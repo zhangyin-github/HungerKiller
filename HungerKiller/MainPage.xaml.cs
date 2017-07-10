@@ -26,5 +26,10 @@ namespace HungerKiller
         {
             this.InitializeComponent();
         }
+
+        private void ClickMeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
