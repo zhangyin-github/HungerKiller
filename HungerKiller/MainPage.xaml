@@ -8,6 +8,70 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <ListView x:Name="listView1"
+                   FontSize="100" Margin="10,288,-10,-288">
+        </ListView>
+        <TextBlock FontSize="32"
+                    Margin="202,101,-198,-96" >用户名</TextBlock>
+        <TextBlock FontSize="32"
+                    Margin="202,190,-198,-96" >密码</TextBlock>
+        <TextBlock FontSize="32"
+                    Margin="200,280,-196,-96" >再输一次</TextBlock>
+        <TextBlock FontSize="32"
+                    Margin="202,360,-198,-96" >邮箱</TextBlock>
+        <TextBox Margin="358,101,280,620"  FontSize="25"></TextBox>
+        <Button Name="ClickMeButton"
+            HorizontalAlignment="Left"
+            Content="注册"
+            FontSize="30"
+            Margin="468,688,0,0" 
+            VerticalAlignment="Top" 
+            Width="100"
+            Height="50" RenderTransformOrigin="-0.135,0.445" Click="ClickMeButton_Click"
+            >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Gray" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <StackPanel
+                    Margin="101,153,-51,-133" 
+                    Orientation="Horizontal">
+            <TextBlock FontSize="32"
+                    Margin="40,291,-36,-86" >口味选择</TextBlock>
+            <TextBlock Name="CheckBoxResultTextBlock" />
+            <CheckBox x:Name="MyCheckBox"  FontSize="27"
+                      Content="酸" RenderTransformOrigin="20,0.41" Margin="-90,354,0,353" />
+            <CheckBox x:Name="MyCheckBox1"  FontSize="27"
+                      Content="甜" RenderTransformOrigin="20,0.41" Margin="20,331,0,330" />
+            <CheckBox x:Name="MyCheckBox2"  FontSize="27"
+                      Content="辣" RenderTransformOrigin="20,0.41" Margin="30,331,0,330" />
+            <CheckBox x:Name="MyCheckBox3"  FontSize="27"
+                      Content="咸" RenderTransformOrigin="20,0.41" Margin="40,331,0,330" />
+            <CheckBox x:Name="MyCheckBox4"  FontSize="27"
+                      Content="肉" RenderTransformOrigin="20,0.41" Margin="50,331,0,330" />
+        </StackPanel>
+        <CheckBox x:Name="MyCheckBox5"  FontSize="27"
+                      Content="我要减肥，来点清淡的~" RenderTransformOrigin="20,0.41" Margin="142,569,0,158" />
+        <TextBlock FontSize="17"
+                    Margin="281,646,533,89" >是否愿意接受校园活动推送</TextBlock>
+        <StackPanel 
+                    Orientation="Horizontal"
+                    Margin="512,529,-452,-19">
+            <RadioButton x:Name="YesRadioButton" 
+                         Content="Yes" 
+                         GroupName="MyGroup" Margin="0,113" />
+            <TextBlock x:Name="RadioButtonTextBlock" />
+            <RadioButton x:Name="NoRadioButton" 
+                         Content="No" 
+                         GroupName="MyGroup" Margin="0,113" />
+        </StackPanel>
+        <PasswordBox x:Name="passwordBox" PasswordChar="*" MaxLength="16" FontSize="27"
+             Margin="358,190,280,531"/>
+        <PasswordBox x:Name="passwordBox1" PasswordChar="*" MaxLength="16" FontSize="27"
+             Margin="358,280,280,443"/>
+        <TextBox Margin="358,360,280,363"  FontSize="25"></TextBox>
     </Grid>
 </Page>
