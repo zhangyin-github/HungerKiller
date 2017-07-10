@@ -8,6 +8,50 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <RelativePanel Background="White">
+            <Button Name="HamburgerButton" 
+                    RelativePanel.AlignLeftWithPanel="True"
+                    FontFamily="Segoe MDL2 Assets"
+                    FontSize="23" 
+                    Content="&#xE700;" 
+                    Width="45" Foreground="Black"
+                    Click="HamburgerButton_Click" />
+            <TextBlock Name="TitleTextBlock"
+                       RelativePanel.RightOf="HamburgerButton"
+                       RelativePanel.AlignVerticalCenterWith="HamburgerButton"
+                       FontSize="20" Foreground="Black"
+                       FontWeight="Light"
+                       Text="测试"
+                       VerticalAlignment="Center" 
+                       Margin="5,0,0,0"/>
+        </RelativePanel>
+        <SplitView 
+                   Name="MySplitView"
+                   DisplayMode="CompactOverlay" 
+                   OpenPaneLength="140" 
+                   CompactPaneLength="45" Margin="0,35,0,0" Grid.RowSpan="2" BorderBrush="#FF292929"
+                   >
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single" 
+                         Background="#DE212020"
+                         SelectionChanged="ListBox_SelectionChanged" BorderBrush="#FF323131" Foreground="#FF817E7E">
+                    <ListBoxItem Name="Homepage">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="#FFD6D2D2" Text="&#xE80F;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2" >主页</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    
+                </ListBox>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Frame Name="MyFrame" Background="White"></Frame>
+            </SplitView.Content>
 
+        </SplitView>
     </Grid>
 </Page>

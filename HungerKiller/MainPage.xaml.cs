@@ -25,6 +25,47 @@ namespace HungerKiller
         public MainPage()
         {
             this.InitializeComponent();
+            MyFrame.Navigate(typeof(homepage));
+            TitleTextBlock.Text = "主页";
+            Homepage.IsSelected = true;
         }
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MyFrame.CanGoBack)
+            {
+                MyFrame.GoBack();
+                Homepage.IsSelected = true;
+            }
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Homepage.IsSelected)
+            {
+
+                MyFrame.Navigate(typeof(homepage));
+                TitleTextBlock.Text = "主页";
+            }
+            /* else if (non1.IsSelected)
+            {
+
+                MyFrame.Navigate(typeof(non1));
+                TitleTextBlock.Text = "图书馆";
+            }    */
+        }
+        /*
+        private void LoggedButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            MyFrame.Navigate(typeof(LoginPage));
+            TitleTextBlock.Text = "登录";
+        }
+        */
     }
 }
