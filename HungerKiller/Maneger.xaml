@@ -57,6 +57,7 @@
                 <Button Content="评论管理" Grid.Row="1" Background="RosyBrown" ></Button>
             </Grid>
             <Frame Name="navigate" Grid.Column="1"></Frame>
+            <Button Content="张竣杰" Grid.Column="1"></Button>
         </Grid>
 
 
