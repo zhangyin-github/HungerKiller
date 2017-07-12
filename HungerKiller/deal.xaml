@@ -137,7 +137,7 @@
                     <RowDefinition Height="200"/>
                     <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="8">
+                <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
                     <Image Source="Assets/12.jpg"/>
                     <TextBlock FontSize="16" Width="Auto" Height="Auto">
                     <Run Text="菜品1"/>
