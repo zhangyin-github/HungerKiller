@@ -95,6 +95,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="comment.xaml.cs">
+      <DependentUpon>comment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="deal.xaml.cs">
       <DependentUpon>deal.xaml</DependentUpon>
     </Compile>
@@ -136,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="comment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="deal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
