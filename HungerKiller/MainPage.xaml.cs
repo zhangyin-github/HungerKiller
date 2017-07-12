@@ -51,12 +51,24 @@ namespace HungerKiller
                 MyFrame.Navigate(typeof(homepage));
                 TitleTextBlock.Text = "主页";
             }
-            /* else if (non1.IsSelected)
+            else if (Deal.IsSelected)
             {
 
-                MyFrame.Navigate(typeof(non1));
-                TitleTextBlock.Text = "图书馆";
-            }    */
+                MyFrame.Navigate(typeof(deal));
+                TitleTextBlock.Text = "趣味决策";
+            }
+            else if (Maneger.IsSelected)
+            {
+
+                MyFrame.Navigate(typeof(Maneger));
+                TitleTextBlock.Text = "趣味决策";
+            }
+            else if (SignUp.IsSelected)
+            {
+
+                MyFrame.Navigate(typeof(SignUp));
+                TitleTextBlock.Text = "趣味决策";
+            }         
         }
         /*
         private void LoggedButton_Click(object sender, RoutedEventArgs e)
