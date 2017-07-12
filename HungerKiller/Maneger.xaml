@@ -1,0 +1,70 @@
+﻿<Page
+    x:Class="HungerKiller.Maneger"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HungerKiller"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+        <Grid.RowDefinitions >
+            <RowDefinition Height="100" ></RowDefinition>
+
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="350"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button  Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background ="LightBlue"></Button>
+            <Button Grid.Column="3"   Content="管理员" Height="50" Background="White"  HorizontalAlignment="Center" >
+                <Button.Flyout >
+                    <MenuFlyout >
+                        <MenuFlyoutItem Text="Profile" Click="MenuFlyoutItem_Click" ></MenuFlyoutItem>
+                        <MenuFlyoutItem Text="Logout" Click="MenuFlyoutItem_Click" ></MenuFlyoutItem>
+                    </MenuFlyout>
+                </Button.Flyout>
+            </Button>
+            <Button Grid.Column="2" Content="选择" Height="50" Background="White" HorizontalAlignment="Center"  >
+                <Button.Flyout >
+                    <MenuFlyout >
+                        <MenuFlyoutItem Text="Choice one" Click="MenuFlyoutItem_Click" ></MenuFlyoutItem>
+                        <MenuFlyoutItem Text="Choice two" Click="MenuFlyoutItem_Click" ></MenuFlyoutItem>
+                        <MenuFlyoutItem Text="Choice three" Click="MenuFlyoutItem_Click" ></MenuFlyoutItem>
+                        <MenuFlyoutItem Text="Choice four" Click="MenuFlyoutItem_Click" ></MenuFlyoutItem>
+                    </MenuFlyout>
+                </Button.Flyout>
+            </Button>
+            <TextBox Name="textbox" Grid.Column="1" Width="220" Height="40" Background="White"  HorizontalAlignment="Center" VerticalAlignment="Center" PlaceholderText="搜索" >
+            </TextBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Content="发布管理" Grid.Row="0" Background="Pink"   ></Button>
+                <Button Content="评论管理" Grid.Row="1" Background="RosyBrown" ></Button>
+            </Grid>
+            <Frame Name="navigate" Grid.Column="1"></Frame>
+        </Grid>
+
+
+
+
+
+
+
+
+    </Grid>
+</Page>

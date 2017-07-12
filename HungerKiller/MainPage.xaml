@@ -8,6 +8,83 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <RelativePanel >
+            <Button Name="HamburgerButton"
+                    RelativePanel.AlignLeftWithPanel="True"  
+                    FontFamily="Segoe MDL2 Assets"
+                    Content="&#xE700;"
+                    FontSize="20"
+                    Width="45"
+                    Height="45"
+                    HorizontalAlignment="Center"
+                    Click="HamburgerButton_Click"
+              />
+
+            <TextBlock Name="TitleTextBlock"
+                       RelativePanel.RightOf="HamburgerButton"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Margin="20,0,0,0"/>
+
+            <AutoSuggestBox Name="MyAutoSuggestBox"
+                            PlaceholderText="输入要搜索的内容"
+                            QueryIcon="Find"
+                            Width="200"
+                            RelativePanel.AlignRightWithPanel="True"
+                            Margin="0,0,10,0"/>
+        </RelativePanel>
+
+        <SplitView Name="MySplitView"
+                       Grid.Row="1"
+                       DisplayMode="CompactOverlay"
+                       OpenPaneLength="150"
+                       CompactPaneLength="45">
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single"
+                     SelectionChanged="ListBox_SelectionChanged">
+                    <ListBoxItem Name="主页">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock 
+                            Text="&#xE80F;"
+                            FontFamily="Segoe MDL2 Assets"
+                            FontSize="20"/>
+                            <TextBlock Text="主页"
+                                   FontSize="18"
+                                   Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="页面一">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock 
+                            Text="&#xE1CE;"
+                            FontFamily="Segoe MDL2 Assets"
+                            FontSize="20"/>
+                            <TextBlock Text="页面一"
+                                   FontSize="18"
+                                   Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+            <!--SplitView.Content 
+                GridView Name="NewsItemGrid"
+                          Background="LightGray"
+                          ItemsSource="{x:Bind NewsItems}"
+                          HorizontalAlignment="Stretch"
+                          Margin="10,0,0,0"
+                    GridView.ItemTemplate 
+                        DataTemplate x:DataType="data:NewsItem"
+                            local:NewsItemsControl/
+
+                        /DataTemplate
+                    /GridView.ItemTemplate
+                /GridView
+            /SplitView.Content-->
+        </SplitView>
     </Grid>
 </Page>

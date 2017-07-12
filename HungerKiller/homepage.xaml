@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="HungerKiller.homepage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HungerKiller"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <!--新品上市轮播控件-->
+        <Grid Grid.Row="0" Margin="0,5,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--左-->
+            <Grid Grid.Column="0" Margin="0,20,0,20">
+                <Grid.Background>
+                    <SolidColorBrush Color="LightGray"/>
+                </Grid.Background>
+                <FlipView x:Name="LeftFlipView" Opacity="0.5" IsEnabled="False" >
+                    <FlipView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding}" Stretch="Fill"/>
+                        </DataTemplate>
+                    </FlipView.ItemTemplate>
+                </FlipView>
+            </Grid>
+
+            <!--中-->
+            <FlipView x:Name="CenterFlipView" Grid.Column="1">
+                <FlipView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding}" Stretch="Fill"/>
+                    </DataTemplate>
+                </FlipView.ItemTemplate>
+            </FlipView>
+
+            <!--右-->
+            <Grid Grid.Column="2" Margin="0,20,0,20">
+                <Grid.Background>
+                    <SolidColorBrush Color="LightGray"/>
+                </Grid.Background>
+                <FlipView x:Name="RightFlipView" Opacity="0.3" IsEnabled="False" >
+                    <FlipView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding}" Stretch="Fill"/>
+                        </DataTemplate>
+                    </FlipView.ItemTemplate>
+                </FlipView>
+            </Grid>
+
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            
+        </Grid>
+        </Grid>
+</Page>
