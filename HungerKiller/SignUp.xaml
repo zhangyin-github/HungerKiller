@@ -73,5 +73,6 @@
         <PasswordBox x:Name="passwordBox1" PasswordChar="*" MaxLength="16" FontSize="27"
              Margin="358,280,280,443"/>
         <TextBox Margin="358,360,280,363"  FontSize="25"></TextBox>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="140" Margin="821,185,0,0" VerticalAlignment="Top" Width="119"/>
     </Grid>
 </Page>
