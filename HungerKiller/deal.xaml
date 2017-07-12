@@ -34,9 +34,6 @@
         </Style>
     </Page.Resources>
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="Assets/bg.jpg"/>
-        </Grid.Background>
         <StackPanel Orientation="Horizontal">
             <Grid Width="220" Margin="50,100,0,0">
                 <Grid.RowDefinitions>
