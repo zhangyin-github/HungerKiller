@@ -7,84 +7,48 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions >
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
-        <RelativePanel >
-            <Button Name="HamburgerButton"
-                    RelativePanel.AlignLeftWithPanel="True"  
+        <RelativePanel Background="LightGray">
+            <Button Name="HamburgerButton" 
+                    RelativePanel.AlignLeftWithPanel="True"
                     FontFamily="Segoe MDL2 Assets"
-                    Content="&#xE700;"
-                    FontSize="20"
-                    Width="45"
-                    Height="45"
-                    HorizontalAlignment="Center"
-                    Click="HamburgerButton_Click"
-              />
-
+                    FontSize="23" 
+                    Content="&#xE700;" 
+                    Width="45" Foreground="White"
+                    Click="HamburgerButton_Click" />
             <TextBlock Name="TitleTextBlock"
                        RelativePanel.RightOf="HamburgerButton"
-                       FontSize="18"
-                       FontWeight="Bold"
-                       Margin="20,0,0,0"/>
-
-            <AutoSuggestBox Name="MyAutoSuggestBox"
-                            PlaceholderText="输入要搜索的内容"
-                            QueryIcon="Find"
-                            Width="200"
-                            RelativePanel.AlignRightWithPanel="True"
-                            Margin="0,0,10,0"/>
+                       RelativePanel.AlignVerticalCenterWith="HamburgerButton"
+                       FontSize="20" Foreground="White"
+                       FontWeight="Light"
+                       VerticalAlignment="Center" 
+                       Margin="5,0,0,0"/>
         </RelativePanel>
-
         <SplitView Name="MySplitView"
-                       Grid.Row="1"
-                       DisplayMode="CompactOverlay"
-                       OpenPaneLength="150"
-                       CompactPaneLength="45">
+                   DisplayMode="CompactOverlay" 
+                   OpenPaneLength="140" 
+                   CompactPaneLength="45" Margin="0,35,0,0" Grid.RowSpan="2" BorderBrush="#FF292929"
+                   >
             <SplitView.Pane>
-                <ListBox SelectionMode="Single"
-                     SelectionChanged="ListBox_SelectionChanged">
-                    <ListBoxItem Name="主页">
+                <ListBox SelectionMode="Single" 
+                         SelectionChanged="ListBox_SelectionChanged" BorderBrush="#FF323131" Foreground="#FF817E7E">
+                    <ListBoxItem Name="Homepage">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock 
-                            Text="&#xE80F;"
-                            FontFamily="Segoe MDL2 Assets"
-                            FontSize="20"/>
-                            <TextBlock Text="主页"
-                                   FontSize="18"
-                                   Margin="20,0,0,0"/>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="White" Text="&#xE80F;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2" >主页</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem Name="页面一">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock 
-                            Text="&#xE1CE;"
-                            FontFamily="Segoe MDL2 Assets"
-                            FontSize="20"/>
-                            <TextBlock Text="页面一"
-                                   FontSize="18"
-                                   Margin="20,0,0,0"/>
-                        </StackPanel>
-                    </ListBoxItem>
+
                 </ListBox>
             </SplitView.Pane>
-            <!--SplitView.Content 
-                GridView Name="NewsItemGrid"
-                          Background="LightGray"
-                          ItemsSource="{x:Bind NewsItems}"
-                          HorizontalAlignment="Stretch"
-                          Margin="10,0,0,0"
-                    GridView.ItemTemplate 
-                        DataTemplate x:DataType="data:NewsItem"
-                            local:NewsItemsControl/
+            <SplitView.Content>
+                <Frame Name="MyFrame" Background="White"></Frame>
+            </SplitView.Content>
 
-                        /DataTemplate
-                    /GridView.ItemTemplate
-                /GridView
-            /SplitView.Content-->
         </SplitView>
     </Grid>
 </Page>

@@ -25,18 +25,18 @@
             <Button Grid.Column="3"   Content="管理员" Height="50" Background="White"  HorizontalAlignment="Center" >
                 <Button.Flyout >
                     <MenuFlyout >
-                        <MenuFlyoutItem Text="Profile" Click="MenuFlyoutItem_Click" ></MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Logout" Click="MenuFlyoutItem_Click" ></MenuFlyoutItem>
+                        <MenuFlyoutItem Name="ProfileMenuFlyoutItem" Text="Profile" Click="ProfileMenuFlyoutItem_Click" ></MenuFlyoutItem>
+                        <MenuFlyoutItem Name="LogoutMenuFlyoutItem" Text="Logout" Click="LogoutMenuFlyoutItem_Click" ></MenuFlyoutItem>
                     </MenuFlyout>
                 </Button.Flyout>
             </Button>
             <Button Grid.Column="2" Content="选择" Height="50" Background="White" HorizontalAlignment="Center"  >
                 <Button.Flyout >
                     <MenuFlyout >
-                        <MenuFlyoutItem Text="Choice one" Click="MenuFlyoutItem_Click" ></MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Choice two" Click="MenuFlyoutItem_Click" ></MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Choice three" Click="MenuFlyoutItem_Click" ></MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Choice four" Click="MenuFlyoutItem_Click" ></MenuFlyoutItem>
+                        <MenuFlyoutItem Name="Choice_one" Text="Choice_one" Click="Choice_one_Click" ></MenuFlyoutItem>
+                        <MenuFlyoutItem Name="Choice_two" Text="Choice_two" Click="Choice_two_Click" ></MenuFlyoutItem>
+                        <MenuFlyoutItem Name="Choice_three" Text="Choice_three" Click="Choice_three_Click" ></MenuFlyoutItem>
+                        <MenuFlyoutItem Name="Choice_four" Text="Choice_four" Click="Choice_four_Click" ></MenuFlyoutItem>
                     </MenuFlyout>
                 </Button.Flyout>
             </Button>

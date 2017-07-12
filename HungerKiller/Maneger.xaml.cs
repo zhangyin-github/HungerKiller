@@ -26,5 +26,35 @@ namespace HungerKiller
         {
             this.InitializeComponent();
         }
+
+        private void ProfileMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LogoutMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Choice_one_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Choice_two_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Choice_three_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Choice_four_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
