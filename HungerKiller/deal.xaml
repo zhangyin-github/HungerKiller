@@ -26,6 +26,12 @@
             <Setter Property="Width" Value="80"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
+        <Style x:Key="DishImageStyle" TargetType="Image">
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="120"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Stretch" Value="Uniform"/>
+        </Style>
     </Page.Resources>
     <Grid>
         <Grid.Background>
@@ -34,6 +40,7 @@
         <StackPanel Orientation="Horizontal">
             <Grid Width="220" Margin="50,100,0,0">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height ="50"/>
                     <RowDefinition Height ="50"/>
                     <RowDefinition Height ="50"/>
                     <RowDefinition Height ="50"/>
@@ -125,6 +132,7 @@
                     </Button>
                     <Button x:Name="ButtonTenTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonTenTwo_Click"/>
                 </StackPanel>
+                <Button  Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Content="确定" FontSize="30" FontFamily="华文行楷" Height="50"/>
             </Grid>
             <Grid HorizontalAlignment="Center" VerticalAlignment="Center"  x:Name="TurntableBG" BorderThickness="0" Padding="0">
                 <Grid.ColumnDefinitions >
@@ -137,57 +145,55 @@
                     <RowDefinition Height="200"/>
                     <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                    <Image Source="Assets/12.jpg"/>
-                    <TextBlock FontSize="16" Width="Auto" Height="Auto">
-                    <Run Text="菜品1"/>
-                    </TextBlock>
+                <StackPanel Name="DishOne"   BorderThickness="0" Padding="0" Grid.Column="0" Grid.Row="0" Orientation="Vertical">
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Width="50" Text="菜品1"/>
                 </StackPanel>
-                <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="8">
-                    <Image Source="Assets/12.jpg"/>
-                    <TextBlock FontSize="16">
-                    <Run Text="菜品2"/>
-                    </TextBlock>
-                </StackPanel>
-                <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="8">
-                    <Image Source="Assets/12.jpg"/>
-                    <TextBlock FontSize="16">
-                    <Run Text="菜品3"/>
-                    </TextBlock>
-                </StackPanel>
-                <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="8">
-                    <Image Source="Assets/12.jpg"/>
-                    <TextBlock FontSize="16">
-                    <Run Text="菜品4"/>
-                    </TextBlock>
-                </StackPanel>
-                <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="8">
-                    <Image Source="Assets/12.jpg"/>
-                    <TextBlock FontSize="16">
-                    <Run Text="菜品5"/>
-                    </TextBlock>
-                </StackPanel>
-                <StackPanel Grid.Column="2" Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="8">
-                    <Image Source="Assets/12.jpg"/>
-                    <TextBlock FontSize="16">
-                    <Run Text="菜品6"/>
-                    </TextBlock>
-                </StackPanel>
-                <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="8">
-                    <Image Source="Assets/12.jpg"/>
-                    <TextBlock FontSize="16">
-                    <Run Text="菜品7"/>
-                    </TextBlock>
-                </StackPanel>
-                <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="8">
-                    <Image Source="Assets/12.jpg"/>
-                    <TextBlock FontSize="16">
+                <StackPanel Name="DishEight" BorderThickness="0" Padding="0" Grid.Column="0" Grid.Row="1" Orientation="Vertical">
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center">
                     <Run Text="菜品8"/>
                     </TextBlock>
                 </StackPanel>
+                <StackPanel Name="DishSeven" BorderThickness="0" Padding="0" Grid.Column="0" Grid.Row="2" Orientation="Vertical">
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center">
+                    <Run Text="菜品7"/>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Name="DishTwo" BorderThickness="0" Padding="0" Grid.Column="1" Grid.Row="0" Orientation="Vertical">
+                    <Image  Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center">
+                    <Run Text="菜品2"/>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Name="DishSix" BorderThickness="0" Padding="0" Grid.Column="1" Grid.Row="2" Orientation="Vertical">
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center" >
+                    <Run Text="菜品6"/>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Name="DishTree" BorderThickness="0" Padding="0" Grid.Column="2" Grid.Row="0" Orientation="Vertical">
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center">
+                    <Run Text="菜品3"/>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Name="DishFour" BorderThickness="0" Padding="0" Grid.Column="2" Grid.Row="1" Orientation="Vertical">
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center">
+                    <Run Text="菜品4"/>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Name="DishFive"  Grid.Column="2" Grid.Row="2" Orientation="Vertical">
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center">
+                    <Run Text="菜品5"/>
+                    </TextBlock>
+                </StackPanel>
                 <StackPanel  Grid.Row="1" Grid.Column="1" Orientation="Vertical" >
-                    <Button  Width="200" Height="100" FontSize="16" Background="Azure" VerticalAlignment="Center" Content="开始选择"  Name="ChooseButton" Click="ChooseButton_Click"/>
-                    <Button  Width="200" Height="100" FontSize="16" Background="LightSlateGray" VerticalAlignment="Center" Content="更新转盘" />
+                    <Button  Width="151" Height="66" FontSize="30" FontFamily="华文行楷" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Center"  Content="开始选择"  Name="ChooseButton" Click="ChooseButton_Click" Margin="25,0,24,0"/>
+                    <Button  Width="151" Height="64" FontSize="30" FontFamily="华文行楷" BorderBrush="Black"  VerticalAlignment="Center" HorizontalAlignment="Center" Content="更新转盘" Name="UpdateTurntable" Click="UpdateTurntable_Click" Margin="25,0,24,0" />
                 </StackPanel>
             </Grid>
 

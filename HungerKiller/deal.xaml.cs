@@ -5,10 +5,12 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
@@ -28,6 +30,18 @@ namespace HungerKiller
         {
             this.InitializeComponent();
         }
+
+        public void time(int i)
+        {
+            int j = 10000 * i, x = 10000 * i;
+            while (j > 0)
+            {
+                while (x > 0)
+                { x--; }
+                j--;
+            }
+        }
+
         private void CardChooseButtonone_Click(object sender, RoutedEventArgs e)
         {
             if (T1.Visibility != Windows.UI.Xaml.Visibility.Collapsed)
@@ -47,6 +61,7 @@ namespace HungerKiller
                 CardChooseButtonone.FontSize = 32;
                 T1.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 count = count | 0x01;
+                CardChooseButtonone.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
             }
         }
 
@@ -69,6 +84,7 @@ namespace HungerKiller
                 CardChooseButtontwo.FontSize = 32;
                 T2.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 count = count | 0x02;
+                CardChooseButtontwo.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
             }
         }
 
@@ -91,6 +107,7 @@ namespace HungerKiller
                 CardChooseButtonthree.FontSize = 32;
                 T3.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 count = count | 0x04;
+                CardChooseButtonthree.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
             }
         }
 
@@ -113,6 +130,7 @@ namespace HungerKiller
                 CardChooseButtontfour.FontSize = 32;
                 T4.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 count = count | 0x08;
+                CardChooseButtontfour.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
             }
         }
 
@@ -135,6 +153,7 @@ namespace HungerKiller
                 CardChooseButtonfive.FontSize = 32;
                 T5.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 count = count | 0x10;
+                CardChooseButtonfive.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
             }
         }
 
@@ -157,6 +176,7 @@ namespace HungerKiller
                 CardChooseButtonsix.FontSize = 32;
                 T6.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 count = count | 0x20;
+                CardChooseButtonsix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
             }
         }
 
@@ -179,6 +199,7 @@ namespace HungerKiller
                 CardChooseButtonseven.FontSize = 32;
                 T7.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 count = count | 0x40;
+                CardChooseButtonseven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
             }
         }
         private void CardChooseButtoneight_Click(object sender, RoutedEventArgs e)
@@ -200,6 +221,7 @@ namespace HungerKiller
                 CardChooseButtoneight.FontSize = 32;
                 T8.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 count = count | 0x80;
+                CardChooseButtoneight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
             }
         }
 
@@ -222,6 +244,7 @@ namespace HungerKiller
                 CardChooseButtonnine.FontSize = 32;
                 T9.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 count = count | 0x100;
+                CardChooseButtonnine.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
             }
         }
 
@@ -244,6 +267,7 @@ namespace HungerKiller
                 CardChooseButtonten.FontSize = 32;
                 T10.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 count = count | 0x200;
+                CardChooseButtonten.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
             }
         }
 
@@ -255,6 +279,7 @@ namespace HungerKiller
             CardChooseButtonone.FontSize = 32;
             T1.Visibility = Windows.UI.Xaml.Visibility.Visible;
             countt = countt | 0x01;
+            CardChooseButtonone.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
 
         private void ButtonTwoTwo_Click(object sender, RoutedEventArgs e)
@@ -265,6 +290,7 @@ namespace HungerKiller
             CardChooseButtontwo.FontSize = 32;
             T2.Visibility = Windows.UI.Xaml.Visibility.Visible;
             countt = countt | 0x02;
+            CardChooseButtontwo.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
 
         private void ButtonThreeTwo_Click(object sender, RoutedEventArgs e)
@@ -275,6 +301,7 @@ namespace HungerKiller
             CardChooseButtonthree.FontSize = 32;
             T3.Visibility = Windows.UI.Xaml.Visibility.Visible;
             countt = countt | 0x04;
+            CardChooseButtonthree.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
 
         private void ButtonFourTwo_Click(object sender, RoutedEventArgs e)
@@ -285,6 +312,7 @@ namespace HungerKiller
             CardChooseButtontfour.FontSize = 32;
             T4.Visibility = Windows.UI.Xaml.Visibility.Visible;
             countt = countt | 0x08;
+            CardChooseButtontfour.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
 
         private void ButtonFiveTwo_Click(object sender, RoutedEventArgs e)
@@ -295,6 +323,7 @@ namespace HungerKiller
             CardChooseButtonfive.FontSize = 32;
             T5.Visibility = Windows.UI.Xaml.Visibility.Visible;
             countt = countt | 0x10;
+            CardChooseButtonfive.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
 
         private void ButtonSixTwo_Click(object sender, RoutedEventArgs e)
@@ -305,6 +334,7 @@ namespace HungerKiller
             CardChooseButtonsix.FontSize = 32;
             T6.Visibility = Windows.UI.Xaml.Visibility.Visible;
             countt = countt | 0x20;
+            CardChooseButtonsix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
 
         private void ButtonSevenTwo_Click(object sender, RoutedEventArgs e)
@@ -315,6 +345,7 @@ namespace HungerKiller
             CardChooseButtonseven.FontSize = 32;
             T7.Visibility = Windows.UI.Xaml.Visibility.Visible;
             countt = countt | 0x40;
+            CardChooseButtonseven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
 
         private void ButtonEightTwo_Click(object sender, RoutedEventArgs e)
@@ -325,6 +356,7 @@ namespace HungerKiller
             CardChooseButtoneight.FontSize = 32;
             T8.Visibility = Windows.UI.Xaml.Visibility.Visible;
             countt = countt | 0x80;
+            CardChooseButtoneight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
 
         private void ButtonNineTwo_Click(object sender, RoutedEventArgs e)
@@ -335,6 +367,7 @@ namespace HungerKiller
             CardChooseButtonnine.FontSize = 32;
             T9.Visibility = Windows.UI.Xaml.Visibility.Visible;
             countt = countt | 0x100;
+            CardChooseButtonnine.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
 
         private void ButtonTenTwo_Click(object sender, RoutedEventArgs e)
@@ -345,13 +378,92 @@ namespace HungerKiller
             CardChooseButtonten.FontSize = 32;
             T10.Visibility = Windows.UI.Xaml.Visibility.Visible;
             countt = countt | 0x200;
+            CardChooseButtonten.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
 
         private void ChooseButton_Click(object sender, RoutedEventArgs e)
         {
-            System.DateTime Currenttime = new System.DateTime();
-            int se = Currenttime.Second;
-            int br = se % 10;
+            var ss = DateTime.Now.Second.ToString();
+            int se = int.Parse(ss);
+            int br = (se % 10) + 30;
+            int brs = br;
+            while (br > 0)
+            {
+                DishOne.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
+                time(brs);
+                if (brs > br)
+                    break;
+                else if (brs > (br / 2))
+                    brs--;
+                else brs++;
+                DishOne.Background = DishTwo.Background;
+                DishTwo.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
+                time(brs);
+                if (brs > br)
+                    break;
+                else if (brs > (br / 2))
+                    brs--;
+                else brs++;
+                DishTwo.Background = DishOne.Background;
+                DishTree.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
+                time(brs);
+                if (brs > br)
+                    break;
+                else if (brs > (br / 2))
+                    brs--;
+                else brs++;
+                DishTree.Background = DishOne.Background;
+                DishFour.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
+                time(brs);
+                if (brs > br)
+                    break;
+                else if (brs > (br / 2))
+                    brs--;
+                else brs++;
+                DishFour.Background = DishOne.Background;
+                DishFive.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
+                time(brs);
+                if (brs > br)
+                    break;
+                else if (brs > (br / 2))
+                    brs--;
+                else brs++;
+                DishFive.Background = DishOne.Background;
+                DishSix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
+                time(brs);
+                if (brs > br)
+                    break;
+                else if (brs > (br / 2))
+                    brs--;
+                else brs++;
+                DishSix.Background = DishOne.Background;
+                DishSeven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
+                time(brs);
+                if (brs > br)
+                    break;
+                else if (brs > (br / 2))
+                    brs--;
+                else brs++;
+                DishSeven.Background = DishOne.Background;
+                DishEight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
+                time(brs);
+                if (brs > br)
+                    break;
+                else if (brs > (br / 2))
+                    brs--;
+                else brs++;
+                DishEight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
+                time(brs);
+                if (brs > br)
+                    break;
+                else if (brs > (br / 2))
+                    brs--;
+                else brs++;
+                DishEight.Background = DishOne.Background;
+            }
+        }
+        private void UpdateTurntable_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
