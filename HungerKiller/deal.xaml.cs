@@ -84,7 +84,7 @@ namespace HungerKiller
                 CardChooseButtonthree.Content = "\xE812";
                 CardChooseButtonthree.FontSize = 40;
             }
-            else if (ButtonThreeTwo.Visibility == Windows.UI.Xaml.Visibility.Collapsed)
+            else if (ButtonThreeTwo.Visibility != Windows.UI.Xaml.Visibility.Collapsed)
             {
                 ButtonThreeTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 CardChooseButtonthree.FontFamily = new FontFamily("华文行楷");
@@ -201,7 +201,7 @@ namespace HungerKiller
 
         private void CardChooseButtonnine_Click(object sender, RoutedEventArgs e)
         {
-            if (ButtonNineTwo.Visibility != Windows.UI.Xaml.Visibility.Collapsed)
+            if (ButtonNineTwo.Visibility == Windows.UI.Xaml.Visibility.Collapsed)
             {
                 ButtonNineTwo.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 ButtonNineTwo.FontSize = 40;
@@ -234,7 +234,7 @@ namespace HungerKiller
             {
                 ButtonTenTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 CardChooseButtonten.FontFamily = new FontFamily("华文行楷");
-                CardChooseButtonten.Content = "汤多";
+                CardChooseButtonten.Content = "面食";
                 CardChooseButtonten.FontSize = 32;
                 count = count | 0x200;
                 CardChooseButtonten.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
@@ -265,7 +265,7 @@ namespace HungerKiller
         {
             ButtonThreeTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             CardChooseButtonthree.FontFamily = new FontFamily("华文行楷");
-            CardChooseButtonthree.Content = "甜口";
+            CardChooseButtonthree.Content = "咸口";
             CardChooseButtonthree.FontSize = 32;
             countt = countt | 0x04;
             CardChooseButtonthree.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
@@ -275,7 +275,7 @@ namespace HungerKiller
         {
             ButtonFourTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             CardChooseButtontfour.FontFamily = new FontFamily("华文行楷");
-            CardChooseButtontfour.Content = "咸口";
+            CardChooseButtontfour.Content = "甜口";
             CardChooseButtontfour.FontSize = 32;
             countt = countt | 0x08;
             CardChooseButtontfour.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
@@ -335,7 +335,7 @@ namespace HungerKiller
         {
             ButtonTenTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             CardChooseButtonten.FontFamily = new FontFamily("华文行楷");
-            CardChooseButtonten.Content = "肉菜";
+            CardChooseButtonten.Content = "面食";
             CardChooseButtonten.FontSize = 32;
             countt = countt | 0x200;
             CardChooseButtonten.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
@@ -347,6 +347,11 @@ namespace HungerKiller
         }
 
         private void ChooseButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void FinalOkButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
