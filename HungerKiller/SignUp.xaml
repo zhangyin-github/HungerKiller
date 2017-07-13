@@ -27,7 +27,7 @@
             HorizontalAlignment="Left"
             Content="注册"
             FontSize="30"
-            Margin="468,642,0,0" 
+            Margin="468,645,0,0" 
             VerticalAlignment="Top" 
             Width="100"
             Height="50" RenderTransformOrigin="-0.135,0.445" Grid.Row="1">
