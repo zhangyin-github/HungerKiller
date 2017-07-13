@@ -16,9 +16,9 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.5*"/>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="240*"/>
+                <RowDefinition Height="71*"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Column="1" Grid.Row="1">
                 <TextBlock FontSize="32" Margin="15" >用户名</TextBlock>
@@ -44,9 +44,9 @@
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="93*"/>
-                <RowDefinition Height="45*"/>
-                <RowDefinition Height="22*"/>
+                <RowDefinition Height="332*"/>
+                <RowDefinition Height="147*"/>
+                <RowDefinition Height="161*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="300*"/>
@@ -57,7 +57,7 @@
                 <ColumnDefinition Width="149*"/>
                 <ColumnDefinition Width="300*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="1" Grid.Row="1">
+            <StackPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="0.2,1,113,1.2">
                 <CheckBox x:Name="MyCheckBox1"  FontSize="27"
                       Content="酸" RenderTransformOrigin="20,0.41" Margin="15" />
             </StackPanel>
@@ -77,7 +77,7 @@
                 <CheckBox x:Name="MyCheckBox5"  FontSize="27"
                       Content="肉" RenderTransformOrigin="20,0.41" Margin="15" />
             </StackPanel>
-            <StackPanel Grid.Column="3" Grid.Row="3">
+            <StackPanel Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,14.8,113.2,0">
                 <Button Name="ClickMeButton"
             HorizontalAlignment="Left"
             Content="注册"
@@ -97,9 +97,9 @@
         </Grid>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="439*"/>
-                <RowDefinition Height="65*"/>
-                <RowDefinition Height="136*"/>
+                <RowDefinition Height="385*"/>
+                <RowDefinition Height="53*"/>
+                <RowDefinition Height="202*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="228*"/>
@@ -108,21 +108,21 @@
                 <ColumnDefinition Width="115*"/>
                 <ColumnDefinition Width="229*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="1" Grid.Row="1">
+            <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,2.2,0.4,163" Grid.RowSpan="2">
                 <CheckBox x:Name="MyCheckBox6"  FontSize="27"
                       Content="我要减肥，来点清淡的~" RenderTransformOrigin="20,0.41" Margin="12" Height="41" Width="317" Grid.Row="1" />
             </StackPanel>
-            <StackPanel Grid.Column="1" Grid.Row="2">
+            <StackPanel Grid.Column="1" Grid.Row="2" Margin="0,8.4,0.4,0">
                 <TextBlock FontSize="27"
                     Margin="15" Grid.Row="1" >是否想接受校园活动推送</TextBlock>
             </StackPanel>
-            <StackPanel Grid.Column="2" Grid.Row="2">
+            <StackPanel Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="350,8.4,0.2,0">
                 <RadioButton x:Name="YesRadioButton" 
                          Content="Yes" 
                          GroupName="MyGroup" Margin="17" />
                 <TextBlock x:Name="RadioButtonTextBlock" />
             </StackPanel>
-            <StackPanel Grid.Column="3" Grid.Row="2">
+            <StackPanel Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="100.6,8.4,0.4,0">
                 <RadioButton x:Name="NoRadioButton" 
                          Content="No" 
                          GroupName="MyGroup" Margin="15" />
