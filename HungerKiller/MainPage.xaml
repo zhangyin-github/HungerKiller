@@ -27,6 +27,12 @@
                        FontWeight="Light"
                        VerticalAlignment="Center" 
                        Margin="5,0,0,0"/>
+            <AutoSuggestBox Name="MyAutoSuggestBox"
+                            PlaceholderText="输入要搜索的内容"
+                            QueryIcon="Find"
+                            Width="200"
+                            RelativePanel.AlignRightWithPanel="True"
+                            Margin="0,0,10,0"/>
         </RelativePanel>
         <SplitView Name="MySplitView"
                    DisplayMode="CompactOverlay" 
