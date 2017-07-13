@@ -5,30 +5,32 @@
     xmlns:local="using:HungerKiller"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Height="770.035">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <ListView x:Name="listView1"
-                   FontSize="100" Margin="10,288,-10,-288">
-        </ListView>
+                   FontSize="100" Margin="10,287,-10,-288" Grid.Row="1"/>
         <TextBlock FontSize="32"
-                    Margin="202,101,-198,-96" >用户名</TextBlock>
+                    Margin="202,100,-198,-96" Grid.Row="1" >用户名</TextBlock>
         <TextBlock FontSize="32"
-                    Margin="202,190,-198,-96" >密码</TextBlock>
+                    Margin="202,189,-198,-96" Grid.Row="1" >密码</TextBlock>
         <TextBlock FontSize="32"
-                    Margin="200,280,-196,-96" >再输一次</TextBlock>
+                    Margin="200,279,-196,-96" Grid.Row="1" >再输一次</TextBlock>
         <TextBlock FontSize="32"
-                    Margin="202,360,-198,-96" >邮箱</TextBlock>
-        <TextBox Margin="358,101,280,620"  FontSize="25"></TextBox>
+                    Margin="202,359,-198,-96" Grid.Row="1" >邮箱</TextBlock>
+        <TextBox Margin="358,100,280,620"  FontSize="25" Grid.Row="1"/>
         <Button Name="ClickMeButton"
             HorizontalAlignment="Left"
             Content="注册"
             FontSize="30"
-            Margin="468,688,0,0" 
+            Margin="468,687,0,0" 
             VerticalAlignment="Top" 
             Width="100"
-            Height="50" RenderTransformOrigin="-0.135,0.445"
-            >
+            Height="50" RenderTransformOrigin="-0.135,0.445" Grid.Row="1">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Gray" Offset="0"/>
@@ -37,8 +39,8 @@
             </Button.Background>
         </Button>
         <StackPanel
-                    Margin="101,153,-51,-133" 
-                    Orientation="Horizontal">
+                    Margin="101,152,-51,-133" 
+                    Orientation="Horizontal" Grid.Row="1">
             <TextBlock FontSize="32"
                     Margin="40,291,-36,-86" >口味选择</TextBlock>
             <TextBlock Name="CheckBoxResultTextBlock" />
@@ -54,12 +56,12 @@
                       Content="肉" RenderTransformOrigin="20,0.41" Margin="50,331,0,330" />
         </StackPanel>
         <CheckBox x:Name="MyCheckBox5"  FontSize="27"
-                      Content="我要减肥，来点清淡的~" RenderTransformOrigin="20,0.41" Margin="142,569,0,158" />
+                      Content="我要减肥，来点清淡的~" RenderTransformOrigin="20,0.41" Margin="142,569,0,158" Height="41" Width="317" Grid.Row="1" />
         <TextBlock FontSize="17"
-                    Margin="281,646,533,89" >是否愿意接受校园活动推送</TextBlock>
+                    Margin="281,644,445,88" Grid.Row="1" >是否愿意接受校园活动推送</TextBlock>
         <StackPanel 
                     Orientation="Horizontal"
-                    Margin="512,529,-452,-19">
+                    Margin="512,528,-452,-19" Grid.Row="1">
             <RadioButton x:Name="YesRadioButton" 
                          Content="Yes" 
                          GroupName="MyGroup" Margin="0,113" />
@@ -69,10 +71,11 @@
                          GroupName="MyGroup" Margin="0,113" />
         </StackPanel>
         <PasswordBox x:Name="passwordBox" PasswordChar="*" MaxLength="16" FontSize="27"
-             Margin="358,190,280,531"/>
+             Margin="358,189,280,531" PasswordChanged="passwordBox_PasswordChanged" Grid.Row="1"/>
+        <TextBlock x:Name="statusText" Margin="200" HorizontalAlignment="Center" />
         <PasswordBox x:Name="passwordBox1" PasswordChar="*" MaxLength="16" FontSize="27"
-             Margin="358,280,280,443"/>
-        <TextBox Margin="358,360,280,363"  FontSize="25"></TextBox>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="140" Margin="821,185,0,0" VerticalAlignment="Top" Width="119"/>
+             Margin="358,279,280,443" PasswordChanged="passwordBox1_PasswordChanged" Grid.Row="1"/>
+        <TextBlock x:Name="statusText1" Margin="329" Foreground="Red" HorizontalAlignment="Center" Width="0" Grid.Row="1" />
+        <TextBox Margin="358,359,280,363"  FontSize="25" Grid.Row="1" />
     </Grid>
 </Page>
