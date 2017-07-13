@@ -31,7 +31,7 @@ namespace HungerKiller
         {
             if (passwordBox.Password == "123")
             {
-                statusText.Text = "'Password' is not allowed as a password.";
+                statusText.Text = "'123' is not allowed as a password.";
             }
             else
             {
@@ -43,7 +43,7 @@ namespace HungerKiller
         {
             if (passwordBox1.Password == "123")
             {
-                statusText1.Text = "'Password' is not allowed as a password.";
+                statusText1.Text = "'123' is not allowed as a password.";
             }
             else
             {
@@ -51,7 +51,7 @@ namespace HungerKiller
             }
             if (passwordBox1.Password != passwordBox.Password)
             {
-                statusText1.Text = "'Password' is not adopt.";
+                statusText1.Text = "Password is not adopt.";
             }
             else
             {
