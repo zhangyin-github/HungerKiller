@@ -375,5 +375,10 @@ namespace HungerKiller
         {
 
         }
+
+        private void ChooseButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
