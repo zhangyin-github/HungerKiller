@@ -61,13 +61,13 @@ namespace HungerKiller
             {
 
                 MyFrame.Navigate(typeof(Maneger));
-                TitleTextBlock.Text = "趣味决策";
+                TitleTextBlock.Text = "管理员页面";
             }
             else if (SignUp.IsSelected)
             {
 
                 MyFrame.Navigate(typeof(SignUp));
-                TitleTextBlock.Text = "趣味决策";
+                TitleTextBlock.Text = "登录页面";
             }         
         }
         /*

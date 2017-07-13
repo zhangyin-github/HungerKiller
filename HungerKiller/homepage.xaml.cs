@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HungerKiller.Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -24,9 +25,13 @@ namespace HungerKiller
     /// </summary>
     public sealed partial class homepage : Page
     {
+        public ObservableCollection<NewsItem> NewsItems;
         public homepage()
         {
             this.InitializeComponent();
+            NewsItems = new ObservableCollection<NewsItem>();
+            NewsManager.GetNews("主页", NewsItems);
+
             this.LeftFlipView.ItemsSource = this.CenterFlipView.ItemsSource = this.RightFlipView.ItemsSource = new ObservableCollection<BitmapImage>()
             {
                 new BitmapImage(new System.Uri("ms-appx:///Assets/1.jpg",System.UriKind.RelativeOrAbsolute)),
@@ -61,5 +66,9 @@ namespace HungerKiller
             timer3.Start();
         }
 
+        private void NewsItemGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
