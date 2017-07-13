@@ -27,36 +27,34 @@ namespace HungerKiller
             this.InitializeComponent();
         }
 
-       /* private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        private void passwordBox1_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            if (passwordBox.Password == "123")
+            if (passwordBox1.Password != passwordBox.Password)
             {
-                statusText.Text = "'123' is not allowed as a password.";
+                statusText3.Text = "Password is not adopt.";
             }
             else
             {
-                statusText.Text = string.Empty;
+                statusText3.Text = string.Empty;
             }
         }
 
-        private void passwordBox1_PasswordChanged(object sender, RoutedEventArgs e)
+        private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            if (passwordBox1.Password == "123")
+            if (passwordBox.Password == "123")
             {
-                statusText1.Text = "'123' is not allowed as a password.";
+                statusText2.Text = "'123' is not allowed as a password.";
             }
             else
             {
-                statusText1.Text = string.Empty;
+                statusText2.Text = string.Empty;
             }
-            if (passwordBox1.Password != passwordBox.Password)
-            {
-                statusText1.Text = "Password is not adopt.";
-            }
-            else
-            {
-                statusText1.Text = string.Empty;
-            }
-        }*/
+        }
+
+        private void username_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //if()
+        }
+        
     }
 }
