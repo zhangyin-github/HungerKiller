@@ -31,11 +31,12 @@
         <Style x:Key="MenuDishTextblocksStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontFamily" Value="华文行楷"/>
-            </Style> 
+            <Setter Property="Margin" Value="40,0,0,0"/>
+        </Style> 
     </Page.Resources>
-    <Grid >
+    <Grid>
         <StackPanel Orientation="Horizontal">
-            <Grid Width="220" Margin="50,100,0,0">
+            <Grid Width="220" Margin="50,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height ="50"/>
                     <RowDefinition Height ="50"/>
@@ -101,7 +102,7 @@
                 </StackPanel>
                 <Button  Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Content="确定" FontSize="30" FontFamily="华文行楷" Height="50"/>
             </Grid>
-            <Grid HorizontalAlignment="Center" VerticalAlignment="Center"  x:Name="TurntableBG" BorderThickness="0" Padding="0">
+            <Grid  Margin="0,0,0,0"  x:Name="TurntableBG" BorderThickness="0" Padding="0">
                 <Grid.ColumnDefinitions >
                     <ColumnDefinition Width="130"/>
                     <ColumnDefinition Width="130"/>
@@ -164,33 +165,21 @@
                 </StackPanel>
             </Grid>
             <StackPanel Orientation="Vertical"  Width="365">
-                <Image Source="Assets/12.jpg" Stretch="Uniform"  Width="250" Height="200" Margin="50,50,0,0" VerticalAlignment="Top"></Image >
+                <Image Source="Assets/12.jpg" Stretch="Uniform"  Width="200" Height="150" Margin="50,0,0,0" VerticalAlignment="Top"></Image >
                 <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜名:</TextBlock>
-                <TextBlock  Name="caiming" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock> 
-                <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品价格:</TextBlock>
-                <TextBlock Name="jiage" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock> 
+                <TextBlock  Name="DishName" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock> 
                 <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品评分:</TextBlock>
-                <TextBlock Name="pingfen" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock> 
+                <TextBlock Name="DishScore" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock> 
+                <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品价格:</TextBlock>
+                <TextBlock Name="DishPrice" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock> 
                 <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品所在楼层其窗口:</TextBlock>
-                <TextBlock Name="louceng" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
-                <TextBlock Name="chuangkou" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
+                <TextBlock Name="DishFloor" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
+                <TextBlock Name="DishWindow" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
+                <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜量:</TextBlock>
+                <TextBlock Name="DishAmount" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
                 <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">评价:</TextBlock>
-                <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="满意" Width="220"  FontSize="30" FontFamily="华文行楷" Height="40"/>
-                <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="不满意" Width="220"  FontSize="30" FontFamily="华文行楷" Height="40"/>
-                <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="还行" Width="220"  FontSize="30" FontFamily="华文行楷" Height="40"/>
+                <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="满意" Width="220"  FontSize="30" FontFamily="华文行楷" Height="40" Name="FinalOkButton" Click="FinalOkButton_Click"/>
             </StackPanel> 
-
-
-
-
-
-
-
-
-
-
-
-
         </StackPanel>
     </Grid>
 </Page>
