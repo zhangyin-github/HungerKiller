@@ -27,7 +27,7 @@ namespace HungerKiller
             this.InitializeComponent();
         }
 
-        private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
+       /* private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
             if (passwordBox.Password == "123")
             {
@@ -57,6 +57,6 @@ namespace HungerKiller
             {
                 statusText1.Text = string.Empty;
             }
-        }
+        }*/
     }
 }
