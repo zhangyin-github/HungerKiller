@@ -25,6 +25,8 @@
         <Style x:Key="CardButtonoStyle" TargetType="Button">
             <Setter Property="Width" Value="80"/>
             <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontFamily" Value="华文行楷"/>
+            <Setter Property="FontSize" Value="32"/>
         </Style>
         <Style x:Key="DishImageStyle" TargetType="Image">
             <Setter Property="Width" Value="150"/>
@@ -50,82 +52,62 @@
                     <RowDefinition Height ="50"/>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" x:Name="CardChooseOne" Orientation="Horizontal">
-                    <Button x:Name="CardChooseButtonone" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonone_Click">
-                        <TextBlock  Style="{StaticResource CardTextblockStyle}" x:Name="T1" HorizontalAlignment="Right">
+                    <Button x:Name="CardChooseButtonone" Style="{StaticResource CardButtonoStyle}" Content="肉菜" Click="CardChooseButtonone_Click">
+                <!--        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T1">
                             <Run Text="肉菜"/>
-                        </TextBlock>
+                        </TextBlock> -->
                     </Button>
                     <Button Style="{StaticResource CardButtonTStyle}" x:Name="ButtonOneTwo" Click="ButtonOneTwo_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" x:Name="CardChooseTwo" Orientation="Horizontal">
-                    <Button Style="{StaticResource CardButtonoStyle}" x:Name="CardChooseButtontwo" Click="CardChooseButtontwo_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T2">
-                            <Run Text="素菜"/>
-                        </TextBlock>
+                    <Button Style="{StaticResource CardButtonoStyle}" x:Name="CardChooseButtontwo" Content="素菜" Click="CardChooseButtontwo_Click">
                     </Button>
                     <Button Style="{StaticResource CardButtonTStyle}" x:Name="ButtonTwoTwo" Click="ButtonTwoTwo_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Row="2" x:Name="CardChooseThree" Orientation="Horizontal" >
-                    <Button x:Name="CardChooseButtonthree" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonthree_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T3">
-                            <Run Text="咸口"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtonthree" Style="{StaticResource CardButtonoStyle}" Content="咸口" Click="CardChooseButtonthree_Click">
                     </Button>
                     <Button x:Name="ButtonThreeTwo"  Style="{StaticResource CardButtonTStyle}" Click="ButtonThreeTwo_Click"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Row="3" x:Name="CardChooseFour">
-                    <Button x:Name="CardChooseButtontfour" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtontfour_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T4">
-                            <Run Text="甜口"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtontfour" Style="{StaticResource CardButtonoStyle}" Content="甜口" Click="CardChooseButtontfour_Click">
+                       
                     </Button>
                     <Button x:Name="ButtonFourTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonFourTwo_Click"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"  Grid.Row="4" x:Name="CardChooseFive">
-                    <Button x:Name="CardChooseButtonfive" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonfive_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T5">
-                            <Run Text="辣口"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtonfive" Style="{StaticResource CardButtonoStyle}" Content="辣口" Click="CardChooseButtonfive_Click">
+                      
                     </Button>
                     <Button x:Name="ButtonFiveTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonFiveTwo_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Row="5" Orientation="Horizontal" x:Name="CardChooseSix">
-                    <Button x:Name="CardChooseButtonsix" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonsix_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T6">
-                            <Run Text="凉菜"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtonsix" Style="{StaticResource CardButtonoStyle}" Content="凉菜" Click="CardChooseButtonsix_Click">
+                      
                     </Button>
                     <Button x:Name="ButtonSixTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonSixTwo_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Row="6" x:Name="CardChooseSeven" Orientation="Horizontal" >
-                    <Button x:Name="CardChooseButtonseven" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonseven_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T7">
-                            <Run Text="热菜"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtonseven" Style="{StaticResource CardButtonoStyle}" Content="热菜" Click="CardChooseButtonseven_Click">
+                      
                     </Button>
                     <Button x:Name="ButtonSevenTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonSevenTwo_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Row="7" x:Name="CardChooseEight" Orientation="Horizontal">
-                    <Button x:Name="CardChooseButtoneight" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtoneight_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T8">
-                            <Run Text="汤多"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtoneight" Style="{StaticResource CardButtonoStyle}" Content="汤多" Click="CardChooseButtoneight_Click">
+                      
                     </Button>
                     <Button x:Name="ButtonEightTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonEightTwo_Click" />
                 </StackPanel>
                 <StackPanel  Grid.Row="8" x:Name="CardChooseNine" Orientation="Horizontal">
-                    <Button x:Name="CardChooseButtonnine" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonnine_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T9">
-                            <Run Text="米食"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtonnine" Style="{StaticResource CardButtonoStyle}" Content="米食" Click="CardChooseButtonnine_Click">
+                      
                     </Button>
                     <Button x:Name="ButtonNineTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonNineTwo_Click" />
                 </StackPanel>
                 <StackPanel Grid.Row="9" x:Name="CardChooseTen" Orientation="Horizontal">
-                    <Button x:Name="CardChooseButtonten" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonten_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T10">
-                            <Run Text="面食"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtonten" Style="{StaticResource CardButtonoStyle}" Content="面食" Click="CardChooseButtonten_Click">
+                     
                     </Button>
                     <Button x:Name="ButtonTenTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonTenTwo_Click"/>
                 </StackPanel>
