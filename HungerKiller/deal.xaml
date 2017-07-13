@@ -133,14 +133,14 @@
             </Grid>
             <Grid HorizontalAlignment="Center" VerticalAlignment="Center"  x:Name="TurntableBG" BorderThickness="0" Padding="0">
                 <Grid.ColumnDefinitions >
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition Height="120"/>
                 </Grid.RowDefinitions>
                 <StackPanel Name="DishOne"   BorderThickness="0" Padding="0" Grid.Column="0" Grid.Row="0" Orientation="Vertical">
                     <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
