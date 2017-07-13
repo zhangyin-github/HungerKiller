@@ -31,16 +31,6 @@ namespace HungerKiller
             this.InitializeComponent();
         }
 
-        public void time(int i)
-        {
-            int j = 10000 * i, x = 10000 * i;
-            while (j > 0)
-            {
-                while (x > 0)
-                { x--; }
-                j--;
-            }
-        }
 
         private void CardChooseButtonone_Click(object sender, RoutedEventArgs e)
         {
@@ -381,87 +371,6 @@ namespace HungerKiller
             CardChooseButtonten.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
 
-        private void ChooseButton_Click(object sender, RoutedEventArgs e)
-        {
-            var ss = DateTime.Now.Second.ToString();
-            int se = int.Parse(ss);
-            int br = (se % 10) + 30;
-            int brs = br;
-            while (br > 0)
-            {
-                DishOne.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                time(brs);
-                if (brs > br)
-                    break;
-                else if (brs > (br / 2))
-                    brs--;
-                else brs++;
-                DishOne.Background = DishTwo.Background;
-                DishTwo.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                time(brs);
-                if (brs > br)
-                    break;
-                else if (brs > (br / 2))
-                    brs--;
-                else brs++;
-                DishTwo.Background = DishOne.Background;
-                DishTree.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                time(brs);
-                if (brs > br)
-                    break;
-                else if (brs > (br / 2))
-                    brs--;
-                else brs++;
-                DishTree.Background = DishOne.Background;
-                DishFour.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                time(brs);
-                if (brs > br)
-                    break;
-                else if (brs > (br / 2))
-                    brs--;
-                else brs++;
-                DishFour.Background = DishOne.Background;
-                DishFive.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                time(brs);
-                if (brs > br)
-                    break;
-                else if (brs > (br / 2))
-                    brs--;
-                else brs++;
-                DishFive.Background = DishOne.Background;
-                DishSix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                time(brs);
-                if (brs > br)
-                    break;
-                else if (brs > (br / 2))
-                    brs--;
-                else brs++;
-                DishSix.Background = DishOne.Background;
-                DishSeven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                time(brs);
-                if (brs > br)
-                    break;
-                else if (brs > (br / 2))
-                    brs--;
-                else brs++;
-                DishSeven.Background = DishOne.Background;
-                DishEight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                time(brs);
-                if (brs > br)
-                    break;
-                else if (brs > (br / 2))
-                    brs--;
-                else brs++;
-                DishEight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                time(brs);
-                if (brs > br)
-                    break;
-                else if (brs > (br / 2))
-                    brs--;
-                else brs++;
-                DishEight.Background = DishOne.Background;
-            }
-        }
         private void UpdateTurntable_Click(object sender, RoutedEventArgs e)
         {
 
