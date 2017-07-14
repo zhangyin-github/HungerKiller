@@ -101,6 +101,9 @@
     <Compile Include="deal.xaml.cs">
       <DependentUpon>deal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DishesDetails.xaml.cs">
+      <DependentUpon>DishesDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="homepage.xaml.cs">
       <DependentUpon>homepage.xaml</DependentUpon>
     </Compile>
