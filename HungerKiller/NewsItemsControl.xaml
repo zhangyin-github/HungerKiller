@@ -14,7 +14,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Image Name="MyImage" Source="{x:Bind NewsItem.Image}" />
+        <Image Name="MyImage" Source="{x:Bind NewsItem.Image}" Tapped="MyImage_Tapped" />
         <RelativePanel Grid.Row="1" Margin="10">
             <TextBlock Text="{x:Bind NewsItem.Headline}" 
                        Name="HeadlineTextBox"
