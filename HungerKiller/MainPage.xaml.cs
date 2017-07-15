@@ -68,7 +68,13 @@ namespace HungerKiller
 
                 MyFrame.Navigate(typeof(SignUp));
                 TitleTextBlock.Text = "登录页面";
-            }         
+            }
+            else if (Comment.IsSelected)
+            {
+
+                MyFrame.Navigate(typeof(comment));
+                TitleTextBlock.Text = "评论界面";
+            }
         }
         /*
         private void LoggedButton_Click(object sender, RoutedEventArgs e)
