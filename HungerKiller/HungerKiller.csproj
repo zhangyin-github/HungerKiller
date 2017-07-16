@@ -116,7 +116,6 @@
     <Compile Include="Maneger.xaml.cs">
       <DependentUpon>Maneger.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\TestClass.cs" />
     <Compile Include="Model\NewsItem.cs" />
     <Compile Include="NewsItemsControl.xaml.cs">
       <DependentUpon>NewsItemsControl.xaml</DependentUpon>
