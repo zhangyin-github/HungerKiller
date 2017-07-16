@@ -8,6 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <Rectangle x:Name="rect">
+            <Rectangle.Fill>
+                <SolidColorBrush/>
+            </Rectangle.Fill> 
+           </Rectangle> 
     </Grid>
+    
 </Page>
