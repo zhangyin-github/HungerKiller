@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using HungerKiller.Model;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -25,36 +26,53 @@ namespace HungerKiller
         public Maneger()
         {
             this.InitializeComponent();
+            if (LogoutComboBoxItem.IsSelected)
+                this.Frame.Navigate(typeof(homepage));
         }
 
-        private void ProfileMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        private void searchAutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
 
         }
 
-        private void LogoutMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        private string[] selectionItems = new string[] { "张三", "讲座", "麻辣香锅", "麻婆豆腐", "社团活动", "社联活动", "张明", "张思", "王明", "李害了", "老衣" };
+        private void searchAutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
         {
 
         }
 
-        private void Choice_one_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Choice_two_Click(object sender, RoutedEventArgs e)
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
 
-        private void Choice_three_Click(object sender, RoutedEventArgs e)
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (fabuguanli.IsSelected)
+            {
 
+                dengluFrame.Navigate(typeof(pinglunguanli));
+                TitleTextBlock.Text = "评论管理";
+            }
+            else if (pinglunguanli.IsSelected)
+            {
+                dengluFrame.Navigate(typeof(publish));
+                TitleTextBlock.Text = "发布管理";
+            }
         }
 
-        private void Choice_four_Click(object sender, RoutedEventArgs e)
+        private void searchAutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
-
+            var filtered = selectionItems.Where(p => p.StartsWith(sender.Text)).ToArray();
+            searchAutoSuggestBox.ItemsSource = filtered;
         }
+
+
+
     }
 }

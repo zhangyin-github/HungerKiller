@@ -116,11 +116,18 @@
     <Compile Include="Maneger.xaml.cs">
       <DependentUpon>Maneger.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Fabu.cs" />
     <Compile Include="Model\NewsItem.cs" />
     <Compile Include="NewsItemsControl.xaml.cs">
       <DependentUpon>NewsItemsControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pinglunguanli.xaml.cs">
+      <DependentUpon>pinglunguanli.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="publish.xaml.cs">
+      <DependentUpon>publish.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
@@ -186,6 +193,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NewsItemsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pinglunguanli.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="publish.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
