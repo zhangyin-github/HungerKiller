@@ -26,17 +26,7 @@ namespace HungerKiller
         {
             this.InitializeComponent();
         }
-
-        private void Wanting_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Ate_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        
         private void SpitSlotButton_Click(object sender, RoutedEventArgs e)
         {
 
