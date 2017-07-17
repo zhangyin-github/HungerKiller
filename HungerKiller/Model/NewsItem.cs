@@ -53,9 +53,9 @@ namespace HungerKiller.Model
              User u = new User();
              u = null;
          }
-         public static User get()
+         public static User get(name,pass)
          {
-
+         
          }
          public static bool islogin()
          {
