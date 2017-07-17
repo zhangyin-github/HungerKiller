@@ -79,6 +79,7 @@
             </StackPanel>
             <StackPanel Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,14.8,113.2,0">
                 <Button Name="ClickMeButton"
+                        Click="Button_Click"
             HorizontalAlignment="Left"
             Content="注册"
             FontSize="30"
@@ -126,6 +127,23 @@
                 <RadioButton x:Name="NoRadioButton" 
                          Content="No" 
                          GroupName="MyGroup" Margin="15" />
+            </StackPanel>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="88*"/>
+                <RowDefinition Height="11*"/>
+                <RowDefinition Height="29*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="137*"/>
+                <ColumnDefinition Width="375*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" Grid.Row="1">
+                <TextBlock x:Name="statusText5" Margin="0" Foreground="Red" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="2">
+                <TextBlock x:Name="statusText6" Margin="0" Foreground="Red" HorizontalAlignment="Center"/>
             </StackPanel>
         </Grid>
     </Grid>

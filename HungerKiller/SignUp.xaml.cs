@@ -44,9 +44,9 @@ namespace HungerKiller
 
         private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            if (passwordBox.Password == "123")
+            if (passwordBox.Password.Length<6)
             {
-                statusText2.Text = "'123' is not allowed as a password.";
+                statusText2.Text = "密码不少于6位.";
             }
             else
             {
@@ -56,7 +56,7 @@ namespace HungerKiller
 
         private void username_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (username.Text.Length<4)
+            if (username.Text.Length < 4)
             {
                 statusText1.Text = "用户名不少于4位.";
             }
@@ -78,6 +78,19 @@ namespace HungerKiller
             else
             {
                 statusText4.Text = string.Empty;
+            }
+        }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (MyCheckBox1.IsChecked == MyCheckBox2.IsChecked == MyCheckBox3.IsChecked == MyCheckBox4.IsChecked == MyCheckBox5.IsChecked==false)
+            {
+                statusText5.Text = "选一个口味嘛";
+            }
+            if(YesRadioButton.IsChecked==NoRadioButton.IsChecked)
+            {
+                statusText6.Text = "告诉人家推不推送嘛";
             }
         }
     }
