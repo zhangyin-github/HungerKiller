@@ -63,11 +63,14 @@
                             <!--用户头像+名称-->
                             <StackPanel Orientation="Horizontal" RelativePanel.LeftOf="MySettingButton_1">
                                 <!--用户头像-->
-                                <Ellipse Name="MyUserHeaderImage_1" Height="25" Width="25" >
-                                    <Ellipse.Fill>
-                                        <ImageBrush ImageSource="Assets/2.jpg"></ImageBrush>
-                                    </Ellipse.Fill>
-                                </Ellipse>
+                                <Button Name="MyUserHeaderImageButton_1" Click="MyUserHeaderImageButton_1_Click">
+                                    <Ellipse  Height="25" Width="25" >
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="Assets/2.jpg"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                </Button>
+                                
                                 <!--登录显示用户名，未登录显示请登录-->
                                 <!--未登录提示-->
                                 <Button Name="IfNotSignIn" Margin="5,0,0,0" FontSize="10" FontWeight="Light" Foreground="Black" Background="{x:Null}"

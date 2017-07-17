@@ -100,6 +100,12 @@ namespace HungerKiller
         { 
              
         }
+
+        private void MyUserHeaderImageButton_1_Click(object sender, RoutedEventArgs e)
+        {
+            /*判断当前用户登录？if()*/
+            MyFrame.Navigate(typeof(SignUp));
+        }
         /*
 private void LoggedButton_Click(object sender, RoutedEventArgs e)
 {
