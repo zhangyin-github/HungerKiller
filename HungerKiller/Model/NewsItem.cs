@@ -19,6 +19,7 @@ namespace HungerKiller.Model
         public string Subhead { get; set; }
         public string Dateline { get; set; }
         public string Image { get; set; }
+        public string Text { get; set; }
     }
     public class NewsManager
     {
@@ -37,10 +38,10 @@ namespace HungerKiller.Model
 
             var items = new List<NewsItem>();
 
-            items.Add(new NewsItem() { Id = 1, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "Assets/1.jpg" });
-            items.Add(new NewsItem() { Id = 2, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "Assets/2.jpg" });
-            items.Add(new NewsItem() { Id = 3, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "Assets/3.jpg" });
-            items.Add(new NewsItem() { Id = 4, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "Assets/4.jpg" });
+            items.Add(new NewsItem() { Id = 1, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/1.jpg", Text = "........" });
+            items.Add(new NewsItem() { Id = 2, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/2.jpg", Text = "........" });
+            items.Add(new NewsItem() { Id = 3, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/3.jpg", Text = "........" });
+            items.Add(new NewsItem() { Id = 4, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/4.jpg", Text = "........" });
             return items;
         }
         public static NewsItem GetNews(int id)
@@ -48,7 +49,7 @@ namespace HungerKiller.Model
             
             var items= getNewsItems();
             
-            for(int i=1;i<items.Capacity;i++)
+            for(int i=0;i<items.Capacity;i++)
             {
                 if (items[i].Id==id)
                 return items[i];

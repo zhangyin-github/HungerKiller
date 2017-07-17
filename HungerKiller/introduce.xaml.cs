@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
@@ -33,8 +34,9 @@ namespace HungerKiller
         {
             base.OnNavigatedTo(e);
             var news = NewsManager.GetNews((int)e.Parameter);
-            news.Headline="";
-            news.Image ="";
+            ee.Text=news.Headline;
+            cc.Source =new BitmapImage(new Uri(news.Image,UriKind.Absolute));
+            aa.Text = news.Text;
         }
     }
 }
