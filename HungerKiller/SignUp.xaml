@@ -32,7 +32,7 @@
             Margin="15" Grid.Row="1" PasswordChanged="passwordBox_PasswordChanged"/>
                 <PasswordBox x:Name="passwordBox1" PasswordChar="*" MaxLength="15" FontSize="25"
              Margin="15" Grid.Row="1" PasswordChanged="passwordBox1_PasswordChanged"/>
-                <TextBox x:Name="mail" FontSize="25" Margin="15" Grid.Row="1"/>
+                <TextBox x:Name="mail" FontSize="25" Margin="15" Grid.Row="1" TextChanged="mail_TextChanged"/>
             </StackPanel>
             <StackPanel Grid.Column="3" Grid.Row="1">
                 <TextBlock x:Name="statusText1" Margin="20" Foreground="Red" HorizontalAlignment="Center"/>

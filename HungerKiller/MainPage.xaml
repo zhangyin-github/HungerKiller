@@ -66,6 +66,12 @@
                             <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2" >注册</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
+                    <ListBoxItem Name="Comment">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="White" Text="&#xE80F;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2" >评论</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
                 </ListBox>
             </SplitView.Pane>
             <SplitView.Content>

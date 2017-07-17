@@ -1,5 +1,7 @@
-﻿using System;
+﻿using HungerKiller.Model;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -24,6 +26,16 @@ namespace HungerKiller
         {
             this.InitializeComponent();
             this.DataContextChanged += (s, e) => Bindings.Update();
+        }
+
+        private void MyImage_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            NewsItem info = new NewsItem();
+            info.Headline = NewsItem.Headline;
+            App.info = info;
+            Debug.WriteLine(info.GetHashCode());
+            Frame root = Window.Current.Content as Frame;
+            root .Navigate(typeof(Maneger),info );
         }
     }
 }
