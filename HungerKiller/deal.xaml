@@ -8,12 +8,6 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-        <Style x:Key="CardTextblockStyle" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="华文行楷"/>
-            <Setter Property="FontSize" Value="32"/>
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-        </Style>
         <Style x:Key="CardButtonTStyle" TargetType="Button">
             <Setter Property="FontFamily"  Value="Segoe MDL2 Assets"/>
             <Setter Property="Content" Value=" &#xE813;"/>
@@ -25,20 +19,24 @@
         <Style x:Key="CardButtonoStyle" TargetType="Button">
             <Setter Property="Width" Value="80"/>
             <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontFamily" Value="华文行楷"/>
+            <Setter Property="FontSize" Value="32"/>
         </Style>
         <Style x:Key="DishImageStyle" TargetType="Image">
-            <Setter Property="Width" Value="150"/>
-            <Setter Property="Height" Value="120"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Height" Value="80"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Stretch" Value="Uniform"/>
         </Style>
+        <Style x:Key="MenuDishTextblocksStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="华文行楷"/>
+            <Setter Property="Margin" Value="40,0,0,0"/>
+        </Style> 
     </Page.Resources>
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="Assets/bg.jpg"/>
-        </Grid.Background>
         <StackPanel Orientation="Horizontal">
-            <Grid Width="220" Margin="50,100,0,0">
+            <Grid Width="220" Margin="50,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height ="50"/>
                     <RowDefinition Height ="50"/>
@@ -53,162 +51,135 @@
                     <RowDefinition Height ="50"/>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" x:Name="CardChooseOne" Orientation="Horizontal">
-                    <Button x:Name="CardChooseButtonone" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonone_Click">
-                        <TextBlock  Style="{StaticResource CardTextblockStyle}" x:Name="T1" HorizontalAlignment="Right">
-                            <Run Text="肉菜"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtonone" Style="{StaticResource CardButtonoStyle}" Content="肉菜" Click="CardChooseButtonone_Click">
                     </Button>
                     <Button Style="{StaticResource CardButtonTStyle}" x:Name="ButtonOneTwo" Click="ButtonOneTwo_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" x:Name="CardChooseTwo" Orientation="Horizontal">
-                    <Button Style="{StaticResource CardButtonoStyle}" x:Name="CardChooseButtontwo" Click="CardChooseButtontwo_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T2">
-                            <Run Text="素菜"/>
-                        </TextBlock>
+                    <Button Style="{StaticResource CardButtonoStyle}" x:Name="CardChooseButtontwo" Content="素菜" Click="CardChooseButtontwo_Click">
                     </Button>
                     <Button Style="{StaticResource CardButtonTStyle}" x:Name="ButtonTwoTwo" Click="ButtonTwoTwo_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Row="2" x:Name="CardChooseThree" Orientation="Horizontal" >
-                    <Button x:Name="CardChooseButtonthree" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonthree_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T3">
-                            <Run Text="咸口"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtonthree" Style="{StaticResource CardButtonoStyle}" Content="咸口" Click="CardChooseButtonthree_Click">
                     </Button>
                     <Button x:Name="ButtonThreeTwo"  Style="{StaticResource CardButtonTStyle}" Click="ButtonThreeTwo_Click"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Row="3" x:Name="CardChooseFour">
-                    <Button x:Name="CardChooseButtontfour" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtontfour_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T4">
-                            <Run Text="甜口"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtontfour" Style="{StaticResource CardButtonoStyle}" Content="甜口" Click="CardChooseButtontfour_Click">
                     </Button>
                     <Button x:Name="ButtonFourTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonFourTwo_Click"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"  Grid.Row="4" x:Name="CardChooseFive">
-                    <Button x:Name="CardChooseButtonfive" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonfive_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T5">
-                            <Run Text="辣口"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtonfive" Style="{StaticResource CardButtonoStyle}" Content="辣口" Click="CardChooseButtonfive_Click">
                     </Button>
                     <Button x:Name="ButtonFiveTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonFiveTwo_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Row="5" Orientation="Horizontal" x:Name="CardChooseSix">
-                    <Button x:Name="CardChooseButtonsix" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonsix_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T6">
-                            <Run Text="凉菜"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtonsix" Style="{StaticResource CardButtonoStyle}" Content="凉菜" Click="CardChooseButtonsix_Click">
                     </Button>
                     <Button x:Name="ButtonSixTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonSixTwo_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Row="6" x:Name="CardChooseSeven" Orientation="Horizontal" >
-                    <Button x:Name="CardChooseButtonseven" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonseven_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T7">
-                            <Run Text="热菜"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtonseven" Style="{StaticResource CardButtonoStyle}" Content="热菜" Click="CardChooseButtonseven_Click">
                     </Button>
                     <Button x:Name="ButtonSevenTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonSevenTwo_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Row="7" x:Name="CardChooseEight" Orientation="Horizontal">
-                    <Button x:Name="CardChooseButtoneight" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtoneight_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T8">
-                            <Run Text="汤多"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtoneight" Style="{StaticResource CardButtonoStyle}" Content="汤多" Click="CardChooseButtoneight_Click">
                     </Button>
                     <Button x:Name="ButtonEightTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonEightTwo_Click" />
                 </StackPanel>
                 <StackPanel  Grid.Row="8" x:Name="CardChooseNine" Orientation="Horizontal">
-                    <Button x:Name="CardChooseButtonnine" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonnine_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T9">
-                            <Run Text="米食"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtonnine" Style="{StaticResource CardButtonoStyle}" Content="米食" Click="CardChooseButtonnine_Click">
                     </Button>
                     <Button x:Name="ButtonNineTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonNineTwo_Click" />
                 </StackPanel>
                 <StackPanel Grid.Row="9" x:Name="CardChooseTen" Orientation="Horizontal">
-                    <Button x:Name="CardChooseButtonten" Style="{StaticResource CardButtonoStyle}" Click="CardChooseButtonten_Click">
-                        <TextBlock Style="{StaticResource CardTextblockStyle}" x:Name="T10">
-                            <Run Text="面食"/>
-                        </TextBlock>
+                    <Button x:Name="CardChooseButtonten" Style="{StaticResource CardButtonoStyle}" Content="面食" Click="CardChooseButtonten_Click">
                     </Button>
                     <Button x:Name="ButtonTenTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonTenTwo_Click"/>
                 </StackPanel>
                 <Button  Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Content="确定" FontSize="30" FontFamily="华文行楷" Height="50"/>
             </Grid>
-            <Grid HorizontalAlignment="Center" VerticalAlignment="Center"  x:Name="TurntableBG" BorderThickness="0" Padding="0">
+            <Grid  Margin="0,0,0,0"  x:Name="TurntableBG" BorderThickness="0" Padding="0">
                 <Grid.ColumnDefinitions >
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="130"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="130"/>
                 </Grid.RowDefinitions>
                 <StackPanel Name="DishOne"   BorderThickness="0" Padding="0" Grid.Column="0" Grid.Row="0" Orientation="Vertical">
-                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto"/>
                     <TextBlock FontSize="16" VerticalAlignment="Center" Width="50" Text="菜品1"/>
                 </StackPanel>
                 <StackPanel Name="DishEight" BorderThickness="0" Padding="0" Grid.Column="0" Grid.Row="1" Orientation="Vertical">
-                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto"/>
                     <TextBlock FontSize="16" Width="50" VerticalAlignment="Center">
                     <Run Text="菜品8"/>
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Name="DishSeven" BorderThickness="0" Padding="0" Grid.Column="0" Grid.Row="2" Orientation="Vertical">
-                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto"/>
                     <TextBlock FontSize="16" Width="50" VerticalAlignment="Center">
                     <Run Text="菜品7"/>
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Name="DishTwo" BorderThickness="0" Padding="0" Grid.Column="1" Grid.Row="0" Orientation="Vertical">
-                    <Image  Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <Image  Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto"/>
                     <TextBlock FontSize="16" Width="50" VerticalAlignment="Center">
                     <Run Text="菜品2"/>
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Name="DishSix" BorderThickness="0" Padding="0" Grid.Column="1" Grid.Row="2" Orientation="Vertical">
-                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto"/>
                     <TextBlock FontSize="16" Width="50" VerticalAlignment="Center" >
                     <Run Text="菜品6"/>
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Name="DishTree" BorderThickness="0" Padding="0" Grid.Column="2" Grid.Row="0" Orientation="Vertical">
-                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto"/>
                     <TextBlock FontSize="16" Width="50" VerticalAlignment="Center">
                     <Run Text="菜品3"/>
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Name="DishFour" BorderThickness="0" Padding="0" Grid.Column="2" Grid.Row="1" Orientation="Vertical">
-                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto"/>
                     <TextBlock FontSize="16" Width="50" VerticalAlignment="Center">
                     <Run Text="菜品4"/>
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Name="DishFive"  Grid.Column="2" Grid.Row="2" Orientation="Vertical">
-                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg"/>
+                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto"/>
                     <TextBlock FontSize="16" Width="50" VerticalAlignment="Center">
                     <Run Text="菜品5"/>
                     </TextBlock>
                 </StackPanel>
                 <StackPanel  Grid.Row="1" Grid.Column="1" Orientation="Vertical" >
-                    <Button  Width="151" Height="66" FontSize="30" FontFamily="华文行楷" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Center"  Content="开始选择"  Name="ChooseButton" Click="ChooseButton_Click" Margin="25,0,24,0"/>
-                    <Button  Width="151" Height="64" FontSize="30" FontFamily="华文行楷" BorderBrush="Black"  VerticalAlignment="Center" HorizontalAlignment="Center" Content="更新转盘" Name="UpdateTurntable" Click="UpdateTurntable_Click" Margin="25,0,24,0" />
+                    <Button  Width="120" Height="60" FontSize="24" FontFamily="华文行楷" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Center"  Content="开始选择"  Name="ChooseButton" Click="ChooseButton_Click"/>
+                    <Button  Width="120" Height="60" FontSize="24" FontFamily="华文行楷" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Content="更新转盘" Name="UpdateTurntable" Click="UpdateTurntable_Click" />
                 </StackPanel>
             </Grid>
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <StackPanel Orientation="Vertical"  Width="365">
+                <Image Source="Assets/12.jpg" Stretch="Uniform"  Width="200" Height="150" Margin="50,0,0,0" VerticalAlignment="Top"></Image >
+                <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜名:</TextBlock>
+                <TextBlock  Name="DishName" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock> 
+                <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品评分:</TextBlock>
+                <TextBlock Name="DishScore" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock> 
+                <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品价格:</TextBlock>
+                <TextBlock Name="DishPrice" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock> 
+                <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品所在楼层其窗口:</TextBlock>
+                <TextBlock Name="DishFloor" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
+                <TextBlock Name="DishWindow" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
+                <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜量:</TextBlock>
+                <TextBlock Name="DishAmount" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
+                <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">评价:</TextBlock>
+                <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="满意" Width="220"  FontSize="30" FontFamily="华文行楷" Height="40" Name="FinalOkButton" Click="FinalOkButton_Click"/>
+            </StackPanel> 
         </StackPanel>
     </Grid>
 </Page>

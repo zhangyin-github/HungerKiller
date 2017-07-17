@@ -20,41 +20,11 @@ namespace HungerKiller
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class Maneger : Page
+    public sealed partial class introduce : Page
     {
-        public Maneger()
+        public introduce()
         {
             this.InitializeComponent();
-        }
-
-        private void ProfileMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void LogoutMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Choice_one_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Choice_two_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Choice_three_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Choice_four_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

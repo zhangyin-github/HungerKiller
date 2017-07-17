@@ -5,20 +5,20 @@
     xmlns:local="using:HungerKiller"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:HungerKiller.Model"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
         <!--新品上市轮播控件-->
-        <Grid Grid.Row="0" Margin="0,5,0,5">
+        <Grid HorizontalAlignment="Center" Grid.Row="0" Margin="0,5,0,5">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
 
             <!--左-->
@@ -61,8 +61,25 @@
 
         </Grid>
 
-        <Grid Grid.Row="1">
-            
-        </Grid>
-        </Grid>
+        <SplitView Name="MySplitView"
+                       Grid.Row="1"
+                       DisplayMode="Inline"
+                       OpenPaneLength="150"
+                       CompactPaneLength="45">
+
+            <SplitView.Content >
+                <GridView Name="NewsItemGrid"
+                          ItemsSource="{x:Bind NewsItems}"
+                          HorizontalAlignment="Stretch"
+                          Margin="34,10,-24,-10" SelectionChanged="NewsItemGrid_SelectionChanged">
+                    <GridView.ItemTemplate >
+                        <DataTemplate x:DataType="data:NewsItem">
+                            <local:NewsItemsControl/>
+
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
 </Page>

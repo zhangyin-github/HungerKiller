@@ -13,46 +13,31 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
+// https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
 namespace HungerKiller
-{
+{    
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class Maneger : Page
+    public sealed partial class DishesDetails : Page
     {
-        public Maneger()
+        public DishesDetails()
         {
             this.InitializeComponent();
         }
-
-        private void ProfileMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        
+        private void SpitSlotButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void LogoutMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        private void HottestComment_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Choice_one_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Choice_two_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Choice_three_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Choice_four_Click(object sender, RoutedEventArgs e)
+        private void NewestComment_Click(object sender, RoutedEventArgs e)
         {
 
         }

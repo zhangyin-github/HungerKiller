@@ -5,74 +5,146 @@
     xmlns:local="using:HungerKiller"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Height="639.883">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView x:Name="listView1"
-                   FontSize="100" Margin="10,288,-10,-288">
-        </ListView>
-        <TextBlock FontSize="32"
-                    Margin="202,101,-198,-96" >用户名</TextBlock>
-        <TextBlock FontSize="32"
-                    Margin="202,190,-198,-96" >密码</TextBlock>
-        <TextBlock FontSize="32"
-                    Margin="200,280,-196,-96" >再输一次</TextBlock>
-        <TextBlock FontSize="32"
-                    Margin="202,360,-198,-96" >邮箱</TextBlock>
-        <TextBox Margin="358,101,280,620"  FontSize="25"></TextBox>
-        <Button Name="ClickMeButton"
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="240*"/>
+                <RowDefinition Height="71*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="1" Grid.Row="1">
+                <TextBlock FontSize="32" Margin="15" >用户名</TextBlock>
+                <TextBlock FontSize="32" Margin="15" >密码</TextBlock>
+                <TextBlock FontSize="32" Margin="15" >再次输入</TextBlock>
+                <TextBlock FontSize="32" Margin="15" >邮箱</TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Grid.Row="1">
+                <TextBox x:Name="username" FontSize="25" Margin="15" Grid.Row="1" TextChanged="username_TextChanged"/>
+                <PasswordBox x:Name="passwordBox" PasswordChar="*" MaxLength="15" FontSize="25"
+            Margin="15" Grid.Row="1" PasswordChanged="passwordBox_PasswordChanged"/>
+                <PasswordBox x:Name="passwordBox1" PasswordChar="*" MaxLength="15" FontSize="25"
+             Margin="15" Grid.Row="1" PasswordChanged="passwordBox1_PasswordChanged"/>
+                <TextBox x:Name="mail" FontSize="25" Margin="15" Grid.Row="1" TextChanged="mail_TextChanged"/>
+            </StackPanel>
+            <StackPanel Grid.Column="3" Grid.Row="1">
+                <TextBlock x:Name="statusText1" Margin="20" Foreground="Red" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="statusText2" Margin="40" Foreground="Red" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="statusText3" Margin="20" Foreground="Red" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="statusText4" Margin="40" Foreground="Red" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="332*"/>
+                <RowDefinition Height="147*"/>
+                <RowDefinition Height="161*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="149*"/>
+                <ColumnDefinition Width="149*"/>
+                <ColumnDefinition Width="149*"/>
+                <ColumnDefinition Width="149*"/>
+                <ColumnDefinition Width="149*"/>
+                <ColumnDefinition Width="300*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="0.2,1,113,1.2">
+                <CheckBox x:Name="MyCheckBox1"  FontSize="27"
+                      Content="酸" RenderTransformOrigin="20,0.41" Margin="15" />
+            </StackPanel>
+            <StackPanel Grid.Column="2" Grid.Row="1">
+                <CheckBox x:Name="MyCheckBox2"  FontSize="27"
+                      Content="甜" RenderTransformOrigin="20,0.41" Margin="15" />
+            </StackPanel>
+            <StackPanel Grid.Column="3" Grid.Row="1">
+                <CheckBox x:Name="MyCheckBox3"  FontSize="27"
+                      Content="辣" RenderTransformOrigin="20,0.41" Margin="15" />
+            </StackPanel>
+            <StackPanel Grid.Column="4" Grid.Row="1">
+                <CheckBox x:Name="MyCheckBox4"  FontSize="27"
+                      Content="咸" RenderTransformOrigin="20,0.41" Margin="15" />
+            </StackPanel>
+            <StackPanel Grid.Column="5" Grid.Row="1">
+                <CheckBox x:Name="MyCheckBox5"  FontSize="27"
+                      Content="肉" RenderTransformOrigin="20,0.41" Margin="15" />
+            </StackPanel>
+            <StackPanel Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,14.8,113.2,0">
+                <Button Name="ClickMeButton"
+                        Click="Button_Click"
             HorizontalAlignment="Left"
             Content="注册"
             FontSize="30"
-            Margin="468,688,0,0" 
+            Margin="5,29" 
             VerticalAlignment="Top" 
             Width="100"
-            Height="50" RenderTransformOrigin="-0.135,0.445"
-            >
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Gray" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <StackPanel
-                    Margin="101,153,-51,-133" 
-                    Orientation="Horizontal">
-            <TextBlock FontSize="32"
-                    Margin="40,291,-36,-86" >口味选择</TextBlock>
-            <TextBlock Name="CheckBoxResultTextBlock" />
-            <CheckBox x:Name="MyCheckBox"  FontSize="27"
-                      Content="酸" RenderTransformOrigin="20,0.41" Margin="-90,354,0,353" />
-            <CheckBox x:Name="MyCheckBox1"  FontSize="27"
-                      Content="甜" RenderTransformOrigin="20,0.41" Margin="20,331,0,330" />
-            <CheckBox x:Name="MyCheckBox2"  FontSize="27"
-                      Content="辣" RenderTransformOrigin="20,0.41" Margin="30,331,0,330" />
-            <CheckBox x:Name="MyCheckBox3"  FontSize="27"
-                      Content="咸" RenderTransformOrigin="20,0.41" Margin="40,331,0,330" />
-            <CheckBox x:Name="MyCheckBox4"  FontSize="27"
-                      Content="肉" RenderTransformOrigin="20,0.41" Margin="50,331,0,330" />
-        </StackPanel>
-        <CheckBox x:Name="MyCheckBox5"  FontSize="27"
-                      Content="我要减肥，来点清淡的~" RenderTransformOrigin="20,0.41" Margin="142,569,0,158" />
-        <TextBlock FontSize="17"
-                    Margin="281,646,533,89" >是否愿意接受校园活动推送</TextBlock>
-        <StackPanel 
-                    Orientation="Horizontal"
-                    Margin="512,529,-452,-19">
-            <RadioButton x:Name="YesRadioButton" 
+            Height="50" RenderTransformOrigin="-0.135,0.445" Grid.Row="1">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Gray" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="385*"/>
+                <RowDefinition Height="53*"/>
+                <RowDefinition Height="202*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="228*"/>
+                <ColumnDefinition Width="350*"/>
+                <ColumnDefinition Width="101*"/>
+                <ColumnDefinition Width="115*"/>
+                <ColumnDefinition Width="229*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,2.2,0.4,163" Grid.RowSpan="2">
+                <CheckBox x:Name="MyCheckBox6"  FontSize="27"
+                      Content="我要减肥，来点清淡的~" RenderTransformOrigin="20,0.41" Margin="12" Height="41" Width="317" Grid.Row="1" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="2" Margin="0,8.4,0.4,0">
+                <TextBlock FontSize="27"
+                    Margin="15" Grid.Row="1" >是否想接受校园活动推送</TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="350,8.4,0.2,0">
+                <RadioButton x:Name="YesRadioButton" 
                          Content="Yes" 
-                         GroupName="MyGroup" Margin="0,113" />
-            <TextBlock x:Name="RadioButtonTextBlock" />
-            <RadioButton x:Name="NoRadioButton" 
+                         GroupName="MyGroup" Margin="17" />
+                <TextBlock x:Name="RadioButtonTextBlock" />
+            </StackPanel>
+            <StackPanel Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="100.6,8.4,0.4,0">
+                <RadioButton x:Name="NoRadioButton" 
                          Content="No" 
-                         GroupName="MyGroup" Margin="0,113" />
-        </StackPanel>
-        <PasswordBox x:Name="passwordBox" PasswordChar="*" MaxLength="16" FontSize="27"
-             Margin="358,190,280,531"/>
-        <PasswordBox x:Name="passwordBox1" PasswordChar="*" MaxLength="16" FontSize="27"
-             Margin="358,280,280,443"/>
-        <TextBox Margin="358,360,280,363"  FontSize="25"></TextBox>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="140" Margin="821,185,0,0" VerticalAlignment="Top" Width="119"/>
+                         GroupName="MyGroup" Margin="15" />
+            </StackPanel>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="88*"/>
+                <RowDefinition Height="11*"/>
+                <RowDefinition Height="29*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="137*"/>
+                <ColumnDefinition Width="375*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" Grid.Row="1">
+                <TextBlock x:Name="statusText5" Margin="0" Foreground="Red" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="2">
+                <TextBlock x:Name="statusText6" Margin="0" Foreground="Red" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
