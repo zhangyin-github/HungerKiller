@@ -1,10 +1,13 @@
-﻿using System;
+﻿using HungerKiller.Model;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +28,13 @@ namespace HungerKiller
         public introduce()
         {
             this.InitializeComponent();
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            var news = NewsManager.GetNews((int)e.Parameter);
+            news.Headline="";
+            news.Image ="";
         }
     }
 }

@@ -8,13 +8,19 @@
     xmlns:data="using:HungerKiller.Model"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RenderTransformOrigin="0.505,0.439">
         <Grid.RowDefinitions>
             <RowDefinition Height="200"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions  >
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <!--新品上市轮播控件-->
-        <Grid HorizontalAlignment="Center" Grid.Row="0" Margin="0,5,0,5">
+        <Grid HorizontalAlignment="Center" Grid.Row="0" Margin="0,5,0,5" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="300"/>
                 <ColumnDefinition Width="400"/>
@@ -57,25 +63,39 @@
                     </FlipView.ItemTemplate>
                 </FlipView>
             </Grid>
-
-
+            
         </Grid>
 
+        <StackPanel  Name="juece" Grid.Row="1" Grid.Column="0" Tapped="juece_Tapped">
+            <Image Source ="Assets/1.jpg" Width=" 50" Height=" 50" HorizontalAlignment="Center" Margin=" 0,25,0,0"/>
+            <TextBlock Text="决策" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel  Name="tuijian" Grid.Row="1" Grid.Column="1" Tapped="tuijian_Tapped">
+            <Image Source ="Assets/1.jpg" Width=" 50" Height=" 50" HorizontalAlignment="Center" Margin=" 0,25,0,0"/>
+            <TextBlock Text="推荐" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel  Name="paihang" Grid.Row="1" Grid.Column="2" Tapped="paihang_Tapped">
+            <Image Source ="Assets/1.jpg" Width=" 50" Height=" 50" HorizontalAlignment="Center" Margin=" 0,25,0,0"/>
+            <TextBlock Text="排行" HorizontalAlignment="Center"/>
+        </StackPanel>
+
         <SplitView Name="MySplitView"
-                       Grid.Row="1"
+                       Grid.Row="2"
                        DisplayMode="Inline"
                        OpenPaneLength="150"
-                       CompactPaneLength="45">
+                       CompactPaneLength="45"
+                       Grid.ColumnSpan="3">
 
             <SplitView.Content >
                 <GridView Name="NewsItemGrid"
                           ItemsSource="{x:Bind NewsItems}"
                           HorizontalAlignment="Stretch"
-                          Margin="34,10,-24,-10" SelectionChanged="NewsItemGrid_SelectionChanged">
+                          Margin="34,10,-24,-10">
                     <GridView.ItemTemplate >
                         <DataTemplate x:DataType="data:NewsItem">
                             <local:NewsItemsControl/>
-
                         </DataTemplate>
                     </GridView.ItemTemplate>
                 </GridView>

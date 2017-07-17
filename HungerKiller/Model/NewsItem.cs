@@ -18,7 +18,6 @@ namespace HungerKiller.Model
     }
     public class NewsManager
     {
-
         public static void GetNews(string category, ObservableCollection<NewsItem> newsItems)
         {
             var allItems = getNewsItems();
@@ -39,6 +38,18 @@ namespace HungerKiller.Model
             items.Add(new NewsItem() { Id = 3, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "Assets/3.jpg" });
             items.Add(new NewsItem() { Id = 4, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "Assets/4.jpg" });
             return items;
+        }
+        public static NewsItem GetNews(int id)
+        {
+            
+            var items= getNewsItems();
+            
+            for(int i=1;i<items.Capacity;i++)
+            {
+                if (items[i].Id==id)
+                return items[i];
+            }
+            return null;
         }
     }
 }

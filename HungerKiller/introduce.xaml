@@ -8,6 +8,19 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel >
+            <Image x:Name="cc" Grid.Row="0" Grid.Column="0" Source="news..Image"/>
+            <TextBlock Name="ee" Text="news.Headline"/>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Text="news.Text"  TextWrapping="Wrap"/>
+        
     </Grid>
 </Page>
