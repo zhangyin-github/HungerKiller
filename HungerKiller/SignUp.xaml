@@ -6,9 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Height="639.883">
-
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid>
+    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2.5*"/>
                 <ColumnDefinition Width="1.5*"/>
@@ -32,7 +32,7 @@
             Margin="15" Grid.Row="1" PasswordChanged="passwordBox_PasswordChanged"/>
                 <PasswordBox x:Name="passwordBox1" PasswordChar="*" MaxLength="15" FontSize="25"
              Margin="15" Grid.Row="1" PasswordChanged="passwordBox1_PasswordChanged"/>
-                <TextBox x:Name="mail" FontSize="25" Margin="15" Grid.Row="1"/>
+                <TextBox x:Name="mail" FontSize="25" Margin="15" Grid.Row="1" TextChanged="mail_TextChanged"/>
             </StackPanel>
             <StackPanel Grid.Column="3" Grid.Row="1">
                 <TextBlock x:Name="statusText1" Margin="20" Foreground="Red" HorizontalAlignment="Center"/>
@@ -79,6 +79,7 @@
             </StackPanel>
             <StackPanel Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,14.8,113.2,0">
                 <Button Name="ClickMeButton"
+                        Click="Button_Click"
             HorizontalAlignment="Left"
             Content="注册"
             FontSize="30"
@@ -128,5 +129,23 @@
                          GroupName="MyGroup" Margin="15" />
             </StackPanel>
         </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="88*"/>
+                <RowDefinition Height="11*"/>
+                <RowDefinition Height="29*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="137*"/>
+                <ColumnDefinition Width="375*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" Grid.Row="1">
+                <TextBlock x:Name="statusText5" Margin="0" Foreground="Red" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="2">
+                <TextBlock x:Name="statusText6" Margin="0" Foreground="Red" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
     </Grid>
+        </ScrollViewer>
 </Page>

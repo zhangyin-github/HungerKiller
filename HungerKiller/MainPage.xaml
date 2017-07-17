@@ -7,71 +7,104 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <RelativePanel Background="LightGray">
-            <Button Name="HamburgerButton" 
-                    RelativePanel.AlignLeftWithPanel="True"
-                    FontFamily="Segoe MDL2 Assets"
-                    FontSize="23" 
-                    Content="&#xE700;" 
-                    Width="45" Foreground="White"
-                    Click="HamburgerButton_Click" />
-            <TextBlock Name="TitleTextBlock"
-                       RelativePanel.RightOf="HamburgerButton"
-                       RelativePanel.AlignVerticalCenterWith="HamburgerButton"
-                       FontSize="20" Foreground="White"
-                       FontWeight="Light"
-                       VerticalAlignment="Center" 
-                       Margin="5,0,0,0"/>
-            <AutoSuggestBox Name="MyAutoSuggestBox"
-                            PlaceholderText="输入要搜索的内容"
-                            QueryIcon="Find"
-                            Width="200"
-                            RelativePanel.AlignRightWithPanel="True"
-                            Margin="0,0,10,0"/>
-        </RelativePanel>
-        <SplitView Name="MySplitView"
-                   DisplayMode="CompactOverlay" 
-                   OpenPaneLength="140" 
-                   CompactPaneLength="45" Margin="0,35,0,0" Grid.RowSpan="2" BorderBrush="#FF292929"
-                   >
+    
+        <SplitView Name="MySplitView" DisplayMode="CompactOverlay" OpenPaneLength="140" 
+                   CompactPaneLength="40" Grid.RowSpan="2" BorderBrush="#FF292929">
             <SplitView.Pane>
-                <ListBox SelectionMode="Single" 
-                         SelectionChanged="ListBox_SelectionChanged" BorderBrush="#FF323131" Foreground="#FF817E7E">
-                    <ListBoxItem Name="Homepage">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="White" Text="&#xE80F;" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2" >主页</TextBlock>
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem Name="Deal">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="White" Text="&#xE80F;" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2" >决策</TextBlock>
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem Name="Maneger">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="White" Text="&#xE80F;" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2" >管理</TextBlock>
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem Name="SignUp">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="White" Text="&#xE80F;" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2" >注册</TextBlock>
-                        </StackPanel>
-                    </ListBoxItem>
-                </ListBox>
+                <RelativePanel>
+                    <!--基本功能菜单-->
+                    <ListBox Name="BaseListBox" SelectionMode="Single" BorderBrush="#FF323131" Foreground="#FF817E7E"
+                             SelectionChanged="BaseListBox_SelectionChanged">
+                        <!--汉堡菜单-->
+                        <ListBoxItem Name="HamburgerButton">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Text="&#xE700;"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </ListBoxItem>
+                        <!--主页-->
+                        <ListBoxItem Name="Homepage">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17.5" Foreground="Black" Text="&#xE80F;" 
+                                           VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock FontSize="13" FontWeight="Light" Margin="12,0,0,0" Foreground="Black" >主页</TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <!--趣味决策-->
+                        <ListBoxItem Name="Deal">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Text="&#xE11D;" 
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock FontSize="13" FontWeight="Light" Margin="12,0,0,0" Foreground="Black" >趣味决策</TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+
+                    </ListBox>
+                    <!--管理员菜单-->
+                    <StackPanel RelativePanel.Below="BaseListBox">
+                        <TextBlock Name="BaseList" FontSize="11" FontWeight="Light" Margin="10,0,0,0" Foreground="Gray">管理员菜单</TextBlock>
+                        <ListBox Name="ManegerListBox" SelectionMode="Single" BorderBrush="#FF323131" Foreground="#FF817E7E"
+                                 SelectionChanged="ManegerListBox_SelectionChanged">
+                            <ListBoxItem Name="Maneger">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Text="&#xE707;"
+                                               VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    <TextBlock FontSize="13" FontWeight="Light" Margin="12,0,0,0" Foreground="Black" >管理</TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+                    </StackPanel>
+                    
+                    <!--登录、设置菜单 splitview打开时-->
+                    <Grid Name="Setting_1" BorderThickness="0,1,0,0" BorderBrush="LightGray" Width="140" Margin="-5,0,0,0"
+                          RelativePanel.AlignBottomWithPanel="True" Visibility="Collapsed">
+                        <RelativePanel Margin="10,15,0,15">
+                            <!--设置button-->
+                            <Button Name="MySettingButton_1" FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Content="&#xE115;" Background="{x:Null}"
+                                    RelativePanel.AlignRightWithPanel="True" />
+                            <!--用户头像+名称-->
+                            <StackPanel Orientation="Horizontal" RelativePanel.LeftOf="MySettingButton_1">
+                                <!--用户头像-->
+                                <Ellipse Name="MyUserHeaderImage_1" Height="25" Width="25" >
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="Assets/2.jpg"></ImageBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <!--登录显示用户名，未登录显示请登录-->
+                                <!--未登录提示-->
+                                <Button Name="IfNotSignIn" Margin="5,0,0,0" FontSize="10" FontWeight="Light" Foreground="Black" Background="{x:Null}"
+                                        HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                        Visibility="Collapsed"
+                                        Click="IfNotSignIn_Click">未登录</Button>
+                                <!--用户名-->
+                                <Button Name="UserName" Margin="5,0,0,0" FontSize="10" FontWeight="Light" Foreground="Black" Background="{x:Null}"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                                           Visibility="Visible"
+                                           Click="UserName_Click" >饥饿猎人</Button>
+                            </StackPanel>
+                        </RelativePanel>
+                    </Grid>
+                    <!--登录、设置菜单 splitview闭合时-->
+                    <ListBox Name="Setting_2" RelativePanel.AlignBottomWithPanel="True" BorderThickness="0,1,0,0" BorderBrush="LightGray" Width="140"
+                             SelectionMode="Single" Foreground="#FF817E7E" SelectionChanged="Setting_2_SelectionChanged" Visibility="Visible">
+                        <!--头像-->
+                        <ListBoxItem Name="MyUserHeaderImage_2">
+                            <Ellipse Height="25" Width="25" Margin="-3,0,0,0">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="Assets/2.jpg"></ImageBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                        </ListBoxItem>
+                        <!--设置-->
+                        <ListBoxItem Name="MySettingButton_2">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Text="&#xE115;" 
+                                           VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </ListBoxItem>
+                    </ListBox>
+                </RelativePanel>
             </SplitView.Pane>
             <SplitView.Content>
                 <Frame Name="MyFrame" Background="White"></Frame>
             </SplitView.Content>
 
         </SplitView>
-    </Grid>
+    
 </Page>

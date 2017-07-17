@@ -26,57 +26,87 @@ namespace HungerKiller
         {
             this.InitializeComponent();
             MyFrame.Navigate(typeof(homepage));
-            TitleTextBlock.Text = "主页";
             Homepage.IsSelected = true;           
-        }
-        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
-        }
-
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (MyFrame.CanGoBack)
+            if(!MySplitView.IsPaneOpen)
             {
-                MyFrame.GoBack();
-                Homepage.IsSelected = true;
+                BaseList.Visibility = Visibility.Collapsed;
+                Setting_1.Visibility = Visibility.Collapsed;
+                Setting_2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BaseList.Visibility = Visibility.Visible;
+                Setting_1.Visibility = Visibility.Visible;
+                Setting_2.Visibility = Visibility.Collapsed;
             }
         }
+      
+     
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void BaseListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (Homepage.IsSelected)
+            if (HamburgerButton.IsSelected)
+            {
+                MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+                if (!MySplitView.IsPaneOpen)
+                {
+                    BaseList.Visibility = Visibility.Collapsed;
+                    Setting_1.Visibility = Visibility.Collapsed;
+                    Setting_2.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    BaseList.Visibility = Visibility.Visible;
+                    Setting_1.Visibility = Visibility.Visible;
+                    Setting_2.Visibility = Visibility.Collapsed;
+                }
+            }
+            else if (Homepage.IsSelected)
             {
 
                 MyFrame.Navigate(typeof(homepage));
-                TitleTextBlock.Text = "主页";
             }
             else if (Deal.IsSelected)
             {
 
                 MyFrame.Navigate(typeof(deal));
-                TitleTextBlock.Text = "趣味决策";
             }
-            else if (Maneger.IsSelected)
-            {
-
-                MyFrame.Navigate(typeof(Maneger));
-                TitleTextBlock.Text = "管理员页面";
-            }
-            else if (SignUp.IsSelected)
-            {
-
-                MyFrame.Navigate(typeof(SignUp));
-                TitleTextBlock.Text = "登录页面";
-            }         
         }
-        /*
-        private void LoggedButton_Click(object sender, RoutedEventArgs e)
+
+        private void ManegerListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Maneger.IsSelected)
+            {
+                MyFrame.Navigate(typeof(Maneger));
+            }
+        }
+
+        private void ControlListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            MyFrame.Navigate(typeof(LoginPage));
-            TitleTextBlock.Text = "登录";
         }
-        */
+
+        private void IfNotSignIn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UserName_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Setting_2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        { 
+             
+        }
+        /*
+private void LoggedButton_Click(object sender, RoutedEventArgs e)
+{
+
+MyFrame.Navigate(typeof(LoginPage));
+TitleTextBlock.Text = "登录";
+}
+*/
     }
 }
