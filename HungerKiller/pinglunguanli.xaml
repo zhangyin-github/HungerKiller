@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="HungerKiller.pinglunguanli"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HungerKiller"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:HungerKiller.Model" 
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView   Grid.Row="0"
+                               ItemsSource="{x:Bind Fabus}"
+                               IsItemClickEnabled="True" 
+                               ItemClick="ListView_ItemClick" >
+            <ListView.ItemTemplate >
+                <DataTemplate  x:DataType="data:Fabu">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  >
+                        <CheckBox Name="PublishCheckBox" Tapped="PublishCheckBox_Tapped" ></CheckBox>
+                        <StackPanel HorizontalAlignment="Center" >
+                            <TextBlock FontSize="16"
+                                               Text="{x:Bind Title}"
+                                               HorizontalAlignment="Center" >
+                            </TextBlock>
+                            <TextBlock FontSize="10"
+                                               Text="{x:Bind Date}"
+                                               HorizontalAlignment="Center" >
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button  FontFamily="Segoe MDL2 Assets" Content="&#xE107;" Grid.Row="1"
+                             FontSize="50"
+                            HorizontalAlignment="Right"  
+                            VerticalAlignment="Center"></Button>
+
+    </Grid>
+    
+</Page>
