@@ -10,7 +10,6 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
         <Grid.RowDefinitions >
             <RowDefinition Height="100" ></RowDefinition>
-
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -22,7 +21,11 @@
                 <ColumnDefinition Width="100"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button  Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background ="LightBlue"></Button>
-            <Button Grid.Column="3"   Content="管理员" Height="50" Background="White"  HorizontalAlignment="Center" >
+            <Button Grid.Column="3"    Height="50" Background="White"  HorizontalAlignment="Center" >
+                <StackPanel Orientation="Horizontal" >
+                    <Button  FontFamily="Segoe MDL2 Assets" Content="&#xE2AF;" Foreground="White"></Button>
+                    <TextBlock Text="管理员" FontSize="20"></TextBlock>
+                </StackPanel>
                 <Button.Flyout >
                     <MenuFlyout >
                         <MenuFlyoutItem Name="ProfileMenuFlyoutItem" Text="Profile" Click="ProfileMenuFlyoutItem_Click" ></MenuFlyoutItem>
@@ -30,7 +33,11 @@
                     </MenuFlyout>
                 </Button.Flyout>
             </Button>
-            <Button Grid.Column="2" Content="选择" Height="50" Background="White" HorizontalAlignment="Center"  >
+            <Button Grid.Column="2" Height="50" Background="White" HorizontalAlignment="Center"  >
+                <StackPanel Orientation="Horizontal" >
+                    <Button  FontFamily="Segoe MDL2 Assets" Content="&#xE1EC;" Foreground="White"></Button>
+                    <TextBlock Text="选择" FontSize="20"></TextBlock>
+                </StackPanel>
                 <Button.Flyout >
                     <MenuFlyout >
                         <MenuFlyoutItem Name="Choice_one" Text="Choice_one" Click="Choice_one_Click" ></MenuFlyoutItem>
@@ -57,7 +64,7 @@
                 <Button Content="评论管理" Grid.Row="1" Background="RosyBrown" ></Button>
             </Grid>
             <Frame Name="navigate" Grid.Column="1"></Frame>
-            <Button Content="张竣杰" Grid.Column="1"></Button>
+            
         </Grid>
 
 
