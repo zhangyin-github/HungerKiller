@@ -6,9 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Height="639.883">
-
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid>
+    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2.5*"/>
                 <ColumnDefinition Width="1.5*"/>
@@ -147,4 +147,5 @@
             </StackPanel>
         </Grid>
     </Grid>
+        </ScrollViewer>
 </Page>

@@ -84,13 +84,21 @@ namespace HungerKiller
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (MyCheckBox1.IsChecked == MyCheckBox2.IsChecked == MyCheckBox3.IsChecked == MyCheckBox4.IsChecked == MyCheckBox5.IsChecked==false)
+            if (MyCheckBox1.IsChecked == false&& MyCheckBox2.IsChecked == false && MyCheckBox3.IsChecked == false && MyCheckBox4.IsChecked == false && MyCheckBox5.IsChecked == false && MyCheckBox6.IsChecked == false)
             {
                 statusText5.Text = "选一个口味嘛";
             }
-            if(YesRadioButton.IsChecked==NoRadioButton.IsChecked)
+            else
+            {
+                statusText5.Text = string.Empty;
+            }
+            if (YesRadioButton.IsChecked==NoRadioButton.IsChecked)
             {
                 statusText6.Text = "告诉人家推不推送嘛";
+            }
+            else
+            {
+                statusText6.Text = string.Empty;
             }
         }
     }
