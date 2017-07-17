@@ -98,7 +98,10 @@ namespace HungerKiller
 
         private void Setting_2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         { 
-             
+             if(MyUserHeaderImage_2.IsSelected)
+            {
+                MyFrame.Navigate(typeof(SignUp));
+            }
         }
 
         private void MyUserHeaderImageButton_1_Click(object sender, RoutedEventArgs e)

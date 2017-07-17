@@ -60,10 +60,11 @@
                             <!--设置button-->
                             <Button Name="MySettingButton_1" FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Content="&#xE115;" Background="{x:Null}"
                                     RelativePanel.AlignRightWithPanel="True" />
+                            
                             <!--用户头像+名称-->
                             <StackPanel Orientation="Horizontal" RelativePanel.LeftOf="MySettingButton_1">
-                                <!--用户头像-->
-                                <Button Name="MyUserHeaderImageButton_1" Click="MyUserHeaderImageButton_1_Click">
+                                <!--用户头像-->                                
+                                <Button Name="MyUserHeaderImageButton_1" Click="MyUserHeaderImageButton_1_Click" Background="{x:Null}">
                                     <Ellipse  Height="25" Width="25" >
                                         <Ellipse.Fill>
                                             <ImageBrush ImageSource="Assets/2.jpg"/>
@@ -73,12 +74,12 @@
                                 
                                 <!--登录显示用户名，未登录显示请登录-->
                                 <!--未登录提示-->
-                                <Button Name="IfNotSignIn" Margin="5,0,0,0" FontSize="10" FontWeight="Light" Foreground="Black" Background="{x:Null}"
+                                <Button Name="IfNotSignIn" Margin="3,0,0,0" FontSize="10" FontWeight="Light" Foreground="Black" Background="{x:Null}"
                                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                                         Visibility="Collapsed"
                                         Click="IfNotSignIn_Click">未登录</Button>
                                 <!--用户名-->
-                                <Button Name="UserName" Margin="5,0,0,0" FontSize="10" FontWeight="Light" Foreground="Black" Background="{x:Null}"
+                                <Button Name="UserName" Margin="3,0,0,0" FontSize="10" FontWeight="Light" Foreground="Black" Background="{x:Null}"
                                            HorizontalAlignment="Center" VerticalAlignment="Center"
                                            Visibility="Visible"
                                            Click="UserName_Click" >饥饿猎人</Button>
@@ -90,7 +91,7 @@
                              SelectionMode="Single" Foreground="#FF817E7E" SelectionChanged="Setting_2_SelectionChanged" Visibility="Visible">
                         <!--头像-->
                         <ListBoxItem Name="MyUserHeaderImage_2">
-                            <Ellipse Height="25" Width="25" Margin="-3,0,0,0">
+                            <Ellipse Height="25" Width="25" Margin="-4.5,0,0,0">
                                     <Ellipse.Fill>
                                         <ImageBrush ImageSource="Assets/2.jpg"></ImageBrush>
                                     </Ellipse.Fill>
