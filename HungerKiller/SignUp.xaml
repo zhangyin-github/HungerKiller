@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Height="639.883">
-    <ScrollViewer>
+    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible">
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <Grid>
             <Grid.ColumnDefinitions>

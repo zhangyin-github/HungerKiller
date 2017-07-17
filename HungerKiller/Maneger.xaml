@@ -5,74 +5,105 @@
     xmlns:local="using:HungerKiller"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:HungerKiller.Model" 
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions >
-            <RowDefinition Height="100" ></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="80" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
         </Grid.RowDefinitions>
+        <RelativePanel Background="WhiteSmoke"  >
+            <AutoSuggestBox  Name="searchAutoSuggestBox" 
+                             PlaceholderText="Search" 
+                             RelativePanel.AlignHorizontalCenterWithPanel="True" 
+                             RelativePanel.AlignVerticalCenterWithPanel="True"  
+                             Width="300" 
+                             QueryIcon="Find" 
+                             QuerySubmitted="searchAutoSuggestBox_QuerySubmitted"
+                             SuggestionChosen="searchAutoSuggestBox_SuggestionChosen" 
+                             TextChanged="searchAutoSuggestBox_TextChanged" 
+                             Background="White" ></AutoSuggestBox>
+            <ComboBox  Name="ManagerComboBox" Height="50" Width="200"
+                    RelativePanel.AlignRightWithPanel="True"
+                    RelativePanel.AlignVerticalCenterWithPanel="True" 
+                    Background="White" Margin="0,0,20,0" >
+                <ComboBoxItem IsSelected="True" >
+                    <StackPanel Orientation="Horizontal" >
+                        <Button FontFamily="Segoe MDL2 Assets" Content="&#xE13D;" Background="White" ></Button>
+                        <TextBlock Text="Admin" VerticalAlignment="Center" ></TextBlock>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem Content="Profile"></ComboBoxItem>
+                <ComboBoxItem Content="Logout" Name="LogoutComboBoxItem"></ComboBoxItem>
+            </ComboBox>
+            <Button Name="HamburgerButton" 
+                    FontFamily="Segoe MDL2 Assets"
+                    Content="&#xE700;"
+                    FontSize="36"
+                    Click="HamburgerButton_Click" 
+                    RelativePanel.AlignLeftWithPanel="True" 
+                    RelativePanel.AlignVerticalCenterWithPanel="True" 
+                    Width="65"
+                    Height="50"
+                    Background="Gray"   
+                    Foreground="White" ></Button>
+        </RelativePanel>
+        <SplitView Grid.Row="1"
+                   Name="MySplitView"
+                   IsPaneOpen="False" 
+                   DisplayMode="Inline"  
+                   CompactPaneLength="60"
+                   OpenPaneLength="150">
+            <SplitView.Pane >
+                <ListBox  Width="150"
+                          HorizontalAlignment="Left" Background="Gray"     
+                          SelectionMode="Single" 
+                          SelectionChanged="ListBox_SelectionChanged" >
+                    <ListBoxItem  Name="fabuguanli" >
+                        <StackPanel Orientation="Horizontal" >
+                            <Button FontFamily="Segoe MDL2 Assets" 
+                                    Content="&#xE14C;" 
+                                    Background="Gray"
+                                    Foreground="White" 
+                                    FontSize="30"></Button>
+                            <TextBlock Text="评论管理" VerticalAlignment="Center" FontSize="15" ></TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem  Name="pinglunguanli">
+                        <StackPanel Orientation="Horizontal" >
+                            <Button FontFamily="Segoe MDL2 Assets" 
+                                    Content="&#xE133;" 
+                                    Background="Gray" 
+                                    Foreground="White" 
+                                    FontSize="30"
+                                    ></Button>
+                            <TextBlock Text="发布管理" VerticalAlignment="Center" FontSize="15" ></TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+            <SplitView.Content >
+                <Grid >
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="100"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions >
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="350"></ColumnDefinition>
-                <ColumnDefinition Width="100"></ColumnDefinition>
-                <ColumnDefinition Width="100"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Button  Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background ="LightBlue"></Button>
-            <Button Grid.Column="3"    Height="50" Background="White"  HorizontalAlignment="Center" >
-                <StackPanel Orientation="Horizontal" >
-                    <Button  FontFamily="Segoe MDL2 Assets" Content="&#xE2AF;" Foreground="White"></Button>
-                    <TextBlock Text="管理员" FontSize="20"></TextBlock>
-                </StackPanel>
-                <Button.Flyout >
-                    <MenuFlyout >
-                        <MenuFlyoutItem Name="ProfileMenuFlyoutItem" Text="Profile" Click="ProfileMenuFlyoutItem_Click" ></MenuFlyoutItem>
-                        <MenuFlyoutItem Name="LogoutMenuFlyoutItem" Text="Logout" Click="LogoutMenuFlyoutItem_Click" ></MenuFlyoutItem>
-                    </MenuFlyout>
-                </Button.Flyout>
-            </Button>
-            <Button Grid.Column="2" Height="50" Background="White" HorizontalAlignment="Center"  >
-                <StackPanel Orientation="Horizontal" >
-                    <Button  FontFamily="Segoe MDL2 Assets" Content="&#xE1EC;" Foreground="White"></Button>
-                    <TextBlock Text="选择" FontSize="20"></TextBlock>
-                </StackPanel>
-                <Button.Flyout >
-                    <MenuFlyout >
-                        <MenuFlyoutItem Name="Choice_one" Text="Choice_one" Click="Choice_one_Click" ></MenuFlyoutItem>
-                        <MenuFlyoutItem Name="Choice_two" Text="Choice_two" Click="Choice_two_Click" ></MenuFlyoutItem>
-                        <MenuFlyoutItem Name="Choice_three" Text="Choice_three" Click="Choice_three_Click" ></MenuFlyoutItem>
-                        <MenuFlyoutItem Name="Choice_four" Text="Choice_four" Click="Choice_four_Click" ></MenuFlyoutItem>
-                    </MenuFlyout>
-                </Button.Flyout>
-            </Button>
-            <TextBox Name="textbox" Grid.Column="1" Width="220" Height="40" Background="White"  HorizontalAlignment="Center" VerticalAlignment="Center" PlaceholderText="搜索" >
-            </TextBox>
-        </Grid>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions >
-                <ColumnDefinition Width="100"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Grid.RowDefinitions >
-                    <RowDefinition Height="50"></RowDefinition>
-                    <RowDefinition Height="50"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Button Content="发布管理" Grid.Row="0" Background="Pink"   ></Button>
-                <Button Content="评论管理" Grid.Row="1" Background="RosyBrown" ></Button>
-            </Grid>
-            <Frame Name="navigate" Grid.Column="1"></Frame>
-            
-        </Grid>
+                    </Grid.RowDefinitions>
+                    <TextBlock Name="TitleTextBlock" 
+                               FontSize="50"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Width="350"
+                       Height="80" >
+
+                    </TextBlock>
+                    <Frame Name="dengluFrame" Grid.Row="1"></Frame>
 
 
 
-
-
-
-
-
+                </Grid>
+            </SplitView.Content >
+        </SplitView>
     </Grid>
 </Page>

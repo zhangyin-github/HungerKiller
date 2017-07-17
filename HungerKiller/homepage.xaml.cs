@@ -26,6 +26,8 @@ namespace HungerKiller
     public sealed partial class homepage : Page
     {
         public ObservableCollection<NewsItem> NewsItems;
+        private object frame;
+
         public homepage()
         {
             this.InitializeComponent();
@@ -66,9 +68,22 @@ namespace HungerKiller
             timer3.Start();
         }
 
-        private void NewsItemGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void juece_Tapped(object sender, TappedRoutedEventArgs e)
         {
+            Frame root = Window.Current.Content as Frame;
+            root.Navigate(typeof(deal));
+        }
 
+        private void tuijian_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame root = Window.Current.Content as Frame;
+            root.Navigate(typeof(deal));
+        }
+
+        private void paihang_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame root = Window.Current.Content as Frame;
+            root.Navigate(typeof(deal));
         }
     }
 }

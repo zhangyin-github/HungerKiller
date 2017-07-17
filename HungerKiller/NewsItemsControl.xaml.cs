@@ -30,12 +30,8 @@ namespace HungerKiller
 
         private void MyImage_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            NewsItem info = new NewsItem();
-            info.Headline = NewsItem.Headline;
-            App.info = info;
-            Debug.WriteLine(info.GetHashCode());
             Frame root = Window.Current.Content as Frame;
-            root .Navigate(typeof(Maneger),info );
+            root .Navigate(typeof(introduce), NewsItem.Id);
         }
     }
 }
