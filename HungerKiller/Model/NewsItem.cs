@@ -45,24 +45,24 @@ namespace HungerKiller.Model
             return items;
         }
     }
-   /* public class User
-    {
-        private static User u;
-        public static bool auth(a,b)
-        {
-            User u = new User();
-            u = null;
-        }
-        public static User get()
-        {
+    /* public class User
+     {
+         private static User u;
+         public static bool authentication(a,b)
+         {
+             User u = new User();
+             u = null;
+         }
+         public static User get()
+         {
 
-        }
-        public static bool islogin()
-        {
+         }
+         public static bool islogin()
+         {
 
-        }
+         }
 
-    }*/
+     }*/
 
 
     public class RegexUtilities
