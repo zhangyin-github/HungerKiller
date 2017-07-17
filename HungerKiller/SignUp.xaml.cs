@@ -88,9 +88,17 @@ namespace HungerKiller
             {
                 statusText5.Text = "选一个口味嘛";
             }
-            if(YesRadioButton.IsChecked==NoRadioButton.IsChecked)
+            else
+            {
+                statusText5.Text = string.Empty;
+            }
+            if (YesRadioButton.IsChecked==NoRadioButton.IsChecked)
             {
                 statusText6.Text = "告诉人家推不推送嘛";
+            }
+            else
+            {
+                statusText6.Text = string.Empty;
             }
         }
     }
