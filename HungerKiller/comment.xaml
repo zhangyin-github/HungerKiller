@@ -39,7 +39,7 @@
                            Text="菜品名称:" 
                            FontSize="20"/>
                     <TextBlock x:Name="Dish_Name_1" 
-                           Text="香辣肉蟹煲" 
+                           Text="锅包肉" 
                            FontSize="20"
                            Margin="10,0,0,0"/>
                 </StackPanel>
