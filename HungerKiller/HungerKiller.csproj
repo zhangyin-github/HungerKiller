@@ -98,9 +98,6 @@
     <Compile Include="Commment.xaml.cs">
       <DependentUpon>Commment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\comment.xaml.cs">
-      <DependentUpon>comment.xaml</DependentUpon>
-    </Compile>
     <Compile Include="deal.xaml.cs">
       <DependentUpon>deal.xaml</DependentUpon>
     </Compile>
@@ -168,10 +165,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Commment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Properties\comment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
