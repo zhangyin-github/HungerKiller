@@ -32,14 +32,15 @@ namespace HungerKiller
         public int countt = 0;
         public int  seed=0;
         public  int a = 0;
-        //   public System.Threading.Timer ti;
+        public int sewq;
+      //  public System.Threading.Timer ti;
         public deal()
         {
             this.InitializeComponent();
         }
 
 
-    /*    public void TimeS()
+   /*   public void TimeS()
         {
             TimeSpan delay = TimeSpan.FromMinutes(1);
 
@@ -56,8 +57,8 @@ namespace HungerKiller
 
                 }, delay);
         }
-        */
-        /*public void time()
+     */   
+     /*   public void time()
         {
          ti = new Timer(new TimerCallback(timercall),this,800,0);
          }
@@ -65,7 +66,8 @@ namespace HungerKiller
         public void timercall(object obj)
         {
           ti.Dispose();
-        Random rd = new Random();
+            stdDish1.Stop();
+        /*Random rd = new Random();
         seed = rd.Next(1,9);
             switch (seed)
             {
@@ -93,10 +95,9 @@ namespace HungerKiller
                 case 8:
                     DishEight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
                     break;
-            }
-
-     }
-     */
+            }*/
+     
+     
     private void CardChooseButtonone_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonOneTwo .Visibility == Windows.UI.Xaml.Visibility.Collapsed)
@@ -413,25 +414,107 @@ namespace HungerKiller
 
         private void ChooseButton_Click(object sender, RoutedEventArgs e)
         {
+            /* if (a == 0)
+             {
+                 DishOne.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
+                 DishTwo.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
+                 DishTree.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
+                 DishFour.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
+                 DishFive.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
+                 DishSix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
+                 DishSeven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
+                 DishEight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
+                 stdDish1.Begin();
+                 a = 1;
+             }*/
             if (a == 0)
             {
-                DishOne.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                DishTwo.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                DishTree.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                DishFour.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                DishFive.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                DishSix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                DishSeven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                DishEight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
+                sewq = 0;
+                var rd = new Random();
+                seed = rd.Next(2000, 3000)+sewq;
                 stdDish1.Begin();
+                TimeSpan delay = TimeSpan.FromMilliseconds(seed);
+                ThreadPoolTimer DelayTimer = ThreadPoolTimer.CreateTimer((source) =>
+                      {
+                          Dispatcher.RunAsync(
+                 CoreDispatcherPriority.High,
+                 () =>
+                 {
+                     stdDish1.Pause();
+                 });
+                      }, delay);
                 a = 1;
             }
+            else if (a == 1)
+            {
+                var rd = new Random();
+                seed = rd.Next(2000, 3000);
+                stdDish1.Resume();
+                TimeSpan delay = TimeSpan.FromMilliseconds(seed);
+                ThreadPoolTimer DelayTimer = ThreadPoolTimer.CreateTimer((source) =>
+                {
+                    Dispatcher.RunAsync(
+           CoreDispatcherPriority.High,
+           () =>
+           {
+               stdDish1.Pause();
+           });
+                }, delay);
+            }
+            TimeSpan sed = TimeSpan.FromMilliseconds(seed);
+            ThreadPoolTimer dehaha = ThreadPoolTimer.CreateTimer((source) =>
+              {
+                   Dispatcher.RunAsync(
+                      CoreDispatcherPriority.High,
+                      () =>
+                      {
+                          int x =(seed+sewq) %1600;
+                          int y = x / 200;
+                          sewq = x;
+                          if (y == 0)
+                          {
+                              DishName.Text = "菜品1";
+                          }
+                          else if (y == 1)
+                          {
+                              DishName.Text = "菜品2";
+                          }
+                          else if (y == 2)
+                          {
+                              DishName.Text = "菜品3";
+                          }
+                          else if (y == 3)
+                          {
+                              DishName.Text = "菜品4";
+                          }
+                          else if (y == 4)
+                          {
+                              DishName.Text = "菜品5";
+                          }
+                          else if (y == 5)
+                          {
+                              DishName.Text = "菜品6";
+                          }
+                          else if (y == 6)
+                          {
+                              DishName.Text = "菜品7";
+                          }
+                          else if (y == 7)
+                          {
+                              DishName.Text = "菜品8";
+                          }
+                      });
+              }, sed);
+            
+            
+            
+                  
             /*int a = 0;
                 if (DishEight.Background != DishOne.Background && DishOne.Background == DishFour.Background)
                 {
                     a = 1;
                 }*/
-                else if (a == 1)
+             /*   else if (a == 1)
                 {
                     stdDish1.Stop();
                     Random rd = new Random();
@@ -464,7 +547,7 @@ namespace HungerKiller
                             break;
                     }
                 a = 0;
-                }
+                }*/
         }
 
         private void FinalOkButton_Click(object sender, RoutedEventArgs e)
