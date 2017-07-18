@@ -1,13 +1,123 @@
 ﻿<Page
-    x:Class="HungerKiller.Commment"
+    x:Class="HungerKiller.comment"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:HungerKiller"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <ScrollViewer>
+        <Grid Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <RelativePanel x:Name="Dish_Information_1"
+                       Grid.Column="0" 
+                       Grid.Row="0" Grid.ColumnSpan="3" Margin="0,0,379,0">
+                <Ellipse x:Name="Dish_Pictures" 
+                     Height="200" 
+                     Width="200" 
+                     Margin="20"
+                     RelativePanel.AlignLeftWithPanel="True">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="Assets/2.jpg"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <StackPanel x:Name="Dish_Information_11" 
+                        RelativePanel.RightOf="Dish_Pictures" 
+                        Margin="30">
+                    <StackPanel x:Name="Dish_Information_111" 
+                            Orientation="Horizontal"
+                            Margin="0,0,0,15">
+                        <TextBlock x:Name="Dish_Name" 
+                           Text="菜品名称:" 
+                           FontSize="20"/>
+                        <TextBlock x:Name="Dish_Name_1" 
+                           Text="香辣肉蟹煲" 
+                           FontSize="20"
+                           Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel x:Name="Dish_Information_112" 
+                            Orientation="Horizontal" 
+                            Margin="0,0,0,15">
+                        <TextBlock x:Name="Dish_Score" 
+                           Text="菜品评分:" 
+                           FontSize="20"/>
+                        <TextBlock x:Name="Dish_Score_1" 
+                           Text="5" 
+                           FontSize="20"/>
+                    </StackPanel>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <!--分类-->
+                    <StackPanel  Orientation="Horizontal" Margin="0,40,0,10">
+                        <TextBlock FontSize="20" >分类：</TextBlock>
+                        <TextBlock Name="Dishes_Classify"  FontSize="20">东北菜</TextBlock>
+                    </StackPanel>
+                    <!--口味-->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock FontSize="20" >口味：</TextBlock>
+                        <TextBlock Name="Dishes_Taste" FontSize="20">酸甜</TextBlock>
+                    </StackPanel>
+                    <!--主要食材-->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock FontSize="20">主要食材：</TextBlock>
+                        <TextBlock Name="Dishes_Material" FontSize="20">猪里脊肉，鸡蛋</TextBlock>
+                    </StackPanel>
 
-    </Grid>
+                </StackPanel>
+            </RelativePanel>
+            <StackPanel x:Name="Similar_dishes" 
+                    Grid.Row="0"
+                    Grid.Column="1">
+                <TextBlock Text="相似菜品" 
+                       FontSize="20"
+                       Margin="10"/>
+                <ScrollViewer>
+                    <RichTextBlock>
+                        <Paragraph>1</Paragraph>
+                        <Paragraph>2</Paragraph>
+                        <Paragraph>3</Paragraph>
+                        <Paragraph>4</Paragraph>
+                        <Paragraph>5</Paragraph>
+                        <Paragraph>6</Paragraph>
+                    </RichTextBlock>
+                </ScrollViewer>
+            </StackPanel>
+            <StackPanel Grid.Column="0" 
+                        Grid.Row="1">
+                <TextBlock Text="评论" FontSize="30"/>
+                <Image Source="Assets/block.png"/>
+
+            </StackPanel>
+
+
+            <RelativePanel Grid.Column="0" 
+                       Grid.Row="3" 
+                       Margin="20" 
+                       Height="100"
+                       VerticalAlignment="Top">
+                <Ellipse x:Name="User_pictrure">
+                </Ellipse>
+                <TextBlock x:Name="User_ID" 
+                           Text="ID:" 
+                           RelativePanel.AlignTopWithPanel="True"/>
+                <TextBlock  RelativePanel.RightOf="User_ID" 
+                            TextWrapping="WrapWholeWords" 
+                            Width="600">
+                你可以通过为 CheckBox 创建 ControlTemplate 来更改这些特性。 例如，如果你想要让复选框的内容显示在选择框下方，并且你想要用 X 来表示用户已选中复选框。 你可以在 CheckBox 的 ControlTemplate 中指定这些特性。
+                </TextBlock>
+                <TextBlock Text="time" 
+                           RelativePanel.AlignBottomWithPanel="True"
+                           RelativePanel.AlignRightWithPanel="True"/>
+
+            </RelativePanel>
+
+        </Grid>
+    </ScrollViewer>
 </Page>
