@@ -117,6 +117,7 @@
       <DependentUpon>Maneger.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\comment1.cs" />
+    <Compile Include="Model\DealManager.cs" />
     <Compile Include="Model\Fabu.cs" />
     <Compile Include="Model\NewsItem.cs" />
     <Compile Include="NewsItemsControl.xaml.cs">
