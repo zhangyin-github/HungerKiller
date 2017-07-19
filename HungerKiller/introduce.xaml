@@ -17,10 +17,18 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <StackPanel >
-            <Image x:Name="cc" Grid.Row="0" Grid.Column="0" Height="200" Width="200" />
+            <Image x:Name="cc" 
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   Height="200" 
+                   Width="200" />
             <TextBlock Name="ee" />
         </StackPanel>
-        <TextBlock Name="aa" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1"   TextWrapping="Wrap"/>
+        <TextBlock Name="aa" 
+                   HorizontalAlignment="Left" 
+                   Grid.Row="0" 
+                   Grid.Column="1"   
+                   TextWrapping="Wrap"/>
         
     </Grid>
 </Page>

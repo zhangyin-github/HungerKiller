@@ -117,6 +117,7 @@
       <DependentUpon>Maneger.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\comment1.cs" />
+    <Compile Include="Model\DealManager.cs" />
     <Compile Include="Model\Fabu.cs" />
     <Compile Include="Model\NewsItem.cs" />
     <Compile Include="NewsItemsControl.xaml.cs">
@@ -146,6 +147,9 @@
     <Content Include="Assets\3.jpg" />
     <Content Include="Assets\4.jpg" />
     <Content Include="Assets\5.jpg" />
+    <Content Include="Assets\7.png" />
+    <Content Include="Assets\8.png" />
+    <Content Include="Assets\9.png" />
     <Content Include="Assets\avr.png" />
     <Content Include="Assets\bg.jpg" />
     <Content Include="Assets\star.png" />
