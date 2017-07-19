@@ -81,7 +81,9 @@ namespace HungerKiller
         /* 横版的用户登录入口*/
         private void MyUserHeaderImageButton_1_Click(object sender, RoutedEventArgs e)
         {
-
+            Sign_In jump = new Sign_In();
+            jump.ShowAsync();
+            
         }
 
         /// <summary>

@@ -65,7 +65,7 @@
                             <!--用户头像+名称-->
                             <StackPanel Orientation="Horizontal" RelativePanel.LeftOf="MySettingButton_1">
                                 <!--用户头像-->                                
-                                <Button Name="MyUserHeaderImageButton_1" Background="{x:Null}">
+                                <Button Name="MyUserHeaderImageButton_1" Click="MyUserHeaderImageButton_1_Click" Background="{x:Null}">
 <!--俊霖看这，这里是横版的登录入口-->                                    
                                     <Ellipse  Height="25" Width="25" >
                                         <Ellipse.Fill>
