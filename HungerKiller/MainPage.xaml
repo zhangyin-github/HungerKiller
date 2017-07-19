@@ -41,7 +41,7 @@
                     <!--管理员菜单-->
                     <StackPanel RelativePanel.Below="BaseListBox">
                         <TextBlock Name="BaseList" FontSize="11" FontWeight="Light" Margin="10,0,0,0" Foreground="Gray">管理员菜单</TextBlock>
-
+                        
                         <ListBox Name="ManegerListBox" SelectionMode="Single" BorderBrush="#FF323131" Foreground="#FF817E7E"
                                  SelectionChanged="ManegerListBox_SelectionChanged">
                             <ListBoxItem Name="Maneger">
@@ -53,7 +53,7 @@
                             </ListBoxItem>
                         </ListBox>
                     </StackPanel>
-
+                    
                     <!--登录、设置菜单 splitview打开时-->
                     <Grid Name="Setting_1" BorderThickness="0,1,0,0" BorderBrush="LightGray" Width="140" Margin="-5,0,0,0"
                           RelativePanel.AlignBottomWithPanel="True" Visibility="Collapsed">
@@ -61,19 +61,19 @@
                             <!--设置button-->
                             <Button Name="MySettingButton_1" FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Content="&#xE115;" Background="{x:Null}"
                                     RelativePanel.AlignRightWithPanel="True" Click="MySettingButton_Click"/>
-
+                            
                             <!--用户头像+名称-->
                             <StackPanel Orientation="Horizontal" RelativePanel.LeftOf="MySettingButton_1">
-                                <!--用户头像-->
+                                <!--用户头像-->                                
                                 <Button Name="MyUserHeaderImageButton_1" Background="{x:Null}">
-                                    <!--俊霖看这，这里是横版的登录入口-->
+<!--俊霖看这，这里是横版的登录入口-->                                    
                                     <Ellipse  Height="25" Width="25" >
                                         <Ellipse.Fill>
                                             <ImageBrush ImageSource="Assets/2.jpg"/>
                                         </Ellipse.Fill>
                                     </Ellipse>
                                 </Button>
-
+                                
                                 <!--登录显示用户名，未登录显示请登录-->
                                 <!--未登录提示-->
                                 <Button Name="IfNotSignIn" Margin="3,0,0,0" FontSize="10" FontWeight="Light" Foreground="Black" Background="{x:Null}"
@@ -93,12 +93,12 @@
                              SelectionMode="Single" Foreground="#FF817E7E" SelectionChanged="SettingListBox_2_SelectionChanged" Visibility="Visible">
                         <!--头像-->
                         <ListBoxItem Name="MyUserHeaderImage_2">
-                            <!--俊霖看这，这里是竖版的登录入口-->
+  <!--俊霖看这，这里是竖版的登录入口-->                                                                  
                             <Ellipse Height="25" Width="25" Margin="-4.5,0,0,0">
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="Assets/2.jpg"></ImageBrush>
-                                </Ellipse.Fill>
-                            </Ellipse>
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="Assets/2.jpg"></ImageBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
                         </ListBoxItem>
                         <!--设置-->
                         <ListBoxItem Name="MySettingButton_2">
@@ -113,14 +113,14 @@
             </SplitView.Content>
 
         </SplitView>
-
+    
         <!--个人资料-->
         <SplitView DisplayMode="Overlay">
-
+            
         </SplitView>
         <!--设置-->
         <SplitView DisplayMode="Overlay">
-
+            
         </SplitView>
     </Grid>
 </Page>

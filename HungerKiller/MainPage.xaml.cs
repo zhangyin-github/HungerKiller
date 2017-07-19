@@ -45,7 +45,7 @@ namespace HungerKiller
                 SettingListBox_2.Visibility = Visibility.Collapsed;
             }
         }
-
+     
 
         private void BaseListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -75,8 +75,8 @@ namespace HungerKiller
             }
         }
 
-
-
+       
+       
         /*  SplitView 打开时点击用户头像，这是个button_click事件*/
         /* 横版的用户登录入口*/
         private void MyUserHeaderImageButton_1_Click(object sender, RoutedEventArgs e)
@@ -109,7 +109,7 @@ namespace HungerKiller
         /*竖版的用户登录入口及设置按钮*/
         private void SettingListBox_2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (MyUserHeaderImage_2.IsSelected)
+            if(MyUserHeaderImage_2.IsSelected)
             {
                 //判断已经登录？ 否，则打开登录页面
                 /*MyFrame.Navigate(typeof(SignIn));//SignIn为登录界面*/

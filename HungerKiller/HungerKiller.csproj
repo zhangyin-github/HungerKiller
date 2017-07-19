@@ -95,10 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Commment.xaml.cs">
-      <DependentUpon>Commment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\comment.xaml.cs">
+    <Compile Include="comment.xaml.cs">
       <DependentUpon>comment.xaml</DependentUpon>
     </Compile>
     <Compile Include="deal.xaml.cs">
@@ -119,6 +116,7 @@
     <Compile Include="Maneger.xaml.cs">
       <DependentUpon>Maneger.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\comment1.cs" />
     <Compile Include="Model\Fabu.cs" />
     <Compile Include="Model\NewsItem.cs" />
     <Compile Include="NewsItemsControl.xaml.cs">
@@ -170,11 +168,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Commment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Properties\comment.xaml">
+    <Page Include="comment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

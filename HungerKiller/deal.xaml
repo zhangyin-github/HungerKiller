@@ -34,14 +34,22 @@
             <Setter Property="Margin" Value="40,0,0,0"/>
         </Style>
         <Storyboard x:Key="stdDish1" x:Name="stdDish1" RepeatBehavior="Forever">
-            <ColorAnimation Storyboard.TargetName="DishOne" BeginTime="0:0:0" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.1"/>
-            <ColorAnimation Storyboard.TargetName="DishTwo" BeginTime="0:0:0.1" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.1"/>
-            <ColorAnimation Storyboard.TargetName="DishTree" BeginTime="0:0:0.2" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.1"/>
-            <ColorAnimation Storyboard.TargetName="DishFour" BeginTime="0:0:0.3" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.1"/>
-            <ColorAnimation Storyboard.TargetName="DishFive" BeginTime="0:0:0.4" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.1"/>
-            <ColorAnimation Storyboard.TargetName="DishSix"  BeginTime="0:0:0.5" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.1"/>
-            <ColorAnimation Storyboard.TargetName="DishSeven" BeginTime="0:0:0.6" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.1"/>
-            <ColorAnimation Storyboard.TargetName="DishEight" BeginTime="0:0:0.7" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.1"/>
+        <!--<ColorAnimation Storyboard.TargetName="DishOne" BeginTime="0:0:0" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishFive" BeginTime="0:0:0" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishTwo" BeginTime="0:0:0.2" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishSix" BeginTime="0:0:0.2" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishTree" BeginTime="0:0:0.4" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishSeven" BeginTime="0:0:0.4" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishFour" BeginTime="0:0:0.6" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishEight" BeginTime="0:0:0.6" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Black" To="White" Duration="0:0:0.2"/>-->
+            <ColorAnimation Storyboard.TargetName="DishOne" BeginTime="0:0:0" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Blue" To="AliceBlue" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishTwo" BeginTime="0:0:0.21" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Blue" To="AliceBlue" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishTree"  BeginTime="0:0:0.41" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Blue" To="AliceBlue" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishFour" BeginTime="0:0:0.61" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Blue" To="AliceBlue" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishFive" BeginTime="0:0:0.81" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Blue" To="AliceBlue" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishSix" BeginTime="0:0:1.01" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Blue" To="AliceBlue" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishSeven" BeginTime="0:0:1.21" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Blue" To="AliceBlue" Duration="0:0:0.2"/>
+            <ColorAnimation Storyboard.TargetName="DishEight" BeginTime="0:0:1.41" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Blue" To="AliceBlue" Duration="0:0:0.2"/> 
         </Storyboard>
     </Page.Resources>
     <Grid>

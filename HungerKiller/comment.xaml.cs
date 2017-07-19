@@ -26,10 +26,5 @@ namespace HungerKiller
         {
             this.InitializeComponent();
         }
-
-        private void score_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
-        {
-
-        }
     }
 }
