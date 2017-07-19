@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using HungerKiller.Model;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -19,12 +20,15 @@ namespace HungerKiller
 {
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
-    /// </summary>
+    /// </summary> 
     public sealed partial class comment : Page
     {
+        public List<Comment> Comment;
         public comment()
         {
             this.InitializeComponent();
+            Comment = Comment_Manager.Get_Comment();
         }
     }
+
 }

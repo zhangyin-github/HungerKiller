@@ -8,5 +8,6 @@ namespace HungerKiller.Model
 {
     class DealManager
     {
+
     }
 }

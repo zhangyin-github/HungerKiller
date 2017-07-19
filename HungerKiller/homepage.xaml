@@ -66,20 +66,59 @@
             
         </Grid>
 
-        <StackPanel  Name="juece" Grid.Row="1" Grid.Column="0" Tapped="juece_Tapped">
-            <Image Source ="Assets/1.jpg" Width=" 50" Height=" 50" HorizontalAlignment="Center" Margin=" 0,25,0,0"/>
-            <TextBlock Text="决策" HorizontalAlignment="Center"/>
-        </StackPanel>
+        <Button Name="juece2" 
+                Grid.Row="1"
+                Grid.Column="0" 
+                Click="juece2_Click"
+                BorderThickness="0"
+                Background="Transparent" 
+                HorizontalAlignment="Stretch">
+            <Button.Content>
+              
+            <RelativePanel >
+                <Image Name="juece" Source="Assets/7.png" Height="50" />
+                <TextBlock Name="juece1" Text="决策" FontSize="24" FontFamily="楷体"
+                   RelativePanel.RightOf="juece" Height="Auto"/>
+                <TextBlock Text="享受你的菜品专属" FontSize="24" FontFamily="楷体" Opacity="0.5"
+                   RelativePanel.RightOf="juece" RelativePanel.Below="juece1" Height="Auto"/>
+            </RelativePanel>
+            </Button.Content>
+        </Button>
 
-        <StackPanel  Name="tuijian" Grid.Row="1" Grid.Column="1" Tapped="tuijian_Tapped">
-            <Image Source ="Assets/1.jpg" Width=" 50" Height=" 50" HorizontalAlignment="Center" Margin=" 0,25,0,0"/>
-            <TextBlock Text="推荐" HorizontalAlignment="Center"/>
-        </StackPanel>
+        <Button Name="tuijian2" 
+                Grid.Row="1" 
+                Grid.Column="1" 
+                Click="tuijian2_Click"
+                BorderThickness="0"
+                Background="Transparent" 
+                HorizontalAlignment="Stretch">
+            <RelativePanel >
+                <Image Name="tuijian" Source="Assets/8.png" Height="50"/>
+                <TextBlock Name="tuijian1" Text="推荐" FontSize="24" FontFamily="楷体"
+                   RelativePanel.RightOf="tuijian" Height="Auto"/>
+                <TextBlock Text="根据你的口味生成" FontSize="24" FontFamily="楷体" Opacity="0.5"
+                   RelativePanel.RightOf="tuijian" RelativePanel.Below="tuijian1" Height="Auto"/>
+            </RelativePanel>
+        </Button>
 
-        <StackPanel  Name="paihang" Grid.Row="1" Grid.Column="2" Tapped="paihang_Tapped">
-            <Image Source ="Assets/1.jpg" Width=" 50" Height=" 50" HorizontalAlignment="Center" Margin=" 0,25,0,0"/>
-            <TextBlock Text="排行" HorizontalAlignment="Center"/>
-        </StackPanel>
+        <Button Name="paihang2" 
+                Grid.Row="1" 
+                Grid.Column="2" 
+                Click="paihang2_Click"
+                BorderThickness="0"
+                Background="Transparent"                 
+                HorizontalAlignment="Stretch"
+                >
+            <RelativePanel >
+                <Image Name="paihang" Source="Assets/9.png" Height="50"/>
+                <TextBlock Name="paihang1" Text="排行" FontSize="24" FontFamily="楷体"
+                   RelativePanel.RightOf="paihang" Height="Auto"/>
+                <TextBlock Text="最热菜品榜" FontSize="24" FontFamily="楷体" Opacity="0.5"
+                   RelativePanel.RightOf="paihang" RelativePanel.Below="paihang1" Height="Auto"/>
+            </RelativePanel>
+        </Button>
+        
+        
 
         <SplitView Name="MySplitView"
                        Grid.Row="2"
