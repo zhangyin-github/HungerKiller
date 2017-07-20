@@ -90,7 +90,6 @@ namespace HungerKiller
             }
         }
 
-
         /*  SplitView 关闭时点击用户头像、或者设置按钮，这是个ListBoxSelectionChanged事件*/
         /*竖版的用户登录入口及设置按钮*/
         private void SettingListBox_2_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -98,7 +97,9 @@ namespace HungerKiller
             if(MyUserHeaderImage_2.IsSelected)
             {
                 ManegerListBox.SelectedIndex = BaseListBox.SelectedIndex = -1;
+
                 UserName_Click(sender,e);
+
                 //判断已经登录？ 否，则打开登录页面
                 /*MyFrame.Navigate(typeof(SignIn));//SignIn为登录界面*/
                 //已登录则打开个人资料侧滑框
@@ -143,6 +144,8 @@ namespace HungerKiller
             }
              */
         }
+
+        //以下是右侧侧滑框内函数
 
 
 
