@@ -19,6 +19,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        
         <!--新品上市轮播控件-->
         <Grid HorizontalAlignment="Center" Grid.Row="0" Margin="0,5,0,5" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
@@ -66,12 +67,14 @@
             
         </Grid>
 
-        <StackPanel  Name="juece" Grid.Row="1" Grid.Column="0" Tapped="juece_Tapped">
-            <Image Source ="Assets/1.jpg" Width=" 50" Height=" 50" HorizontalAlignment="Center" Margin=" 0,25,0,0"/>
+        <StackPanel  Name="juece" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+                     Tapped="juece_Tapped" BorderBrush="LightGray" BorderThickness="0,0,1,0" Orientation="Horizontal">
+            <Image Source ="Assets/1.jpg" Width=" 50" Height=" 50" HorizontalAlignment="Center"/>
             <TextBlock Text="决策" HorizontalAlignment="Center"/>
+            
         </StackPanel>
 
-        <StackPanel  Name="tuijian" Grid.Row="1" Grid.Column="1" Tapped="tuijian_Tapped">
+        <StackPanel  Name="tuijian" Grid.Row="1" Grid.Column="1" Tapped="tuijian_Tapped" BorderBrush="LightGray" BorderThickness="0,0,1,0">
             <Image Source ="Assets/1.jpg" Width=" 50" Height=" 50" HorizontalAlignment="Center" Margin=" 0,25,0,0"/>
             <TextBlock Text="推荐" HorizontalAlignment="Center"/>
         </StackPanel>

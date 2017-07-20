@@ -8,6 +8,7 @@
     mc:Ignorable="d">
 
     <Grid>
+        <!--汉堡菜单-->
         <SplitView Name="MySplitView" DisplayMode="CompactOverlay" OpenPaneLength="140" 
                    CompactPaneLength="40" Grid.RowSpan="2" BorderBrush="#FF292929">
             <SplitView.Pane>
@@ -31,7 +32,7 @@
                         <!--趣味决策-->
                         <ListBoxItem Name="Deal">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Text="&#xE11D;" 
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Text="&#xE707;" 
                                        VerticalAlignment="Center" HorizontalAlignment="Center" />
                                 <TextBlock FontSize="13" FontWeight="Light" Margin="12,0,0,0" Foreground="Black" >趣味决策</TextBlock>
                             </StackPanel>
@@ -46,7 +47,7 @@
                                  SelectionChanged="ManegerListBox_SelectionChanged">
                             <ListBoxItem Name="Maneger">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Text="&#xE707;"
+                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Text="&#xE99A;"
                                                VerticalAlignment="Center" HorizontalAlignment="Center" />
                                     <TextBlock FontSize="13" FontWeight="Light" Margin="12,0,0,0" Foreground="Black" >管理</TextBlock>
                                 </StackPanel>
@@ -56,16 +57,14 @@
                     
                     <!--登录、设置菜单 splitview打开时-->
                     <Grid Name="Setting_1" BorderThickness="0,1,0,0" BorderBrush="LightGray" Width="140" Margin="-5,0,0,0"
-                          RelativePanel.AlignBottomWithPanel="True" Visibility="Collapsed">
+                          RelativePanel.AlignBottomWithPanel="True" Visibility="Visible">
                         <RelativePanel Margin="10,15,0,15">
-                            <!--设置button-->
-                            <Button Name="MySettingButton_1" FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Content="&#xE115;" Background="{x:Null}"
-                                    RelativePanel.AlignRightWithPanel="True" Click="MySettingButton_Click"/>
-                            
+                           
                             <!--用户头像+名称-->
-                            <StackPanel Orientation="Horizontal" RelativePanel.LeftOf="MySettingButton_1">
-                                <!--用户头像-->                                
-                                <Button Name="MyUserHeaderImageButton_1" Background="{x:Null}">
+                            <StackPanel Orientation="Horizontal" 
+                                        RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
+                                <!--用户头像-->
+                                <Button Background="{x:Null}" Click="UserName_Click" Padding="0">
 <!--俊霖看这，这里是横版的登录入口-->                                    
                                     <Ellipse  Height="25" Width="25" >
                                         <Ellipse.Fill>
@@ -74,23 +73,27 @@
                                     </Ellipse>
                                 </Button>
                                 
-                                <!--登录显示用户名，未登录显示请登录-->
-                                <!--未登录提示-->
-                                <Button Name="IfNotSignIn" Margin="3,0,0,0" FontSize="10" FontWeight="Light" Foreground="Black" Background="{x:Null}"
-                                        HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                        Visibility="Collapsed"
-                                        Click="IfNotSignIn_Click">未登录</Button>
+                                <!--登录显示用户名，未登录显示请登录-->                     
                                 <!--用户名-->
-                                <Button Name="UserName" Margin="3,0,0,0" FontSize="10" FontWeight="Light" Foreground="Black" Background="{x:Null}"
-                                           HorizontalAlignment="Center" VerticalAlignment="Center"
-                                           Visibility="Visible"
-                                           Click="UserName_Click" >饥饿猎人</Button>
+                                <Button Name="UserName" Padding="2,0,0,0" FontSize="10" FontWeight="Light" MaxWidth="67"
+                                        Foreground="Black" Background="{x:Null}" VerticalAlignment="Center" 
+                                        Visibility="Visible" Click="UserName_Click" >饥饿哈hh哈哈猎人哈哈哈</Button>
+                                
                             </StackPanel>
+                            <TextBlock Name="IfUserNameSoLong"  FontSize="10" FontWeight="Light" Foreground="Black"
+                                       RelativePanel.LeftOf="MySettingButton_1" RelativePanel.AlignBottomWithPanel="True"
+                                        Margin="0,0,5,8">...</TextBlock>
+                             <!--设置button-->
+                            <Button Name="MySettingButton_1" FontFamily="Segoe MDL2 Assets"
+                                    FontSize="17" Foreground="Black" Content="&#xE115;" Background="{x:Null}"
+                                    RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"
+                                    Click="MySettingButton_Click" Padding="0"/>
                         </RelativePanel>
                     </Grid>
+                    
                     <!--登录、设置菜单 splitview闭合时-->
                     <ListBox Name="SettingListBox_2" RelativePanel.AlignBottomWithPanel="True" BorderThickness="0,1,0,0" BorderBrush="LightGray" Width="140"
-                             SelectionMode="Single" Foreground="#FF817E7E" SelectionChanged="SettingListBox_2_SelectionChanged" Visibility="Visible">
+                             SelectionMode="Single" Foreground="#FF817E7E" SelectionChanged="SettingListBox_2_SelectionChanged" Visibility="Collapsed">
                         <!--头像-->
                         <ListBoxItem Name="MyUserHeaderImage_2">
   <!--俊霖看这，这里是竖版的登录入口-->                                                                  
@@ -115,12 +118,107 @@
         </SplitView>
     
         <!--个人资料-->
-        <SplitView DisplayMode="Overlay">
-            
+        <SplitView Name="SelfInfoSplitView" DisplayMode="Overlay" PanePlacement="Right"
+                   HorizontalAlignment="Right" MaxWidth="300" MinWidth="0">
+            <SplitView.Pane>
+                <Grid Width="300" HorizontalAlignment="Left" Background="White" BorderThickness="2,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid  BorderBrush="LightGray" BorderThickness="0,0,0,0.5"  Grid.Row="0">
+                        <TextBlock FontSize="12" Margin="20,10,20,5">个人资料</TextBlock>
+                    </Grid>
+                    <Grid BorderBrush="LightGray" BorderThickness="0,0,0,0.5"  Grid.Row="1">
+                        <StackPanel Margin="20,10,20,10">
+                            <RelativePanel>
+                                <Ellipse Name="InfoUserHeaderImage" Height="40" Width="40">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="Assets/1.jpg"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <TextBlock Name="InfoUserName" FontSize="12" Margin="15,0,0,0"
+                                           RelativePanel.RightOf="InfoUserHeaderImage" RelativePanel.AlignVerticalCenterWith="InfoUserHeaderImage">今之心</TextBlock>
+                            </RelativePanel>
+                            <Grid Margin="0,20,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                </Grid.RowDefinitions>
+                                <!--Grid.Column=0-->
+                                <TextBlock Grid.Row="0" FontSize="12" Foreground="Gray">用户ID</TextBlock>
+                                <TextBlock Grid.Row="1" FontSize="12" Foreground="Gray">性别</TextBlock>
+                                <TextBlock Grid.Row="2" FontSize="12" Foreground="Gray">生日</TextBlock>
+                                <TextBlock Grid.Row="3" FontSize="12" Foreground="Gray">常住地</TextBlock>
+                                <TextBlock Grid.Row="4" FontSize="12" Foreground="Gray">家乡</TextBlock>
+                                <TextBlock Grid.Row="5" FontSize="12" Foreground="Gray">口味</TextBlock>
+                                <!--Grid.Column=1-->
+                                <TextBlock Name="InfoUserId" Grid.Row="0" Grid.Column="1" FontSize="12" Foreground="Black">用户ID</TextBlock>
+                                <TextBlock Name="InfoUserSex" Grid.Row="1" Grid.Column="1" FontSize="12" Foreground="Black">性别</TextBlock>
+                                <TextBlock Name="InfoUserBirthday" Grid.Row="2" Grid.Column="1" FontSize="12" Foreground="Black">生日</TextBlock>
+                                <TextBlock Name="InfoUserLivePlace" Grid.Row="3" Grid.Column="1" FontSize="12" Foreground="Black">常住地</TextBlock>
+                                <TextBlock Name="InfoUserHometown" Grid.Row="4" Grid.Column="1" FontSize="12" Foreground="Black">家乡</TextBlock>
+                                <TextBlock Name="InfoUserTaste" Grid.Row="5" Grid.Column="1" FontSize="12" Foreground="Black">口味</TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </SplitView.Pane>
         </SplitView>
         <!--设置-->
-        <SplitView DisplayMode="Overlay">
-            
+        <SplitView Name="MySettingSplitView" DisplayMode="Overlay" PanePlacement="Right"
+                   HorizontalAlignment="Right" MaxWidth="300" MinWidth="0">
+            <SplitView.Pane>
+                <Grid Width="300" HorizontalAlignment="Left" Background="White" BorderThickness="2,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid  BorderBrush="LightGray" BorderThickness="0,0,0,0.5"  Grid.Row="0">
+                        <TextBlock FontSize="12" Margin="20,10,20,5">设置</TextBlock>
+                    </Grid>
+                    
+                    <Grid BorderBrush="LightGray" BorderThickness="0,0,0,0.5"  Grid.Row="1">
+                        <StackPanel Margin="20,10,20,10">
+                            <RelativePanel>
+                                <ToggleSwitch Name="S1" RelativePanel.AlignRightWithPanel="True" MinWidth="30" FontSize="12"/>
+                                <TextBlock FontSize="12" RelativePanel.AlignVerticalCenterWith="S1" RelativePanel.AlignLeftWithPanel="True">透明磁贴</TextBlock>
+                            </RelativePanel>
+                            <RelativePanel>
+                                <ToggleSwitch Name="S2" RelativePanel.AlignRightWithPanel="True" MinWidth="30" FontSize="12"/>
+                                <TextBlock FontSize="12" RelativePanel.AlignVerticalCenterWith="S2" RelativePanel.AlignLeftWithPanel="True">透明磁贴</TextBlock>
+                            </RelativePanel>
+                        </StackPanel>
+                        <Button Name="ClearCacheSetting" BorderBrush="LightGray" BorderThickness="1" Width="257" Background="White" Margin="20,10,20,20"
+                                HorizontalContentAlignment="Left" VerticalAlignment="Bottom" FontSize="12" Click="ClearCacheSetting_Click">
+                            <Button.Content>
+                                <RelativePanel Width="240">
+                                    <TextBlock>清除缓存</TextBlock>
+                                    <TextBlock Name="Cache" RelativePanel.AlignRightWithPanel="True">(12MB)</TextBlock>
+                                </RelativePanel>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                    <StackPanel Grid.Row="2" Margin="20,10,20,15">
+                        <Button Name="AccountSecuritySetting" BorderBrush="LightGray" BorderThickness="1" Width="257" Background="White"
+                                HorizontalContentAlignment="Left" FontSize="12" Click="AccountSecuritySetting_Click">账号、设备安全</Button>
+                        <Button Name="MessagePrivacySetting" BorderBrush="LightGray" BorderThickness="1" Width="257" Background="White" Margin="0,10,0,0"
+                                HorizontalContentAlignment="Left" FontSize="12" Click="MessagePrivacySetting_Click">消息与隐私设置</Button>
+                    </StackPanel>
+                </Grid>
+            </SplitView.Pane>
         </SplitView>
     </Grid>
 </Page>
