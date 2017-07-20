@@ -7,15 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Title="登陆"
-    PrimaryButtonText="注册"
-    SecondaryButtonText="登陆"
+    PrimaryButtonText="登录"
+    SecondaryButtonText="注册"
 
     PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
     SecondaryButtonClick="ContentDialog_SecondaryButtonClick" Height="640">
 
     <Grid Margin="0,0,0.4,-34">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="71*"/>
             <ColumnDefinition Width="121*"/>
             <ColumnDefinition Width="18*"/>
@@ -30,9 +30,11 @@
             <TextBlock FontSize="25" Margin="8" >密码</TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="1" >
-            <TextBox x:Name="username" FontSize="17" Margin="5"/>
-            <PasswordBox x:Name="passwordBox" PasswordChar="*" MaxLength="15" FontSize="17" Margin="5"/>
+            <TextBox x:Name="username" FontSize="17" Margin="5,5,-8.2,5" RenderTransformOrigin="0.5,0.506" TextChanged="username_TextChanged"/>
+            <PasswordBox x:Name="passwordBox" PasswordChar="*" MaxLength="15" FontSize="17" Margin="5,5,-8.2,5"/>
         </StackPanel>
-        <CheckBox Content="记住密码" Grid.ColumnSpan="2" Grid.Column="2" Margin="24.8,61.8,-70.4,10.2" Grid.Row="1" Grid.RowSpan="2"></CheckBox>
+        <CheckBox Content="记住密码" Grid.ColumnSpan="3" Margin="22,4.6,0,35.4" Grid.Row="2"/>
+        <CheckBox Content="自动登录" Grid.ColumnSpan="2" Margin="52,4.6,-29.6,35.4" Grid.Row="2" Grid.Column="2"/>
+        <TextBlock Margin="0,41.6,45.2,0" x:Name="statusText" Foreground="Red" Grid.Column="2" Height="14" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="10" Width="88"></TextBlock>
     </Grid>
 </ContentDialog>

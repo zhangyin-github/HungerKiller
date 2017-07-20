@@ -26,10 +26,19 @@ namespace HungerKiller
 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
+            statusText.Text = "wtf";
         }
 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
+        }
+
+        private void username_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(username.Text.Length<5)
+            {
+                statusText.Text = "wtf";
+            }
         }
     }
 }
