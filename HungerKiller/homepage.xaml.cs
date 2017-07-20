@@ -28,6 +28,8 @@ namespace HungerKiller
         public ObservableCollection<NewsItem> NewsItems;
         private object frame;
 
+        public static bool IsSelected { get; internal set; }
+
         public homepage()
         {
             this.InitializeComponent();
@@ -68,22 +70,19 @@ namespace HungerKiller
             timer3.Start();
         }
 
-        private void juece_Tapped(object sender, TappedRoutedEventArgs e)
+        private void juece2_Click(object sender, RoutedEventArgs e)
         {
-            Frame root = Window.Current.Content as Frame;
-            root.Navigate(typeof(deal));
+            this.Frame.Navigate(typeof(deal));
         }
 
-        private void tuijian_Tapped(object sender, TappedRoutedEventArgs e)
+        private void tuijian2_Click(object sender, RoutedEventArgs e)
         {
-            Frame root = Window.Current.Content as Frame;
-            root.Navigate(typeof(deal));
+            this.Frame.Navigate(typeof(deal));
         }
 
-        private void paihang_Tapped(object sender, TappedRoutedEventArgs e)
+        private void paihang2_Click(object sender, RoutedEventArgs e)
         {
-            Frame root = Window.Current.Content as Frame;
-            root.Navigate(typeof(deal));
+            this.Frame.Navigate(typeof(deal));
         }
     }
 }

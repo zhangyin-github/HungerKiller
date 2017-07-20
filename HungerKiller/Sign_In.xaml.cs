@@ -12,23 +12,24 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using HungerKiller.Model;
 
-// “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
+// “内容对话框”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上进行了说明
 
 namespace HungerKiller
 {
-    /// <summary>
-    /// 可用于自身或导航至 Frame 内部的空白页。
-    /// </summary> 
-    public sealed partial class comment : Page
+    public sealed partial class Sign_In : ContentDialog
     {
-        public List<Comment> Comment;
-        public comment()
+        public Sign_In()
         {
             this.InitializeComponent();
-            Comment = Comment_Manager.Get_Comment();
+        }
+
+        private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        {
+        }
+
+        private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        {
         }
     }
-
 }
