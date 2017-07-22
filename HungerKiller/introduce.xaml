@@ -16,12 +16,15 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel >
-            <Image x:Name="cc" 
-                   Grid.Row="0" 
-                   Grid.Column="0" 
-                   Height="200" 
-                   Width="200" />
+        <StackPanel>
+            <Ellipse  Grid.Row="0" 
+                      Grid.Column="0" 
+                      Height="200" 
+                      Width="200" >
+                <Ellipse.Fill>
+                    <ImageBrush x:Name="cc"/>
+                </Ellipse.Fill>
+            </Ellipse>
             <TextBlock Name="ee" />
         </StackPanel>
         <TextBlock Name="aa" 

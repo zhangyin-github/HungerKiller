@@ -35,7 +35,7 @@ namespace HungerKiller
             base.OnNavigatedTo(e);
             var news = NewsManager.GetNews((int)e.Parameter);
             ee.Text=news.Headline;
-            cc.Source =new BitmapImage(new Uri(news.Image,UriKind.Absolute));
+            cc.ImageSource =new BitmapImage(new Uri(news.Image,UriKind.Absolute));
             aa.Text = news.Text;
         }
     }
