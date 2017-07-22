@@ -17,37 +17,19 @@ using Windows.UI.Xaml.Navigation;
 
 namespace HungerKiller
 {
-    public sealed partial class Sign_In : ContentDialog
+    public sealed partial class warning : ContentDialog
     {
-        public Sign_In()
+        public warning()
         {
             this.InitializeComponent();
         }
 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
-            args.Cancel = true;
-            statusText6.Text = "wtf";
         }
 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
-        }
-
-        private void username_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if(username.Text.Length<5)
-            {
-                statusText6.Text = "wtf";
-            }
-        }
-
-        private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            if(passwordBox.Password.Length<6)
-            {
-                statusText6.Text = "wtf";
-            }
         }
     }
 }
