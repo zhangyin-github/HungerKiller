@@ -120,9 +120,6 @@
     <Compile Include="Model\DealManager.cs" />
     <Compile Include="Model\Fabu.cs" />
     <Compile Include="Model\NewsItem.cs" />
-    <Compile Include="NewsItemsControl.xaml.cs">
-      <DependentUpon>NewsItemsControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="pinglunguanli.xaml.cs">
       <DependentUpon>pinglunguanli.xaml</DependentUpon>
     </Compile>
@@ -197,10 +194,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Maneger.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="NewsItemsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HungerKiller.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace HungerKiller
     /// </summary>
     public sealed partial class deal : Page
     {
-        public int count = 0;
+        public int count= 0;
         public int countt = 0;
         public int  seed=0;
         public  int a = 0;
@@ -553,6 +554,12 @@ namespace HungerKiller
         private void FinalOkButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void OK_Click(object sender, RoutedEventArgs e)
+        {
+            DealManager dealmanager = new DealManager();
+            List<turn> turntab = new List<turn>();
+            dealmanager.DealCountAndCountt(count, countt);
         }
     }
 }
