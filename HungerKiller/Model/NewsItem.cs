@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Net.Sockets;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using Windows.UI.Xaml.Controls;
 
 namespace HungerKiller.Model
 {
@@ -76,6 +77,11 @@ namespace HungerKiller.Model
 
      }*/
 
+     public class tiao
+    {
+        static tiao jmp = new tiao();
+        public static bool jm=false;
+    }
 
     public class RegexUtilities
     {
