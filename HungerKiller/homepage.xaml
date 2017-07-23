@@ -7,19 +7,100 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data="using:HungerKiller.Model"
     mc:Ignorable="d">
+    <Page.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+            <Setter Property="Padding" Value="8,4,8,4"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="UseSystemFocusVisuals" Value="True"/>
+            <Setter Property="FocusVisualMargin" Value="-3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPointerOver}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPointerOver}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPressed}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPressed}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushDisabled}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundDisabled}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" 
+                                              BorderThickness="{TemplateBinding BorderThickness}" ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                              ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}"
+                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" 
+                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
     <ScrollViewer>
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RenderTransformOrigin="0.505,0.439">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <!--菜品展示信息的自定义数据模板，事件click，点击图片进入菜品详细界面-->
+        <Grid x:Name="rootGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RenderTransformOrigin="0.505,0.439">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+           
+            <!--菜品展示信息的自定义数据模板，事件click，点击图片进入菜品详细界面-->
         <Grid.Resources>
             <DataTemplate x:Key="dish_Item"
                           x:DataType="data:NewsItem">
@@ -46,103 +127,133 @@
                 </Grid>
             </DataTemplate>
         </Grid.Resources>
-        <!--新品上市轮播控件-->
-        <Grid HorizontalAlignment="Center" Grid.Row="0" Margin="0,5,0,5" Grid.ColumnSpan="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300"/>
-                <ColumnDefinition Width="400"/>
-                <ColumnDefinition Width="300"/>
-            </Grid.ColumnDefinitions>
+            <RelativePanel Grid.Row="0" Grid.ColumnSpan="3">
+                <TextBlock 
+                Foreground="#FF145714" 
+                HorizontalAlignment="Center" 
+                FontSize="20" 
+                FontFamily="楷体" 
+                Text="个性推荐" 
+                Margin="30,30,0,0"/>
+                <AutoSuggestBox x:Name="AutoSuggestBox" 
+                            PlaceholderText="输入要搜索的内容" 
+                            QueryIcon="Find" 
+                            BorderThickness="0"
+                            Background="#232323"
+                            Foreground="White"
+                            Width="300" 
+                            RelativePanel.AlignRightWithPanel="True" 
+                            Margin="0,20,0,0"
+                            TextChanged="AutoSuggestBox_TextChanged"
+                            QuerySubmitted="AutoSuggestBox_QuerySubmitted"
+                            SuggestionChosen="AutoSuggestBox_SuggestionChosen"/>
+            </RelativePanel>
+            <!--新品上市轮播控件-->
+            <Grid HorizontalAlignment="Center" Grid.Row="1" Margin="0,5,0,5" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
 
-            <!--左-->
-            <Grid Grid.Column="0" Margin="0,20,0,20">
-                <Grid.Background>
-                    <SolidColorBrush Color="LightGray"/>
-                </Grid.Background>
-                <FlipView x:Name="LeftFlipView" Opacity="0.5" IsEnabled="False" >
+                <!--左-->
+                <Grid Grid.Column="0" Margin="0,20,0,20">
+                    <Grid.Background>
+                        <SolidColorBrush Color="LightGray"/>
+                    </Grid.Background>
+                    <FlipView x:Name="LeftFlipView" Opacity="0.5" IsEnabled="False" Tapped="LeftFlipView_Tapped">
+                        <FlipView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding}" Stretch="Fill"/>
+                            </DataTemplate>
+                        </FlipView.ItemTemplate>
+                    </FlipView>
+                </Grid>
+
+                <!--中-->
+                <FlipView x:Name="CenterFlipView" Grid.Column="1" Tapped="CenterFlipView_Tapped">
                     <FlipView.ItemTemplate>
                         <DataTemplate>
                             <Image Source="{Binding}" Stretch="Fill"/>
                         </DataTemplate>
                     </FlipView.ItemTemplate>
                 </FlipView>
+
+                <!--右-->
+                <Grid Grid.Column="2" Margin="0,20,0,20">
+                    <Grid.Background>
+                        <SolidColorBrush Color="LightGray"/>
+                    </Grid.Background>
+                    <FlipView x:Name="RightFlipView" Opacity="0.3" IsEnabled="False" Tapped="RightFlipView_Tapped">
+                        <FlipView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding}" Stretch="Fill"/>
+                            </DataTemplate>
+                        </FlipView.ItemTemplate>
+                    </FlipView>
+                </Grid>
             </Grid>
 
-            <!--中-->
-            <FlipView x:Name="CenterFlipView" Grid.Column="1">
-                <FlipView.ItemTemplate>
-                    <DataTemplate>
-                        <Image Source="{Binding}" Stretch="Fill"/>
-                    </DataTemplate>
-                </FlipView.ItemTemplate>
-            </FlipView>
-
-            <!--右-->
-            <Grid Grid.Column="2" Margin="0,20,0,20">
-                <Grid.Background>
-                    <SolidColorBrush Color="LightGray"/>
-                </Grid.Background>
-                <FlipView x:Name="RightFlipView" Opacity="0.3" IsEnabled="False" >
-                    <FlipView.ItemTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding}" Stretch="Fill"/>
-                        </DataTemplate>
-                    </FlipView.ItemTemplate>
-                </FlipView>
-            </Grid>
-        </Grid>
-
-        <Button Name="juece2" 
-                Grid.Row="1"
-                Grid.Column="0" 
+            <Grid  BorderBrush="LightGray" 
+               BorderThickness="0,0,0.5,0" 
+               Grid.Row="2"
+               Grid.Column="0">
+                <Button Name="juece2"  
                 Click="juece2_Click"
                 BorderThickness="0"
                 Background="Transparent" 
-                HorizontalAlignment="Stretch">
-            <Button.Content>
-                <RelativePanel>
-                    <Image Name="juece" Source="Assets/7.png" Height="50" />
-                    <TextBlock Name="juece1" Text="决策" FontSize="24" FontFamily="楷体"
+                HorizontalAlignment="Stretch" 
+                VerticalContentAlignment="Stretch"
+                Style="{StaticResource ButtonStyle1}">
+                    <RelativePanel >
+                        <Image Name="juece" Source="Assets/7.png" Height="50" />
+                        <TextBlock Name="juece1" Text="决策" FontSize="24" FontFamily="楷体"
                    RelativePanel.RightOf="juece" Height="Auto"/>
-                    <TextBlock Text="享受你的菜品专属" FontSize="24" FontFamily="楷体" Opacity="0.5"
+                        <TextBlock Text="享受你的菜品专属" FontSize="24" FontFamily="楷体" Opacity="0.5"
                    RelativePanel.RightOf="juece" RelativePanel.Below="juece1" Height="Auto"/>
-                </RelativePanel>
-            </Button.Content>
-        </Button>
+                    </RelativePanel>
+                </Button>
+            </Grid>
 
-        <Button Name="tuijian2" 
-                Grid.Row="1" 
-                Grid.Column="1" 
+            <Grid  BorderBrush="LightGray" 
+               BorderThickness="0,0,0.5,0" 
+               Grid.Row="2"
+               Grid.Column="1">
+                <Button Name="tuijian2" 
                 Click="tuijian2_Click"
                 BorderThickness="0"
                 Background="Transparent" 
-                HorizontalAlignment="Stretch">
-            <RelativePanel >
-                <Image Name="tuijian" Source="Assets/8.png" Height="50"/>
-                <TextBlock Name="tuijian1" Text="推荐" FontSize="24" FontFamily="楷体"
+                VerticalContentAlignment="Stretch"
+                HorizontalAlignment="Stretch" 
+                Style="{StaticResource ButtonStyle1}">
+                    <RelativePanel >
+                        <Image Name="tuijian" Source="Assets/8.png" Height="50"/>
+                        <TextBlock Name="tuijian1" Text="推荐" FontSize="24" FontFamily="楷体"
                    RelativePanel.RightOf="tuijian" Height="Auto"/>
-                <TextBlock Text="根据你的口味生成" FontSize="24" FontFamily="楷体" Opacity="0.5"
+                        <TextBlock Text="根据你的口味生成" FontSize="24" FontFamily="楷体" Opacity="0.5"
                    RelativePanel.RightOf="tuijian" RelativePanel.Below="tuijian1" Height="Auto"/>
-            </RelativePanel>
-        </Button>
+                    </RelativePanel>
+                </Button>
+            </Grid>
 
-        <Button Name="paihang2" 
-                Grid.Row="1" 
+            <Button Name="paihang2" 
+                Grid.Row="2" 
                 Grid.Column="2" 
                 Click="paihang2_Click"
                 BorderThickness="0"
                 Background="Transparent"                 
-                HorizontalAlignment="Stretch"
-                >
-            <RelativePanel >
-                <Image Name="paihang" Source="Assets/9.png" Height="50"/>
-                <TextBlock Name="paihang1" Text="排行" FontSize="24" FontFamily="楷体"
+                HorizontalAlignment="Stretch" 
+                VerticalContentAlignment="Stretch"
+                Style="{StaticResource ButtonStyle1}">
+                <RelativePanel >
+                    <Image Name="paihang" Source="Assets/9.png" Height="50"/>
+                    <TextBlock Name="paihang1" Text="排行" FontSize="24" FontFamily="楷体"
                    RelativePanel.RightOf="paihang" Height="Auto"/>
-                <TextBlock Text="最热菜品榜" FontSize="24" FontFamily="楷体" Opacity="0.5"
+                    <TextBlock Text="最热菜品榜" FontSize="24" FontFamily="楷体" Opacity="0.5"
                    RelativePanel.RightOf="paihang" RelativePanel.Below="paihang1" Height="Auto"/>
-            </RelativePanel>
-        </Button>
-            <GridView Grid.Row="2"
+                </RelativePanel>
+            </Button>
+            <GridView Grid.Row="3"
                           Grid.ColumnSpan="3"
                           Name="MyGridview"
                           HorizontalAlignment="Left"

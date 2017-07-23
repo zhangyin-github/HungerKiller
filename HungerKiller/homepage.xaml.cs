@@ -26,15 +26,15 @@ namespace HungerKiller
     public sealed partial class homepage : Page
     {
         public ObservableCollection<NewsItem> NewsItems;
+        private List<string> Suggestions;
         private object frame;
-
         public static bool IsSelected { get; internal set; }
 
         public homepage()
         {
             this.InitializeComponent();
             NewsItems = new ObservableCollection<NewsItem>();
-            NewsManager.GetNews("主页", NewsItems);
+            NewsManager.GetAllItems(NewsItems);
 
             this.LeftFlipView.ItemsSource = this.CenterFlipView.ItemsSource = this.RightFlipView.ItemsSource = new ObservableCollection<BitmapImage>()
             {
@@ -85,7 +85,40 @@ namespace HungerKiller
             this.Frame.Navigate(typeof(deal));
         }
 
-        App something = Application.Current as App;
+        private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            NewsManager.GetAllItems(NewsItems);
+            Suggestions = NewsItems.Where(p => p.Headline.StartsWith(sender.Text)).Select(p => p.Headline).ToList();
+            AutoSuggestBox.ItemsSource = Suggestions;
+        }
+
+        private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            NewsManager.GetNewsItemsByHeadline(NewsItems, sender.Text);
+        }
+
+        private void AutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+            NewsItem suggest = args.SelectedItem as NewsItem;
+            if (suggest == null)
+                return;
+            sender.Text = suggest.Headline;
+        }
+
+        private void LeftFlipView_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
+
+        private void CenterFlipView_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
+
+        private void RightFlipView_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
         /// <summary>
         /// gridview item点击事件
         /// </summary>
@@ -94,7 +127,6 @@ namespace HungerKiller
         private void MyGridview_dish_ItemClick(object sender, ItemClickEventArgs e)
         {
             var comment_dish = (NewsItem)e.ClickedItem;
-            
             this.Frame.Navigate(typeof(comment));
 
         }
