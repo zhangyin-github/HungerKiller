@@ -140,6 +140,7 @@ namespace HungerKiller
            if(tiao.jm==true)
             {
                 Frame.Navigate(typeof(SignUp));
+                tiao.jm = false;
             }
             /*
              else
