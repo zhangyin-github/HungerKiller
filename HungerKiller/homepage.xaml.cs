@@ -84,5 +84,20 @@ namespace HungerKiller
         {
             this.Frame.Navigate(typeof(deal));
         }
+
+        App something = Application.Current as App;
+        /// <summary>
+        /// gridview item点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MyGridview_dish_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var comment_dish = (NewsItem)e.ClickedItem;
+            
+            this.Frame.Navigate(typeof(comment));
+
+        }
     }
+
 }

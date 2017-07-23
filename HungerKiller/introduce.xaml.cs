@@ -37,6 +37,7 @@ namespace HungerKiller
             ee.Text=news.Headline;
             cc.ImageSource =new BitmapImage(new Uri(news.Image,UriKind.Absolute));
             aa.Text = news.Text;
+          
         }
     }
 }

@@ -7,18 +7,45 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data="using:HungerKiller.Model"
     mc:Ignorable="d">
-
+    <ScrollViewer>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RenderTransformOrigin="0.505,0.439">
         <Grid.RowDefinitions>
             <RowDefinition Height="200"/>
             <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions  >
+        <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <!--菜品展示信息的自定义数据模板，事件click，点击图片进入菜品详细界面-->
+        <Grid.Resources>
+            <DataTemplate x:Key="dish_Item"
+                          x:DataType="data:NewsItem">
+                <Grid Background="LightGray" Margin="10" Height="275" Width="200">
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Image Name="MyImage" Source="{x:Bind Image}"  />
+                    <RelativePanel Grid.Row="1" Margin="10">
+                        <TextBlock Text="{x:Bind Headline}" 
+                       Name="HeadlineTextBox"
+                       RelativePanel.AlignTopWithPanel="True" 
+                       FontSize="18" 
+                       TextWrapping="Wrap" 
+                       FontFamily="楷体"/>
+                        <TextBlock Text="{x:Bind Subhead}" 
+                       RelativePanel.Below="HeadlineTextBox" 
+                       TextWrapping="Wrap"/>
+                        <TextBlock Text="{x:Bind Dateline}" 
+                       RelativePanel.AlignBottomWithPanel="True" 
+                       FontSize="18"/>
+                    </RelativePanel>
+                </Grid>
+            </DataTemplate>
+        </Grid.Resources>
         <!--新品上市轮播控件-->
         <Grid HorizontalAlignment="Center" Grid.Row="0" Margin="0,5,0,5" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
@@ -63,7 +90,6 @@
                     </FlipView.ItemTemplate>
                 </FlipView>
             </Grid>
-            
         </Grid>
 
         <Button Name="juece2" 
@@ -74,14 +100,13 @@
                 Background="Transparent" 
                 HorizontalAlignment="Stretch">
             <Button.Content>
-              
-            <RelativePanel >
-                <Image Name="juece" Source="Assets/7.png" Height="50" />
-                <TextBlock Name="juece1" Text="决策" FontSize="24" FontFamily="楷体"
+                <RelativePanel>
+                    <Image Name="juece" Source="Assets/7.png" Height="50" />
+                    <TextBlock Name="juece1" Text="决策" FontSize="24" FontFamily="楷体"
                    RelativePanel.RightOf="juece" Height="Auto"/>
-                <TextBlock Text="享受你的菜品专属" FontSize="24" FontFamily="楷体" Opacity="0.5"
+                    <TextBlock Text="享受你的菜品专属" FontSize="24" FontFamily="楷体" Opacity="0.5"
                    RelativePanel.RightOf="juece" RelativePanel.Below="juece1" Height="Auto"/>
-            </RelativePanel>
+                </RelativePanel>
             </Button.Content>
         </Button>
 
@@ -117,28 +142,16 @@
                    RelativePanel.RightOf="paihang" RelativePanel.Below="paihang1" Height="Auto"/>
             </RelativePanel>
         </Button>
-        
-        
-
-        <SplitView Name="MySplitView"
-                       Grid.Row="2"
-                       DisplayMode="Inline"
-                       OpenPaneLength="150"
-                       CompactPaneLength="45"
-                       Grid.ColumnSpan="3">
-
-            <SplitView.Content >
-                <GridView Name="NewsItemGrid"
+            <GridView Grid.Row="2"
+                          Grid.ColumnSpan="3"
+                          Name="MyGridview"
+                          HorizontalAlignment="Left"
                           ItemsSource="{x:Bind NewsItems}"
-                          HorizontalAlignment="Stretch"
-                          Margin="34,10,-24,-10">
-                    <GridView.ItemTemplate >
-                        <DataTemplate x:DataType="data:NewsItem">
-                            <local:NewsItemsControl/>
-                        </DataTemplate>
-                    </GridView.ItemTemplate>
-                </GridView>
-            </SplitView.Content>
-        </SplitView>
-    </Grid>
+                          IsItemClickEnabled="True" 
+                          Margin="40,20,0,0"
+                          ItemClick="MyGridview_dish_ItemClick"
+                          ItemTemplate="{StaticResource dish_Item}">
+            </GridView>
+        </Grid>
+    </ScrollViewer>
 </Page>
