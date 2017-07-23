@@ -90,7 +90,7 @@
         <Grid x:Name="rootGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RenderTransformOrigin="0.505,0.439">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
-                <RowDefinition Height="150"/>
+                <RowDefinition Height="175"/>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
@@ -171,7 +171,7 @@
                 </Grid>
 
                 <!--中-->
-                <FlipView x:Name="CenterFlipView" Grid.Column="1" Tapped="CenterFlipView_Tapped">
+                <FlipView x:Name="CenterFlipView" Grid.Column="1" Tapped="CenterFlipView_Tapped" SelectionChanged="CenterFlipView_SelectionChanged">
                     <FlipView.ItemTemplate>
                         <DataTemplate>
                             <Image Source="{Binding}" Stretch="Fill"/>
@@ -253,7 +253,7 @@
                    RelativePanel.RightOf="paihang" RelativePanel.Below="paihang1" Height="Auto"/>
                 </RelativePanel>
             </Button>
-            <GridView Grid.Row="3"
+            <GridView     Grid.Row="3"
                           Grid.ColumnSpan="3"
                           Name="MyGridview"
                           HorizontalAlignment="Left"

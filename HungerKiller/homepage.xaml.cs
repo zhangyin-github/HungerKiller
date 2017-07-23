@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -38,9 +39,9 @@ namespace HungerKiller
 
             this.LeftFlipView.ItemsSource = this.CenterFlipView.ItemsSource = this.RightFlipView.ItemsSource = new ObservableCollection<BitmapImage>()
             {
-                new BitmapImage(new System.Uri("ms-appx:///Assets/1.jpg",System.UriKind.RelativeOrAbsolute)),
-                new BitmapImage(new System.Uri("ms-appx:///Assets/2.jpg",System.UriKind.RelativeOrAbsolute)),
-                new BitmapImage(new System.Uri("ms-appx:///Assets/3.jpg",System.UriKind.RelativeOrAbsolute))
+                new BitmapImage(new Uri("ms-appx:///Assets/1.jpg",UriKind.RelativeOrAbsolute)),
+                new BitmapImage(new Uri("ms-appx:///Assets/2.jpg",UriKind.RelativeOrAbsolute)),
+                new BitmapImage(new Uri("ms-appx:///Assets/3.jpg",UriKind.RelativeOrAbsolute))
             };
             this.CenterFlipView.SelectedIndex = 0;
             this.LeftFlipView.SelectedIndex = this.LeftFlipView.Items.Count - 1;
@@ -107,17 +108,17 @@ namespace HungerKiller
 
         private void LeftFlipView_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(comment));
         }
 
         private void CenterFlipView_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(comment));
         }
 
         private void RightFlipView_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(comment));
         }
         /// <summary>
         /// gridview item点击事件
@@ -129,6 +130,35 @@ namespace HungerKiller
             var comment_dish = (NewsItem)e.ClickedItem;
             this.Frame.Navigate(typeof(comment));
 
+        }
+
+        private void CenterFlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.CenterFlipView.SelectedIndex==0)
+            {
+                this.LeftFlipView.SelectedIndex = this.LeftFlipView.Items.Count - 1;
+                this.RightFlipView.SelectedIndex = 1;
+            }
+            else if (this.CenterFlipView.SelectedIndex == 1)
+            {
+                this.LeftFlipView.SelectedIndex = 0;
+                this.RightFlipView.SelectedIndex = this.RightFlipView.Items.Count - 1;
+            }
+            else if(this.CenterFlipView.SelectedIndex==this.CenterFlipView.Items.Count-1)
+            {
+                this.LeftFlipView.SelectedIndex = this.LeftFlipView.Items.Count - 2;
+                this.RightFlipView.SelectedIndex = 0;
+            }
+            else if((this.CenterFlipView.SelectedIndex<(this.CenterFlipView.Items.Count-1))&&this.CenterFlipView.SelectedIndex>-1)
+            {
+                this.LeftFlipView.SelectedIndex = this.CenterFlipView.SelectedIndex - 1;
+                this.RightFlipView.SelectedIndex = this.CenterFlipView.SelectedIndex + 1;
+            }
+            else
+            {
+                return;
+            }
+            Debug.Write(this.LeftFlipView.SelectedIndex);
         }
     }
 
