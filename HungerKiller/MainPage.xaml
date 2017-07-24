@@ -64,6 +64,7 @@
                                         RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
                                 <!--用户头像-->
                                 <Button Background="{x:Null}" Click="UserName_Click" Padding="0">
+<!--俊霖看这，这里是横版的登录入口-->                                    
                                     <Ellipse  Height="25" Width="25" >
                                         <Ellipse.Fill>
                                             <ImageBrush ImageSource="Assets/2.jpg"/>
@@ -73,9 +74,9 @@
                                 
                                 <!--登录显示用户名，未登录显示请登录-->                     
                                 <!--用户名-->
-                                <Button Name="UserName_1" Padding="2,0,0,0" FontSize="10" FontWeight="Light" MaxWidth="67"
+                                <Button Name="UserName" Padding="2,0,0,0" FontSize="10" FontWeight="Light" MaxWidth="67"
                                         Foreground="Black" Background="{x:Null}" VerticalAlignment="Center" 
-                                        Visibility="Visible" Click="UserName_1_Click" >饥饿哈hh哈哈猎人哈哈哈</Button>
+                                        Visibility="Visible" Click="UserName_Click" >饥饿哈hh哈哈猎人哈哈哈</Button>
                                 
                             </StackPanel>
                             <TextBlock Name="IfUserNameSoLong"  FontSize="10" FontWeight="Light" Foreground="Black"
@@ -94,6 +95,7 @@
                              SelectionMode="Single" Foreground="#FF817E7E" SelectionChanged="SettingListBox_2_SelectionChanged" Visibility="Collapsed">
                         <!--头像-->
                         <ListBoxItem Name="MyUserHeaderImage_2">
+  <!--俊霖看这，这里是竖版的登录入口-->                                                                  
                             <Ellipse Height="25" Width="25" Margin="-4.5,0,0,0">
                                     <Ellipse.Fill>
                                         <ImageBrush ImageSource="Assets/2.jpg"></ImageBrush>
@@ -121,65 +123,53 @@
                 <Grid Width="300" HorizontalAlignment="Left" Background="White" BorderThickness="2,0,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    <!--修改资料按钮在这-->
                     <Grid  BorderBrush="LightGray" BorderThickness="0,0,0,0.5"  Grid.Row="0">
                         <TextBlock FontSize="12" Margin="20,10,20,5">个人资料</TextBlock>
-                        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                                FontSize="8" Padding="2,0,2,0" Margin="0,0,20,5" Height="15"
-                                BorderBrush="Gray" Background="White" BorderThickness="0.4">修改个人资料</Button>
                     </Grid>
-                    <!--头像 ID-->
-                    <Grid BorderBrush="LightGray" BorderThickness="0,0,0,0.5" 
-                          Grid.Row="1" >
-                        <Grid Margin="20,10,20,5">
+                    <Grid BorderBrush="LightGray" BorderThickness="0,0,0,0.5"  Grid.Row="1">
+                        <StackPanel Margin="20,10,20,10">
                             <RelativePanel>
-                                <Ellipse Name="InfoUserHeaderImage" Height="45" Width="45">
+                                <Ellipse Name="InfoUserHeaderImage" Height="40" Width="40">
                                     <Ellipse.Fill>
                                         <ImageBrush ImageSource="Assets/1.jpg"/>
                                     </Ellipse.Fill>
                                 </Ellipse>
-                                <TextBlock Name="InfoUserName" FontSize="12" Margin="20,0,0,0"
+                                <TextBlock Name="InfoUserName" FontSize="12" Margin="15,0,0,0"
                                            RelativePanel.RightOf="InfoUserHeaderImage" RelativePanel.AlignVerticalCenterWith="InfoUserHeaderImage">今之心</TextBlock>
-                                <TextBlock Name="l1" FontSize="12" RelativePanel.AlignVerticalCenterWith="InfoUserHeaderImage" RelativePanel.AlignRightWithPanel="True">收藏</TextBlock>
-                                <Button FontFamily="Segoe MDL2 Assets" FontSize="18" Content="&#xE006;" 
-                                        Foreground="Black" Background="White"
-                                        RelativePanel.LeftOf="l1"  RelativePanel.AlignVerticalCenterWith="InfoUserHeaderImage"/>
                             </RelativePanel>
-                        </Grid>
-                    </Grid>
-                    
-                    <!--详细信息-->
-                    <Grid Grid.Row="2" Margin="20,10,20,10">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="65"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="20"/>
-                        </Grid.RowDefinitions>
-                        <!--Grid.Column=0-->
-                        <TextBlock Grid.Row="0" FontSize="12" Foreground="Gray">用户ID</TextBlock>
-                        <TextBlock Grid.Row="1" FontSize="12" Foreground="Gray">性别</TextBlock>
-                        <TextBlock Grid.Row="2" FontSize="12" Foreground="Gray">生日</TextBlock>
-                        <TextBlock Grid.Row="3" FontSize="12" Foreground="Gray">常住地</TextBlock>
-                        <TextBlock Grid.Row="4" FontSize="12" Foreground="Gray">家乡</TextBlock>
-                        <TextBlock Grid.Row="5" FontSize="12" Foreground="Gray">口味</TextBlock>
-                        <!--Grid.Column=1-->
-                        <TextBlock Name="InfoUserId" Grid.Row="0" Grid.Column="1" FontSize="12" Foreground="Black">用户ID</TextBlock>
-                        <TextBlock Name="InfoUserSex" Grid.Row="1" Grid.Column="1" FontSize="12" Foreground="Black">性别</TextBlock>
-                        <TextBlock Name="InfoUserBirthday" Grid.Row="2" Grid.Column="1" FontSize="12" Foreground="Black">生日</TextBlock>
-                        <TextBlock Name="InfoUserLivePlace" Grid.Row="3" Grid.Column="1" FontSize="12" Foreground="Black">常住地</TextBlock>
-                        <TextBlock Name="InfoUserHometown" Grid.Row="4" Grid.Column="1" FontSize="12" Foreground="Black">家乡</TextBlock>
-                        <TextBlock Name="InfoUserTaste" Grid.Row="5" Grid.Column="1" FontSize="12" Foreground="Black">口味</TextBlock>
+                            <Grid Margin="0,20,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                </Grid.RowDefinitions>
+                                <!--Grid.Column=0-->
+                                <TextBlock Grid.Row="0" FontSize="12" Foreground="Gray">用户ID</TextBlock>
+                                <TextBlock Grid.Row="1" FontSize="12" Foreground="Gray">性别</TextBlock>
+                                <TextBlock Grid.Row="2" FontSize="12" Foreground="Gray">生日</TextBlock>
+                                <TextBlock Grid.Row="3" FontSize="12" Foreground="Gray">常住地</TextBlock>
+                                <TextBlock Grid.Row="4" FontSize="12" Foreground="Gray">家乡</TextBlock>
+                                <TextBlock Grid.Row="5" FontSize="12" Foreground="Gray">口味</TextBlock>
+                                <!--Grid.Column=1-->
+                                <TextBlock Name="InfoUserId" Grid.Row="0" Grid.Column="1" FontSize="12" Foreground="Black">用户ID</TextBlock>
+                                <TextBlock Name="InfoUserSex" Grid.Row="1" Grid.Column="1" FontSize="12" Foreground="Black">性别</TextBlock>
+                                <TextBlock Name="InfoUserBirthday" Grid.Row="2" Grid.Column="1" FontSize="12" Foreground="Black">生日</TextBlock>
+                                <TextBlock Name="InfoUserLivePlace" Grid.Row="3" Grid.Column="1" FontSize="12" Foreground="Black">常住地</TextBlock>
+                                <TextBlock Name="InfoUserHometown" Grid.Row="4" Grid.Column="1" FontSize="12" Foreground="Black">家乡</TextBlock>
+                                <TextBlock Name="InfoUserTaste" Grid.Row="5" Grid.Column="1" FontSize="12" Foreground="Black">口味</TextBlock>
+                            </Grid>
+                        </StackPanel>
                     </Grid>
                 </Grid>
             </SplitView.Pane>
@@ -194,11 +184,11 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-
+                    
                     <Grid  BorderBrush="LightGray" BorderThickness="0,0,0,0.5"  Grid.Row="0">
                         <TextBlock FontSize="12" Margin="20,10,20,5">设置</TextBlock>
                     </Grid>
-
+                    
                     <Grid BorderBrush="LightGray" BorderThickness="0,0,0,0.5"  Grid.Row="1">
                         <StackPanel Margin="20,10,20,10">
                             <RelativePanel>
@@ -229,6 +219,5 @@
                 </Grid>
             </SplitView.Pane>
         </SplitView>
-        <!---->
     </Grid>
 </Page>
