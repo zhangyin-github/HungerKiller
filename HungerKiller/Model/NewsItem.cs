@@ -59,7 +59,7 @@ namespace HungerKiller.Model
             for (int i = 0; i < items.Capacity; i++)
             {
                 if (items[i].Id == id)
-                    return items[i];
+             return items[i];
             }
             return null;
         }

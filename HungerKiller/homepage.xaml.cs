@@ -122,17 +122,7 @@ namespace HungerKiller
         {
             this.Frame.Navigate(typeof(comment));
         }
-        /// <summary>
-        /// gridview item点击事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MyGridview_dish_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var comment_dish = (NewsItem)e.ClickedItem;
-            this.Frame.Navigate(typeof(comment));
 
-        }
 
         private void CenterFlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -163,11 +153,9 @@ namespace HungerKiller
             Debug.Write(this.LeftFlipView.SelectedIndex);
         }
 
-        private void MyImage_Tapped(object sender, TappedRoutedEventArgs e)
+        private void MyGridview_ItemClick(object sender, ItemClickEventArgs e)
         {
-
-            Frame root = Window.Current.Content as Frame;
-            root.Navigate(typeof(comment), NewsItem.Id);
+            Frame.Navigate(typeof(comment), ((NewsItem)e.ClickedItem).Id);
         }
     }
 

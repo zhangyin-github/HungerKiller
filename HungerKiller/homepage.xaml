@@ -101,32 +101,6 @@
             </Grid.ColumnDefinitions>
            
             <!--菜品展示信息的自定义数据模板，事件click，点击图片进入菜品详细界面-->
-        <Grid.Resources>
-            <DataTemplate x:Key="dish_Item"
-                          x:DataType="data:NewsItem">
-                <Grid Background="LightGray" Margin="10" Height="275" Width="200">
-                    <Grid.RowDefinitions >
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Image Name="MyImage" Source="{x:Bind Image}" Tapped="MyImage_Tapped" />
-                    <RelativePanel Grid.Row="1" Margin="10">
-                        <TextBlock Text="{x:Bind Headline}" 
-                       Name="HeadlineTextBox"
-                       RelativePanel.AlignTopWithPanel="True" 
-                       FontSize="18" 
-                       TextWrapping="Wrap" 
-                       FontFamily="楷体"/>
-                        <TextBlock Text="{x:Bind Subhead}" 
-                       RelativePanel.Below="HeadlineTextBox" 
-                       TextWrapping="Wrap"/>
-                        <TextBlock Text="{x:Bind Dateline}" 
-                       RelativePanel.AlignBottomWithPanel="True" 
-                       FontSize="18"/>
-                    </RelativePanel>
-                </Grid>
-            </DataTemplate>
-        </Grid.Resources>
             <RelativePanel Grid.Row="0" Grid.ColumnSpan="3">
                 <TextBlock 
                 Foreground="#FF145714" 
@@ -253,6 +227,7 @@
                    RelativePanel.RightOf="paihang" RelativePanel.Below="paihang1" Height="Auto"/>
                 </RelativePanel>
             </Button>
+            
             <GridView     Grid.Row="3"
                           Grid.ColumnSpan="3"
                           Name="MyGridview"
@@ -260,7 +235,36 @@
                           ItemsSource="{x:Bind NewsItems}"
                           IsItemClickEnabled="True" 
                           Margin="40,20,0,0"
-                          ItemTemplate="{StaticResource dish_Item}">
+                          ItemClick="MyGridview_ItemClick">
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="data:NewsItem">
+                        <Grid Background="LightGray" Margin="10" Height="275" Width="200">
+                            <Grid.RowDefinitions >
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Image Name="MyImage" Source="{x:Bind Image}"/>
+                            <RelativePanel Grid.Row="1" Margin="10">
+                                <TextBlock Text="{x:Bind Headline}" 
+                                           Name="HeadlineTextBox"
+                                           RelativePanel.AlignTopWithPanel="True" 
+                                           FontSize="18" 
+                                           TextWrapping="Wrap" 
+                                           FontFamily="楷体"/>
+                                <TextBlock Text="{x:Bind Subhead}" 
+                                           RelativePanel.Below="HeadlineTextBox" 
+                                           TextWrapping="Wrap"
+                                           FontSize="18"
+                                           FontFamily="楷体"/>
+                                <TextBlock Text="{x:Bind Dateline}" 
+                                           RelativePanel.AlignBottomWithPanel="True" 
+                                           FontSize="18"
+                                           FontFamily="楷体"
+                                           TextWrapping="Wrap"/>
+                            </RelativePanel>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
             </GridView>
         </Grid>
     </ScrollViewer>
