@@ -136,6 +136,9 @@
     <Compile Include="Sign_In.xaml.cs">
       <DependentUpon>Sign_In.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StarGrade.xaml.cs">
+      <DependentUpon>StarGrade.xaml</DependentUpon>
+    </Compile>
     <Compile Include="warning.xaml.cs">
       <DependentUpon>warning.xaml</DependentUpon>
     </Compile>
@@ -159,8 +162,12 @@
     <Content Include="Assets\avr.png" />
     <Content Include="Assets\bg.jpg" />
     <Content Include="Assets\star.png" />
-    <Content Include="Assets\star_1.png" />
     <Content Include="Assets\block.png" />
+    <Content Include="Assets\star_10.png" />
+    <Content Include="Assets\star_6.png" />
+    <Content Include="Assets\star_7.png" />
+    <Content Include="Assets\star_8.png" />
+    <Content Include="Assets\star_9.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -220,6 +227,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Sign_In.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StarGrade.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
