@@ -95,7 +95,10 @@
                     </Button.Background>
                 </Button>
             </StackPanel>
-        </Grid>
+                <StackPanel Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,14.8,113.2,0">
+
+                </StackPanel>
+            </Grid>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="385*"/>
@@ -116,7 +119,16 @@
             <StackPanel Grid.Column="1" Grid.Row="2" Margin="0,8.4,0.4,0">
                 <TextBlock FontSize="27"
                     Margin="15" Grid.Row="1" >是否想接受校园活动推送</TextBlock>
-            </StackPanel>
+                    <Button Name="cancel"
+            HorizontalAlignment="Left"
+            Content="不注册了，先去主页逛逛"
+            FontSize="18" 
+            VerticalAlignment="Top" 
+            Width="228"
+            Height="50" RenderTransformOrigin="-0.135,0.445" Grid.Row="1" Foreground="Gray"
+                            Background="Transparent" Click="cancel_Click">
+                    </Button>
+                </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="350,8.4,0.2,0">
                 <RadioButton x:Name="YesRadioButton" 
                          Content="Yes" 

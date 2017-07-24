@@ -13,7 +13,7 @@
     PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
     SecondaryButtonClick="ContentDialog_SecondaryButtonClick" Height="640">
 
-    <Grid Margin="0,0,0.4,-34">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="71*"/>
@@ -32,13 +32,13 @@
             <TextBlock FontSize="25" Margin="8" >密码</TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="114,0,0.4,55.8" Grid.RowSpan="2" >
-            <TextBox x:Name="username" FontSize="17" Margin="5,5,0.4,5" RenderTransformOrigin="0.5,0.506" TextChanged="username_TextChanged"/>
-            <PasswordBox x:Name="passwordBox" PasswordChar="*" MaxLength="15" FontSize="17" Margin="5,5,0.4,5" PasswordChanged="passwordBox_PasswordChanged"/>
+            <TextBox x:Name="username" FontSize="17" Margin="5,5,0.4,5" RenderTransformOrigin="0.5,0.506"/>
+            <PasswordBox x:Name="passwordBox" PasswordChar="*" MaxLength="15" FontSize="17" Margin="5,5,0.4,5"/>
         </StackPanel>
         <TextBlock Margin="11.6,42.6,56.4,0" x:Name="statusText" Foreground="Red" Grid.Column="2" Height="14" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="10" Width="88"/>
         <StackPanel Grid.Column="1" Grid.Row="2" Margin="0,1.6,0.4,13.4" Grid.RowSpan="3">
             <CheckBox Content="记住密码" Margin="0,20" ></CheckBox>
-            <TextBlock x:Name="statusText7"  Foreground="Red" HorizontalAlignment="Center"/>
+            <!--<Button FontSize="10" Click="Button_Click" Background="Transparent">不登录了先看看</Button>-->
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="114,1.6,0.4,13.4" Grid.RowSpan="3">
             <CheckBox Content="自动登录" Margin="0,20" ></CheckBox>
