@@ -40,7 +40,6 @@
                            Text="菜品名称:" 
                            FontSize="20"/>
                         <TextBlock x:Name="Dish_Name_1" 
-                           Text="香辣肉蟹煲" 
                            FontSize="20"
                            Margin="10,0,0,0"/>
                     </StackPanel>
@@ -58,17 +57,17 @@
                     <!--分类-->
                     <StackPanel  Orientation="Horizontal" Margin="0,40,0,10">
                         <TextBlock FontSize="20" >分类：</TextBlock>
-                        <TextBlock Name="Dishes_Classify"  FontSize="20">东北菜</TextBlock>
+                        <TextBlock Name="Dishes_Classify"  FontSize="20"/>
                     </StackPanel>
                     <!--口味-->
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                         <TextBlock FontSize="20" >口味：</TextBlock>
-                        <TextBlock Name="Dishes_Taste" FontSize="20">酸甜</TextBlock>
+                        <TextBlock Name="Dishes_Taste" FontSize="20"/>
                     </StackPanel>
                     <!--主要食材-->
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                         <TextBlock FontSize="20">主要食材：</TextBlock>
-                        <TextBlock Name="Dishes_Material" FontSize="20">猪里脊肉，鸡蛋</TextBlock>
+                        <TextBlock Name="Dishes_Material" FontSize="20"/>
                     </StackPanel>
 
                 </StackPanel>

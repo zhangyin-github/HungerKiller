@@ -30,12 +30,14 @@ namespace HungerKiller
         private List<string> Suggestions;
         private object frame;
         public static bool IsSelected { get; internal set; }
+        public NewsItem NewsItem { get { return this.DataContext as NewsItem; } }
 
         public homepage()
         {
             this.InitializeComponent();
             NewsItems = new ObservableCollection<NewsItem>();
             NewsManager.GetAllItems(NewsItems);
+            this.DataContextChanged += (s, e) => Bindings.Update();
 
             this.LeftFlipView.ItemsSource = this.CenterFlipView.ItemsSource = this.RightFlipView.ItemsSource = new ObservableCollection<BitmapImage>()
             {
@@ -159,6 +161,13 @@ namespace HungerKiller
                 return;
             }
             Debug.Write(this.LeftFlipView.SelectedIndex);
+        }
+
+        private void MyImage_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+            Frame root = Window.Current.Content as Frame;
+            root.Navigate(typeof(comment), NewsItem.Id);
         }
     }
 

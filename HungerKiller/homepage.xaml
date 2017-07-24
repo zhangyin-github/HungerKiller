@@ -109,7 +109,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Image Name="MyImage" Source="{x:Bind Image}"  />
+                    <Image Name="MyImage" Source="{x:Bind Image}" Tapped="MyImage_Tapped" />
                     <RelativePanel Grid.Row="1" Margin="10">
                         <TextBlock Text="{x:Bind Headline}" 
                        Name="HeadlineTextBox"
@@ -260,7 +260,6 @@
                           ItemsSource="{x:Bind NewsItems}"
                           IsItemClickEnabled="True" 
                           Margin="40,20,0,0"
-                          ItemClick="MyGridview_dish_ItemClick"
                           ItemTemplate="{StaticResource dish_Item}">
             </GridView>
         </Grid>
