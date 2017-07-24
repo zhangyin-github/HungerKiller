@@ -88,6 +88,11 @@ namespace HungerKiller.Model
         static tiao jmp = new tiao();
         public static bool jm = false;
     }
+    public class tiao1
+    {
+        static tiao1 jmp1 = new tiao1();
+        public static bool jm1 = false;
+    }
 
     public class RegexUtilities
     {

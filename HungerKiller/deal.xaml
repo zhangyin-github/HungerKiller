@@ -23,8 +23,8 @@
             <Setter Property="FontSize" Value="32"/>
         </Style>
         <Style x:Key="DishImageStyle" TargetType="Image">
-            <Setter Property="Width" Value="120"/>
-            <Setter Property="Height" Value="80"/>
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="60"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Stretch" Value="Uniform"/>
         </Style>
@@ -136,15 +136,14 @@
                         <SolidColorBrush/>
                     </StackPanel.Background> 
                         <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishOneImage"/>
-                    <TextBlock FontSize="16" VerticalAlignment="Center" Width="50" Text="菜品1" Name="DishOneText"/>
+                    <TextBlock FontSize="24" VerticalAlignment="Center" Width="150"  Name="DishOneText"/>
                 </StackPanel>
                 <StackPanel Name="DishEight" BorderThickness="0" Padding="0" Grid.Column="0" Grid.Row="1" Orientation="Vertical">
                     <StackPanel.Background>
                         <SolidColorBrush/>
                     </StackPanel.Background>
                     <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishEightImage"/>
-                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center" Name="DishEightText">
-                    <Run Text="菜品8"/>
+                    <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishEightText">
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Name="DishSeven" BorderThickness="0" Padding="0" Grid.Column="0" Grid.Row="2" Orientation="Vertical">
@@ -152,8 +151,7 @@
                         <SolidColorBrush/>
                     </StackPanel.Background>
                 <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishSevenImage"/>
-                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center" Name="DishSevenText">
-                    <Run Text="菜品7"/>
+                    <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishSevenText">
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Name="DishTwo" BorderThickness="0" Padding="0" Grid.Column="1" Grid.Row="0" Orientation="Vertical">
@@ -161,8 +159,7 @@
                         <SolidColorBrush/>
                     </StackPanel.Background>
                     <Image  Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishTwoImage"/>
-                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center" Name="DishTwoText">
-                    <Run Text="菜品2"/>
+                    <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishTwoText">
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Name="DishSix" BorderThickness="0" Padding="0" Grid.Column="1" Grid.Row="2" Orientation="Vertical">
@@ -170,8 +167,7 @@
                         <SolidColorBrush/>
                         </StackPanel.Background> 
                         <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishSixImage"/>
-                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center" Name="DishSixText">
-                    <Run Text="菜品6"/>
+                    <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishSixText">
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Name="DishTree" BorderThickness="0" Padding="0" Grid.Column="2" Grid.Row="0" Orientation="Vertical">
@@ -179,8 +175,7 @@
                         <SolidColorBrush/>
                     </StackPanel.Background>
                     <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishThreeImage"/>
-                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center" Name="DishThreeText">
-                    <Run Text="菜品3"/>
+                    <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishThreeText">
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Name="DishFour" BorderThickness="0" Padding="0" Grid.Column="2" Grid.Row="1" Orientation="Vertical">
@@ -188,8 +183,7 @@
                         <SolidColorBrush/>
                     </StackPanel.Background>
                     <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishFourIamge"/>
-                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center" Name="DishFourText">
-                    <Run Text="菜品4"/>
+                    <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishFourText">
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Name="DishFive"  Grid.Column="2" Grid.Row="2" Orientation="Vertical">
@@ -197,8 +191,7 @@
                         <SolidColorBrush/>
                     </StackPanel.Background>
                     <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishFiveImage"/>
-                    <TextBlock FontSize="16" Width="50" VerticalAlignment="Center" Name="DishFiveText">
-                    <Run Text="菜品5"/>
+                    <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishFiveText">
                     </TextBlock>
                 </StackPanel>
                 <StackPanel  Grid.Row="1" Grid.Column="1" Orientation="Vertical" >
