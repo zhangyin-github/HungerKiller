@@ -27,7 +27,7 @@
                      Margin="20"
                      RelativePanel.AlignLeftWithPanel="True">
                     <Ellipse.Fill>
-                        <ImageBrush ImageSource="Assets/2.jpg"/>
+                        <ImageBrush x:Name="dish_Picture"/>
                     </Ellipse.Fill>
                 </Ellipse>
                 <StackPanel x:Name="Dish_Information_11" 
@@ -102,25 +102,29 @@
                 <GridView.ItemTemplate>
                     <DataTemplate x:DataType="data:Comment">
                         <RelativePanel>
-                            <Ellipse x:Name="User_pictrure" >
+                            <Ellipse x:Name="User_pictrure" 
+                                     RelativePanel.AlignLeftWithPanel="True"
+                                     Width="35"
+                                     Height="35">
                                 <Ellipse.Fill>
                                     <ImageBrush ImageSource="{x:Bind Profile_Picture}"/>
                                 </Ellipse.Fill>
                             </Ellipse>
 
                             <TextBlock x:Name="User_ID" 
-                                       Text="{x:Bind User_Id}" 
-                                       RelativePanel.AlignTopWithPanel="True"/>
+                                       Text="{x:Bind User_Id}"
+                                       RelativePanel.RightOf="User_pictrure"
+                                       />
 
-                            <TextBlock  RelativePanel.RightOf="User_ID" 
+                            <TextBlock  x:Name="Comment_block"
+                                        RelativePanel.RightOf="User_pictrure"
+                                        RelativePanel.Below="User_ID"
                                         TextWrapping="WrapWholeWords" 
                                         Width="600"
                                         Text="{x:Bind User_comments}"/>
-
-
-                            <TextBlock Text="time" 
-                                       RelativePanel.AlignHorizontalCenterWith="User_ID"
-                                       />
+                            <TextBlock x:Name="time_block"
+                                       RelativePanel.AlignRightWithPanel="True"
+                                       Text="{x:Bind Data_Time}"  />
                         </RelativePanel>
                     </DataTemplate>
                 </GridView.ItemTemplate>

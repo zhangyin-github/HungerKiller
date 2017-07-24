@@ -28,7 +28,9 @@ namespace HungerKiller
         {
             this.InitializeComponent();
             Comment = Comment_Manager.Get_Comment();
+            
         }
     }
+    
 
 }
