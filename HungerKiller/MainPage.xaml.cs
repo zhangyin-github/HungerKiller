@@ -142,6 +142,12 @@ namespace HungerKiller
                 Frame.Navigate(typeof(SignUp));
                 tiao.jm = false;
             }
+            if (tiao1.jm1 == true)
+            {
+                ContentDialog1 m = new ContentDialog1();
+                m.ShowAsync();
+                tiao1.jm1 = false;
+            }
             /*
              else
              {
