@@ -9,15 +9,26 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
+            <RowDefinition MinHeight="100"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
-        <Border BorderBrush="Black" BorderThickness="8">
-            <TextBlock MinHeight=" 300" MinWidth="400" Grid.Row="0" ></TextBlock>
-        </Border>
-        <Button Content="发布" FontSize="40" Background="Gray" 
-                Grid.Row="1"
+        <Image Name="ChoosenPhotoImage" MaxHeight="80" MinWidth="60" VerticalAlignment="Center" ></Image>
+        <Button Name="AddPhoto"
+                Height="50" Width="50"
+                Content="插入图片"
+                Background="Lavender" 
+                Click="AddPhoto_Click" 
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Right" ></Button>
+
+        <TextBox MinHeight=" 300" MinWidth="400" Grid.Row="2" ></TextBox>
+        
+        <Button Content="发布" FontSize="40" 
+                Grid.Row="3"
                 HorizontalAlignment="Right" 
-                VerticalAlignment="Center" ></Button>
+                VerticalAlignment="Center"
+                Background="Lavender" ></Button>
     </Grid>
 </Page>
