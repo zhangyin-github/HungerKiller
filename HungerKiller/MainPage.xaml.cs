@@ -48,7 +48,7 @@ namespace HungerKiller
             }
             if(Setting_1.Visibility==Visibility.Visible)
             {                
-                if(UserName.Width<=67)
+                if(UserName_1.Width<=67)
                 {
                     IfUserNameSoLong.Visibility = Visibility.Collapsed;
                 }
@@ -157,6 +157,12 @@ namespace HungerKiller
             }
              */
         }
+        private void UserName_1_Click(object sender, RoutedEventArgs e)
+        {
+            ManegerListBox.SelectedIndex = BaseListBox.SelectedIndex = -1;
+            SelfInfoSplitView.IsPaneOpen = !SelfInfoSplitView.IsPaneOpen;
+            MySettingSplitView.IsPaneOpen = false;
+        }
 
         //以下是右侧侧滑框内函数
 
@@ -199,5 +205,7 @@ namespace HungerKiller
                 Frame.Navigate(typeof(SignUp));
             }
         }
+
+
     }
 }
