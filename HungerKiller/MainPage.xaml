@@ -74,9 +74,9 @@
                                 
                                 <!--登录显示用户名，未登录显示请登录-->                     
                                 <!--用户名-->
-                                <Button Name="UserName" Padding="2,0,0,0" FontSize="10" FontWeight="Light" MaxWidth="67"
+                                <Button Name="UserName_1" Padding="2,0,0,0" FontSize="10" FontWeight="Light" MaxWidth="67"
                                         Foreground="Black" Background="{x:Null}" VerticalAlignment="Center" 
-                                        Visibility="Visible" Click="UserName_Click" >饥饿哈hh哈哈猎人哈哈哈</Button>
+                                        Visibility="Visible" Click="UserName_1_Click" >饥饿哈hh哈哈猎人哈哈哈</Button>
                                 
                             </StackPanel>
                             <TextBlock Name="IfUserNameSoLong"  FontSize="10" FontWeight="Light" Foreground="Black"
