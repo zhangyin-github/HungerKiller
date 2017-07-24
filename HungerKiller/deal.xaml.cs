@@ -410,7 +410,14 @@ namespace HungerKiller
 
         private void UpdateTurntable_Click(object sender, RoutedEventArgs e)
         {
-
+            DishOneText.Text = hahaha.getinstance().getDish()[8].Key;
+            DishTwoText.Text = hahaha.getinstance().getDish()[9].Key;
+            DishThreeText.Text = hahaha.getinstance().getDish()[10].Key;
+            DishFourText.Text = hahaha.getinstance().getDish()[11].Key;
+            DishFiveText.Text = hahaha.getinstance().getDish()[12].Key;
+            DishSixText.Text = hahaha.getinstance().getDish()[13].Key;
+            DishSevenText.Text = hahaha.getinstance().getDish()[14].Key;
+            DishEightText.Text = hahaha.getinstance().getDish()[15].Key;
         }
 
         private void ChooseButton_Click(object sender, RoutedEventArgs e)
