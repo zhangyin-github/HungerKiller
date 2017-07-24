@@ -48,7 +48,7 @@ namespace HungerKiller.Model
         {
             var items = new List<NewsItem>();
             items.Add(new NewsItem() { Id = 1, Category = "主页", Headline = ".", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/1.jpg", Text = "........" });
-            items.Add(new NewsItem() { Id = 2, Category = "主页", Headline = "..", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/2.jpg", Text = "........" });
+            items.Add(new NewsItem() { Id = 2, Category = "主页", Headline = "香辣肉蟹煲", Subhead = "酸甜", Dateline = "猪里脊肉，鸡蛋", Image = "ms-appx:///Assets/2.jpg", Text = "东北菜" });
             items.Add(new NewsItem() { Id = 3, Category = "主页", Headline = "...", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/3.jpg", Text = "........" });
             items.Add(new NewsItem() { Id = 4, Category = "主页", Headline = "....", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/4.jpg", Text = "........" });
             return items;

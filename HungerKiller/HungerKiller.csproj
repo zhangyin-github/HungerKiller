@@ -130,6 +130,9 @@
     <Compile Include="publish.xaml.cs">
       <DependentUpon>publish.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ranking.xaml.cs">
+      <DependentUpon>Ranking.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
@@ -212,6 +215,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="publish.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ranking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
