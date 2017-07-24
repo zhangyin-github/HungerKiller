@@ -98,6 +98,9 @@
     <Compile Include="comment.xaml.cs">
       <DependentUpon>comment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ContentDialog1.xaml.cs">
+      <DependentUpon>ContentDialog1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="deal.xaml.cs">
       <DependentUpon>deal.xaml</DependentUpon>
     </Compile>
@@ -122,9 +125,6 @@
     <Compile Include="Model\Fabu.cs" />
     <Compile Include="Model\hahaha.cs" />
     <Compile Include="Model\NewsItem.cs" />
-    <Compile Include="NewsItemsControl.xaml.cs">
-      <DependentUpon>NewsItemsControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="pinglunguanli.xaml.cs">
       <DependentUpon>pinglunguanli.xaml</DependentUpon>
     </Compile>
@@ -132,14 +132,17 @@
     <Compile Include="publish.xaml.cs">
       <DependentUpon>publish.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ranking.xaml.cs">
+      <DependentUpon>Ranking.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="signup_over.xaml.cs">
+      <DependentUpon>signup_over.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sign_In.xaml.cs">
       <DependentUpon>Sign_In.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="warning.xaml.cs">
-      <DependentUpon>warning.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +184,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ContentDialog1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="deal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -205,10 +212,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NewsItemsControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="pinglunguanli.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -217,15 +220,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Ranking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SignUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sign_In.xaml">
+    <Page Include="signup_over.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="warning.xaml">
+    <Page Include="Sign_In.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

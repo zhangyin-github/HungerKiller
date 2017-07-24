@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using HungerKiller.Model;
+using Windows.UI.Xaml.Media.Imaging;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -27,8 +28,20 @@ namespace HungerKiller
         public comment()
         {
             this.InitializeComponent();
-            Comment = Comment_Manager.Get_Comment();
+            Comment = Comment_Manager.Get_Comment();            
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            var news = NewsManager.GetNews((int)e.Parameter);
+            Dish_Name_1.Text = news.Headline;
+            dish_Picture.ImageSource = new BitmapImage(new Uri(news.Image, UriKind.Absolute));
+            Dishes_Classify.Text = news.Text;
+            Dishes_Taste.Text = news.Subhead;
+            Dishes_Material.Text = news.Dateline;
         }
     }
+
+    
 
 }

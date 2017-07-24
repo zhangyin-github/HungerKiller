@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Net.Sockets;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using Windows.UI.Xaml.Controls;
 
 namespace HungerKiller.Model
 {
@@ -23,36 +24,42 @@ namespace HungerKiller.Model
     }
     public class NewsManager
     {
-        public static void GetNews(string category, ObservableCollection<NewsItem> newsItems)
+        public static void GetAllItems(ObservableCollection<NewsItem> newsItems)
         {
             var allItems = getNewsItems();
-
-            var filteredNewsItems = allItems.Where(p => p.Category == category).ToList();
-
             newsItems.Clear();
-
+            allItems.ForEach(p => newsItems.Add(p));
+        }
+        public static void GetAllItemsByCategory(string category, ObservableCollection<NewsItem> newsItems)
+        {
+            var allItems = getNewsItems();
+            var filteredNewsItems = allItems.Where(p => p.Category == category).ToList();
+            newsItems.Clear();
+            filteredNewsItems.ForEach(p => newsItems.Add(p));
+        }
+        public static void GetNewsItemsByHeadline(ObservableCollection<NewsItem> newsItems, string Headline)
+        {
+            var allItems = getNewsItems();
+            var filteredNewsItems = allItems.Where(p => p.Headline == Headline).ToList();
+            newsItems.Clear();
             filteredNewsItems.ForEach(p => newsItems.Add(p));
         }
         private static List<NewsItem> getNewsItems()
         {
-
             var items = new List<NewsItem>();
-
-            items.Add(new NewsItem() { Id = 1, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/1.jpg", Text = "........" });
-            items.Add(new NewsItem() { Id = 2, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/2.jpg", Text = "........" });
-            items.Add(new NewsItem() { Id = 3, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/3.jpg", Text = "........" });
-            items.Add(new NewsItem() { Id = 4, Category = "主页", Headline = ".....", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/4.jpg", Text = "........" });
+            items.Add(new NewsItem() { Id = 1, Category = "主页", Headline = ".", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/1.jpg", Text = "........" });
+            items.Add(new NewsItem() { Id = 2, Category = "主页", Headline = "香辣肉蟹煲", Subhead = "酸甜", Dateline = "猪里脊肉，鸡蛋", Image = "ms-appx:///Assets/2.jpg", Text = "东北菜" });
+            items.Add(new NewsItem() { Id = 3, Category = "主页", Headline = "...", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/3.jpg", Text = "........" });
+            items.Add(new NewsItem() { Id = 4, Category = "主页", Headline = "....", Subhead = ".....", Dateline = ".....", Image = "ms-appx:///Assets/4.jpg", Text = "........" });
             return items;
         }
         public static NewsItem GetNews(int id)
         {
-            
-            var items= getNewsItems();
-            
-            for(int i=0;i<items.Capacity;i++)
+            var items = getNewsItems();
+            for (int i = 0; i < items.Capacity; i++)
             {
-                if (items[i].Id==id)
-                return items[i];
+                if (items[i].Id == id)
+                    return items[i];
             }
             return null;
         }
@@ -76,6 +83,16 @@ namespace HungerKiller.Model
 
      }*/
 
+    public class tiao
+    {
+        static tiao jmp = new tiao();
+        public static bool jm = false;
+    }
+    public class tiao1
+    {
+        static tiao1 jmp1 = new tiao1();
+        public static bool jm1 = false;
+    }
 
     public class RegexUtilities
     {

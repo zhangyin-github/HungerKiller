@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -26,21 +27,23 @@ namespace HungerKiller
     public sealed partial class homepage : Page
     {
         public ObservableCollection<NewsItem> NewsItems;
+        private List<string> Suggestions;
         private object frame;
-
         public static bool IsSelected { get; internal set; }
+        public NewsItem NewsItem { get { return this.DataContext as NewsItem; } }
 
         public homepage()
         {
             this.InitializeComponent();
             NewsItems = new ObservableCollection<NewsItem>();
-            NewsManager.GetNews("主页", NewsItems);
+            NewsManager.GetAllItems(NewsItems);
+            this.DataContextChanged += (s, e) => Bindings.Update();
 
             this.LeftFlipView.ItemsSource = this.CenterFlipView.ItemsSource = this.RightFlipView.ItemsSource = new ObservableCollection<BitmapImage>()
             {
-                new BitmapImage(new System.Uri("ms-appx:///Assets/1.jpg",System.UriKind.RelativeOrAbsolute)),
-                new BitmapImage(new System.Uri("ms-appx:///Assets/2.jpg",System.UriKind.RelativeOrAbsolute)),
-                new BitmapImage(new System.Uri("ms-appx:///Assets/3.jpg",System.UriKind.RelativeOrAbsolute))
+                new BitmapImage(new Uri("ms-appx:///Assets/1.jpg",UriKind.RelativeOrAbsolute)),
+                new BitmapImage(new Uri("ms-appx:///Assets/2.jpg",UriKind.RelativeOrAbsolute)),
+                new BitmapImage(new Uri("ms-appx:///Assets/3.jpg",UriKind.RelativeOrAbsolute))
             };
             this.CenterFlipView.SelectedIndex = 0;
             this.LeftFlipView.SelectedIndex = this.LeftFlipView.Items.Count - 1;
@@ -84,5 +87,88 @@ namespace HungerKiller
         {
             this.Frame.Navigate(typeof(deal));
         }
+
+        private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            NewsManager.GetAllItems(NewsItems);
+            Suggestions = NewsItems.Where(p => p.Headline.StartsWith(sender.Text)).Select(p => p.Headline).ToList();
+            AutoSuggestBox.ItemsSource = Suggestions;
+        }
+
+        private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            NewsManager.GetNewsItemsByHeadline(NewsItems, sender.Text);
+        }
+
+        private void AutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+            NewsItem suggest = args.SelectedItem as NewsItem;
+            if (suggest == null)
+                return;
+            sender.Text = suggest.Headline;
+        }
+
+        private void LeftFlipView_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(comment));
+        }
+
+        private void CenterFlipView_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(comment));
+        }
+
+        private void RightFlipView_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(comment));
+        }
+        /// <summary>
+        /// gridview item点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MyGridview_dish_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var comment_dish = (NewsItem)e.ClickedItem;
+            this.Frame.Navigate(typeof(comment));
+
+        }
+
+        private void CenterFlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.CenterFlipView.SelectedIndex==0)
+            {
+                this.LeftFlipView.SelectedIndex = this.LeftFlipView.Items.Count - 1;
+                this.RightFlipView.SelectedIndex = 1;
+            }
+            else if (this.CenterFlipView.SelectedIndex == 1)
+            {
+                this.LeftFlipView.SelectedIndex = 0;
+                this.RightFlipView.SelectedIndex = this.RightFlipView.Items.Count - 1;
+            }
+            else if(this.CenterFlipView.SelectedIndex==this.CenterFlipView.Items.Count-1)
+            {
+                this.LeftFlipView.SelectedIndex = this.LeftFlipView.Items.Count - 2;
+                this.RightFlipView.SelectedIndex = 0;
+            }
+            else if((this.CenterFlipView.SelectedIndex<(this.CenterFlipView.Items.Count-1))&&this.CenterFlipView.SelectedIndex>-1)
+            {
+                this.LeftFlipView.SelectedIndex = this.CenterFlipView.SelectedIndex - 1;
+                this.RightFlipView.SelectedIndex = this.CenterFlipView.SelectedIndex + 1;
+            }
+            else
+            {
+                return;
+            }
+            Debug.Write(this.LeftFlipView.SelectedIndex);
+        }
+
+        private void MyImage_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+            Frame root = Window.Current.Content as Frame;
+            root.Navigate(typeof(comment), NewsItem.Id);
+        }
     }
+
 }

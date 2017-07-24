@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HungerKiller.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace HungerKiller
             MyFrame.Navigate(typeof(homepage));
             Homepage.IsSelected = true;
             IfSplitViewOpen();
+            
         }
 
         public void IfSplitViewOpen()
@@ -129,12 +131,23 @@ namespace HungerKiller
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void UserName_Click(object sender, RoutedEventArgs e)
+        private async void UserName_Click(object sender, RoutedEventArgs e)
         {
             ManegerListBox.SelectedIndex = BaseListBox.SelectedIndex = -1;
             //if(未登录)
             Sign_In jump = new Sign_In();
-            jump.ShowAsync();
+            await jump.ShowAsync();
+           if(tiao.jm==true)
+            {
+                Frame.Navigate(typeof(SignUp));
+                tiao.jm = false;
+            }
+            if (tiao1.jm1 == true)
+            {
+                ContentDialog1 m = new ContentDialog1();
+                m.ShowAsync();
+                tiao1.jm1 = false;
+            }
             /*
              else
              {
@@ -177,6 +190,14 @@ namespace HungerKiller
         private void ClearCacheSetting_Click(object sender, RoutedEventArgs e)
         {
            
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (tiao.jm == true)
+            {
+                Frame.Navigate(typeof(SignUp));
+            }
         }
     }
 }

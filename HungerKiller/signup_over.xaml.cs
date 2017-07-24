@@ -17,9 +17,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace HungerKiller
 {
-    public sealed partial class warning : ContentDialog
+    public sealed partial class signup_over : ContentDialog
     {
-        public warning()
+        public signup_over()
         {
             this.InitializeComponent();
         }

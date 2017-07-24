@@ -82,7 +82,7 @@ namespace HungerKiller
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             if (MyCheckBox1.IsChecked == false&& MyCheckBox2.IsChecked == false && MyCheckBox3.IsChecked == false && MyCheckBox4.IsChecked == false && MyCheckBox5.IsChecked == false && MyCheckBox6.IsChecked == false)
             {
@@ -100,6 +100,35 @@ namespace HungerKiller
             {
                 statusText6.Text = string.Empty;
             }
+            string strIn = mail.Text;
+            RegexUtilities a = new RegexUtilities();
+            bool b = a.IsValidEmail(strIn);
+            if (passwordBox1.Password == passwordBox.Password)
+            {
+                if (passwordBox.Password.Length >= 6)
+                {
+                    if (b)
+                    {
+                        if (username.Text.Length >= 4)
+                        {
+                            if (!(MyCheckBox1.IsChecked == false && MyCheckBox2.IsChecked == false && MyCheckBox3.IsChecked == false && MyCheckBox4.IsChecked == false && MyCheckBox5.IsChecked == false && MyCheckBox6.IsChecked == false))
+                            {
+                                if (YesRadioButton.IsChecked != NoRadioButton.IsChecked)
+                                {
+                                    signup_over jump1 = new signup_over();
+                                    await jump1.ShowAsync();
+                                    Frame.Navigate(typeof(MainPage));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void cancel_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
         }
     }
 }
