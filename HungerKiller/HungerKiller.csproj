@@ -144,9 +144,9 @@
     <Compile Include="Sign_In.xaml.cs">
       <DependentUpon>Sign_In.xaml</DependentUpon>
     </Compile>
-    <Compile Include="warning.xaml.cs">
+    <!--<Compile Include="warning.xaml.cs">
       <DependentUpon>warning.xaml</DependentUpon>
-    </Compile>
+    </Compile>-->
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -235,7 +235,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="warning.xaml">
+    <!--<Page Include="warning.xaml">-->
     <Page Include="Sign_In.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
