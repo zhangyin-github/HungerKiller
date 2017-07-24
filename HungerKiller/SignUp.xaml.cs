@@ -115,6 +115,23 @@ namespace HungerKiller
                             {
                                 if (YesRadioButton.IsChecked != NoRadioButton.IsChecked)
                                 {
+                                    string usernam = username.Text;
+                                    string passwor = passwordBox.Password;
+                                    string emai = mail.Text;
+                                    bool acid = MyCheckBox1.IsChecked.Value;
+                                    bool sweet = MyCheckBox2.IsChecked.Value;
+                                    bool hot = MyCheckBox3.IsChecked.Value;
+                                    bool salty = MyCheckBox4.IsChecked.Value;
+                                    bool meet = MyCheckBox5.IsChecked.Value;
+                                    bool light = MyCheckBox6.IsChecked.Value;
+                                    if(YesRadioButton.IsChecked == true)
+                                    {
+                                        bool send_or_not = true;
+                                    }
+                                    else
+                                    {
+                                        bool send_or_not = false;
+                                    }
                                     signup_over jump1 = new signup_over();
                                     await jump1.ShowAsync();
                                     Frame.Navigate(typeof(MainPage));
