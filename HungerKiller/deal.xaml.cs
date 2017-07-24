@@ -474,35 +474,35 @@ namespace HungerKiller
                           sewq = x;
                           if (y == 0)
                           {
-                              DishName.Text = "菜品1";
+                              DishName.Text =DishOneText.Text;
                           }
                           else if (y == 1)
                           {
-                              DishName.Text = "菜品2";
+                              DishName.Text = DishTwoText.Text;
                           }
                           else if (y == 2)
                           {
-                              DishName.Text = "菜品3";
+                              DishName.Text = DishThreeText.Text;
                           }
                           else if (y == 3)
                           {
-                              DishName.Text = "菜品4";
+                              DishName.Text = DishFourText.Text;
                           }
                           else if (y == 4)
                           {
-                              DishName.Text = "菜品5";
+                              DishName.Text = DishFiveText.Text;
                           }
                           else if (y == 5)
                           {
-                              DishName.Text = "菜品6";
+                              DishName.Text = DishSixText.Text;
                           }
                           else if (y == 6)
                           {
-                              DishName.Text = "菜品7";
+                              DishName.Text = DishSevenText.Text;
                           }
                           else if (y == 7)
                           {
-                              DishName.Text = "菜品8";
+                              DishName.Text = DishEightText.Text;
                           }
                       });
               }, sed);
@@ -554,12 +554,33 @@ namespace HungerKiller
         private void FinalOkButton_Click(object sender, RoutedEventArgs e)
         {
 
+
         }
-        private void OK_Click(object sender, RoutedEventArgs e)
+        
+         private void OK_Click(object sender, RoutedEventArgs e)
         {
             DealManager dealmanager = new DealManager();
             List<turn> turntab = new List<turn>();
             dealmanager.DealCountAndCountt(count, countt);
+
+            TimeSpan sed = TimeSpan.FromMilliseconds(1000);
+            ThreadPoolTimer dehaha = ThreadPoolTimer.CreateTimer((source) =>
+            {
+                Dispatcher.RunAsync(
+                   CoreDispatcherPriority.High,
+                   () =>
+                   {
+                       DishOneText.Text = hahaha.getinstance().getDish()[0].Key;
+                       DishTwoText.Text = hahaha.getinstance().getDish()[1].Key;
+                       DishThreeText.Text = hahaha.getinstance().getDish()[2].Key;
+                       DishFourText.Text = hahaha.getinstance().getDish()[3].Key;
+                       DishFiveText.Text = hahaha.getinstance().getDish()[4].Key;
+                       DishSixText.Text = hahaha.getinstance().getDish()[5].Key;
+                       DishSevenText.Text = hahaha.getinstance().getDish()[6].Key;
+                       DishEightText.Text = hahaha.getinstance().getDish()[7].Key;
+                   });
+            }, sed);
         }
     }
-}
+    }
+

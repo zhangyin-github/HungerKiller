@@ -118,7 +118,9 @@
     </Compile>
     <Compile Include="Model\comment1.cs" />
     <Compile Include="Model\DealManager.cs" />
+    <Compile Include="Model\DishNameAndImage.cs" />
     <Compile Include="Model\Fabu.cs" />
+    <Compile Include="Model\hahaha.cs" />
     <Compile Include="Model\NewsItem.cs" />
     <Compile Include="NewsItemsControl.xaml.cs">
       <DependentUpon>NewsItemsControl.xaml</DependentUpon>
@@ -228,7 +230,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
