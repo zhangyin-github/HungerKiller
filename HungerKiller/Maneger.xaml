@@ -216,7 +216,7 @@
                     </StackPanel>
                 </ComboBoxItem>
                 <ComboBoxItem Content="Profile"></ComboBoxItem>
-                <ComboBoxItem Content="Logout" Name="LogoutComboBoxItem" PointerEntered="LogoutComboBoxItem_PointerEntered" ></ComboBoxItem>
+                <ComboBoxItem Content="Logout" Name="LogoutComboBoxItem" Tapped="LogoutComboBoxItem_Tapped" ></ComboBoxItem>
             </ComboBox>
             <Button Name="HamburgerButton" 
                     BorderThickness="0"
@@ -230,7 +230,7 @@
                     Width="65"
                     Height="50"
                        
-                    Foreground="Black"  Style="{StaticResource HamburgerButton}" ></Button>
+                    Foreground="Black"></Button>
         </RelativePanel>
         <SplitView Grid.Row="1"
                    Name="MySplitView"

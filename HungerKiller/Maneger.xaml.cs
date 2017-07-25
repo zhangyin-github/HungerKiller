@@ -71,9 +71,11 @@ namespace HungerKiller
             searchAutoSuggestBox.ItemsSource = filtered;
         }
 
-        private void LogoutComboBoxItem_PointerEntered(object sender, PointerRoutedEventArgs e)
+        
+
+        private void LogoutComboBoxItem_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(homepage));
+            this.Frame.Navigate(typeof(MainPage));
         }
     }
 }
