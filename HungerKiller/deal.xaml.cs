@@ -432,19 +432,6 @@ namespace HungerKiller
 
         private void ChooseButton_Click(object sender, RoutedEventArgs e)
         {
-            /* if (a == 0)
-             {
-                 DishOne.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                 DishTwo.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                 DishTree.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                 DishFour.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                 DishFive.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                 DishSix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                 DishSeven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                 DishEight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.White);
-                 stdDish1.Begin();
-                 a = 1;
-             }*/
             if (a == 0)
             {
                 sewq = 0;
@@ -452,9 +439,9 @@ namespace HungerKiller
                 seed = rd.Next(2000, 3000)+sewq;
                 stdDish1.Begin();
                 TimeSpan delay = TimeSpan.FromMilliseconds(seed);
-                ThreadPoolTimer DelayTimer = ThreadPoolTimer.CreateTimer((source) =>
+                ThreadPoolTimer DelayTimer = ThreadPoolTimer.CreateTimer(async (source) =>
                       {
-                          Dispatcher.RunAsync(
+                          await Dispatcher.RunAsync(
                  CoreDispatcherPriority.High,
                  () =>
                  {
@@ -469,9 +456,9 @@ namespace HungerKiller
                 seed = rd.Next(2000, 3000);
                 stdDish1.Resume();
                 TimeSpan delay = TimeSpan.FromMilliseconds(seed);
-                ThreadPoolTimer DelayTimer = ThreadPoolTimer.CreateTimer((source) =>
+                ThreadPoolTimer DelayTimer = ThreadPoolTimer.CreateTimer(async (source) =>
                 {
-                    Dispatcher.RunAsync(
+                    await Dispatcher.RunAsync(
            CoreDispatcherPriority.High,
            () =>
            {
@@ -480,56 +467,56 @@ namespace HungerKiller
                 }, delay);
             }
             TimeSpan sed = TimeSpan.FromMilliseconds(seed);
-            ThreadPoolTimer dehaha = ThreadPoolTimer.CreateTimer((source) =>
+            ThreadPoolTimer dehaha = ThreadPoolTimer.CreateTimer(async (source) =>
               {
-                   Dispatcher.RunAsync(
-                      CoreDispatcherPriority.High,
-                      () =>
-                      {
-                          int x =(seed+sewq) %1600;
-                          int y = x / 200;
-                          sewq = x;
-                          if (y == 0)
-                          {
-                              DishName.Text =DishOneText.Text;
-                              FinalImage.Source = DishOneImage.Source;
-                          }
-                          else if (y == 1)
-                          {
-                              DishName.Text = DishTwoText.Text;
-                              FinalImage.Source = DishTwoImage.Source;
-                          }
-                          else if (y == 2)
-                          {
-                              DishName.Text = DishThreeText.Text;
-                              FinalImage.Source = DishThreeImage.Source;
-                          }
-                          else if (y == 3)
-                          {
-                              DishName.Text = DishFourText.Text;
-                              FinalImage.Source = DishFourIamge.Source;
-                          }
-                          else if (y == 4)
-                          {
-                              DishName.Text = DishFiveText.Text;
-                              FinalImage.Source = DishFiveImage.Source;
-                          }
-                          else if (y == 5)
-                          {
-                              DishName.Text = DishSixText.Text;
-                              FinalImage.Source = DishSixImage.Source;
-                          }
-                          else if (y == 6)
-                          {
-                              DishName.Text = DishSevenText.Text;
-                              FinalImage.Source = DishSevenImage.Source;
-                          }
-                          else if (y == 7)
-                          {
-                              DishName.Text = DishEightText.Text;
-                              FinalImage.Source = DishEightImage.Source;
-                          }
-                      });
+                  await Dispatcher.RunAsync(
+                     CoreDispatcherPriority.High,
+                     () =>
+                     {
+                         int x = (seed + sewq) % 1600;
+                         int y = x / 200;
+                         sewq = x;
+                         if (y == 0)
+                         {
+                             DishName.Text = DishOneText.Text;
+                             FinalImage.Source = DishOneImage.Source;
+                         }
+                         else if (y == 1)
+                         {
+                             DishName.Text = DishTwoText.Text;
+                             FinalImage.Source = DishTwoImage.Source;
+                         }
+                         else if (y == 2)
+                         {
+                             DishName.Text = DishThreeText.Text;
+                             FinalImage.Source = DishThreeImage.Source;
+                         }
+                         else if (y == 3)
+                         {
+                             DishName.Text = DishFourText.Text;
+                             FinalImage.Source = DishFourIamge.Source;
+                         }
+                         else if (y == 4)
+                         {
+                             DishName.Text = DishFiveText.Text;
+                             FinalImage.Source = DishFiveImage.Source;
+                         }
+                         else if (y == 5)
+                         {
+                             DishName.Text = DishSixText.Text;
+                             FinalImage.Source = DishSixImage.Source;
+                         }
+                         else if (y == 6)
+                         {
+                             DishName.Text = DishSevenText.Text;
+                             FinalImage.Source = DishSevenImage.Source;
+                         }
+                         else if (y == 7)
+                         {
+                             DishName.Text = DishEightText.Text;
+                             FinalImage.Source = DishEightImage.Source;
+                         }
+                     });
               }, sed);
             
             
@@ -595,6 +582,8 @@ namespace HungerKiller
                    CoreDispatcherPriority.High,
                    () =>
                    {
+                       ChooseButton.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                       UpdateTurntable.Visibility = Windows.UI.Xaml.Visibility.Visible;
                        DishOneText.Text = hahaha.getinstance().getDish()[0].Key;
                        var url="http://localhost:8080/HungerKillerBacked/HungerKiller/";
                        DishOneImage.Source = new BitmapImage(new Uri(url+hahaha.getinstance().getDish()[0].Value, UriKind.Absolute));
