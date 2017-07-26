@@ -73,7 +73,7 @@ namespace HungerKiller
                 passwordBox.Password = UserStored as string;
 
             }
-            object UserStored1 = localSettings.Values["UserStoredPassword"];
+            object UserStored1 = localSettings.Values["UserStoredUsername"];
             if (UserStored1 != null)
             {
                 //OneUser oneUser = UserStored as OneUser;
