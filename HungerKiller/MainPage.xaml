@@ -173,7 +173,7 @@
                     </Grid>
                     <StackPanel Grid.Row="2" Margin="20,10,20,15">
                         <Button Name="SignOutSetting" BorderBrush="LightGray" BorderThickness="1" Width="257" Background="White" Margin="0,10,0,0"
-                                HorizontalContentAlignment="Left" FontSize="12" Click="SignOutSetting_Click">消息与隐私设置</Button>
+                                HorizontalContentAlignment="Left" FontSize="12" Click="SignOutSetting_Click">注销</Button>
                     </StackPanel>
                 </Grid>
             </SplitView.Pane>

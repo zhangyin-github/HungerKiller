@@ -221,7 +221,12 @@ namespace HungerKiller
         /// <param name="e"></param>
         private void SignOutSetting_Click(object sender, RoutedEventArgs e)
         {
-
+            if (User.sign_or_not == true)
+            {
+                User.sign_or_not = false;
+                logout signout = new logout();
+                signout.ShowAsync();
+            }
         }
     }
 }

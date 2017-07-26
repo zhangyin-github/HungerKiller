@@ -113,6 +113,9 @@
     <Compile Include="introduce.xaml.cs">
       <DependentUpon>introduce.xaml</DependentUpon>
     </Compile>
+    <Compile Include="logout.xaml.cs">
+      <DependentUpon>logout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -210,6 +213,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="introduce.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="logout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
