@@ -26,8 +26,7 @@ namespace HungerKiller
         public Maneger()
         {
             this.InitializeComponent();
-            if (LogoutComboBoxItem.IsSelected)
-                this.Frame.Navigate(typeof(homepage));
+           
         }
 
         private void searchAutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
@@ -72,7 +71,11 @@ namespace HungerKiller
             searchAutoSuggestBox.ItemsSource = filtered;
         }
 
+        
 
-
+        private void LogoutComboBoxItem_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
     }
 }

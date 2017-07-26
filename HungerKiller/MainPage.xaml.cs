@@ -87,7 +87,7 @@ namespace HungerKiller
             if (Maneger.IsSelected)
             {
                 BaseListBox.SelectedIndex = SettingListBox_2.SelectedIndex = -1;
-                MyFrame.Navigate(typeof(Maneger));
+                this.Frame.Navigate(typeof(Maneger));
                 IfSplitViewOpen();
             }
         }
@@ -134,28 +134,29 @@ namespace HungerKiller
         private async void UserName_Click(object sender, RoutedEventArgs e)
         {
             ManegerListBox.SelectedIndex = BaseListBox.SelectedIndex = -1;
-            //if(未登录)
-            Sign_In jump = new Sign_In();
-            await jump.ShowAsync();
-           if(tiao.jm==true)
+            if (User.sign_or_not==false)
             {
-                Frame.Navigate(typeof(SignUp));
-                tiao.jm = false;
+                Sign_In jump = new Sign_In();
+                await jump.ShowAsync();
+                if (tiao.jm == true)
+                {
+                    Frame.Navigate(typeof(SignUp));
+                    tiao.jm = false;
+                }
+                if (tiao1.jm1 == true)
+                {
+                    ContentDialog1 m = new ContentDialog1();
+                    m.ShowAsync();
+                    tiao1.jm1 = false;
+                }
             }
-            if (tiao1.jm1 == true)
-            {
-                ContentDialog1 m = new ContentDialog1();
-                m.ShowAsync();
-                tiao1.jm1 = false;
-            }
-            /*
              else
              {
                 
                 MySettingSplitView.IsPaneOpen = false;
                 SelfInfoSplitView.IsPaneOpen = !SelfInfoSplitView.IsPaneOpen;
             }
-             */
+             
         }
         private void UserName_1_Click(object sender, RoutedEventArgs e)
         {
@@ -203,6 +204,13 @@ namespace HungerKiller
             if (tiao.jm == true)
             {
                 Frame.Navigate(typeof(SignUp));
+            }
+            Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            object UserStored2 = localSettings.Values["UserStoredautosignin"];
+            if(UserStored2 as string == "true")
+            {
+                User.sign_or_not = true;
             }
         }
 

@@ -78,6 +78,7 @@ namespace HungerKiller.Model
                 List<KeyValuePair<string, string>> DishImageAndName = new List<KeyValuePair<string, string>>();
                 int c = SArray.Count();
                 int d = 3;
+                hahaha.getinstance().getDish().Clear();
                 while (d < c)
                 {
                     int z = d + 4;

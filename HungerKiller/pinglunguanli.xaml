@@ -40,7 +40,9 @@
         <Button  FontFamily="Segoe MDL2 Assets" Content="&#xE107;" Grid.Row="1"
                              FontSize="50"
                             HorizontalAlignment="Right"  
-                            VerticalAlignment="Center"></Button>
+                            VerticalAlignment="Center"
+                            Background="White"
+                            Click="Button_Click" ></Button>
 
     </Grid>
     

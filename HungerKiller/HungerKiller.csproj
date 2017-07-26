@@ -125,6 +125,7 @@
     <Compile Include="Model\Fabu.cs" />
     <Compile Include="Model\hahaha.cs" />
     <Compile Include="Model\NewsItem.cs" />
+    <Compile Include="Model\Sign_Up.cs" />
     <Compile Include="pinglunguanli.xaml.cs">
       <DependentUpon>pinglunguanli.xaml</DependentUpon>
     </Compile>

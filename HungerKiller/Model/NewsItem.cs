@@ -83,6 +83,18 @@ namespace HungerKiller.Model
 
      }*/
 
+    public class OneUser
+    {
+        public string name { get; set; }
+        public string password { get; set; }
+    }
+
+
+    public class User
+    {
+        static User u = new User();
+        public static bool sign_or_not = false;
+    }
     public class tiao
     {
         static tiao jmp = new tiao();

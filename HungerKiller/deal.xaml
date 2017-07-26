@@ -52,9 +52,10 @@
             <ColorAnimation Storyboard.TargetName="DishEight" BeginTime="0:0:1.41" Storyboard.TargetProperty="(Stackpanel.Background).(SolidColorBrush.Color)" From="Blue" To="AliceBlue" Duration="0:0:0.2"/> 
         </Storyboard>
     </Page.Resources>
-    <Grid>
-        <StackPanel Orientation="Horizontal">
-            <Grid Width="220" Margin="50,0,0,0">
+    <ScrollViewer>
+        <StackPanel Orientation="Horizontal"  Name="DealStackpanel">
+            <StackPanel Orientation="Horizontal" Name="DealOneAndTwo">
+                <Grid Width="220" Margin="50,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height ="50"/>
                     <RowDefinition Height ="50"/>
@@ -134,15 +135,15 @@
                 <StackPanel Name="DishOne"   BorderThickness="0" Padding="0" Grid.Column="0" Grid.Row="0" Orientation="Vertical">
                     <StackPanel.Background>
                         <SolidColorBrush/>
-                    </StackPanel.Background> 
-                        <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishOneImage"/>
+                    </StackPanel.Background>
+                    <Image Style="{StaticResource DishImageStyle}"  Margin="0,0,0.4,0" Width="Auto" Name="DishOneImage"/>
                     <TextBlock FontSize="24" VerticalAlignment="Center" Width="150"  Name="DishOneText"/>
                 </StackPanel>
                 <StackPanel Name="DishEight" BorderThickness="0" Padding="0" Grid.Column="0" Grid.Row="1" Orientation="Vertical">
                     <StackPanel.Background>
                         <SolidColorBrush/>
                     </StackPanel.Background>
-                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishEightImage"/>
+                    <Image Style="{StaticResource DishImageStyle}"  Margin="0,0,0.4,0" Width="Auto" Name="DishEightImage"/>
                     <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishEightText">
                     </TextBlock>
                 </StackPanel>
@@ -150,7 +151,7 @@
                     <StackPanel.Background>
                         <SolidColorBrush/>
                     </StackPanel.Background>
-                <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishSevenImage"/>
+                    <Image Style="{StaticResource DishImageStyle}"  Margin="0,0,0.4,0" Width="Auto" Name="DishSevenImage"/>
                     <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishSevenText">
                     </TextBlock>
                 </StackPanel>
@@ -158,15 +159,15 @@
                     <StackPanel.Background>
                         <SolidColorBrush/>
                     </StackPanel.Background>
-                    <Image  Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishTwoImage"/>
+                    <Image  Style="{StaticResource DishImageStyle}"  Margin="0,0,0.4,0" Width="Auto" Name="DishTwoImage"/>
                     <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishTwoText">
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Name="DishSix" BorderThickness="0" Padding="0" Grid.Column="1" Grid.Row="2" Orientation="Vertical">
                     <StackPanel.Background>
                         <SolidColorBrush/>
-                        </StackPanel.Background> 
-                        <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishSixImage"/>
+                    </StackPanel.Background>
+                    <Image Style="{StaticResource DishImageStyle}"  Margin="0,0,0.4,0" Width="Auto" Name="DishSixImage"/>
                     <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishSixText">
                     </TextBlock>
                 </StackPanel>
@@ -174,7 +175,7 @@
                     <StackPanel.Background>
                         <SolidColorBrush/>
                     </StackPanel.Background>
-                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishThreeImage"/>
+                    <Image Style="{StaticResource DishImageStyle}"  Margin="0,0,0.4,0" Width="Auto" Name="DishThreeImage"/>
                     <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishThreeText">
                     </TextBlock>
                 </StackPanel>
@@ -182,7 +183,7 @@
                     <StackPanel.Background>
                         <SolidColorBrush/>
                     </StackPanel.Background>
-                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishFourIamge"/>
+                    <Image Style="{StaticResource DishImageStyle}"  Margin="0,0,0.4,0" Width="Auto" Name="DishFourIamge"/>
                     <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishFourText">
                     </TextBlock>
                 </StackPanel>
@@ -190,27 +191,28 @@
                     <StackPanel.Background>
                         <SolidColorBrush/>
                     </StackPanel.Background>
-                    <Image Style="{StaticResource DishImageStyle}" Source="Assets/12.jpg" Margin="0,0,0.4,0" Width="Auto" Name="DishFiveImage"/>
+                    <Image Style="{StaticResource DishImageStyle}"  Margin="0,0,0.4,0" Width="Auto" Name="DishFiveImage"/>
                     <TextBlock FontSize="24" Width="150" VerticalAlignment="Center" Name="DishFiveText">
                     </TextBlock>
                 </StackPanel>
                 <StackPanel  Grid.Row="1" Grid.Column="1" Orientation="Vertical" >
-                    <Button  Width="120" Height="60" FontSize="16" FontFamily="华文行楷" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Center"  Content="开始选择/结束"  Name="ChooseButton" Click="ChooseButton_Click">
+                    <Button  Width="120" Height="60" FontSize="16" FontFamily="华文行楷" BorderBrush="Black" VerticalAlignment="Center" Visibility="Collapsed" HorizontalAlignment="Center"  Content="开始选择/结束"  Name="ChooseButton" Click="ChooseButton_Click">
                         <Button.Background>
                             <SolidColorBrush/>
                         </Button.Background>
                     </Button>
-                    <Button  Width="120" Height="60" FontSize="24" FontFamily="华文行楷" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Content="更新转盘" Name="UpdateTurntable" Click="UpdateTurntable_Click"/>
+                    <Button  Width="120" Height="60" FontSize="24" FontFamily="华文行楷" BorderBrush="Black" VerticalAlignment="Center" Visibility="Collapsed" HorizontalAlignment="Center" Content="更新转盘" Name="UpdateTurntable" Click="UpdateTurntable_Click"/>
                 </StackPanel>
             </Grid>
+           </StackPanel> 
             <StackPanel Orientation="Vertical"  Width="365">
-                <Image Source="Assets/12.jpg" Stretch="Uniform"  Width="200" Height="150" Margin="50,0,0,0" VerticalAlignment="Top"></Image >
+                <Image  Stretch="Uniform"  Name="FinalImage" Width="200" Height="150" Margin="50,0,0,0" VerticalAlignment="Top"></Image >
                 <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜名:</TextBlock>
-                <TextBlock  Name="DishName" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock> 
+                <TextBlock  Name="DishName" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
                 <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品评分:</TextBlock>
-                <TextBlock Name="DishScore" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock> 
+                <TextBlock Name="DishScore" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
                 <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品价格:</TextBlock>
-                <TextBlock Name="DishPrice" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock> 
+                <TextBlock Name="DishPrice" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
                 <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品所在楼层其窗口:</TextBlock>
                 <TextBlock Name="DishFloor" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
                 <TextBlock Name="DishWindow" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
@@ -218,7 +220,7 @@
                 <TextBlock Name="DishAmount" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
                 <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">评价:</TextBlock>
                 <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="满意" Width="220"  FontSize="30" FontFamily="华文行楷" Height="40" Name="FinalOkButton" Click="FinalOkButton_Click"/>
-            </StackPanel> 
+            </StackPanel>
         </StackPanel>
-    </Grid>
+    </ScrollViewer> 
 </Page>
