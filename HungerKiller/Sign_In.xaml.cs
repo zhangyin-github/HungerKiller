@@ -42,7 +42,14 @@ namespace HungerKiller
             }
             else
             {
-                if(mima_rem.IsChecked.HasValue && mima_rem.IsChecked.Value)
+                if (autosignin.IsChecked.Value == true){
+                    mima_rem.IsChecked = true;
+                    string checksignin = "true";
+                    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                    localSettings.Values["UserStoredautosignin"] = checksignin;
+                }
+                if (mima_rem.IsChecked.HasValue && mima_rem.IsChecked.Value)
                 {
                     Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
                     Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;

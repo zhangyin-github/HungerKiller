@@ -150,14 +150,13 @@ namespace HungerKiller
                     tiao1.jm1 = false;
                 }
             }
-            /*
              else
              {
                 
                 MySettingSplitView.IsPaneOpen = false;
                 SelfInfoSplitView.IsPaneOpen = !SelfInfoSplitView.IsPaneOpen;
             }
-             */
+             
         }
         private void UserName_1_Click(object sender, RoutedEventArgs e)
         {
@@ -205,6 +204,13 @@ namespace HungerKiller
             if (tiao.jm == true)
             {
                 Frame.Navigate(typeof(SignUp));
+            }
+            Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            object UserStored2 = localSettings.Values["UserStoredautosignin"];
+            if(UserStored2 as string == "true")
+            {
+                User.sign_or_not = true;
             }
         }
 
