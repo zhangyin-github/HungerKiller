@@ -206,6 +206,14 @@ namespace HungerKiller
             }
         }
 
+        /// <summary>
+        /// 注销
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SignOutSetting_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }

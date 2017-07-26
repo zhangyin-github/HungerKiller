@@ -144,6 +144,9 @@
     <Compile Include="Sign_In.xaml.cs">
       <DependentUpon>Sign_In.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StarGradeUserControl.xaml.cs">
+      <DependentUpon>StarGradeUserControl.xaml</DependentUpon>
+    </Compile>
     <!--<Compile Include="warning.xaml.cs">
       <DependentUpon>warning.xaml</DependentUpon>
     </Compile>-->
@@ -167,6 +170,8 @@
     <Content Include="Assets\avr.png" />
     <Content Include="Assets\bg.jpg" />
     <Content Include="Assets\star.png" />
+    <Content Include="Assets\starempty.png" />
+    <Content Include="Assets\starfull.png" />
     <Content Include="Assets\star_1.png" />
     <Content Include="Assets\block.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -239,6 +244,14 @@
     <Page Include="Sign_In.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StarGradeUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
