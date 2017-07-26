@@ -11,7 +11,7 @@
     SecondaryButtonText="注册"
 
     PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
-    SecondaryButtonClick="ContentDialog_SecondaryButtonClick" Height="640">
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick" Height="640" Loaded="ContentDialog_Loaded">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -37,7 +37,7 @@
         </StackPanel>
         <TextBlock Margin="11.6,42.6,56.4,0" x:Name="statusText" Foreground="Red" Grid.Column="2" Height="14" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="10" Width="88"/>
         <StackPanel Grid.Column="1" Grid.Row="2" Margin="0,1.6,0.4,13.4" Grid.RowSpan="3">
-            <CheckBox Content="记住密码" Margin="0,20" ></CheckBox>
+            <CheckBox x:Name="mima_rem" Content="记住密码" Margin="0,20" ></CheckBox>
             <!--<Button FontSize="10" Click="Button_Click" Background="Transparent">不登录了先看看</Button>-->
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="114,1.6,0.4,13.4" Grid.RowSpan="3">

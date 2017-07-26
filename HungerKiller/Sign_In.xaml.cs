@@ -42,6 +42,14 @@ namespace HungerKiller
             }
             else
             {
+                if(mima_rem.IsChecked.HasValue && mima_rem.IsChecked.Value)
+                {
+                    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                    //OneUser oneUser = new OneUser() { name = username.Text, password = passwordBox.Password };
+                    localSettings.Values["UserStoredPassword"] = passwordBox.Password;
+                    localSettings.Values["UserStoredUsername"] = username.Text;
+                }
                 tiao1.jm1 = true;
             }
 
@@ -53,13 +61,36 @@ namespace HungerKiller
             tiao.jm = true;
         }
 
-        
-
-       /* private void Button_Click(object sender, RoutedEventArgs e)
+        private void ContentDialog_Loaded(object sender, RoutedEventArgs e)
         {
-            Sign_In a = new Sign_In();
-            a.Hide();
+            Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            object UserStored = localSettings.Values["UserStoredPassword"];
+            if (UserStored != null)
+            {
+                //OneUser oneUser = UserStored as OneUser;
+                //username.Text = oneUser.name;
+                passwordBox.Password = UserStored as string;
 
-        }*/
+            }
+            object UserStored1 = localSettings.Values["UserStoredPassword"];
+            if (UserStored1 != null)
+            {
+                //OneUser oneUser = UserStored as OneUser;
+                //username.Text = oneUser.name;
+                username.Text = UserStored1 as string;
+
+            }
+
+        }
+
+
+
+        /* private void Button_Click(object sender, RoutedEventArgs e)
+         {
+             Sign_In a = new Sign_In();
+             a.Hide();
+
+         }*/
     }
 }
