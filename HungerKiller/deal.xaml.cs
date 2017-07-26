@@ -219,7 +219,7 @@ namespace HungerKiller
             {
                 ButtonSixTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 CardChooseButtonsix.FontFamily = new FontFamily("华文行楷");
-                CardChooseButtonsix.Content = "凉菜";
+                CardChooseButtonsix.Content = "酸口";
                 CardChooseButtonsix.FontSize = 32;
                 count = count | 0x20;
                 CardChooseButtonsix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
@@ -240,7 +240,7 @@ namespace HungerKiller
             {
                 ButtonSevenTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 CardChooseButtonseven.FontFamily = new FontFamily("华文行楷");
-                CardChooseButtonseven.Content = "热菜";
+                CardChooseButtonseven.Content = "凉菜";
                 CardChooseButtonseven.FontSize = 32;
                 count = count | 0x40;
                 CardChooseButtonseven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
@@ -260,7 +260,7 @@ namespace HungerKiller
             {
                 ButtonEightTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 CardChooseButtoneight.FontFamily = new FontFamily("华文行楷");
-                CardChooseButtoneight.Content = "汤多";
+                CardChooseButtoneight.Content = "热菜";
                 CardChooseButtoneight.FontSize = 32;
                 count = count | 0x80;
                 CardChooseButtoneight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
@@ -363,7 +363,7 @@ namespace HungerKiller
         {
             ButtonSixTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             CardChooseButtonsix.FontFamily = new FontFamily("华文行楷");
-            CardChooseButtonsix.Content = "凉菜";
+            CardChooseButtonsix.Content = "酸口";
             CardChooseButtonsix.FontSize = 32;
             countt = countt | 0x20;
             CardChooseButtonsix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
@@ -373,7 +373,7 @@ namespace HungerKiller
         {
             ButtonSevenTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             CardChooseButtonseven.FontFamily = new FontFamily("华文行楷");
-            CardChooseButtonseven.Content = "热菜";
+            CardChooseButtonseven.Content = "凉菜";
             CardChooseButtonseven.FontSize = 32;
             countt = countt | 0x40;
             CardChooseButtonseven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
@@ -383,7 +383,7 @@ namespace HungerKiller
         {
             ButtonEightTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             CardChooseButtoneight.FontFamily = new FontFamily("华文行楷");
-            CardChooseButtoneight.Content = "汤多";
+            CardChooseButtoneight.Content = "热菜";
             CardChooseButtoneight.FontSize = 32;
             countt = countt | 0x80;
             CardChooseButtoneight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);

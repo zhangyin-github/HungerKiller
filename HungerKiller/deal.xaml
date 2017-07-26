@@ -95,17 +95,17 @@
                     <Button x:Name="ButtonFiveTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonFiveTwo_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Row="5" Orientation="Horizontal" x:Name="CardChooseSix">
-                    <Button x:Name="CardChooseButtonsix" Style="{StaticResource CardButtonoStyle}" Content="凉菜" Click="CardChooseButtonsix_Click">
+                    <Button x:Name="CardChooseButtonsix" Style="{StaticResource CardButtonoStyle}" Content="酸口" Click="CardChooseButtonsix_Click">
                     </Button>
                     <Button x:Name="ButtonSixTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonSixTwo_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Row="6" x:Name="CardChooseSeven" Orientation="Horizontal" >
-                    <Button x:Name="CardChooseButtonseven" Style="{StaticResource CardButtonoStyle}" Content="热菜" Click="CardChooseButtonseven_Click">
+                    <Button x:Name="CardChooseButtonseven" Style="{StaticResource CardButtonoStyle}" Content="凉菜" Click="CardChooseButtonseven_Click">
                     </Button>
                     <Button x:Name="ButtonSevenTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonSevenTwo_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Row="7" x:Name="CardChooseEight" Orientation="Horizontal">
-                    <Button x:Name="CardChooseButtoneight" Style="{StaticResource CardButtonoStyle}" Content="汤多" Click="CardChooseButtoneight_Click">
+                    <Button x:Name="CardChooseButtoneight" Style="{StaticResource CardButtonoStyle}" Content="热菜" Click="CardChooseButtoneight_Click">
                     </Button>
                     <Button x:Name="ButtonEightTwo" Style="{StaticResource CardButtonTStyle}" Click="ButtonEightTwo_Click" />
                 </StackPanel>
