@@ -134,19 +134,21 @@ namespace HungerKiller
         private async void UserName_Click(object sender, RoutedEventArgs e)
         {
             ManegerListBox.SelectedIndex = BaseListBox.SelectedIndex = -1;
-            //if(未登录)
-            Sign_In jump = new Sign_In();
-            await jump.ShowAsync();
-           if(tiao.jm==true)
+            if (User.sign_or_not==false)
             {
-                Frame.Navigate(typeof(SignUp));
-                tiao.jm = false;
-            }
-            if (tiao1.jm1 == true)
-            {
-                ContentDialog1 m = new ContentDialog1();
-                m.ShowAsync();
-                tiao1.jm1 = false;
+                Sign_In jump = new Sign_In();
+                await jump.ShowAsync();
+                if (tiao.jm == true)
+                {
+                    Frame.Navigate(typeof(SignUp));
+                    tiao.jm = false;
+                }
+                if (tiao1.jm1 == true)
+                {
+                    ContentDialog1 m = new ContentDialog1();
+                    m.ShowAsync();
+                    tiao1.jm1 = false;
+                }
             }
             /*
              else

@@ -50,6 +50,7 @@ namespace HungerKiller
                     localSettings.Values["UserStoredPassword"] = passwordBox.Password;
                     localSettings.Values["UserStoredUsername"] = username.Text;
                 }
+                User.sign_or_not = true;
                 tiao1.jm1 = true;
             }
 
