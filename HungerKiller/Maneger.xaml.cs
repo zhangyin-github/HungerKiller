@@ -55,12 +55,12 @@ namespace HungerKiller
             if (fabuguanli.IsSelected)
             {
 
-                dengluFrame.Navigate(typeof(pinglunguanli));
+                guanliFrame.Navigate(typeof(pinglunguanli));
                 TitleTextBlock.Text = "评论管理";
             }
             else if (pinglunguanli.IsSelected)
             {
-                dengluFrame.Navigate(typeof(publish));
+                
                 TitleTextBlock.Text = "发布管理";
             }
         }
@@ -76,6 +76,30 @@ namespace HungerKiller
         private void LogoutComboBoxItem_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void PublishActivity_Click(object sender, RoutedEventArgs e)
+        {
+            guanliFrame.Navigate(typeof(publish));
+            TitleTextBlock.Text = "发布活动";
+        }
+
+        private void PublishDilicious_Click(object sender, RoutedEventArgs e)
+        {
+            guanliFrame.Navigate(typeof(Fabucaiping));
+            TitleTextBlock.Text = "发布菜品";
+        }
+
+        private void DeleteComments_Click(object sender, RoutedEventArgs e)
+        {
+            guanliFrame.Navigate(typeof(pinglunguanli));
+            TitleTextBlock.Text = "评论删除";
+        }
+
+        private void RevokeActivity_Click(object sender, RoutedEventArgs e)
+        {
+            guanliFrame.Navigate(typeof(RevokeActivity));
+            TitleTextBlock.Text = "活动撤销";
         }
     }
 }

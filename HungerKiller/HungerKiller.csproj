@@ -109,6 +109,9 @@
     <Compile Include="DishesDetails.xaml.cs">
       <DependentUpon>DishesDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Fabucaiping.xaml.cs">
+      <DependentUpon>Fabucaiping.xaml</DependentUpon>
+    </Compile>
     <Compile Include="homepage.xaml.cs">
       <DependentUpon>homepage.xaml</DependentUpon>
     </Compile>
@@ -125,10 +128,13 @@
       <DependentUpon>Maneger.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\comment1.cs" />
+    <Compile Include="Model\dayede.cs" />
     <Compile Include="Model\DealManager.cs" />
     <Compile Include="Model\DishNameAndImage.cs" />
     <Compile Include="Model\Fabu.cs" />
     <Compile Include="Model\hahaha.cs" />
+    <Compile Include="Model\Huodongchexiao.cs" />
+    <Compile Include="Model\hehehhe.cs" />
     <Compile Include="Model\NewsItem.cs" />
     <Compile Include="Model\Sign_Up.cs" />
     <Compile Include="pinglunguanli.xaml.cs">
@@ -140,6 +146,9 @@
     </Compile>
     <Compile Include="Ranking.xaml.cs">
       <DependentUpon>Ranking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RevokeActivity.xaml.cs">
+      <DependentUpon>RevokeActivity.xaml</DependentUpon>
     </Compile>
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
@@ -211,6 +220,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Fabucaiping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="homepage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -240,6 +253,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ranking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RevokeActivity.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

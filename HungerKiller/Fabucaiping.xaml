@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="HungerKiller.Fabucaiping"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HungerKiller"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+     
+        <RichTextBlock Width="300">
+            
+            <Paragraph TextAlignment="DetectFromContent"   TextIndent="25"    >
+                
+                <InlineUIContainer >
+                   
+                        <Image Name="AddPhoto" Source="Assets/3.jpg" MaxHeight="100" MaxWidth="100"></Image>
+                        
+                </InlineUIContainer>
+                Hello world ! ! !This is my imageHello world ! ! !This is my imageHello world ! ! !This is my image
+                Hello world ! ! !This is my imageHello world ! ! !This is my imageHello world ! ! !This is my image
+            </Paragraph>
+            <Paragraph >
+                    
+            </Paragraph>
+        </RichTextBlock>
+    </Grid>
+</Page>
