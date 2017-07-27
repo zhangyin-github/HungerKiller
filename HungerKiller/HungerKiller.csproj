@@ -90,6 +90,8 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <PRIResource Include="Strings\zh-CN\Resources.resw" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -165,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\1.jpg" />
+    <Content Include="Assets\10.jpg" />
     <Content Include="Assets\12.jpg" />
     <Content Include="Assets\2.jpg" />
     <Content Include="Assets\3.jpg" />

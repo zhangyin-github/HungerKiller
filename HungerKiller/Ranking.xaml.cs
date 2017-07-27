@@ -1,5 +1,7 @@
-﻿using System;
+﻿using HungerKiller.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,9 +24,44 @@ namespace HungerKiller
     /// </summary>
     public sealed partial class Ranking : Page
     {
+        public ObservableCollection<NewsItem> NewsItems;
+        public NewsItem NewsItem { get { return this.DataContext as NewsItem; } }
         public Ranking()
         {
             this.InitializeComponent();
+            NewsItems = new ObservableCollection<NewsItem>();
+            NewsManager.GetAllItems(NewsItems);
+            this.DataContextChanged += (s, e) => Bindings.Update();
         }
+
+        private void Mylistview_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frame.Navigate(typeof(comment), ((NewsItem)e.ClickedItem).Id);
+        }
+        private List<ListStyle> _songList;
+
+        public List<ListStyle> SongList
+        {
+            get { return _songList; }
+            set
+            {
+                _songList = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private void OnPropertyChanged()
+        {
+            throw new NotImplementedException();
+        }
+
+        public class ListStyle
+        {
+            public int Num { get; set; }
+            public string Song { get; set; }
+            public SolidColorBrush Color { get; set; }
+        }
+
+
     }
 }
