@@ -141,6 +141,9 @@
     <Compile Include="Ranking.xaml.cs">
       <DependentUpon>Ranking.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Recommend.xaml.cs">
+      <DependentUpon>Recommend.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
@@ -166,6 +169,7 @@
   <ItemGroup>
     <Content Include="Assets\1.jpg" />
     <Content Include="Assets\10.jpg" />
+    <Content Include="Assets\11.jpg" />
     <Content Include="Assets\12.jpg" />
     <Content Include="Assets\2.jpg" />
     <Content Include="Assets\3.jpg" />
@@ -240,6 +244,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ranking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Recommend.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
