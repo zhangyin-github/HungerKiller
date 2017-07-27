@@ -87,7 +87,7 @@ namespace HungerKiller
             if (Maneger.IsSelected)
             {
                 BaseListBox.SelectedIndex = SettingListBox_2.SelectedIndex = -1;
-                this.Frame.Navigate(typeof(Maneger));
+                MyFrame.Navigate(typeof(Maneger));
                 IfSplitViewOpen();
             }
         }
