@@ -86,7 +86,8 @@ namespace HungerKiller
 
         private void PublishDilicious_Click(object sender, RoutedEventArgs e)
         {
-
+            guanliFrame.Navigate(typeof(Fabucaiping));
+            TitleTextBlock.Text = "发布菜品";
         }
 
         private void DeleteComments_Click(object sender, RoutedEventArgs e)
@@ -97,7 +98,8 @@ namespace HungerKiller
 
         private void RevokeActivity_Click(object sender, RoutedEventArgs e)
         {
-
+            guanliFrame.Navigate(typeof(RevokeActivity));
+            TitleTextBlock.Text = "活动撤销";
         }
     }
 }
