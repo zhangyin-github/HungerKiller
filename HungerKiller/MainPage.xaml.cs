@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,12 +29,56 @@ namespace HungerKiller
         public MainPage()
         {
             this.InitializeComponent();
+            //隐藏返回按钮
+            BackButton.Visibility = Visibility.Collapsed;
+
             MyFrame.Navigate(typeof(homepage));
             Homepage.IsSelected = true;
             IfSplitViewOpen();
-            
-        }
 
+            
+
+            //扩展到标题栏
+            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+            coreTitleBar.ExtendViewIntoTitleBar = true;
+            Window.Current.SetTitleBar(RealTitle);
+            //设置标题栏颜色
+            MakeTitleBarBeautiful();
+        }
+        /// <summary>
+        /// 设置标题栏颜色
+        /// 宋寅瑜
+        /// </summary>
+        public void MakeTitleBarBeautiful()
+        {
+            
+            var view = ApplicationView.GetForCurrentView();
+
+            //active
+            view.TitleBar.BackgroundColor = Color.FromArgb(255, 254, 103, 74);
+            view.TitleBar.ForegroundColor = Colors.White;
+            //inactive
+            view.TitleBar.InactiveBackgroundColor = Color.FromArgb(255, 254, 103, 74);
+            view.TitleBar.InactiveForegroundColor = Colors.White;
+
+            //button
+            view.TitleBar.ButtonBackgroundColor = Color.FromArgb(255, 254, 103, 74);
+            view.TitleBar.ButtonForegroundColor = Colors.White;
+
+            view.TitleBar.ButtonHoverBackgroundColor = Color.FromArgb(255, 255, 149, 86);
+            view.TitleBar.ButtonHoverForegroundColor = Colors.White;
+
+            view.TitleBar.ButtonPressedBackgroundColor = Color.FromArgb(255, 255, 149, 86);
+            view.TitleBar.ButtonPressedForegroundColor = Colors.White;
+
+            view.TitleBar.ButtonInactiveBackgroundColor = Color.FromArgb(255, 255, 149, 86);
+            view.TitleBar.ButtonInactiveForegroundColor = Color.FromArgb(255, 254, 103, 74);            
+        }
+        
+       /// <summary>
+       /// 隐藏汉堡菜单内的标题栏
+       /// 宋寅瑜
+       /// </summary>
         public void IfSplitViewOpen()
         {
             if (!MySplitView.IsPaneOpen)
@@ -58,40 +105,67 @@ namespace HungerKiller
                 }
             }
         }
-     
 
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            ManegerListBox.SelectedIndex = SettingListBox_2.SelectedIndex = -1;
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+            IfSplitViewOpen();            
+        }
+
+
+        /// <summary>
+        /// 汉堡菜单-基本部分
+        /// 宋寅瑜
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BaseListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {            
-            if (HamburgerButton.IsSelected)
+            if (Homepage.IsSelected)
             {
-                ManegerListBox.SelectedIndex = SettingListBox_2.SelectedIndex = -1;
-                MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
-                IfSplitViewOpen();
-            }
-            else if (Homepage.IsSelected)
-            {
+                //隐藏返回按钮
+                BackButton.Visibility = Visibility.Collapsed;
+
                 ManegerListBox.SelectedIndex = SettingListBox_2.SelectedIndex = -1;
                 MyFrame.Navigate(typeof(homepage));
                 IfSplitViewOpen();
             }
             else if (Deal.IsSelected)
             {
+                //显示返回按钮
+                BackButton.Visibility = Visibility.Visible;
+
                 ManegerListBox.SelectedIndex = SettingListBox_2.SelectedIndex = -1;
                 MyFrame.Navigate(typeof(deal));
                 IfSplitViewOpen();
             }
         }
-
+        /// <summary>
+        /// 汉堡菜单-管理员部分
+        /// 宋寅瑜
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ManegerListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {           
             if (Maneger.IsSelected)
             {
+                //显示返回按钮
+                BackButton.Visibility = Visibility.Visible;
+
                 BaseListBox.SelectedIndex = SettingListBox_2.SelectedIndex = -1;
-                this.Frame.Navigate(typeof(Maneger));
+                MyFrame.Navigate(typeof(Maneger));
                 IfSplitViewOpen();
             }
         }
-
+        /// <summary>
+        /// 用户登录、设置、个人资料入口
+        /// 宋寅瑜
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         /*  SplitView 关闭时点击用户头像、或者设置按钮，这是个ListBoxSelectionChanged事件*/
         /*竖版的用户登录入口及设置按钮*/
         private void SettingListBox_2_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -140,6 +214,9 @@ namespace HungerKiller
                 await jump.ShowAsync();
                 if (tiao.jm == true)
                 {
+                    //显示返回按钮
+                    BackButton.Visibility = Visibility.Visible;
+
                     Frame.Navigate(typeof(SignUp));
                     tiao.jm = false;
                 }
@@ -228,5 +305,15 @@ namespace HungerKiller
                 signout.ShowAsync();
             }
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(MyFrame.CanGoBack)
+            {
+                MyFrame.GoBack();
+            }
+        }
+
+        
     }
 }
