@@ -55,7 +55,7 @@ namespace HungerKiller
             DispatcherTimer timer1 = new DispatcherTimer();
             DispatcherTimer timer2 = new DispatcherTimer();
             DispatcherTimer timer3 = new DispatcherTimer();
-            timer1.Interval = timer2.Interval = timer3.Interval = new System.TimeSpan(0, 0, 3);
+            timer1.Interval = timer2.Interval = timer3.Interval = new System.TimeSpan(0, 0, 7);
             timer1.Tick += (sender, args) =>
             {
                 this.CenterFlipView.SelectedIndex = this.CenterFlipView.SelectedIndex < this.CenterFlipView.Items.Count - 1 ? ++this.CenterFlipView.SelectedIndex : 0;
@@ -85,7 +85,7 @@ namespace HungerKiller
 
         private void paihang2_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(deal));
+            this.Frame.Navigate(typeof(Ranking));
         }
 
         private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
@@ -108,21 +108,10 @@ namespace HungerKiller
             sender.Text = suggest.Headline;
         }
 
-        private void LeftFlipView_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(comment));
-        }
-
         private void CenterFlipView_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(comment));
         }
-
-        private void RightFlipView_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(comment));
-        }
-
 
         private void CenterFlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -155,7 +144,7 @@ namespace HungerKiller
 
         private void MyGridview_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Frame.Navigate(typeof(comment), ((NewsItem)e.ClickedItem).Id);
+            Frame.Navigate(typeof(comment),((NewsItem)e.ClickedItem).Id);
         }
     }
 

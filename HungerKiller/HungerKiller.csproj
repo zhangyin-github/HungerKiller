@@ -90,6 +90,8 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <PRIResource Include="Strings\zh-CN\Resources.resw" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -116,6 +118,9 @@
     <Compile Include="introduce.xaml.cs">
       <DependentUpon>introduce.xaml</DependentUpon>
     </Compile>
+    <Compile Include="logout.xaml.cs">
+      <DependentUpon>logout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -123,11 +128,13 @@
       <DependentUpon>Maneger.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\comment1.cs" />
+    <Compile Include="Model\dayede.cs" />
     <Compile Include="Model\DealManager.cs" />
     <Compile Include="Model\DishNameAndImage.cs" />
     <Compile Include="Model\Fabu.cs" />
     <Compile Include="Model\hahaha.cs" />
     <Compile Include="Model\Huodongchexiao.cs" />
+    <Compile Include="Model\hehehhe.cs" />
     <Compile Include="Model\NewsItem.cs" />
     <Compile Include="Model\Sign_Up.cs" />
     <Compile Include="pinglunguanli.xaml.cs">
@@ -152,6 +159,9 @@
     <Compile Include="Sign_In.xaml.cs">
       <DependentUpon>Sign_In.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StarGradeUserControl.xaml.cs">
+      <DependentUpon>StarGradeUserControl.xaml</DependentUpon>
+    </Compile>
     <!--<Compile Include="warning.xaml.cs">
       <DependentUpon>warning.xaml</DependentUpon>
     </Compile>-->
@@ -164,6 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\1.jpg" />
+    <Content Include="Assets\10.jpg" />
     <Content Include="Assets\12.jpg" />
     <Content Include="Assets\2.jpg" />
     <Content Include="Assets\3.jpg" />
@@ -175,6 +186,8 @@
     <Content Include="Assets\avr.png" />
     <Content Include="Assets\bg.jpg" />
     <Content Include="Assets\star.png" />
+    <Content Include="Assets\starempty.png" />
+    <Content Include="Assets\starfull.png" />
     <Content Include="Assets\star_1.png" />
     <Content Include="Assets\block.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -219,6 +232,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="logout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -255,6 +272,14 @@
     <Page Include="Sign_In.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StarGradeUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

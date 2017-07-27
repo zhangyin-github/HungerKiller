@@ -101,22 +101,14 @@
                 <GridView.ItemTemplate>
                     <DataTemplate x:DataType="data:Comment">
                         <RelativePanel>
-                            <Ellipse x:Name="User_pictrure" 
-                                     RelativePanel.AlignLeftWithPanel="True"
-                                     Width="35"
-                                     Height="35">
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="{x:Bind Profile_Picture}"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
-
+                            
                             <TextBlock x:Name="User_ID" 
                                        Text="{x:Bind User_Id}"
-                                       RelativePanel.RightOf="User_pictrure"
+                                       RelativePanel.AlignLeftWithPanel="True"
                                        />
 
                             <TextBlock  x:Name="Comment_block"
-                                        RelativePanel.RightOf="User_pictrure"
+                                       RelativePanel.AlignRightWithPanel="True"
                                         RelativePanel.Below="User_ID"
                                         TextWrapping="WrapWholeWords" 
                                         Width="600"

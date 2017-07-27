@@ -41,7 +41,7 @@
             <!--<Button FontSize="10" Click="Button_Click" Background="Transparent">不登录了先看看</Button>-->
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="114,1.6,0.4,13.4" Grid.RowSpan="3">
-            <CheckBox Content="自动登录" Margin="0,20" ></CheckBox>
+            <CheckBox x:Name="autosignin" Content="自动登录" Margin="0,20" ></CheckBox>
             <TextBlock x:Name="statusText6"  Foreground="Red" Margin="0,-17" HorizontalAlignment="Left"/>
         </StackPanel>
     </Grid>
