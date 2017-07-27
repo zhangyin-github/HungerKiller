@@ -8,33 +8,55 @@
     mc:Ignorable="d" Loaded="Page_Loaded">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--扩展标题栏-->
+        <RelativePanel Grid.Row="0" Background="#FE674A" BorderBrush="{x:Null}" BorderThickness="0">
+            <!--后退按钮-->
+            <Button Name="BackButton" Click="BackButton_Click"                    
+                    Foreground="White" Background="{x:Null}"
+                    RelativePanel.AlignVerticalCenterWithPanel="True" Width="40" Height="32">
+                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="14" Text="&#xE112;"  />
+                
+                
+            </Button>               
+            <!--标题-->
+            <TextBlock Name="RealTitle" FontSize="13" Margin="11,0,0,0" Foreground="White"
+                       RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.RightOf="BackButton">HungerKiller</TextBlock>
+            <!--AutoSuggestBox-->
+        </RelativePanel>
+        
         <!--汉堡菜单-->
-        <SplitView Name="MySplitView" DisplayMode="CompactOverlay" OpenPaneLength="140" 
+        <SplitView Name="MySplitView" Grid.Row="1" DisplayMode="CompactOverlay" OpenPaneLength="140" 
                    CompactPaneLength="40" Grid.RowSpan="2" BorderBrush="#FF292929">
             <SplitView.Pane>
                 <RelativePanel>
+                    <!--汉堡菜单-->
+                    <Button Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                            FontSize="15" Foreground="Black" Background="{x:Null}" Width="40"
+                            VerticalAlignment="Center" HorizontalAlignment="Center" 
+                            Click="HamburgerButton_Click"/>
                     <!--基本功能菜单-->
                     <ListBox Name="BaseListBox" SelectionMode="Single" BorderBrush="#FF323131" Foreground="#FF817E7E"
+                             RelativePanel.Below="HamburgerButton"
                              SelectionChanged="BaseListBox_SelectionChanged">
-                        <!--汉堡菜单-->
-                        <ListBoxItem Name="HamburgerButton">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Text="&#xE700;"
-                                       VerticalAlignment="Center" HorizontalAlignment="Center" />
-                        </ListBoxItem>
                         <!--主页-->
                         <ListBoxItem Name="Homepage">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17.5" Foreground="Black" Text="&#xE80F;" 
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Foreground="Black" Text="&#xE80F;" 
                                            VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                <TextBlock FontSize="13" FontWeight="Light" Margin="12,0,0,0" Foreground="Black" >主页</TextBlock>
+                                <TextBlock FontSize="13" FontWeight="Light" Margin="13,0,0,0" Foreground="Black" >主页</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
                         <!--趣味决策-->
                         <ListBoxItem Name="Deal">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Text="&#xE707;" 
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Foreground="Black" Text="&#xE707;" 
                                        VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                <TextBlock FontSize="13" FontWeight="Light" Margin="12,0,0,0" Foreground="Black" >趣味决策</TextBlock>
+                                <TextBlock FontSize="13" FontWeight="Light" Margin="13,0,0,0" Foreground="Black" >趣味决策</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
 
@@ -47,9 +69,9 @@
                                  SelectionChanged="ManegerListBox_SelectionChanged">
                             <ListBoxItem Name="Maneger">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Text="&#xE99A;"
+                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Foreground="Black" Text="&#xE99A;"
                                                VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                    <TextBlock FontSize="13" FontWeight="Light" Margin="12,0,0,0" Foreground="Black" >管理</TextBlock>
+                                    <TextBlock FontSize="13" FontWeight="Light" Margin="13,0,0,0" Foreground="Black" >管理</TextBlock>
                                 </StackPanel>
                             </ListBoxItem>
                         </ListBox>
@@ -84,19 +106,22 @@
                                         Margin="0,0,5,8">...</TextBlock>
                              <!--设置button-->
                             <Button Name="MySettingButton_1" FontFamily="Segoe MDL2 Assets"
-                                    FontSize="17" Foreground="Black" Content="&#xE115;" Background="{x:Null}"
+                                    FontSize="15" Foreground="Black" Content="&#xE115;" Background="{x:Null}"
                                     RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"
                                     Click="MySettingButton_Click" Padding="0"/>
                         </RelativePanel>
                     </Grid>
                     
                     <!--登录、设置菜单 splitview闭合时-->
-                    <ListBox Name="SettingListBox_2" RelativePanel.AlignBottomWithPanel="True" BorderThickness="0,1,0,0" BorderBrush="LightGray" Width="140"
-                             SelectionMode="Single" Foreground="#FF817E7E" SelectionChanged="SettingListBox_2_SelectionChanged" Visibility="Collapsed">
+                    <ListBox Name="SettingListBox_2" RelativePanel.AlignBottomWithPanel="True" 
+                             BorderThickness="0,1,0,0" BorderBrush="LightGray" Width="140"
+                             SelectionMode="Single" Foreground="#FF817E7E" 
+                             SelectionChanged="SettingListBox_2_SelectionChanged" Visibility="Collapsed">
                         <!--头像-->
                         <ListBoxItem Name="MyUserHeaderImage_2">
-  <!--俊霖看这，这里是竖版的登录入口-->                                                                  
-                            <Ellipse Height="25" Width="25" Margin="-4.5,0,0,0">
+  <!--俊霖看这，这里是竖版的登录入口-->
+                            <Ellipse Height="20" Width="20" 
+                                     VerticalAlignment="Center" HorizontalAlignment="Center">
                                     <Ellipse.Fill>
                                         <ImageBrush ImageSource="Assets/2.jpg"></ImageBrush>
                                     </Ellipse.Fill>
@@ -104,7 +129,7 @@
                         </ListBoxItem>
                         <!--设置-->
                         <ListBoxItem Name="MySettingButton_2">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="Black" Text="&#xE115;" 
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Foreground="Black" Text="&#xE115;" 
                                            VerticalAlignment="Center" HorizontalAlignment="Center" />
                         </ListBoxItem>
                     </ListBox>
@@ -117,7 +142,7 @@
         </SplitView>
     
         <!--个人资料-->
-        <SplitView Name="SelfInfoSplitView" DisplayMode="Overlay" PanePlacement="Right"
+        <SplitView Name="SelfInfoSplitView" Grid.Row="1" DisplayMode="Overlay" PanePlacement="Right"
                    HorizontalAlignment="Right" MaxWidth="300" MinWidth="0">
             <SplitView.Pane>
                 <Grid Width="300" HorizontalAlignment="Left" Background="White" BorderThickness="2,0,0,0">
@@ -179,7 +204,7 @@
             </SplitView.Pane>
         </SplitView>
         <!--设置-->
-        <SplitView Name="MySettingSplitView" DisplayMode="Overlay" PanePlacement="Right"
+        <SplitView Grid.Row="1" Name="MySettingSplitView" DisplayMode="Overlay" PanePlacement="Right"
                    HorizontalAlignment="Right" MaxWidth="300" MinWidth="0">
             <SplitView.Pane>
                 <Grid Width="300" HorizontalAlignment="Left" Background="White" BorderThickness="2,0,0,0">
@@ -224,7 +249,7 @@
             </SplitView.Pane>
         </SplitView>
         <!--修改个人资料-->
-        <SplitView Name="ModifySplitView" DisplayMode="Overlay" PanePlacement="Right"
+        <SplitView Grid.Row="1" Name="ModifySplitView" DisplayMode="Overlay" PanePlacement="Right"
                    HorizontalAlignment="Right" MaxWidth="300" MinWidth="0">
             <SplitView.Pane>
                 <Grid>
