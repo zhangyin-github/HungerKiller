@@ -115,6 +115,11 @@ namespace HungerKiller
                             {
                                 if (YesRadioButton.IsChecked != NoRadioButton.IsChecked)
                                 {
+                                    string checksignin1 = "true";
+                                    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                                    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                                    localSettings.Values["UserStoredautosignin"] = checksignin1;
+                                    User.sign_or_not = true;
                                     string usernam = username.Text;
                                     string passwor = passwordBox.Password;
                                     string emai = mail.Text;
