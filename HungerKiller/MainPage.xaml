@@ -48,7 +48,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Foreground="Black" Text="&#xE80F;" 
                                            VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                <TextBlock FontSize="13" FontWeight="Light" Margin="12,0,0,0" Foreground="Black" >主页</TextBlock>
+                                <TextBlock FontSize="13" FontWeight="Light" Margin="13,0,0,0" Foreground="Black" >主页</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
                         <!--趣味决策-->
@@ -56,7 +56,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Foreground="Black" Text="&#xE707;" 
                                        VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                <TextBlock FontSize="13" FontWeight="Light" Margin="12,0,0,0" Foreground="Black" >趣味决策</TextBlock>
+                                <TextBlock FontSize="13" FontWeight="Light" Margin="13,0,0,0" Foreground="Black" >趣味决策</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
 
@@ -71,7 +71,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Foreground="Black" Text="&#xE99A;"
                                                VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                    <TextBlock FontSize="13" FontWeight="Light" Margin="12,0,0,0" Foreground="Black" >管理</TextBlock>
+                                    <TextBlock FontSize="13" FontWeight="Light" Margin="13,0,0,0" Foreground="Black" >管理</TextBlock>
                                 </StackPanel>
                             </ListBoxItem>
                         </ListBox>
@@ -113,12 +113,15 @@
                     </Grid>
                     
                     <!--登录、设置菜单 splitview闭合时-->
-                    <ListBox Name="SettingListBox_2" RelativePanel.AlignBottomWithPanel="True" BorderThickness="0,1,0,0" BorderBrush="LightGray" Width="140"
-                             SelectionMode="Single" Foreground="#FF817E7E" SelectionChanged="SettingListBox_2_SelectionChanged" Visibility="Collapsed">
+                    <ListBox Name="SettingListBox_2" RelativePanel.AlignBottomWithPanel="True" 
+                             BorderThickness="0,1,0,0" BorderBrush="LightGray" Width="140"
+                             SelectionMode="Single" Foreground="#FF817E7E" 
+                             SelectionChanged="SettingListBox_2_SelectionChanged" Visibility="Collapsed">
                         <!--头像-->
                         <ListBoxItem Name="MyUserHeaderImage_2">
-  <!--俊霖看这，这里是竖版的登录入口-->                                                                  
-                            <Ellipse Height="25" Width="25" Margin="-4.5,0,0,0">
+  <!--俊霖看这，这里是竖版的登录入口-->
+                            <Ellipse Height="20" Width="20" 
+                                     VerticalAlignment="Center" HorizontalAlignment="Center">
                                     <Ellipse.Fill>
                                         <ImageBrush ImageSource="Assets/2.jpg"></ImageBrush>
                                     </Ellipse.Fill>
