@@ -47,7 +47,7 @@ namespace HungerKiller
         }
         /// <summary>
         /// 设置标题栏颜色
-        /// 宋寅瑜
+        /// Sakura
         /// </summary>
         public void MakeTitleBarBeautiful()
         {
@@ -74,11 +74,11 @@ namespace HungerKiller
             view.TitleBar.ButtonInactiveBackgroundColor = Color.FromArgb(255, 255, 149, 86);
             view.TitleBar.ButtonInactiveForegroundColor = Color.FromArgb(255, 254, 103, 74);            
         }
-        
-       /// <summary>
-       /// 隐藏汉堡菜单内的标题栏
-       /// 宋寅瑜
-       /// </summary>
+
+        /// <summary>
+        /// 隐藏汉堡菜单内的标题栏
+        /// Sakura
+        /// </summary>
         public void IfSplitViewOpen()
         {
             if (!MySplitView.IsPaneOpen)
@@ -117,7 +117,7 @@ namespace HungerKiller
 
         /// <summary>
         /// 汉堡菜单-基本部分
-        /// 宋寅瑜
+        /// Sakura
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -144,7 +144,7 @@ namespace HungerKiller
         }
         /// <summary>
         /// 汉堡菜单-管理员部分
-        /// 宋寅瑜
+        /// Sakura
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -162,7 +162,7 @@ namespace HungerKiller
         }
         /// <summary>
         /// 用户登录、设置、个人资料入口
-        /// 宋寅瑜
+        /// Sakura
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -189,6 +189,7 @@ namespace HungerKiller
         }
         /// <summary>
         /// 设置按钮
+        /// Sakura
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
