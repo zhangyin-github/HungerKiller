@@ -75,8 +75,8 @@ namespace HungerKiller
 
         private void LogoutComboBoxItem_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(homepage));
-            homepage.IsSelected = true;
+            this.Frame.Navigate(typeof(homepage));           
+            //Homepage.IsSelected = true;
         }
 
         private void PublishActivity_Click(object sender, RoutedEventArgs e)

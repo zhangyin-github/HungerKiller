@@ -30,8 +30,9 @@
         </RelativePanel>
         
         <!--汉堡菜单-->
-        <SplitView Name="MySplitView" Grid.Row="1" DisplayMode="CompactOverlay" OpenPaneLength="140" 
-                   CompactPaneLength="40" Grid.RowSpan="2" BorderBrush="#FF292929">
+        <SplitView Name="MySplitView" Grid.Row="1" DisplayMode="CompactInline" OpenPaneLength="140" 
+                   BorderThickness="0,0,0.4,0" BorderBrush="LightGray"
+                   CompactPaneLength="40" Grid.RowSpan="2" >
             <SplitView.Pane>
                 <RelativePanel>
                     <!--汉堡菜单-->

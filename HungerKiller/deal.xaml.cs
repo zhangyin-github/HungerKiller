@@ -35,71 +35,10 @@ namespace HungerKiller
         public int  seed=0;
         public  int a = 0;
         public int sewq;
-      //  public System.Threading.Timer ti;
         public deal()
         {
             this.InitializeComponent();
         }
-
-
-   /*   public void TimeS()
-        {
-            TimeSpan delay = TimeSpan.FromMinutes(1);
-
-            ThreadPoolTimer DelayTimer = ThreadPoolTimer.CreateTimer(
-                (source) =>
-                {
-
-        Dispatcher.RunAsync(
-                        CoreDispatcherPriority.High,
-                        () =>
-                        {
-                            stdDish1.Stop();
-            });
-
-                }, delay);
-        }
-     */   
-     /*   public void time()
-        {
-         ti = new Timer(new TimerCallback(timercall),this,800,0);
-         }
-
-        public void timercall(object obj)
-        {
-          ti.Dispose();
-            stdDish1.Stop();
-        /*Random rd = new Random();
-        seed = rd.Next(1,9);
-            switch (seed)
-            {
-                case 1:
-                    DishOne.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 2:
-                    DishTwo.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 3:
-                    DishTree.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 4:
-                    DishFour.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 5:
-                    DishFive.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 6:
-                    DishSix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 7:
-                    DishSeven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 8:
-                    DishEight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-            }*/
-     
-     
     private void CardChooseButtonone_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonOneTwo .Visibility == Windows.UI.Xaml.Visibility.Collapsed)
@@ -411,23 +350,25 @@ namespace HungerKiller
 
         private void UpdateTurntable_Click(object sender, RoutedEventArgs e)
         {
+            Randomm rfg = new Randomm();
+            int[] dishneworder = rfg.differSamenessRandomNum(8, 0, hahaha.getinstance().getDish().Count());
             var url = "http://localhost:8080/HungerKillerBacked/HungerKiller/";
-            DishOneText.Text = hahaha.getinstance().getDish()[8].Key;
-            DishOneImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[8].Value, UriKind.RelativeOrAbsolute));
-            DishTwoText.Text = hahaha.getinstance().getDish()[9].Key;
-            DishTwoImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[9].Value, UriKind.RelativeOrAbsolute));
-            DishThreeText.Text = hahaha.getinstance().getDish()[10].Key;
-            DishThreeImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[10].Value, UriKind.RelativeOrAbsolute));
-            DishFourText.Text = hahaha.getinstance().getDish()[11].Key;
-            DishFourIamge.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[11].Value, UriKind.RelativeOrAbsolute));
-            DishFiveText.Text = hahaha.getinstance().getDish()[12].Key;
-            DishFiveImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[12].Value, UriKind.RelativeOrAbsolute));
-            DishSixText.Text = hahaha.getinstance().getDish()[13].Key;
-            DishSixImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[13].Value, UriKind.RelativeOrAbsolute));
-            DishSevenText.Text = hahaha.getinstance().getDish()[14].Key;
-            DishSevenImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[14].Value, UriKind.RelativeOrAbsolute));
-            DishEightText.Text = hahaha.getinstance().getDish()[15].Key;
-            DishEightImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[15].Value, UriKind.RelativeOrAbsolute));
+            DishOneText.Text = hahaha.getinstance().getDish()[dishneworder[0]].Key;
+            DishOneImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishneworder[0]].Value, UriKind.RelativeOrAbsolute));
+            DishTwoText.Text = hahaha.getinstance().getDish()[dishneworder[1]].Key;
+            DishTwoImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishneworder[1]].Value, UriKind.RelativeOrAbsolute));
+            DishThreeText.Text = hahaha.getinstance().getDish()[dishneworder[2]].Key;
+            DishThreeImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishneworder[2]].Value, UriKind.RelativeOrAbsolute));
+            DishFourText.Text = hahaha.getinstance().getDish()[dishneworder[3]].Key;
+            DishFourIamge.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishneworder[3]].Value, UriKind.RelativeOrAbsolute));
+            DishFiveText.Text = hahaha.getinstance().getDish()[dishneworder[4]].Key;
+            DishFiveImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishneworder[4]].Value, UriKind.RelativeOrAbsolute));
+            DishSixText.Text = hahaha.getinstance().getDish()[dishneworder[5]].Key;
+            DishSixImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishneworder[5]].Value, UriKind.RelativeOrAbsolute));
+            DishSevenText.Text = hahaha.getinstance().getDish()[dishneworder[6]].Key;
+            DishSevenImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishneworder[6]].Value, UriKind.RelativeOrAbsolute));
+            DishEightText.Text = hahaha.getinstance().getDish()[dishneworder[7]].Key;
+            DishEightImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishneworder[7]].Value, UriKind.RelativeOrAbsolute));
         }
 
         private void ChooseButton_Click(object sender, RoutedEventArgs e)
@@ -518,49 +459,6 @@ namespace HungerKiller
                          }
                      });
               }, sed);
-            
-            
-            
-                  
-            /*int a = 0;
-                if (DishEight.Background != DishOne.Background && DishOne.Background == DishFour.Background)
-                {
-                    a = 1;
-                }*/
-             /*   else if (a == 1)
-                {
-                    stdDish1.Stop();
-                    Random rd = new Random();
-                    seed = rd.Next(1, 9);
-                    switch (seed)
-                    {
-                        case 1:
-                            DishOne.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 2:
-                            DishTwo.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 3:
-                            DishTree.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 4:
-                            DishFour.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 5:
-                            DishFive.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 6:
-                            DishSix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 7:
-                            DishSeven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 8:
-                            DishEight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                    }
-                a = 0;
-                }*/
         }
 
         private void FinalOkButton_Click(object sender, RoutedEventArgs e)
@@ -582,25 +480,27 @@ namespace HungerKiller
                    CoreDispatcherPriority.High,
                    () =>
                    {
+                       Randomm res = new Randomm();
+                       int[] dishorder=res.differSamenessRandomNum(8, 0, hahaha.getinstance().getDish().Count());
                        ChooseButton.Visibility = Windows.UI.Xaml.Visibility.Visible;
                        UpdateTurntable.Visibility = Windows.UI.Xaml.Visibility.Visible;
                        DishOneText.Text = hahaha.getinstance().getDish()[0].Key;
                        var url="http://localhost:8080/HungerKillerBacked/HungerKiller/";
-                       DishOneImage.Source = new BitmapImage(new Uri(url+hahaha.getinstance().getDish()[0].Value, UriKind.Absolute));
+                       DishOneImage.Source = new BitmapImage(new Uri(url+hahaha.getinstance().getDish()[dishorder[0]].Value, UriKind.Absolute));
                        DishTwoText.Text = hahaha.getinstance().getDish()[1].Key;
-                       DishTwoImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[1].Value, UriKind.Absolute));
+                       DishTwoImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishorder[1]].Value, UriKind.Absolute));
                        DishThreeText.Text = hahaha.getinstance().getDish()[2].Key;
-                       DishThreeImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[2].Value, UriKind.RelativeOrAbsolute));
+                       DishThreeImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishorder[2]].Value, UriKind.RelativeOrAbsolute));
                        DishFourText.Text = hahaha.getinstance().getDish()[3].Key;
-                       DishFourIamge.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[3].Value , UriKind.RelativeOrAbsolute));
+                       DishFourIamge.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishorder[3]].Value , UriKind.RelativeOrAbsolute));
                        DishFiveText.Text = hahaha.getinstance().getDish()[4].Key;
-                       DishFiveImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[4].Value , UriKind.RelativeOrAbsolute));
+                       DishFiveImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishorder[4]].Value , UriKind.RelativeOrAbsolute));
                        DishSixText.Text = hahaha.getinstance().getDish()[5].Key;
-                       DishSixImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[5].Value , UriKind.RelativeOrAbsolute));
+                       DishSixImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishorder[5]].Value , UriKind.RelativeOrAbsolute));
                        DishSevenText.Text = hahaha.getinstance().getDish()[6].Key;
-                       DishSevenImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[6].Value , UriKind.RelativeOrAbsolute));
+                       DishSevenImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishorder[6]].Value , UriKind.RelativeOrAbsolute));
                        DishEightText.Text = hahaha.getinstance().getDish()[7].Key;
-                       DishEightImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[7].Value , UriKind.RelativeOrAbsolute));
+                       DishEightImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishorder[7]].Value , UriKind.RelativeOrAbsolute));
                    });
             }, sed);
         }

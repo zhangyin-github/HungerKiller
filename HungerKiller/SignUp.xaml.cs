@@ -139,10 +139,17 @@ namespace HungerKiller
                                         send_or_not = false;
                                     }
                                     Sign_Up SI = new Sign_Up();
-                                    SI.PostUser(usernam, passwor, emai, acid, sweet, hot, salty, meet, light, send_or_not);
-                                    signup_over jump1 = new signup_over();
-                                    await jump1.ShowAsync();
-                                    Frame.Navigate(typeof(MainPage));
+                                    bool check_signornot = await SI.PostUser(usernam, passwor, emai, acid, sweet, hot, salty, meet, light, send_or_not);
+                                    if (check_signornot == true)
+                                    {
+                                        signup_over jump1 = new signup_over();
+                                        await jump1.ShowAsync();
+                                        Frame.Navigate(typeof(MainPage));
+                                    }
+                                    else
+                                    {
+                                        statusText6.Text = "用户名已存在";
+                                    }
                                 }
                             }
                         }

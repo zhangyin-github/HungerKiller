@@ -90,187 +90,176 @@
         <Grid x:Name="rootGrid" 
               Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
               RenderTransformOrigin="0.505,0.439">
-            
-            <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="175"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-           
-            <!--菜品展示信息的自定义数据模板，事件click，点击图片进入菜品详细界面-->
-            <RelativePanel Grid.Row="0" Grid.ColumnSpan="3" BorderThickness="0,0,0,0.3" BorderBrush="LightGray">
-                <TextBlock 
-                Foreground="#FF145714" 
-                HorizontalAlignment="Center" 
-                FontSize="20" 
-                FontFamily="楷体" 
-                Text="个性推荐" 
-                Margin="30,30,0,0"/>
-                <AutoSuggestBox x:Name="AutoSuggestBox" 
-                            PlaceholderText="输入要搜索的内容" 
-                            BorderThickness="0"
-                            Background="#232323"
-                            Foreground="White" 
-                            Width="300" 
-                            RelativePanel.AlignRightWithPanel="True" 
-                            Margin="0,20,20,0"
-                            TextChanged="AutoSuggestBox_TextChanged"
-                            QuerySubmitted="AutoSuggestBox_QuerySubmitted"
-                            SuggestionChosen="AutoSuggestBox_SuggestionChosen"/>
-            </RelativePanel>
-            
-            <!--新品上市轮播控件-->
-            <Grid HorizontalAlignment="Center" Grid.Row="1" Margin="0,10,0,5" Grid.ColumnSpan="3" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="300"/>
-                    <ColumnDefinition Width="400"/>
-                    <ColumnDefinition Width="300"/>
-                </Grid.ColumnDefinitions>
+             <!--留白-->
+             <Grid Margin="20,0,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-                <!--左-->
-                <Grid Grid.Column="0" Margin="0,20,0,20">
-                    <Grid.Background>
-                        <SolidColorBrush Color="LightGray"/>
-                    </Grid.Background>
-                    <FlipView x:Name="LeftFlipView" Opacity="0.5" IsEnabled="False">
-                        <FlipView.ItemTemplate>
-                            <DataTemplate>
-                                <Image Source="{Binding}" Stretch="Fill"/>
-                            </DataTemplate>
-                        </FlipView.ItemTemplate>
-                    </FlipView>
-                </Grid>
+                <!--菜品展示信息的自定义数据模板，事件click，点击图片进入菜品详细界面-->
+                <RelativePanel Grid.Row="0" BorderThickness="0,0,0,0.5" BorderBrush="LightGray" >
+                    <TextBlock Foreground="Gray" HorizontalAlignment="Center"                                
+                               FontSize="14" FontFamily="楷体" Text="发现美食"
+                               RelativePanel.AlignVerticalCenterWithPanel="True" />
+                    <AutoSuggestBox x:Name="AutoSuggestBox" PlaceholderText="输入要搜索的内容" 
+                                    Background="#232323" Foreground="White" Width="300" 
+                                    RelativePanel.AlignRightWithPanel="True" 
+                                    RelativePanel.AlignVerticalCenterWithPanel="True"
+                                    RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                    TextChanged="AutoSuggestBox_TextChanged"
+                                    QuerySubmitted="AutoSuggestBox_QuerySubmitted"
+                                    SuggestionChosen="AutoSuggestBox_SuggestionChosen"/>
+                </RelativePanel>
 
-                <!--中-->
-                <FlipView x:Name="CenterFlipView" Grid.Column="1" 
+                <!--新品上市轮播控件-->
+                <Grid HorizontalAlignment="Center" Grid.Row="1" Margin="0,20,0,0" Grid.ColumnSpan="3" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1.5*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--左-->
+                    <Grid Grid.Column="0" Margin="0,20,0,10">
+                        <Grid.Background>
+                            <SolidColorBrush Color="LightGray"/>
+                        </Grid.Background>
+                        <FlipView x:Name="LeftFlipView" Opacity="0.5" IsEnabled="False">
+                            <FlipView.ItemTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding}" Stretch="Fill"/>
+                                </DataTemplate>
+                            </FlipView.ItemTemplate>
+                        </FlipView>
+                    </Grid>
+
+                    <!--中-->
+                    <FlipView x:Name="CenterFlipView" Grid.Column="1" 
                           Tapped="CenterFlipView_Tapped" 
                           SelectionChanged="CenterFlipView_SelectionChanged">
-                    <FlipView.ItemTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding}" Stretch="Fill"/>
-                        </DataTemplate>
-                    </FlipView.ItemTemplate>
-                </FlipView>
-
-                <!--右-->
-                <Grid Grid.Column="2" Margin="0,20,0,20">
-                    <Grid.Background>
-                        <SolidColorBrush Color="LightGray"/>
-                    </Grid.Background>
-                    <FlipView x:Name="RightFlipView" Opacity="0.3" IsEnabled="False">
                         <FlipView.ItemTemplate>
                             <DataTemplate>
                                 <Image Source="{Binding}" Stretch="Fill"/>
                             </DataTemplate>
                         </FlipView.ItemTemplate>
                     </FlipView>
-                </Grid>
+
+                    <!--右-->
+                    <Grid Grid.Column="2" Margin="0,20,0,10">
+                        <Grid.Background>
+                            <SolidColorBrush Color="LightGray"/>
+                        </Grid.Background>
+                        <FlipView x:Name="RightFlipView" Opacity="0.3" IsEnabled="False">
+                            <FlipView.ItemTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding}" Stretch="Fill"/>
+                                </DataTemplate>
+                            </FlipView.ItemTemplate>
+                        </FlipView>
+                    </Grid>
             </Grid>
+                
+                <!--三种推荐方式-->
+                <Grid  Grid.Row="2" HorizontalAlignment="Center"  Margin="0,20,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+                    <!--趣味决策-->
+                    <Grid Grid.Column="0" BorderBrush="LightGray" BorderThickness="0,0,0.5,0">
+                        <Button Name="juece2" Click="juece2_Click"
+                                BorderThickness="0" Background="Transparent"                                
+                                Style="{StaticResource ButtonStyle1}">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Image Name="juece" Source="Assets/7.png" Height="50" />
+                                <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                                    <TextBlock Text="趣味决策" FontSize="17" FontFamily="楷体" Margin="0,0,0,3"/>
+                                    <TextBlock Text="今天吃啥？玩点不一样的" FontSize="14" FontFamily="楷体" Foreground="Gray"/>
+                                </StackPanel>
 
-        <Grid  BorderBrush="LightGray" 
-               BorderThickness="0,0,0.5,0" 
-               Grid.Row="2"
-               Grid.Column="0">
-        <Button Name="juece2"  
-                Click="juece2_Click"
-                BorderThickness="0"
-                Background="Transparent" 
-                HorizontalAlignment="Stretch" 
-                VerticalContentAlignment="Stretch"
-                Style="{StaticResource ButtonStyle1}">
-                    <RelativePanel >
-                        <Image Name="juece" Source="Assets/7.png" Height="50" />
-                        <TextBlock Name="juece1" Text="决策" FontSize="24" FontFamily="楷体"
-                                   RelativePanel.RightOf="juece" Height="Auto"/>
-                        <TextBlock Text="享受你的菜品专属" FontSize="24" FontFamily="楷体" Opacity="0.5"
-                                   RelativePanel.RightOf="juece" RelativePanel.Below="juece1" Height="Auto"/>
-                    </RelativePanel>
-          </Button>
-          </Grid>
-
-        <Grid  BorderBrush="LightGray" 
-               BorderThickness="0,0,0.5,0" 
-               Grid.Row="2"
-               Grid.Column="1">
-        <Button Name="tuijian2" 
-                Click="tuijian2_Click"
-                BorderThickness="0"
-                Background="Transparent" 
-                VerticalContentAlignment="Stretch"
-                HorizontalAlignment="Stretch" 
-                Style="{StaticResource ButtonStyle1}">
-                    <RelativePanel >
-                        <Image Name="tuijian" Source="Assets/8.png" Height="50"/>
-                        <TextBlock Name="tuijian1" Text="推荐" FontSize="24" FontFamily="楷体"
-                                   RelativePanel.RightOf="tuijian" Height="Auto"/>
-                        <TextBlock Text="根据你的口味生成" FontSize="24" FontFamily="楷体" Opacity="0.5"
-                                   RelativePanel.RightOf="tuijian" RelativePanel.Below="tuijian1" Height="Auto"/>
-                    </RelativePanel>
-         </Button>
-         </Grid>
-
-        <Button Name="paihang2" 
-                Grid.Row="2" 
-                Grid.Column="2" 
-                Click="paihang2_Click"
-                BorderThickness="0"
-                Background="Transparent"                 
-                HorizontalAlignment="Stretch" 
-                VerticalContentAlignment="Stretch"
-                Style="{StaticResource ButtonStyle1}">
-                <RelativePanel >
-                    <Image Name="paihang" Source="Assets/9.png" Height="50"/>
-                    <TextBlock Name="paihang1" Text="排行" FontSize="24" FontFamily="楷体"
-                               RelativePanel.RightOf="paihang" Height="Auto"/>
-                    <TextBlock Text="最热菜品榜" FontSize="24" FontFamily="楷体" Opacity="0.5"
-                               RelativePanel.RightOf="paihang" RelativePanel.Below="paihang1" Height="Auto"/>
-                </RelativePanel>
-        </Button>
-            
-            <GridView     Grid.Row="3"
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                    <!--今日热门看点-->
+                    <Grid Grid.Column="1" BorderBrush="LightGray" BorderThickness="0,0,0.5,0">
+                        <Button Name="tuijian2" Click="tuijian2_Click"
+                                BorderThickness="0" Background="Transparent"                                
+                                Style="{StaticResource ButtonStyle1}">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Image Name="tuijian" Source="Assets/8.png" Height="50" />
+                                <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                                    <TextBlock Text="今日看点" FontSize="17" FontFamily="楷体" Margin="0,0,0,3"/>
+                                    <TextBlock Text="边吃边知天下事" FontSize="14" FontFamily="楷体" Foreground="Gray"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                    <!--热门排行-->
+                    <Grid Grid.Column="2" BorderBrush="LightGray" BorderThickness="0,0,0.5,0">
+                        <Button Name="paihang2" Click="paihang2_Click"
+                                BorderThickness="0" Background="Transparent"                                
+                                Style="{StaticResource ButtonStyle1}">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Image Name="paihang" Source="Assets/8.png" Height="50" />
+                                <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                                    <TextBlock Text="排行榜" FontSize="17" FontFamily="楷体" Margin="0,0,0,3"/>
+                                    <TextBlock Text="食堂风云榜" FontSize="14" FontFamily="楷体" Foreground="Gray"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Grid>
+                <!--推荐菜品-->
+                <Grid Grid.Row="3" BorderThickness="0,0,0,0.5" BorderBrush="LightGray">
+                    <TextBlock Foreground="Gray"
+                               FontSize="14"
+                               FontFamily="楷体"
+                               Text="推荐菜品"
+                               VerticalAlignment="Center"/>
+                </Grid>
+                 
+               <GridView  Grid.Row="4"
                           Grid.ColumnSpan="3"
                           Name="MyGridview"
                           HorizontalAlignment="Left"
-                          ItemsSource="{x:Bind NewsItems}"
-                          IsItemClickEnabled="True" 
-                          Margin="40,20,0,0"
+                          ItemsSource="{x:Bind NewsItems}" IsItemClickEnabled="True"                         
                           ItemClick="MyGridview_ItemClick">
-                <GridView.ItemTemplate>
-                    <DataTemplate x:DataType="data:NewsItem">
-                        <Grid Background="White" Margin="10" Height="275" Width="200">
-                            <Grid.RowDefinitions >
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Image Name="MyImage" Source="{x:Bind Image}"/>
-                            <RelativePanel Grid.Row="1" Margin="10">
-                                <TextBlock Text="{x:Bind Headline}" 
+                    <GridView.ItemTemplate>
+                        <DataTemplate x:DataType="data:NewsItem">
+                            <Grid Background="White" Margin="10" Height="250" Width="200">
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Image Name="MyImage" Source="{x:Bind Image}"/>
+                                <RelativePanel Grid.Row="1" Margin="10">
+                                    <TextBlock Text="{x:Bind Headline}" 
                                            Name="HeadlineTextBox"
                                            RelativePanel.AlignTopWithPanel="True" 
                                            FontSize="18" 
                                            TextWrapping="Wrap" 
                                            FontFamily="楷体"/>
-                                <TextBlock Text="{x:Bind Subhead}" 
+                                    <TextBlock Text="{x:Bind Subhead}" 
                                            RelativePanel.Below="HeadlineTextBox" 
                                            TextWrapping="Wrap"
                                            FontSize="18"
                                            FontFamily="楷体"/>
-                                <TextBlock Text="{x:Bind Dateline}" 
+                                    <TextBlock Text="{x:Bind Dateline}" 
                                            RelativePanel.AlignBottomWithPanel="True" 
                                            FontSize="18"
                                            FontFamily="楷体"
                                            TextWrapping="Wrap"/>
-                            </RelativePanel>
-                        </Grid>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-            </GridView>
+                                </RelativePanel>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </Grid>
         </Grid>
     </ScrollViewer>
 </Page>
