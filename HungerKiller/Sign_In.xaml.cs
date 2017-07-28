@@ -42,6 +42,8 @@ namespace HungerKiller
             }
             else
             {
+                OneUser.name = username.Text;
+                OneUser.password = passwordBox.Password;
                 if (autosignin.IsChecked.Value == true){
                     mima_rem.IsChecked = true;
                     string checksignin = "true";
