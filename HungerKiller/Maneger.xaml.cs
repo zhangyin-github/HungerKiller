@@ -45,25 +45,9 @@ namespace HungerKiller
 
         }
 
-        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
-        }
+       
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (fabuguanli.IsSelected)
-            {
-
-                guanliFrame.Navigate(typeof(pinglunguanli));
-                TitleTextBlock.Text = "评论管理";
-            }
-            else if (pinglunguanli.IsSelected)
-            {
-                
-                TitleTextBlock.Text = "发布管理";
-            }
-        }
+        
 
         private void searchAutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
@@ -102,5 +86,7 @@ namespace HungerKiller
             guanliFrame.Navigate(typeof(RevokeActivity));
             TitleTextBlock.Text = "活动撤销";
         }
+
+        
     }
 }
