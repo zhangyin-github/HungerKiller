@@ -73,6 +73,10 @@ namespace HungerKiller
             {
                 editbox.Document.Selection.CharacterFormat.Size = (float)24;
             }
+            if (BlackItem.IsSelected)
+            {
+                editbox.Document.Selection.CharacterFormat.ForegroundColor = Colors.Black;
+            }
             if (RedItem.IsSelected)
             {
                 editbox.Document.Selection.CharacterFormat.ForegroundColor = Colors.Red;

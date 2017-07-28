@@ -23,6 +23,9 @@
                 <ListBoxItem Content="16" IsTapEnabled="True" Name="SecondItem"></ListBoxItem>
                 <ListBoxItem Content="24" IsTapEnabled="True" Name="ThirdItem"></ListBoxItem>
                 <ListBoxItem Content="字体颜色："></ListBoxItem>
+                <ListBoxItem IsTapEnabled="True" Name="BlackItem">
+                    <Button Background="Black" BorderThickness="0"></Button>
+                </ListBoxItem>
                 <ListBoxItem IsTapEnabled="True" Name="RedItem">
                     <Button Background="Red" BorderThickness="0"></Button>
                 </ListBoxItem>
