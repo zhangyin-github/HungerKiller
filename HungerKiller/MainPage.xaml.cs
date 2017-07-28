@@ -308,7 +308,7 @@ namespace HungerKiller
         }
 
             //MySettingStackPanel.Visibility = Visibility.Collapsed;
-        }
+        
 
         /// <summary>
         /// 注销
