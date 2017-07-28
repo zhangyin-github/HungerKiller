@@ -22,7 +22,7 @@ namespace HungerKiller.Model
             }
             return tmp;
         }
-        public int[] differSamenessRandomNum(int num, int minValue, int maxValue) //在区间[minValue,maxValue]取出num个互不相同的随机数，返回数组。
+        public async Task<int[]> differSamenessRandomNum(int num, int minValue, int maxValue) //在区间[minValue,maxValue]取出num个互不相同的随机数，返回数组。
         {
             Random ra = new Random(unchecked((int)DateTime.Now.Ticks));//保证产生的数字的随机性
             int[] arrNum = new int[num];

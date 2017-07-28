@@ -115,11 +115,7 @@ namespace HungerKiller
                             {
                                 if (YesRadioButton.IsChecked != NoRadioButton.IsChecked)
                                 {
-                                    string checksignin1 = "true";
-                                    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-                                    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-                                    localSettings.Values["UserStoredautosignin"] = checksignin1;
-                                    User.sign_or_not = true;
+                                   
                                     string usernam = username.Text;
                                     string passwor = passwordBox.Password;
                                     string emai = mail.Text;
@@ -142,6 +138,11 @@ namespace HungerKiller
                                     bool check_signornot = await SI.PostUser(usernam, passwor, emai, acid, sweet, hot, salty, meet, light, send_or_not);
                                     if (check_signornot == true)
                                     {
+                                        string checksignin1 = "true";
+                                        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                                        Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                                        localSettings.Values["UserStoredautosignin"] = checksignin1;
+                                        User.sign_or_not = true;
                                         signup_over jump1 = new signup_over();
                                         await jump1.ShowAsync();
                                         Frame.Navigate(typeof(MainPage));
@@ -149,6 +150,7 @@ namespace HungerKiller
                                     else
                                     {
                                         statusText6.Text = "用户名已存在";
+                                        User.sign_or_not = false;
                                     }
                                 }
                             }
