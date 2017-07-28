@@ -83,10 +83,10 @@ namespace HungerKiller.Model
 
      }*/
 
-    public class OneUser
+    public static class OneUser
     {
-        public string name { get; set; }
-        public string password { get; set; }
+        public static string name { get; set; }
+        public static string password { get; set; }
     }
 
 

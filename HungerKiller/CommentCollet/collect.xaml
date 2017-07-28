@@ -1,0 +1,25 @@
+﻿<ContentDialog
+    x:Class="HungerKiller.CommentCollet.collect"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HungerKiller.CommentCollet"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="评论"
+    PrimaryButtonText="评论"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    >
+
+    <Grid>
+        <StackPanel>
+            <TextBox x:Name="comment_Collectbox"
+                 TextWrapping="Wrap" 
+                 Height="100"
+                 MaxLength="140"
+                 >
+            </TextBox>
+            <TextBlock x:Name="prompt" FontSize="15" Foreground="Red"></TextBlock>
+        </StackPanel>
+    </Grid>
+</ContentDialog>

@@ -92,7 +92,11 @@
             <StackPanel Grid.Column="0" 
                         Grid.Row="1">
                 <TextBlock Text="评论" FontSize="30"/>
-                <Image Source="Assets/block.png"/>
+                <Button x:Name="collect_comment" Click="collect_comment_Click" Height="40" Width="600"
+                        BorderBrush="AliceBlue">
+               
+                </Button>
+                
 
             </StackPanel>
 

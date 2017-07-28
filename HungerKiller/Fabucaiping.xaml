@@ -7,23 +7,55 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-     
-        <RichTextBlock Width="300">
-            
-            <Paragraph TextAlignment="DetectFromContent"   TextIndent="25"    >
-                
-                <InlineUIContainer >
-                   
-                        <Image Name="AddPhoto" Source="Assets/3.jpg" MaxHeight="100" MaxWidth="100"></Image>
-                        
-                </InlineUIContainer>
-                Hello world ! ! !This is my imageHello world ! ! !This is my imageHello world ! ! !This is my image
-                Hello world ! ! !This is my imageHello world ! ! !This is my imageHello world ! ! !This is my image
-            </Paragraph>
-            <Paragraph >
-                    
-            </Paragraph>
-        </RichTextBlock>
-    </Grid>
+        <Grid HorizontalAlignment="Center" >
+            <Grid.RowDefinitions >
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <ListBox HorizontalAlignment="Left" Width="100" Name="EditListBox"
+                     SelectionMode="Single" 
+                     SelectionChanged="EditListBox_SelectionChanged" >
+                <ListBoxItem Content="字体大小："></ListBoxItem>
+                <ListBoxItem Content="12" IsTapEnabled="True" Name="FirstItem"></ListBoxItem>
+                <ListBoxItem Content="16" IsTapEnabled="True" Name="SecondItem"></ListBoxItem>
+                <ListBoxItem Content="24" IsTapEnabled="True" Name="ThirdItem"></ListBoxItem>
+                <ListBoxItem Content="字体颜色："></ListBoxItem>
+                <ListBoxItem IsTapEnabled="True" Name="RedItem">
+                    <Button Background="Red" BorderThickness="0"></Button>
+                </ListBoxItem>
+                <ListBoxItem IsTapEnabled="True" Name="BlueItem">
+                    <Button Background="Blue" BorderThickness="0" ></Button>
+                </ListBoxItem>
+                <ListBoxItem IsTapEnabled="True" Name="BrownItem">
+                    <Button Background="Brown" BorderThickness="0"></Button>
+                </ListBoxItem>
+                <ListBoxItem  >
+
+                        <Button Name="BoldButton"  Content="&#xE19B;" FontFamily="Segoe MDL2 Assets"  Click="BoldButton_Click"  BorderThickness="0"></Button>
+                </ListBoxItem>
+                <ListBoxItem >
+                        <Button Name="AddPhotoButton" Content="插入图片" FontSize="10" Click="AddPhotoButton_Click" BorderThickness="0"  ></Button> 
+                </ListBoxItem>
+            </ListBox>
+
+            <ScrollViewer >
+                <RichEditBox Name="editbox" TextWrapping="Wrap" Width="600" HorizontalAlignment="Center" AcceptsReturn="True" PlaceholderText="请输入......"></RichEditBox>
+            </ScrollViewer>
+        </StackPanel>
+            <Button Grid.Row="1" 
+                    Name="FabucaipingButton" 
+                    Content="发布" 
+                    FontSize="20"
+                    Height="60" 
+                    Width="80"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Background="Lavender" 
+                    Click="FabucaipingButton_Click" ></Button>
+        </Grid>
+        </Grid>
+    
 </Page>

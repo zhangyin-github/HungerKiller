@@ -301,6 +301,11 @@ namespace HungerKiller
             {
                 User.sign_or_not = true;
             }
+            else
+            {
+                User.sign_or_not = false;
+            }
+        }
 
             //MySettingStackPanel.Visibility = Visibility.Collapsed;
         }
@@ -315,6 +320,12 @@ namespace HungerKiller
             if (User.sign_or_not == true)
             {
                 User.sign_or_not = false;
+                OneUser.name = null;
+                OneUser.password = null; 
+                string checksignin2 = "false";
+                    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                    localSettings.Values["UserStoredautosignin"] = checksignin2;
                 logout signout = new logout();
                 signout.ShowAsync();
             }

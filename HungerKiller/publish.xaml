@@ -22,7 +22,14 @@
             <StackPanel Orientation="Horizontal"  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" >
                 <Image Name="ChoosenPhotoImage" Height="400" MaxWidth="200" 
                        ></Image>
-                <TextBox  Height="400" Width="300"  Name="PublishTextBox" Margin="10"></TextBox>
+                <TextBox  Height="400"
+                          Width="300"  
+                          Name="PublishTextBox" 
+                          Margin="10"
+                          TextWrapping="Wrap" 
+                          InputScope="Chat" 
+                          AcceptsReturn="True"
+                          PlaceholderText="请输入......"></TextBox>
                 
             </StackPanel>
             <Button Name="AddPhoto"
@@ -35,18 +42,22 @@
                               HorizontalAlignment="Left"  
                               Grid.Row="1" 
                               Grid.Column="1"
-                              Margin="0,0,20,0"></Button>
+                              Margin="0,0,20,0"
+                              ></Button>
 
                     
                       
                    
                
-                      <Button Content="发布" FontSize="40" 
+                      <Button Content="发布" FontSize="20" 
+                              Height="40" Width="80"
                               Grid.Row="1"
                               Grid.Column="1"
                               HorizontalAlignment="Right" 
                               VerticalAlignment="Center"
-                              Background="Lavender" ></Button>
+                              Background="Lavender" 
+                              Name="PublishButton"
+                              Click="PublishButton_Click" ></Button>
 
             
     </Grid>
