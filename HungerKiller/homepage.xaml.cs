@@ -115,7 +115,7 @@ namespace HungerKiller
 
         private void tuijian2_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(deal));
+            this.Frame.Navigate(typeof(Recommend));
         }
 
         private void paihang2_Click(object sender, RoutedEventArgs e)
