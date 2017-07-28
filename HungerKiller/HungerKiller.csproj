@@ -100,6 +100,15 @@
     <Compile Include="comment.xaml.cs">
       <DependentUpon>comment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CommentCollet\Collet1.xaml.cs">
+      <DependentUpon>Collet1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommentCollet\Collet2.xaml.cs">
+      <DependentUpon>Collet2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommentCollet\Message.xaml.cs">
+      <DependentUpon>Message.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ContentDialog1.xaml.cs">
       <DependentUpon>ContentDialog1.xaml</DependentUpon>
     </Compile>
@@ -209,6 +218,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="comment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommentCollet\Collet1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommentCollet\Collet2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommentCollet\Message.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -39,6 +39,7 @@ namespace HungerKiller
             NewsManager.GetAllItems(NewsItems);
             this.DataContextChanged += (s, e) => Bindings.Update();
 
+            //轮播图
             this.LeftFlipView.ItemsSource = this.CenterFlipView.ItemsSource = this.RightFlipView.ItemsSource = new ObservableCollection<BitmapImage>()
             {
                 new BitmapImage(new Uri("ms-appx:///Assets/1.jpg",UriKind.RelativeOrAbsolute)),
@@ -49,6 +50,40 @@ namespace HungerKiller
             this.LeftFlipView.SelectedIndex = this.LeftFlipView.Items.Count - 1;
             this.RightFlipView.SelectedIndex = this.CenterFlipView.SelectedIndex + 1;
 
+        }
+
+        /// <summary>
+        /// 轮播图
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CenterFlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.CenterFlipView.SelectedIndex == 0)
+            {
+                this.LeftFlipView.SelectedIndex = this.LeftFlipView.Items.Count - 1;
+                this.RightFlipView.SelectedIndex = 1;
+            }
+            else if (this.CenterFlipView.SelectedIndex == 1)
+            {
+                this.LeftFlipView.SelectedIndex = 0;
+                this.RightFlipView.SelectedIndex = this.RightFlipView.Items.Count - 1;
+            }
+            else if (this.CenterFlipView.SelectedIndex == this.CenterFlipView.Items.Count - 1)
+            {
+                this.LeftFlipView.SelectedIndex = this.LeftFlipView.Items.Count - 2;
+                this.RightFlipView.SelectedIndex = 0;
+            }
+            else if ((this.CenterFlipView.SelectedIndex < (this.CenterFlipView.Items.Count - 1)) && this.CenterFlipView.SelectedIndex > -1)
+            {
+                this.LeftFlipView.SelectedIndex = this.CenterFlipView.SelectedIndex - 1;
+                this.RightFlipView.SelectedIndex = this.CenterFlipView.SelectedIndex + 1;
+            }
+            else
+            {
+                return;
+            }
+            Debug.Write(this.LeftFlipView.SelectedIndex);
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -113,34 +148,6 @@ namespace HungerKiller
             this.Frame.Navigate(typeof(comment));
         }
 
-        private void CenterFlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (this.CenterFlipView.SelectedIndex==0)
-            {
-                this.LeftFlipView.SelectedIndex = this.LeftFlipView.Items.Count - 1;
-                this.RightFlipView.SelectedIndex = 1;
-            }
-            else if (this.CenterFlipView.SelectedIndex == 1)
-            {
-                this.LeftFlipView.SelectedIndex = 0;
-                this.RightFlipView.SelectedIndex = this.RightFlipView.Items.Count - 1;
-            }
-            else if(this.CenterFlipView.SelectedIndex==this.CenterFlipView.Items.Count-1)
-            {
-                this.LeftFlipView.SelectedIndex = this.LeftFlipView.Items.Count - 2;
-                this.RightFlipView.SelectedIndex = 0;
-            }
-            else if((this.CenterFlipView.SelectedIndex<(this.CenterFlipView.Items.Count-1))&&this.CenterFlipView.SelectedIndex>-1)
-            {
-                this.LeftFlipView.SelectedIndex = this.CenterFlipView.SelectedIndex - 1;
-                this.RightFlipView.SelectedIndex = this.CenterFlipView.SelectedIndex + 1;
-            }
-            else
-            {
-                return;
-            }
-            Debug.Write(this.LeftFlipView.SelectedIndex);
-        }
 
         private void MyGridview_ItemClick(object sender, ItemClickEventArgs e)
         {

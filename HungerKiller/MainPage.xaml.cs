@@ -93,6 +93,7 @@ namespace HungerKiller
                 Setting_1.Visibility = Visibility.Visible;
                 SettingListBox_2.Visibility = Visibility.Collapsed;
             }
+
             if(Setting_1.Visibility==Visibility.Visible)
             {                
                 if(UserName_1.Width<=67)
@@ -133,10 +134,7 @@ namespace HungerKiller
                 IfSplitViewOpen();
             }
             else if (Deal.IsSelected)
-            {
-                //显示返回按钮
-                BackButton.Visibility = Visibility.Visible;
-
+            {              
                 ManegerListBox.SelectedIndex = SettingListBox_2.SelectedIndex = -1;
                 MyFrame.Navigate(typeof(deal));
                 IfSplitViewOpen();
@@ -152,9 +150,6 @@ namespace HungerKiller
         {           
             if (Maneger.IsSelected)
             {
-                //显示返回按钮
-                BackButton.Visibility = Visibility.Visible;
-
                 BaseListBox.SelectedIndex = SettingListBox_2.SelectedIndex = -1;
                 MyFrame.Navigate(typeof(Maneger));
                 IfSplitViewOpen();
@@ -230,7 +225,6 @@ namespace HungerKiller
             }
              else
              {
-                
                 MySettingSplitView.IsPaneOpen = false;
                 SelfInfoSplitView.IsPaneOpen = !SelfInfoSplitView.IsPaneOpen;
             }
@@ -307,6 +301,12 @@ namespace HungerKiller
             }
         }
 
+        /// <summary>
+        /// 返回上一页
+        /// Sakura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             if(MyFrame.CanGoBack)
