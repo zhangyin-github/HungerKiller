@@ -52,13 +52,13 @@ namespace HungerKiller.Model
                 var response = await hc.PostAsync(new Uri(url), content);
                 var resdata = await response.Content.ReadAsStringAsync();
                 if (resdata[0]=='1')
-                    return true;
+                    return await Task.FromResult(true);
                 else
-                    return false;
+                    return await Task.FromResult(false);
             }
             catch
             {
-                return false;
+                return await Task.FromResult(false);
             }
         }
 
