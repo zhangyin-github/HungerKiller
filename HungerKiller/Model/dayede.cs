@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace HungerKiller.Model
-{
+{/// <summary>
+///一个单例，用来存储一个hehehhe格式的链表 
+/// </summary>
     class dayede
     {
         private static dayede instance;

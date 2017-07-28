@@ -7,8 +7,17 @@ using Windows.Web.Http;
 
 namespace HungerKiller.Model
 {
+    /// <summary>
+    /// 登录与服务器的交互
+    /// </summary>
     class Signinn
     {
+        /// <summary>
+        /// 收集用户名和密码，然后将其发送到服务端，并返回相应的值
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public async Task<int> siginin(string username, string password)
         {
             try

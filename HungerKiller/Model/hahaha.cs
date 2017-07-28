@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace HungerKiller.Model
 {
+    /// <summary>
+    /// 用来存储在趣味决策页面取出的菜品的名字和图片的名字，单例
+    /// </summary>
     class hahaha
     {
         private static hahaha instance;

@@ -5,9 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace HungerKiller.Model
-{
+{/// <summary>
+/// 随机数的实现
+/// </summary>
     class Randomm
     {
+        /// <summary>
+        /// 到时候再改
+        /// </summary>
+        /// <param name="arrNum"></param>
+        /// <param name="tmp"></param>
+        /// <param name="minValue"></param>
+        /// <param name="maxValue"></param>
+        /// <param name="ra"></param>
+        /// <returns></returns>
         public int getRandomNum(int[] arrNum, int tmp, int minValue, int maxValue, Random ra)
         {
             int n = 0;
@@ -22,6 +33,13 @@ namespace HungerKiller.Model
             }
             return tmp;
         }
+        /// <summary>
+        /// 到时候再改
+        /// </summary>
+        /// <param name="num"></param>
+        /// <param name="minValue"></param>
+        /// <param name="maxValue"></param>
+        /// <returns></returns>
         public async Task<int[]> differSamenessRandomNum(int num, int minValue, int maxValue) //在区间[minValue,maxValue]取出num个互不相同的随机数，返回数组。
         {
             Random ra = new Random(unchecked((int)DateTime.Now.Ticks));//保证产生的数字的随机性

@@ -7,8 +7,25 @@ using Windows.Web.Http;
 
 namespace HungerKiller.Model
 {
+    /// <summary>
+    /// 注册与服务器的交互
+    /// </summary>
     public class Sign_Up
     {
+        /// <summary>
+        /// 统计各个信息并将其发送到服务器之中然后返回是否成功。
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <param name="email"></param>
+        /// <param name="acid"></param>
+        /// <param name="sweet"></param>
+        /// <param name="hot"></param>
+        /// <param name="salty"></param>
+        /// <param name="meet"></param>
+        /// <param name="light"></param>
+        /// <param name="send"></param>
+        /// <returns></returns>
         public async Task<bool> PostUser(string username, string password, string email, bool acid, bool sweet, bool hot, bool salty, bool meet, bool light, bool send)
         {
             String acidd, sweett, hott, saltyy, meett, lightt, sendd;
