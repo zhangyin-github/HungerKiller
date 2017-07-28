@@ -22,29 +22,33 @@ namespace HungerKiller
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class pinglunguanli : Page
+    public sealed partial class RevokeActivity : Page
     {
-        public pinglunguanli()
+        public RevokeActivity()
         {
             this.InitializeComponent();
-            Fabus = FabuManager.GetFabus();
+            Genggai = HuodongchexiaoManager.RevokeActivity();
         }
-        private List<Fabu> Fabus;
-        
+        private List<Huodongchexiao> Genggai;
 
-        private void PublishCheckBox_Tapped(object sender, TappedRoutedEventArgs e)
+        private void RevokeListView_ItemClick(object sender, ItemClickEventArgs e)
         {
 
         }
 
-        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        private void RevokeCheckBox_Tapped(object sender, TappedRoutedEventArgs e)
         {
 
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private  void Button_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new MessageDialog("你确定要删除所选项，删除后将难以恢复 ！", "删除提示");
+            
+        }
+
+        private async  void BottomButton_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new MessageDialog("你确定要撤销所选项，撤销后将难以恢复 ！", "撤销提示");
 
             dialog.Commands.Add(new UICommand("确定", cmd => { }, commandId: 0));
             dialog.Commands.Add(new UICommand("取消", cmd => { }, commandId: 1));
@@ -57,9 +61,9 @@ namespace HungerKiller
             var result = await dialog.ShowAsync();
         }
 
-        private async  void DeleteCommentButton_Click(object sender, RoutedEventArgs e)
+        private async  void SingleTrashButton_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new MessageDialog("你确定要删除此项，删除后将难以恢复 ！", "删除提示");
+            var dialog = new MessageDialog("你确定要撤销此活动吗，撤销后将难以恢复 ！", "撤销提示");
 
             dialog.Commands.Add(new UICommand("确定", cmd => { }, commandId: 0));
             dialog.Commands.Add(new UICommand("取消", cmd => { }, commandId: 1));

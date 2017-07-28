@@ -36,7 +36,7 @@
                                     <VisualState x:Name="PointerOver">
                                         <Storyboard>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="LightBlue"/>
                                             </ObjectAnimationUsingKeyFrames>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
                                                 <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPointerOver}"/>
@@ -227,9 +227,9 @@
                     Click="HamburgerButton_Click" 
                     RelativePanel.AlignLeftWithPanel="True" 
                     RelativePanel.AlignVerticalCenterWithPanel="True" 
-                    Width="65"
+                    Width="60"
                     Height="50"
-                       
+                    Style="{StaticResource HamburgerButton}"   
                     Foreground="Black"></Button>
         </RelativePanel>
         <SplitView Grid.Row="1"
@@ -244,20 +244,43 @@
                           SelectionMode="Single" 
                           SelectionChanged="ListBox_SelectionChanged"
                           >
-                    <ListBoxItem  Name="fabuguanli" >
-                        <StackPanel Orientation="Horizontal" >
-                            <Button FontFamily="Segoe MDL2 Assets" 
+                    <ListBoxItem  Name="fabuguanli" 
+                                  HorizontalContentAlignment="Stretch" 
+                                  VerticalContentAlignment="Stretch"
+                                  Padding="0">
+                        <Button VerticalAlignment="Stretch" 
+                                HorizontalAlignment="Stretch" 
+                                BorderThickness="0"
+                                Background="Transparent"
+                                Style="{StaticResource HamburgerButton }">
+                          <StackPanel Orientation="Horizontal" >
+                              <Button FontFamily="Segoe MDL2 Assets" 
                                     Content="&#xE14C;" 
                                     Background="Transparent" 
                                     Foreground="Black" 
                                     FontSize="30"
                                     BorderThickness="0"
-                                    Style="{StaticResource HamburgerButton}"></Button>
-
-                            <TextBlock Text="评论管理" VerticalAlignment="Center" FontSize="15" ></TextBlock>
-                        </StackPanel>
+                                    Style="{StaticResource HamburgerButton}">
+                              </Button>
+                              <TextBlock Text="评论管理" VerticalAlignment="Center" FontSize="15" ></TextBlock>
+                          </StackPanel>
+                            <Button.Flyout >
+                                <MenuFlyout Placement="Right">
+                                    <MenuFlyoutItem Text="评论删除" Name="DeleteComments" Click="DeleteComments_Click" ></MenuFlyoutItem>
+                                    <MenuFlyoutItem Text="活动撤销" Name="RevokeActivity" Click="RevokeActivity_Click" ></MenuFlyoutItem>
+                                </MenuFlyout>
+                            </Button.Flyout>
+                        </Button>
                     </ListBoxItem>
-                    <ListBoxItem  Name="pinglunguanli">
+                    <ListBoxItem  Name="pinglunguanli"
+                                  HorizontalContentAlignment="Stretch" 
+                                  VerticalContentAlignment="Stretch" 
+                                  Padding="0">
+                        <Button VerticalAlignment="Stretch"  
+                                HorizontalAlignment="Stretch" 
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Style="{StaticResource HamburgerButton}">
                         <StackPanel Orientation="Horizontal" >
                             <Button FontFamily="Segoe MDL2 Assets" 
                                     Content="&#xE133;" 
@@ -265,9 +288,17 @@
                                     Foreground="Black"  
                                     FontSize="30"
                                     BorderThickness="0"
-                                    Style="{StaticResource HamburgerButton}"></Button>
+                                    Style="{StaticResource HamburgerButton}">
+                            </Button>
                             <TextBlock Text="发布管理" VerticalAlignment="Center" FontSize="15" ></TextBlock>
                         </StackPanel>
+                        <Button.Flyout>
+                                <MenuFlyout Placement="Right">
+                                    <MenuFlyoutItem Text="发布活动" Name="PublishActivity" Click="PublishActivity_Click"  ></MenuFlyoutItem>
+                                    <MenuFlyoutItem Text="发布菜品" Name="PublishDilicious" Click="PublishDilicious_Click" ></MenuFlyoutItem>
+                                </MenuFlyout>
+                        </Button.Flyout>
+                        </Button>
                     </ListBoxItem>
                 </ListBox>
             </SplitView.Pane>
@@ -286,7 +317,7 @@
                        Height="80" >
 
                     </TextBlock>
-                    <Frame Name="dengluFrame" Grid.Row="1"></Frame>
+                    <Frame Name="guanliFrame" Grid.Row="1"></Frame>
 
 
 

@@ -109,6 +109,9 @@
     <Compile Include="DishesDetails.xaml.cs">
       <DependentUpon>DishesDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Fabucaiping.xaml.cs">
+      <DependentUpon>Fabucaiping.xaml</DependentUpon>
+    </Compile>
     <Compile Include="homepage.xaml.cs">
       <DependentUpon>homepage.xaml</DependentUpon>
     </Compile>
@@ -130,6 +133,7 @@
     <Compile Include="Model\DishNameAndImage.cs" />
     <Compile Include="Model\Fabu.cs" />
     <Compile Include="Model\hahaha.cs" />
+    <Compile Include="Model\Huodongchexiao.cs" />
     <Compile Include="Model\hehehhe.cs" />
     <Compile Include="Model\NewsItem.cs" />
     <Compile Include="Model\Sign_Up.cs" />
@@ -142,6 +146,12 @@
     </Compile>
     <Compile Include="Ranking.xaml.cs">
       <DependentUpon>Ranking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RevokeActivity.xaml.cs">
+      <DependentUpon>RevokeActivity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Recommend.xaml.cs">
+      <DependentUpon>Recommend.xaml</DependentUpon>
     </Compile>
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
@@ -168,6 +178,7 @@
   <ItemGroup>
     <Content Include="Assets\1.jpg" />
     <Content Include="Assets\10.jpg" />
+    <Content Include="Assets\11.jpg" />
     <Content Include="Assets\12.jpg" />
     <Content Include="Assets\2.jpg" />
     <Content Include="Assets\3.jpg" />
@@ -213,6 +224,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Fabucaiping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="homepage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -242,6 +257,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ranking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RevokeActivity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Recommend.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
