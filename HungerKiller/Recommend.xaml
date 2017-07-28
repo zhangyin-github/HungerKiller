@@ -44,7 +44,6 @@
                   IsSwipeEnabled="True"
                   ItemsSource="{x:Bind NewsItems}"
                   IsItemClickEnabled="True"
-                  ItemTemplateSelector="{StaticResource HomeTemplateSelector}"
                   ItemClick="Mylistview_ItemClick"
                   Margin="0,20,0,0">
                 <ListView.ItemContainerStyle>
