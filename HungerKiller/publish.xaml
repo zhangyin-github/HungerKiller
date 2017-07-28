@@ -22,7 +22,14 @@
             <StackPanel Orientation="Horizontal"  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" >
                 <Image Name="ChoosenPhotoImage" Height="400" MaxWidth="200" 
                        ></Image>
-                <TextBox  Height="400" Width="300"  Name="PublishTextBox" Margin="10"></TextBox>
+                <TextBox  Height="400"
+                          Width="300"  
+                          Name="PublishTextBox" 
+                          Margin="10"
+                          TextWrapping="Wrap" 
+                          InputScope="Chat" 
+                          AcceptsReturn="True"
+                          PlaceholderText="请输入......"></TextBox>
                 
             </StackPanel>
             <Button Name="AddPhoto"
