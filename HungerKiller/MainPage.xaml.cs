@@ -163,22 +163,44 @@ namespace HungerKiller
         /// <param name="e"></param>
         /*  SplitView 关闭时点击用户头像、或者设置按钮，这是个ListBoxSelectionChanged事件*/
         /*竖版的用户登录入口及设置按钮*/
-        private void SettingListBox_2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void SettingListBox_2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {            
             if(MyUserHeaderImage_2.IsSelected)
             {
                 ManegerListBox.SelectedIndex = BaseListBox.SelectedIndex = -1;
+                if (User.sign_or_not == false)
+                {
+                    Sign_In jump = new Sign_In();
+                    await jump.ShowAsync();
+                    if (tiao.jm == true)
+                    {
+                        //显示返回按钮
+                        BackButton.Visibility = Visibility.Visible;
 
-                UserName_Click(sender,e);
+                  
 
-                //判断已经登录？ 否，则打开登录页面
-                /*MyFrame.Navigate(typeof(SignIn));//SignIn为登录界面*/
-                //已登录则打开个人资料侧滑框
+                        Frame.Navigate(typeof(SignUp));
+                        tiao.jm = false;
+                    }
+                    if (tiao1.jm1 == true)
+                    {
+                        ContentDialog1 m = new ContentDialog1();
+                        m.ShowAsync();
+                        tiao1.jm1 = false;
+                    }
+                }
+                else
+                {
+                    MySettingSplitView.IsPaneOpen = false;
+                    SelfInfoSplitView.IsPaneOpen = true;
+                }
+                
             }
             else if(MySettingButton_2.IsSelected)
             {
                 ManegerListBox.SelectedIndex = BaseListBox.SelectedIndex = -1;
-                MySettingSplitView.IsPaneOpen = !MySettingSplitView.IsPaneOpen;
+
+                MySettingSplitView.IsPaneOpen = true;
                 SelfInfoSplitView.IsPaneOpen = false;
             }
         }
@@ -230,12 +252,7 @@ namespace HungerKiller
             }
              
         }
-        private void UserName_1_Click(object sender, RoutedEventArgs e)
-        {
-            ManegerListBox.SelectedIndex = BaseListBox.SelectedIndex = -1;
-            SelfInfoSplitView.IsPaneOpen = !SelfInfoSplitView.IsPaneOpen;
-            MySettingSplitView.IsPaneOpen = false;
-        }
+
 
         //以下是右侧侧滑框内函数
 
@@ -288,6 +305,9 @@ namespace HungerKiller
             {
                 User.sign_or_not = false;
             }
+        }
+
+            //MySettingStackPanel.Visibility = Visibility.Collapsed;
         }
 
         /// <summary>

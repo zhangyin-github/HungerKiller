@@ -25,7 +25,7 @@ namespace HungerKiller
             this.InitializeComponent();
         }
 
-        private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        private async void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
 
             if ((passwordBox.Password == "123456") && (username.Text == "admin"))
@@ -34,7 +34,7 @@ namespace HungerKiller
                 statusText6.Text = "用户名或密码错误";
 
             }
-            if ((passwordBox.Password.Length==0) || (username.Text.Length == 0))
+            if ((passwordBox.Password.Length == 0) || (username.Text.Length == 0))
             {
                 args.Cancel = true;
                 statusText6.Text = "东西都不写全还想登录？？？";
@@ -44,7 +44,15 @@ namespace HungerKiller
             {
                 OneUser.name = username.Text;
                 OneUser.password = passwordBox.Password;
-                if (autosignin.IsChecked.Value == true){
+                Signinn sin = new Signinn();
+                int loginlogo = await sin.siginin(OneUser.name, OneUser.password);
+
+
+
+
+
+                if (autosignin.IsChecked.Value == true)
+                {
                     mima_rem.IsChecked = true;
                     string checksignin = "true";
                     Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
@@ -65,6 +73,14 @@ namespace HungerKiller
                     //OneUser oneUser = new OneUser() { name = username.Text, password = passwordBox.Password };
                     localSettings.Values["UserStoredPassword"] = passwordBox.Password;
                     localSettings.Values["UserStoredUsername"] = username.Text;
+                }
+                else
+                {
+                    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                    //OneUser oneUser = new OneUser() { name = username.Text, password = passwordBox.Password };
+                    localSettings.Values["UserStoredPassword"] = null;
+                    localSettings.Values["UserStoredUsername"] = null;
                 }
                 User.sign_or_not = true;
                 tiao1.jm1 = true;

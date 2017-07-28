@@ -146,6 +146,7 @@
     <Compile Include="Model\hehehhe.cs" />
     <Compile Include="Model\NewsItem.cs" />
     <Compile Include="Model\Randomm.cs" />
+    <Compile Include="Model\Signinn.cs" />
     <Compile Include="Model\Sign_Up.cs" />
     <Compile Include="pinglunguanli.xaml.cs">
       <DependentUpon>pinglunguanli.xaml</DependentUpon>
