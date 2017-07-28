@@ -104,7 +104,10 @@
             </Grid.ColumnDefinitions>
            
             <!--菜品展示信息的自定义数据模板，事件click，点击图片进入菜品详细界面-->
-            <RelativePanel Grid.Row="0" Grid.ColumnSpan="3" BorderThickness="0,0,0,0.3" BorderBrush="LightGray">
+            <RelativePanel Grid.Row="0" 
+                           Grid.ColumnSpan="3" 
+                           BorderThickness="0,0,0,0.3" 
+                           BorderBrush="LightGray">
                 <TextBlock 
                 Foreground="#FF145714" 
                 HorizontalAlignment="Center" 
@@ -185,11 +188,22 @@
                 VerticalContentAlignment="Stretch"
                 Style="{StaticResource ButtonStyle1}">
                     <RelativePanel >
-                        <Image Name="juece" Source="Assets/7.png" Height="50" />
-                        <TextBlock Name="juece1" Text="决策" FontSize="24" FontFamily="楷体"
-                                   RelativePanel.RightOf="juece" Height="Auto"/>
-                        <TextBlock Text="享受你的菜品专属" FontSize="24" FontFamily="楷体" Opacity="0.5"
-                                   RelativePanel.RightOf="juece" RelativePanel.Below="juece1" Height="Auto"/>
+                        <Image Name="juece" 
+                               Source="Assets/7.png" 
+                               Height="50" />
+                        <TextBlock Name="juece1" 
+                                   Text="决策" 
+                                   FontSize="24" 
+                                   FontFamily="楷体"
+                                   RelativePanel.RightOf="juece" 
+                                   Height="Auto"/>
+                        <TextBlock Text="享受你的菜品专属" 
+                                   FontSize="24" 
+                                   FontFamily="楷体" 
+                                   Opacity="0.5"
+                                   RelativePanel.RightOf="juece" 
+                                   RelativePanel.Below="juece1" 
+                                   Height="Auto"/>
                     </RelativePanel>
           </Button>
           </Grid>
@@ -206,11 +220,22 @@
                 HorizontalAlignment="Stretch" 
                 Style="{StaticResource ButtonStyle1}">
                     <RelativePanel >
-                        <Image Name="tuijian" Source="Assets/8.png" Height="50"/>
-                        <TextBlock Name="tuijian1" Text="推荐" FontSize="24" FontFamily="楷体"
-                                   RelativePanel.RightOf="tuijian" Height="Auto"/>
-                        <TextBlock Text="根据你的口味生成" FontSize="24" FontFamily="楷体" Opacity="0.5"
-                                   RelativePanel.RightOf="tuijian" RelativePanel.Below="tuijian1" Height="Auto"/>
+                        <Image Name="tuijian" 
+                               Source="Assets/8.png" 
+                               Height="50"/>
+                        <TextBlock Name="tuijian1" 
+                                   Text="推荐" 
+                                   FontSize="24" 
+                                   FontFamily="楷体"
+                                   RelativePanel.RightOf="tuijian" 
+                                   Height="Auto"/>
+                        <TextBlock Text="根据你的口味生成" 
+                                   FontSize="24" 
+                                   FontFamily="楷体" 
+                                   Opacity="0.5"
+                                   RelativePanel.RightOf="tuijian" 
+                                   RelativePanel.Below="tuijian1" 
+                                   Height="Auto"/>
                     </RelativePanel>
          </Button>
          </Grid>
@@ -225,11 +250,22 @@
                 VerticalContentAlignment="Stretch"
                 Style="{StaticResource ButtonStyle1}">
                 <RelativePanel >
-                    <Image Name="paihang" Source="Assets/9.png" Height="50"/>
-                    <TextBlock Name="paihang1" Text="排行" FontSize="24" FontFamily="楷体"
-                               RelativePanel.RightOf="paihang" Height="Auto"/>
-                    <TextBlock Text="最热菜品榜" FontSize="24" FontFamily="楷体" Opacity="0.5"
-                               RelativePanel.RightOf="paihang" RelativePanel.Below="paihang1" Height="Auto"/>
+                    <Image Name="paihang" 
+                           Source="Assets/9.png" 
+                           Height="50"/>
+                    <TextBlock Name="paihang1" 
+                               Text="排行" 
+                               FontSize="24" 
+                               FontFamily="楷体"
+                               RelativePanel.RightOf="paihang" 
+                               Height="Auto"/>
+                    <TextBlock Text="最热菜品榜" 
+                               FontSize="24" 
+                               FontFamily="楷体" 
+                               Opacity="0.5"
+                               RelativePanel.RightOf="paihang" 
+                               RelativePanel.Below="paihang1" 
+                               Height="Auto"/>
                 </RelativePanel>
         </Button>
             
