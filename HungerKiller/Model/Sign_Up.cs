@@ -9,7 +9,7 @@ namespace HungerKiller.Model
 {
     public class Sign_Up
     {
-        public async void PostUser(string username, string password, string email, bool acid, bool sweet, bool hot, bool salty, bool meet, bool light, bool send)
+        public async Task<bool> PostUser(string username, string password, string email, bool acid, bool sweet, bool hot, bool salty, bool meet, bool light, bool send)
         {
             String acidd, sweett, hott, saltyy, meett, lightt, sendd;
             if (acid)
@@ -50,11 +50,15 @@ namespace HungerKiller.Model
                 Windows.Web.Http.HttpClient hc = new Windows.Web.Http.HttpClient();
                 var content = new HttpFormUrlEncodedContent(data);
                 var response = await hc.PostAsync(new Uri(url), content);
-
+                var resdata = await response.Content.ReadAsStringAsync();
+                if (resdata[0]=='1')
+                    return true;
+                else
+                    return false;
             }
             catch
             {
-
+                return false;
             }
         }
 
