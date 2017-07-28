@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using HungerKiller.Model;
 using Windows.UI.Xaml.Media.Imaging;
+using HungerKiller.CommentCollet;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -39,6 +40,12 @@ namespace HungerKiller
             Dishes_Classify.Text = news.Text;
             Dishes_Taste.Text = news.Subhead;
             Dishes_Material.Text = news.Dateline;
+        }
+
+        private void collect_comment_Click(object sender, RoutedEventArgs e)
+        {
+            collect a = new collect();
+            a.ShowAsync();
         }
     }
 

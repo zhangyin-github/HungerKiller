@@ -100,8 +100,8 @@
     <Compile Include="comment.xaml.cs">
       <DependentUpon>comment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CommentCollet\Collet1.xaml.cs">
-      <DependentUpon>Collet1.xaml</DependentUpon>
+    <Compile Include="CommentCollet\collect.xaml.cs">
+      <DependentUpon>collect.xaml</DependentUpon>
     </Compile>
     <Compile Include="CommentCollet\Collet2.xaml.cs">
       <DependentUpon>Collet2.xaml</DependentUpon>
@@ -222,7 +222,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CommentCollet\Collet1.xaml">
+    <Page Include="CommentCollet\collect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
