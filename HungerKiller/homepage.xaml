@@ -90,8 +90,8 @@
         <Grid x:Name="rootGrid" 
               Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
               RenderTransformOrigin="0.505,0.439">
-            <!--留白-->
-            <Grid Margin="20,0,20,0">
+             <!--留白-->
+             <Grid Margin="20,0,20,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="200"/>
@@ -161,7 +161,7 @@
                             </FlipView.ItemTemplate>
                         </FlipView>
                     </Grid>
-                </Grid>
+            </Grid>
                 
                 <!--三种推荐方式-->
                 <Grid  Grid.Row="2" HorizontalAlignment="Center"  Margin="0,20,0,10">
@@ -196,7 +196,6 @@
                                     <TextBlock Text="今日看点" FontSize="17" FontFamily="楷体" Margin="0,0,0,3"/>
                                     <TextBlock Text="边吃边知天下事" FontSize="14" FontFamily="楷体" Foreground="Gray"/>
                                 </StackPanel>
-
                             </StackPanel>
                         </Button>
                     </Grid>
@@ -211,20 +210,22 @@
                                     <TextBlock Text="排行榜" FontSize="17" FontFamily="楷体" Margin="0,0,0,3"/>
                                     <TextBlock Text="食堂风云榜" FontSize="14" FontFamily="楷体" Foreground="Gray"/>
                                 </StackPanel>
-
                             </StackPanel>
                         </Button>
                     </Grid>
                 </Grid>
-
                 <!--推荐菜品-->
                 <Grid Grid.Row="3" BorderThickness="0,0,0,0.5" BorderBrush="LightGray">
-                    <TextBlock Foreground="Gray"         
-                               FontSize="14" FontFamily="楷体" Text="推荐菜品"
-                               VerticalAlignment="Center" />
+                    <TextBlock Foreground="Gray"
+                               FontSize="14"
+                               FontFamily="楷体"
+                               Text="推荐菜品"
+                               VerticalAlignment="Center"/>
                 </Grid>
-                                
-                <GridView Name="MyGridview" Grid.Row="4" Grid.ColumnSpan="3" Margin="0,15,0,0"
+                 
+               <GridView  Grid.Row="4"
+                          Grid.ColumnSpan="3"
+                          Name="MyGridview"
                           HorizontalAlignment="Left"
                           ItemsSource="{x:Bind NewsItems}" IsItemClickEnabled="True"                         
                           ItemClick="MyGridview_ItemClick">
