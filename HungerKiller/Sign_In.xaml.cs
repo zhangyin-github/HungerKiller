@@ -66,6 +66,14 @@ namespace HungerKiller
                     localSettings.Values["UserStoredPassword"] = passwordBox.Password;
                     localSettings.Values["UserStoredUsername"] = username.Text;
                 }
+                else
+                {
+                    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                    //OneUser oneUser = new OneUser() { name = username.Text, password = passwordBox.Password };
+                    localSettings.Values["UserStoredPassword"] = null;
+                    localSettings.Values["UserStoredUsername"] = null;
+                }
                 User.sign_or_not = true;
                 tiao1.jm1 = true;
             }
