@@ -35,71 +35,10 @@ namespace HungerKiller
         public int  seed=0;
         public  int a = 0;
         public int sewq;
-      //  public System.Threading.Timer ti;
         public deal()
         {
             this.InitializeComponent();
         }
-
-
-   /*   public void TimeS()
-        {
-            TimeSpan delay = TimeSpan.FromMinutes(1);
-
-            ThreadPoolTimer DelayTimer = ThreadPoolTimer.CreateTimer(
-                (source) =>
-                {
-
-        Dispatcher.RunAsync(
-                        CoreDispatcherPriority.High,
-                        () =>
-                        {
-                            stdDish1.Stop();
-            });
-
-                }, delay);
-        }
-     */   
-     /*   public void time()
-        {
-         ti = new Timer(new TimerCallback(timercall),this,800,0);
-         }
-
-        public void timercall(object obj)
-        {
-          ti.Dispose();
-            stdDish1.Stop();
-        /*Random rd = new Random();
-        seed = rd.Next(1,9);
-            switch (seed)
-            {
-                case 1:
-                    DishOne.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 2:
-                    DishTwo.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 3:
-                    DishTree.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 4:
-                    DishFour.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 5:
-                    DishFive.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 6:
-                    DishSix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 7:
-                    DishSeven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-                case 8:
-                    DishEight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                    break;
-            }*/
-     
-     
     private void CardChooseButtonone_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonOneTwo .Visibility == Windows.UI.Xaml.Visibility.Collapsed)
@@ -518,49 +457,6 @@ namespace HungerKiller
                          }
                      });
               }, sed);
-            
-            
-            
-                  
-            /*int a = 0;
-                if (DishEight.Background != DishOne.Background && DishOne.Background == DishFour.Background)
-                {
-                    a = 1;
-                }*/
-             /*   else if (a == 1)
-                {
-                    stdDish1.Stop();
-                    Random rd = new Random();
-                    seed = rd.Next(1, 9);
-                    switch (seed)
-                    {
-                        case 1:
-                            DishOne.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 2:
-                            DishTwo.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 3:
-                            DishTree.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 4:
-                            DishFour.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 5:
-                            DishFive.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 6:
-                            DishSix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 7:
-                            DishSeven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                        case 8:
-                            DishEight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Black);
-                            break;
-                    }
-                a = 0;
-                }*/
         }
 
         private void FinalOkButton_Click(object sender, RoutedEventArgs e)
