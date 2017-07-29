@@ -196,21 +196,11 @@
                                 BorderThickness="0" 
                                 Background="Transparent"                                
                                 Style="{StaticResource ButtonStyle1}">
-                            <StackPanel Orientation="Horizontal" 
-                                        HorizontalAlignment="Left">
-                                <Image Name="juece" 
-                                       Source="Assets/7.png" 
-                                       Height="50" />
-                                <StackPanel Margin="10,0,0,0" 
-                                            VerticalAlignment="Center">
-                                    <TextBlock Text="趣味决策" 
-                                               FontSize="17" 
-                                               FontFamily="楷体" 
-                                               Margin="0,0,0,3"/>
-                                    <TextBlock Text="今天吃啥？玩点不一样的" 
-                                               FontSize="14" 
-                                               FontFamily="楷体" 
-                                               Foreground="Gray"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Image Name="juece" Source="Assets/大转盘 LOGO-03.png" Height="50" />
+                                <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                                    <TextBlock Text="趣味决策" FontSize="17" FontFamily="楷体" Margin="0,0,0,3"/>
+                                    <TextBlock Text="今天吃啥？玩点不一样的" FontSize="14" FontFamily="楷体" Foreground="Gray"/>
                                 </StackPanel>
                             </StackPanel>
                         </Button>
@@ -224,48 +214,25 @@
                                 BorderThickness="0" 
                                 Background="Transparent"                                
                                 Style="{StaticResource ButtonStyle1}">
-                            <StackPanel Orientation="Horizontal" 
-                                        HorizontalAlignment="Left">
-                                <Image Name="tuijian" 
-                                       Source="Assets/8.png" 
-                                       Height="50" />
-                                <StackPanel Margin="10,0,0,0" 
-                                            VerticalAlignment="Center">
-                                    <TextBlock Text="今日看点" 
-                                               FontSize="17" 
-                                               FontFamily="楷体" 
-                                               Margin="0,0,0,3"/>
-                                    <TextBlock Text="边吃边知天下事" 
-                                               FontSize="14" 
-                                               FontFamily="楷体" 
-                                               Foreground="Gray"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Image Name="tuijian" Source="Assets/看板_1.png" Height="50" />
+                                <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                                    <TextBlock Text="今日看点" FontSize="17" FontFamily="楷体" Margin="0,0,0,3"/>
+                                    <TextBlock Text="边吃边知天下事" FontSize="14" FontFamily="楷体" Foreground="Gray"/>
                                 </StackPanel>
                             </StackPanel>
                         </Button>
                     </Grid>
                     <!--热门排行-->
-                    <Grid Grid.Column="2" 
-                          BorderBrush="LightGray">
-                        <Button Name="paihang2" 
-                                Click="paihang2_Click"
-                                BorderThickness="0" 
-                                Background="Transparent"                                
+                    <Grid Grid.Column="2" BorderBrush="LightGray" BorderThickness="0,0,0.0,0">
+                        <Button Name="paihang2" Click="paihang2_Click"
+                                BorderThickness="0" Background="Transparent"                                
                                 Style="{StaticResource ButtonStyle1}">
-                            <StackPanel Orientation="Horizontal" 
-                                        HorizontalAlignment="Left">
-                                <Image Name="paihang" 
-                                       Source="Assets/8.png" 
-                                       Height="50" />
-                                <StackPanel Margin="10,0,0,0" 
-                                            VerticalAlignment="Center">
-                                    <TextBlock Text="排行榜" 
-                                               FontSize="17" 
-                                               FontFamily="楷体" 
-                                               Margin="0,0,0,3"/>
-                                    <TextBlock Text="食堂风云榜" 
-                                               FontSize="14" 
-                                               FontFamily="楷体" 
-                                               Foreground="Gray"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Image Name="paihang" Source="Assets/排行榜.png" Height="50" />
+                                <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                                    <TextBlock Text="排行榜" FontSize="17" FontFamily="楷体" Margin="0,0,0,3"/>
+                                    <TextBlock Text="食堂风云榜" FontSize="14" FontFamily="楷体" Foreground="Gray"/>
                                 </StackPanel>
                             </StackPanel>
                         </Button>
@@ -291,11 +258,9 @@
                           ItemClick="MyGridview_ItemClick">
                     <GridView.ItemTemplate>
                         <DataTemplate x:DataType="data:NewsItem">
-                            <Grid Background="White" 
-                                  Margin="10" 
-                                  Height="250" 
-                                  Width="200">
-                                <Grid.RowDefinitions >
+                            <Grid Background="White" Margin="10" Height="230" Width="190" 
+                                  BorderBrush="LightGray" BorderThickness="0.5">
+                                <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
@@ -309,15 +274,18 @@
                                            FontSize="18" 
                                            TextWrapping="Wrap" 
                                            FontFamily="楷体"/>
-                                    <TextBlock Text="{x:Bind Subhead}" 
+                                    <TextBlock x:Name="SubheadTextBox"
+                                          Text="{x:Bind Subhead}" 
                                            RelativePanel.Below="HeadlineTextBox" 
                                            TextWrapping="Wrap"
-                                           FontSize="18"
+                                           FontSize="12"
+                                           Foreground="Gray"
                                            FontFamily="楷体"/>
                                     <TextBlock Text="{x:Bind Dateline}" 
-                                           RelativePanel.AlignBottomWithPanel="True" 
-                                           FontSize="18"
+                                           RelativePanel.Below="SubheadTextBox"
+                                           FontSize="16"
                                            FontFamily="楷体"
+                                           Foreground="Gray"
                                            TextWrapping="Wrap"/>
                                 </RelativePanel>
                             </Grid>

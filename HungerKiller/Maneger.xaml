@@ -190,139 +190,103 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions >
-            <RowDefinition Height="80" ></RowDefinition>
-            <RowDefinition Height="*" ></RowDefinition>
-        </Grid.RowDefinitions>
-        <RelativePanel Background="WhiteSmoke"  >
-            <AutoSuggestBox  Name="searchAutoSuggestBox" 
-                             PlaceholderText="Search" 
-                             RelativePanel.AlignHorizontalCenterWithPanel="True" 
-                             RelativePanel.AlignVerticalCenterWithPanel="True"  
-                             Width="300" 
-                             QueryIcon="Find" 
-                             QuerySubmitted="searchAutoSuggestBox_QuerySubmitted"
-                             SuggestionChosen="searchAutoSuggestBox_SuggestionChosen" 
-                             TextChanged="searchAutoSuggestBox_TextChanged" 
-                             Background="White" ></AutoSuggestBox>
-            <ComboBox  Name="ManagerComboBox" Height="50" Width="200"
-                    RelativePanel.AlignRightWithPanel="True"
-                    RelativePanel.AlignVerticalCenterWithPanel="True" 
-                    Background="White" Margin="0,0,20,0" >
-                <ComboBoxItem IsSelected="True" >
-                    <StackPanel Orientation="Horizontal" >
-                        <Button FontFamily="Segoe MDL2 Assets" Content="&#xE13D;" Background="White" ></Button>
-                        <TextBlock Text="Admin" VerticalAlignment="Center" ></TextBlock>
-                    </StackPanel>
-                </ComboBoxItem>
-                <ComboBoxItem Content="Profile"></ComboBoxItem>
-                <ComboBoxItem Content="Logout" Name="LogoutComboBoxItem" Tapped="LogoutComboBoxItem_Tapped" ></ComboBoxItem>
-            </ComboBox>
-            <Button Name="HamburgerButton" 
-                    BorderThickness="0"
-                    Background="Transparent"
-                    FontFamily="Segoe MDL2 Assets"
-                    Content="&#xE700;"
-                    FontSize="36"
-                    Click="HamburgerButton_Click" 
-                    RelativePanel.AlignLeftWithPanel="True" 
-                    RelativePanel.AlignVerticalCenterWithPanel="True" 
-                    Width="60"
-                    Height="50"
-                    Style="{StaticResource HamburgerButton}"   
-                    Foreground="Black"></Button>
-        </RelativePanel>
-        <SplitView Grid.Row="1"
-                   Name="MySplitView"
-                   IsPaneOpen="False" 
-                   DisplayMode="Inline"  
-                   CompactPaneLength="60"
-                   OpenPaneLength="150">
-            <SplitView.Pane >
-                <ListBox  Width="150"
-                          HorizontalAlignment="Left" Background="Transparent"      
-                          SelectionMode="Single" 
-                          SelectionChanged="ListBox_SelectionChanged"
-                          >
-                    <ListBoxItem  Name="fabuguanli" 
-                                  HorizontalContentAlignment="Stretch" 
-                                  VerticalContentAlignment="Stretch"
-                                  Padding="0">
-                        <Button VerticalAlignment="Stretch" 
-                                HorizontalAlignment="Stretch" 
-                                BorderThickness="0"
-                                Background="Transparent"
-                                Style="{StaticResource HamburgerButton }">
-                          <StackPanel Orientation="Horizontal" >
-                              <Button FontFamily="Segoe MDL2 Assets" 
-                                    Content="&#xE14C;" 
-                                    Background="Transparent" 
-                                    Foreground="Black" 
-                                    FontSize="30"
-                                    BorderThickness="0"
-                                    Style="{StaticResource HamburgerButton}">
-                              </Button>
-                              <TextBlock Text="评论管理" VerticalAlignment="Center" FontSize="15" ></TextBlock>
-                          </StackPanel>
-                            <Button.Flyout >
-                                <MenuFlyout Placement="Right">
-                                    <MenuFlyoutItem Text="评论删除" Name="DeleteComments" Click="DeleteComments_Click" ></MenuFlyoutItem>
-                                    <MenuFlyoutItem Text="活动撤销" Name="RevokeActivity" Click="RevokeActivity_Click" ></MenuFlyoutItem>
-                                </MenuFlyout>
-                            </Button.Flyout>
-                        </Button>
-                    </ListBoxItem>
-                    <ListBoxItem  Name="pinglunguanli"
-                                  HorizontalContentAlignment="Stretch" 
-                                  VerticalContentAlignment="Stretch" 
-                                  Padding="0">
-                        <Button VerticalAlignment="Stretch"  
-                                HorizontalAlignment="Stretch" 
-                                Background="Transparent"
-                                BorderThickness="0"
-                                Style="{StaticResource HamburgerButton}">
+        <Grid >
+            <Grid.RowDefinitions >
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <RelativePanel Grid.Row="0">
+                <AutoSuggestBox  Name="searchAutoSuggestBox" 
+                                 PlaceholderText="Search" 
+                                 RelativePanel.AlignHorizontalCenterWithPanel="True" 
+                                 RelativePanel.AlignVerticalCenterWithPanel="True"  
+                                 Width="300" 
+                                 QueryIcon="Find" 
+                                 QuerySubmitted="searchAutoSuggestBox_QuerySubmitted"
+                                 SuggestionChosen="searchAutoSuggestBox_SuggestionChosen" 
+                                 TextChanged="searchAutoSuggestBox_TextChanged" 
+                                 Background="White" >
+                </AutoSuggestBox>
+                <ComboBox  Name="ManagerComboBox" Height="50" Width="200"
+                           RelativePanel.AlignRightWithPanel="True"
+                           RelativePanel.AlignVerticalCenterWithPanel="True" 
+                           Background="White" Margin="0,0,20,0" >
+                    <ComboBoxItem IsSelected="True" >
                         <StackPanel Orientation="Horizontal" >
-                            <Button FontFamily="Segoe MDL2 Assets" 
-                                    Content="&#xE133;" 
-                                    Background="Transparent"  
-                                    Foreground="Black"  
-                                    FontSize="30"
-                                    BorderThickness="0"
-                                    Style="{StaticResource HamburgerButton}">
-                            </Button>
-                            <TextBlock Text="发布管理" VerticalAlignment="Center" FontSize="15" ></TextBlock>
+                            <Button FontFamily="Segoe MDL2 Assets" Content="&#xE13D;" Background="White" ></Button>
+                            <TextBlock Text="Admin" VerticalAlignment="Center" ></TextBlock>
                         </StackPanel>
-                        <Button.Flyout>
-                                <MenuFlyout Placement="Right">
-                                    <MenuFlyoutItem Text="发布活动" Name="PublishActivity" Click="PublishActivity_Click"  ></MenuFlyoutItem>
-                                    <MenuFlyoutItem Text="发布菜品" Name="PublishDilicious" Click="PublishDilicious_Click" ></MenuFlyoutItem>
-                                </MenuFlyout>
-                        </Button.Flyout>
-                        </Button>
-                    </ListBoxItem>
-                </ListBox>
-            </SplitView.Pane>
-            <SplitView.Content >
-                <Grid >
-                    <Grid.RowDefinitions >
-                        <RowDefinition Height="100"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-
-                    </Grid.RowDefinitions>
-                    <TextBlock Name="TitleTextBlock" 
-                               FontSize="50"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Width="350"
-                       Height="80" >
-
-                    </TextBlock>
-                    <Frame Name="guanliFrame" Grid.Row="1"></Frame>
-
-
-
-                </Grid>
-            </SplitView.Content >
-        </SplitView>
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="Profile"></ComboBoxItem>
+                    <ComboBoxItem Content="Logout" Name="LogoutComboBoxItem" Tapped="LogoutComboBoxItem_Tapped" ></ComboBoxItem>
+                </ComboBox>
+                <Button RelativePanel.AlignLeftWithPanel="True" 
+                        Height="45"
+                        Width="60"
+                        Background="Transparent" 
+                        FontFamily="Segoe MDL2 Assets"
+                        Content="&#xE112;"
+                        Name="GobackButton"
+                        Margin="30"
+                        FontSize="20"
+                         
+                        Click="GobackButton_Click"></Button>
+            </RelativePanel>
+            <Frame Grid.Row="1" Name="guanliFrame">
+               <Grid >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                
+                    <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" >
+                        <StackPanel Orientation="Horizontal" >
+                         <Button Height="200" 
+                                 Width="300" 
+                                 Name="PublishDilicious" 
+                                 Click="PublishDilicious_Click"
+                                 Background="Red">
+                                <StackPanel Orientation="Horizontal">
+                                    <!-- <TextBlock FontFamily ="Segoe MDL2 Assets" Text="&#xE14C;"></TextBlock> -->
+                                    <TextBlock Text="发布菜品" Foreground="White" FontFamily="Ebrima" FontSize="25"></TextBlock>
+                              </StackPanel>
+                            </Button>
+                         <Button Height="200" 
+                                 Width="300" 
+                                 Name="PublishActivity"  
+                                 Margin="30" 
+                                 Click="PublishActivity_Click" 
+                                 Background="Purple">
+                                <TextBlock Text="发布活动" Foreground="White" FontFamily="Ebrima" FontSize="25"></TextBlock>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" >
+                            <Button Height="200" 
+                                    Width="300" 
+                                    Name="DeleteComments"  
+                                    Click="DeleteComments_Click" 
+                                    Background="Brown">
+                                <TextBlock Text="删除评论" Foreground="White" FontFamily="Ebrima" FontSize="25">
+                                </TextBlock>
+                            </Button>
+                            <Button Height="200" 
+                                    Width="300" 
+                                    Name="RevokeActivity"  
+                                    Click="RevokeActivity_Click" 
+                                    Margin="30" 
+                                    Background="Green" 
+                                    >
+                                <TextBlock Text="活动撤销" Foreground="White" FontFamily="Ebrima" FontSize="25"></TextBlock>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                
+            </Grid>
+            </Frame>
+        </Grid>
     </Grid>
+        
+                
+                       
 </Page>

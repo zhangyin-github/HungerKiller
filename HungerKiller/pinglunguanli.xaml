@@ -9,14 +9,26 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions >
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="100"></RowDefinition>
-        </Grid.RowDefinitions>
+        <Grid >
+            <Grid.RowDefinitions >
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                       HorizontalAlignment="Center" 
+                       Text="评论删除"
+                       FontSize="50"
+                       VerticalAlignment="Center" ></TextBlock>
+            <Grid Grid.Row="1">
+              <Grid.RowDefinitions >
+                <RowDefinition Height="*"></RowDefinition>
+                 <RowDefinition Height="100"></RowDefinition>
+            </Grid.RowDefinitions>
         <ListView   Grid.Row="0"
-                               ItemsSource="{x:Bind Fabus}"
-                               IsItemClickEnabled="True" 
-                               ItemClick="ListView_ItemClick" >
+                    ItemsSource="{x:Bind Fabus}"
+                    IsItemClickEnabled="True" 
+                    ItemClick="ListView_ItemClick"
+                    HorizontalAlignment="Center" >
             <ListView.ItemTemplate >
                 <DataTemplate  x:DataType="data:Fabu">
                     <Grid >
@@ -49,14 +61,15 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-        <Button  FontFamily="Segoe MDL2 Assets" Content="&#xE107;" Grid.Row="1"
+       
+            <Button  FontFamily="Segoe MDL2 Assets" Content="&#xE107;" Grid.Row="1"
                              FontSize="50"
                             HorizontalAlignment="Right"  
                             VerticalAlignment="Center"
                             Background="White"
                             Click="Button_Click" ></Button>
-
+            </Grid>
+        </Grid>
     </Grid>
     
 </Page>

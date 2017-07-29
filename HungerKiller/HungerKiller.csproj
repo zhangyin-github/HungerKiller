@@ -139,6 +139,8 @@
     <Compile Include="Model\comment1.cs" />
     <Compile Include="Model\dayede.cs" />
     <Compile Include="Model\DealManager.cs" />
+    <Compile Include="Model\dealturninformation.cs" />
+    <Compile Include="Model\Dealturnresult.cs" />
     <Compile Include="Model\DishNameAndImage.cs" />
     <Compile Include="Model\Fabu.cs" />
     <Compile Include="Model\hahaha.cs" />
@@ -146,7 +148,9 @@
     <Compile Include="Model\hehehhe.cs" />
     <Compile Include="Model\NewsItem.cs" />
     <Compile Include="Model\Randomm.cs" />
+    <Compile Include="Model\Signinn.cs" />
     <Compile Include="Model\Sign_Up.cs" />
+    <Compile Include="Model\trunresult.cs" />
     <Compile Include="pinglunguanli.xaml.cs">
       <DependentUpon>pinglunguanli.xaml</DependentUpon>
     </Compile>
@@ -199,11 +203,24 @@
     <Content Include="Assets\9.png" />
     <Content Include="Assets\avr.png" />
     <Content Include="Assets\bg.jpg" />
+    <Content Include="Assets\list view.png" />
+    <Content Include="Assets\refresh.png" />
     <Content Include="Assets\star.png" />
     <Content Include="Assets\starempty.png" />
     <Content Include="Assets\starfull.png" />
     <Content Include="Assets\star_1.png" />
     <Content Include="Assets\block.png" />
+    <Content Include="Assets\个人中心.png" />
+    <Content Include="Assets\主页.png" />
+    <Content Include="Assets\关闭.png" />
+    <Content Include="Assets\大转盘 LOGO-03.png" />
+    <Content Include="Assets\大转盘 LOGO-07.png" />
+    <Content Include="Assets\排行榜.png" />
+    <Content Include="Assets\排行榜_1.png" />
+    <Content Include="Assets\看板.png" />
+    <Content Include="Assets\看板_1.png" />
+    <Content Include="Assets\看点.png" />
+    <Content Include="Assets\管理.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

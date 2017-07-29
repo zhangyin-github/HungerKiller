@@ -9,6 +9,17 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid >
+            <Grid.RowDefinitions >
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                       HorizontalAlignment="Center" 
+                       Text="发布菜品"
+                       FontSize="50"
+                       VerticalAlignment="Center" ></TextBlock>
+            <Grid Grid.Row="1">
         <Grid.RowDefinitions >
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
@@ -68,5 +79,7 @@
             FontSize="30"
             Height="50"
             Width="50"></Button>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

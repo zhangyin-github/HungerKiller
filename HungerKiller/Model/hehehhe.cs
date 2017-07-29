@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace HungerKiller.Model
-{
+{/// <summary>
+/// 菜品详情的数据结构
+/// </summary>
     class hehehhe
     {
         public int dishID { get; set; }

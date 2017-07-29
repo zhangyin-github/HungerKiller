@@ -83,30 +83,41 @@ namespace HungerKiller.Model
 
      }*/
 
-    public static class OneUser
+    public static class OneUser     //存用户名密码静态类
     {
         public static string name { get; set; }
         public static string password { get; set; }
     }
 
 
-    public class User
+    public class User           //用户服务
     {
         static User u = new User();
         public static bool sign_or_not = false;
+        public static int category=0;
     }
-    public class tiao
+    public class tiao       //登录界面跳转到主页的flag
     {
         static tiao jmp = new tiao();
         public static bool jm = false;
     }
-    public class tiao1
+    public class tiao1        //注销成功
     {
         static tiao1 jmp1 = new tiao1();
         public static bool jm1 = false;
     }
 
-    public class RegexUtilities
+    public class zidongzhuxiao
+    {
+        public static string zhuxiaoming;
+    }
+
+    public class guanliyuan        //注销成功
+    {
+        public static bool son = false;
+    }
+
+    public class RegexUtilities             //正则表达式邮箱验证
     {
         bool invalid = false;
 

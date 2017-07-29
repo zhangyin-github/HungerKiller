@@ -143,6 +143,14 @@ namespace HungerKiller
             sender.Text = suggest.Headline;
         }
 
+        /*private void CenterFlipView_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            
+                this.Frame.Navigate(typeof(comment));
+            
+            
+        }
+        */
         private void MyGridview_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frame.Navigate(typeof(comment),((NewsItem)e.ClickedItem).Id);

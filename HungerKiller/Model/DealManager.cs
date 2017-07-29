@@ -13,9 +13,17 @@ namespace HungerKiller.Model
         public string turnname { get; set; }
 
     }
+    /// <summary>
+    /// 点击转盘左侧的确定按钮所进行的各种操作
+    /// </summary>
     class DealManager
     {
-
+        /// <summary>
+        /// 处理count和countt两个用来存储用户选择卡片的结果
+        /// 将十个代表选择的字符发送到服务器并取出相应的菜品的名字以及图片的名字
+        /// </summary>
+        /// <param name="count"></param>
+        /// <param name="countt"></param>
         public async void DealCountAndCountt(int count, int countt)
         {
             List<int> counts = new List<int>();

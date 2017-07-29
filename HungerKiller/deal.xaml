@@ -121,7 +121,8 @@
                 </StackPanel>
                 <Button  Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Content="确定" FontSize="30" Name="OK" FontFamily="华文行楷" Height="50" Click="OK_Click"/>
             </Grid>
-            <Grid  Margin="0,0,0,0"  x:Name="TurntableBG" BorderThickness="0" Padding="0">
+                <StackPanel Orientation="Vertical">
+                    <Grid  Margin="0,0,0,0"  x:Name="TurntableBG" BorderThickness="0" Padding="0">
                 <Grid.ColumnDefinitions >
                     <ColumnDefinition Width="130"/>
                     <ColumnDefinition Width="130"/>
@@ -204,15 +205,20 @@
                     <Button  Width="120" Height="60" FontSize="24" FontFamily="华文行楷" BorderBrush="Black" VerticalAlignment="Center" Visibility="Collapsed" HorizontalAlignment="Center" Content="更新转盘" Name="UpdateTurntable" Click="UpdateTurntable_Click"/>
                 </StackPanel>
             </Grid>
-           </StackPanel> 
-            <StackPanel Orientation="Vertical"  Width="365">
+
+
+                    <TextBlock FontSize="36" Name="ERRORtextblock" Visibility="Collapsed">无法连接服务器</TextBlock>
+                    <TextBlock FontSize="36" Name="peipei" Visibility="Collapsed">我们已将您的反馈收集</TextBlock>
+                </StackPanel> 
+            </StackPanel> 
+            <StackPanel Orientation="Vertical"  Width="365" >
                 <Image  Stretch="Uniform"  Name="FinalImage" Width="200" Height="150" Margin="50,0,0,0" VerticalAlignment="Top"></Image >
                 <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜名:</TextBlock>
                 <TextBlock  Name="DishName" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
                 <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品评分:</TextBlock>
                 <TextBlock Name="DishScore" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
-                <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品价格:</TextBlock>
-                <TextBlock Name="DishPrice" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
+                <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品原料:</TextBlock>
+                <TextBlock Name="DishIngre" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
                 <TextBlock Style="{StaticResource MenuDishTextblocksStyle}">菜品所在楼层其窗口:</TextBlock>
                 <TextBlock Name="DishFloor" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>
                 <TextBlock Name="DishWindow" Style="{StaticResource MenuDishTextblocksStyle}"></TextBlock>

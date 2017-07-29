@@ -30,6 +30,7 @@ namespace HungerKiller
 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
+            int a = 1;
         }
     }
 }

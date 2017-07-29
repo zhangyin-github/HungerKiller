@@ -6,56 +6,125 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <ScrollViewer >
+   
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+        <Grid >
             <Grid.RowDefinitions >
+                <RowDefinition Height="80"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
             </Grid.RowDefinitions>
-                 
-                     <Grid.ColumnDefinitions >
+            <TextBlock Grid.Row="0"
+                       HorizontalAlignment="Center" 
+                       Text="发布活动"
+                       FontSize="50"
+                       VerticalAlignment="Center" ></TextBlock>
+            <ScrollViewer HorizontalAlignment="Center" 
+                          VerticalAlignment="Center"
+                          Grid.Row="1">
+            <StackPanel >
+            <Grid >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="300"></ColumnDefinition>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                            </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="100"></ColumnDefinition>
                         <ColumnDefinition Width="200"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="200"></ColumnDefinition>
-                     </Grid.ColumnDefinitions>
-                 
-            <StackPanel Orientation="Horizontal"  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" >
-                <Image Name="ChoosenPhotoImage" Height="400" MaxWidth="200" 
-                       ></Image>
-                <TextBox  Height="400"
-                          Width="300"  
-                          Name="PublishTextBox" 
-                          Margin="10"
-                          TextWrapping="Wrap" 
-                          InputScope="Chat" 
-                          AcceptsReturn="True"
-                          PlaceholderText="请输入......"></TextBox>
-                
-            </StackPanel>
-            <Button Name="AddPhoto"
-                              Height="40" Width="100"
-                              Content="插入图片" 
-                              FontSize="20"
-                              Background="Lavender" 
-                              Click="AddPhoto_Click" 
-                              VerticalAlignment="Center"  
-                              HorizontalAlignment="Left"  
-                              Grid.Row="1" 
-                              Grid.Column="1"
-                              Margin="0,0,20,0"></Button>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="标题："
+                               Grid.Row="0"
+                               Grid.Column="0"
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" >
+                    </TextBlock>
+                    <TextBox Name="BiaoTiTextBox" 
+                             Grid.Column="1"
+                             Grid.Row="0"
+                             Height="40"
+                             Width="180"></TextBox>
 
-                    
-                      
+                    <TextBlock Text="主办方："
+                               Grid.Row="1"
+                               Grid.Column="0"
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" >
+                    </TextBlock>
+                    <TextBox Name="ZhubanfangTextBox" 
+                             Grid.Column="1" 
+                             Grid.Row="1"
+                             Height="40"
+                             Width="180"></TextBox>
+
+                    <TextBlock Text="活动日期："
+                               Grid.Row="2"
+                               Grid.Column="0"
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" >
+                    </TextBlock>
+                    <TextBox Name="DayTextBox" 
+                             Grid.Column="1" 
+                             Grid.Row="2"
+                             Height="40"
+                             Width="180"></TextBox>
+
+                    <TextBlock Text="开始时间："
+                               Grid.Row="3"
+                               Grid.Column="0"
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" >
+                    </TextBlock>
+                    <TextBox Name="TimeTextBox"
+                             Grid.Column="1" 
+                             Grid.Row="3"
+                             Height="40"
+                             Width="180"></TextBox>
+
+                    <TextBlock Text="活动简介："
+                               Grid.Row="4"
+                               Grid.Column="0"
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" >
+                    </TextBlock>
+                    <TextBox Name="JianjieTextBox" 
+                             Grid.Column="1" 
+                             Grid.Row="4"
+                             Height="40"
+                             Width="180"></TextBox>
                    
-               
-                      <Button Content="发布" FontSize="40" 
+                   
+                </Grid>
+                <StackPanel Grid.Column="1" Grid.Row="0">
+                    <Button Name="AddPhoto"
+                            Content="插入图片"
+                            HorizontalAlignment="Center" 
+                            Background="Lavender" 
+                            Click="AddPhoto_Click">
+                    </Button>
+                    <Image Name="ChoosenPhotoImage"
+                           Margin="10,10"></Image>
+                </StackPanel>
+            </Grid>
+                <Button Content="发布" FontSize="20" 
+                              Height="40" Width="80"
                               Grid.Row="1"
                               Grid.Column="1"
                               HorizontalAlignment="Right" 
                               VerticalAlignment="Center"
-                              Background="Lavender" ></Button>
+                              Background="Lavender" 
+                              Name="PublishButton"
+                              Click="PublishButton_Click" ></Button>
 
-            
+
+            </StackPanel>
+        </ScrollViewer>    
     </Grid>
-    </ScrollViewer>
+    </Grid> 
 </Page>

@@ -7,54 +7,234 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid >
             <Grid.RowDefinitions >
+                <RowDefinition Height="80"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
             </Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" Grid.Row="0">
-            <ListBox HorizontalAlignment="Left" Width="100" Name="EditListBox"
-                     SelectionMode="Single" 
-                     SelectionChanged="EditListBox_SelectionChanged" >
-                <ListBoxItem Content="字体大小："></ListBoxItem>
-                <ListBoxItem Content="12" IsTapEnabled="True" Name="FirstItem"></ListBoxItem>
-                <ListBoxItem Content="16" IsTapEnabled="True" Name="SecondItem"></ListBoxItem>
-                <ListBoxItem Content="24" IsTapEnabled="True" Name="ThirdItem"></ListBoxItem>
-                <ListBoxItem Content="字体颜色："></ListBoxItem>
-                <ListBoxItem IsTapEnabled="True" Name="RedItem">
-                    <Button Background="Red" BorderThickness="0"></Button>
-                </ListBoxItem>
-                <ListBoxItem IsTapEnabled="True" Name="BlueItem">
-                    <Button Background="Blue" BorderThickness="0" ></Button>
-                </ListBoxItem>
-                <ListBoxItem IsTapEnabled="True" Name="BrownItem">
-                    <Button Background="Brown" BorderThickness="0"></Button>
-                </ListBoxItem>
-                <ListBoxItem  >
-
-                        <Button Name="BoldButton"  Content="&#xE19B;" FontFamily="Segoe MDL2 Assets"  Click="BoldButton_Click"  BorderThickness="0"></Button>
-                </ListBoxItem>
-                <ListBoxItem >
-                        <Button Name="AddPhotoButton" Content="插入图片" FontSize="10" Click="AddPhotoButton_Click" BorderThickness="0"  ></Button> 
-                </ListBoxItem>
-            </ListBox>
-
-            <ScrollViewer >
-                <RichEditBox Name="editbox" TextWrapping="Wrap" Width="600" HorizontalAlignment="Center" AcceptsReturn="True" ></RichEditBox>
-            </ScrollViewer>
-        </StackPanel>
-            <Button Grid.Row="1" 
-                    Name="FabucaipingButton" 
-                    Content="发布" 
-                    FontSize="20"
-                    Height="60" 
-                    Width="80"
-                    HorizontalAlignment="Center" 
-                    VerticalAlignment="Center"
-                    Background="Lavender" ></Button>
+            <TextBlock Grid.Row="0"
+                       HorizontalAlignment="Center" 
+                       Text="发布菜品"
+                       FontSize="50"
+                       VerticalAlignment="Center" ></TextBlock>
+        <ScrollViewer HorizontalAlignment="Center" 
+                      VerticalAlignment="Center"
+                      Grid.Row="1">
+            <StackPanel >
+            <Grid >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="300"></ColumnDefinition>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="菜名："
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" 
+                               FontSize="20"
+                               Grid.Row="0"
+                               Grid.Column="0"
+                               Name="CaiMingTextBlock">
+                    </TextBlock>
+                    <TextBlock Text="菜系："
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" 
+                               FontSize="20"
+                               Grid.Row="1"
+                               Grid.Column="0"
+                               Name="CaiXiTextBlock">
+                    </TextBlock>
+                    <TextBlock Text="口味："
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" 
+                               FontSize="20"
+                               Grid.Row="2"
+                               Grid.Column="0"
+                               Name="KouWeiTextBlock">
+                    </TextBlock>
+                    <TextBlock Text="所在楼层："
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" 
+                               FontSize="17"
+                               Grid.Row="3"
+                               Grid.Column="0"
+                               Name="LouCengTextBlock">
+                    </TextBlock>
+                    <TextBlock Text="原料："
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" 
+                               FontSize="20"
+                               Grid.Row="4"
+                               Grid.Column="0"
+                               Name="YuanLiaoTextBlock">
+                    </TextBlock>
+                    <!-- TextBox-->
+                    <TextBox Name="CaiMingTextBox"
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Center" 
+                             Grid.Row="0"
+                             Grid.Column="1"
+                             Width="180"
+                             Height="40">
+                    </TextBox>
+                    <ComboBox Name="CaiXiComboBox"
+                              HorizontalAlignment="Center" 
+                              VerticalAlignment="Center" 
+                              Grid.Row="1"
+                              Grid.Column="1"
+                              Width="180"
+                              Height="40">
+                        <ComboBoxItem Name="ChuanCaiComboBoxItem">
+                            <TextBlock Text="川菜" HorizontalAlignment="Center" ></TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem Name="YueCaiComboBoxItem">
+                            <TextBlock Text="粤菜" HorizontalAlignment="Center" ></TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem Name="HuiCaiComboBoxItem">
+                            <TextBlock Text="徽菜" HorizontalAlignment="Center" ></TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem Name="XiangCaiComboBoxItem">
+                            <TextBlock Text="湘菜" HorizontalAlignment="Center" ></TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem Name="LuCaiComboBoxItem">
+                            <TextBlock Text="鲁菜" HorizontalAlignment="Center" ></TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem Name="SuCaiComboBoxItem">
+                            <TextBlock Text="苏菜" HorizontalAlignment="Center" ></TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem Name="ZheCaiComboBoxItem">
+                            <TextBlock Text="浙菜" HorizontalAlignment="Center" ></TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem Name="MinCaiComboBoxItem">
+                            <TextBlock Text="闽菜" HorizontalAlignment="Center" ></TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Name="KouWeiComboBox"
+                              Grid.Column="1"
+                              Grid.Row="2"
+                              Height="40"
+                              Width="180"
+                              HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ComboBoxItem Name="MainComboBoxItem" IsSelected="True">
+                            <TextBlock Name="ShowTextBlock"></TextBlock> 
+                        </ComboBoxItem >
+                        <ComboBoxItem >
+                            <CheckBox  Content="肉" 
+                                       Name="RouCheckBox"
+                                       Click="RouCheckBox_Click" >
+                            </CheckBox>
+                        </ComboBoxItem>
+                        <ComboBoxItem >
+                            <CheckBox  Content="甜" 
+                                       Name="TianCheckBox"
+                                       Click="TianCheckBox_Click">
+                            </CheckBox>
+                        </ComboBoxItem>
+                        <ComboBoxItem >
+                            <CheckBox  Content="酸" 
+                                       Name="SuanCheckBox"
+                                       Click="SuanCheckBox_Click">
+                            </CheckBox>
+                        </ComboBoxItem>
+                        <ComboBoxItem >
+                            <CheckBox  Content="凉" 
+                                       Name="LiangCheckBox"
+                                       Click="LiangCheckBox_Click">
+                            </CheckBox>
+                        </ComboBoxItem>
+                        <ComboBoxItem >
+                            <CheckBox  Content="热" 
+                                       Name="ReCheckBox"
+                                       Click="ReCheckBox_Click">
+                            </CheckBox>
+                        </ComboBoxItem>
+                        <ComboBoxItem >
+                            <CheckBox  Content="咸" 
+                                       Name="XianCheckBox"
+                                       Click="XianCheckBox_Click">
+                            </CheckBox>
+                        </ComboBoxItem>
+                        <ComboBoxItem >
+                            <CheckBox  Content="辣" 
+                                       Name="LaCheckBox"
+                                       Click="LaCheckBox_Click">
+                            </CheckBox>
+                        </ComboBoxItem>
+                        <ComboBoxItem >
+                            <CheckBox  Content="米食" 
+                                       Name="MiShiCheckBox"
+                                       Click="MiShiCheckBox_Click">
+                            </CheckBox>
+                        </ComboBoxItem>
+                        <ComboBoxItem >
+                            <CheckBox  Content="面食" 
+                                       Name="MianShiCheckBox"
+                                       Click="MianShiCheckBox_Click" >
+                            </CheckBox>
+                        </ComboBoxItem>
+                        <ComboBoxItem >
+                            <CheckBox  Content="素食" 
+                                       Name="SuShiCheckBox"
+                                       Click="SuShiCheckBox_Click">
+                            </CheckBox>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Name="FloorComboBox"
+                              Grid.Row="3"
+                              Grid.Column="1"
+                              HorizontalAlignment="Center" 
+                              VerticalAlignment="Center" 
+                              Height="40"
+                              Width="180">
+                        <ComboBoxItem Content="一楼"></ComboBoxItem>
+                        <ComboBoxItem Content="二楼"></ComboBoxItem>
+                        <ComboBoxItem Content="三楼"></ComboBoxItem>
+                    </ComboBox>
+                    <TextBox Name="YuanLiaoTextBox"
+                             Grid.Row="4"
+                             Grid.Column="1"
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Center" 
+                             Height="40"
+                             Width="180">
+                    </TextBox>
+                </Grid>
+                <StackPanel  Grid.Column="1">
+                    
+                    <Button Content="添加图片"
+                            Grid.Row="0"
+                            Background="Lavender"
+                            HorizontalAlignment="Center" 
+                            Name="TianjiaTupianButton"
+                            Click="TianjiaTupianButton_Click" >
+                    </Button>
+                    <Image Name="FabucaipingImage"
+                           Margin="10,10" ></Image>
+                </StackPanel>
+            </Grid>
+                <Button Content="发布" FontSize="20" 
+                              Height="40" Width="80"
+                              Grid.Row="1"
+                              Grid.Column="1"
+                              HorizontalAlignment="Right" 
+                              VerticalAlignment="Center"
+                              Background="Lavender" 
+                              Name="FabuButton"
+                              Click="FabuButton_Click"  ></Button>
+            </StackPanel>
+        </ScrollViewer>
         </Grid>
-        </Grid>
-    
+    </Grid>
 </Page>
