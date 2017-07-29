@@ -308,6 +308,8 @@ namespace HungerKiller
             if (User.sign_or_not == true)
             {
                 User.sign_or_not = false;
+                Signinn six1 = new Model.Signinn();
+                six1.loginout(OneUser.name);
                 OneUser.name = null;
                 OneUser.password = null; 
                 string checksignin2 = "false";
@@ -315,6 +317,7 @@ namespace HungerKiller
                     Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
                     localSettings.Values["UserStoredautosignin"] = checksignin2;
                 User.category = 0;
+                
                 logout signout = new logout();
                 signout.ShowAsync();
 
