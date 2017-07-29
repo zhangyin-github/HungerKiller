@@ -164,12 +164,6 @@ namespace HungerKiller
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            if ((passwordBox.Password == "123456") && (username.Text == "admin"))
-            {
-                //args.Cancel = true;
-                statusText6.Text = "用户名或密码错误";
-
-            }
             if ((passwordBox.Password.Length == 0) || (username.Text.Length == 0))
             {
                 //args.Cancel = true;
