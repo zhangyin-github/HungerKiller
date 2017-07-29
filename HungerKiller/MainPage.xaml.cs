@@ -190,6 +190,7 @@ namespace HungerKiller
             }
              else
              {
+                Frame.Navigate(this.GetType());
                 MySettingSplitView.IsPaneOpen = false;
                 SelfInfoSplitView.IsPaneOpen = !SelfInfoSplitView.IsPaneOpen;
             }
@@ -247,6 +248,11 @@ namespace HungerKiller
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            if (User.sign_or_not == false)
+            {
+                Signinn six = new Model.Signinn();
+                six.loginout(OneUser.name);
+            }
             if (tiao.jm == true)
             {
                 Frame.Navigate(typeof(SignUp));

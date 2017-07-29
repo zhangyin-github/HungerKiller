@@ -608,14 +608,14 @@ namespace HungerKiller
                 if (OneUser.name == null)
                 { sc = "佚名"; }
                 System.Net.Http.HttpClient cl = new System.Net.Http.HttpClient();
-                var url = "http://localhost:8080/HungerKillerBacked/Dealturn.jsp";
+                var url = "http://localhost:8080/HungerKillerBacked/FionalOk.jsp";
                 string st = "dishname=" + DishName.Text + "&";
                 st += "username=" +sc;
                 System.Net.Http.StringContent cons = new StringContent(st, System.Text.Encoding.UTF8, "application/x-www-form-urlencoded");
                 System.Net.Http.HttpResponseMessage response = await cl.PostAsync(url, cons);
                 var resdata = await response.Content.ReadAsStringAsync();
                 String[] SArraysss = resdata.Split('"');
-                if (SArraysss[3] == "1")
+                if (SArraysss[3]=="1")
                 {
                     peipei.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 }
