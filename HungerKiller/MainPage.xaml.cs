@@ -190,9 +190,19 @@ namespace HungerKiller
             }
              else
              {
-                //Frame.Navigate(this.GetType());
+                //bool asd = User.sign_or_not;
+               // Frame.Navigate(typeof(MainPage));
+                if (User.category == 4)
+                {
+                    MySettingStackPanel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    MySettingStackPanel.Visibility = Visibility.Collapsed;
+                }
                 MySettingSplitView.IsPaneOpen = false;
                 SelfInfoSplitView.IsPaneOpen = !SelfInfoSplitView.IsPaneOpen;
+                //Frame.Navigate(this.GetType());
             }
              
         }
@@ -248,6 +258,14 @@ namespace HungerKiller
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            if (User.category == 4)
+            {
+                MySettingStackPanel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MySettingStackPanel.Visibility = Visibility.Collapsed;
+            }
             if (User.sign_or_not == false)
             {
                 Windows.Storage.ApplicationDataContainer localSettings1 = Windows.Storage.ApplicationData.Current.LocalSettings;
@@ -273,14 +291,7 @@ namespace HungerKiller
             {
                 User.sign_or_not = false;
             }
-            if (User.category == 4)
-            {
-                MySettingStackPanel.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                MySettingStackPanel.Visibility = Visibility.Collapsed;
-            }
+            
             //MySettingStackPanel.Visibility = Visibility.Collapsed;
         }
 
@@ -303,6 +314,7 @@ namespace HungerKiller
                     Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
                     Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
                     localSettings.Values["UserStoredautosignin"] = checksignin2;
+                User.category = 0;
                 logout signout = new logout();
                 signout.ShowAsync();
 
