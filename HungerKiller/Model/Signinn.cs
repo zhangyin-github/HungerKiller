@@ -31,19 +31,19 @@ namespace HungerKiller.Model
                 var response = await hc.PostAsync(new Uri(url), content);
                 var resdata = await response.Content.ReadAsStringAsync();
                 if (resdata[0] == '4')
-                    return await Task.FromResult(4);
+                    return 4;
                 else if (resdata[0] == '3')
-                    return await Task.FromResult(3);
+                    return 3;
                 else if (resdata[0] == '2')
-                    return await Task.FromResult(2);
+                    return 2;
                 else if (resdata[0] == '1')
-                    return await Task.FromResult(1);
-                else 
-                    return await Task.FromResult(0);
+                    return 1;
+                else
+                    return -1;
             }
             catch
             {
-                return await Task.FromResult(0);
+                return 0;
             }
         }
     }

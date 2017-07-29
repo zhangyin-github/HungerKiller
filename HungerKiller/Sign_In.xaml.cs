@@ -49,41 +49,46 @@ namespace HungerKiller
 
 
 
-
-
-                if (autosignin.IsChecked.Value == true)
+                if (loginlogo == -1)
                 {
-                    mima_rem.IsChecked = true;
-                    string checksignin = "true";
-                    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-                    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-                    localSettings.Values["UserStoredautosignin"] = checksignin;
+                    if (autosignin.IsChecked.Value == true)
+                    {
+                        mima_rem.IsChecked = true;
+                        string checksignin = "true";
+                        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                        Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                        localSettings.Values["UserStoredautosignin"] = checksignin;
+                    }
+                    else
+                    {
+                        string checksignin2 = "false";
+                        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                        Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                        localSettings.Values["UserStoredautosignin"] = checksignin2;
+                    }
+                    if (mima_rem.IsChecked.HasValue && mima_rem.IsChecked.Value)
+                    {
+                        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                        Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                        //OneUser oneUser = new OneUser() { name = username.Text, password = passwordBox.Password };
+                        localSettings.Values["UserStoredPassword"] = passwordBox.Password;
+                        localSettings.Values["UserStoredUsername"] = username.Text;
+                    }
+                    else
+                    {
+                        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                        Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                        //OneUser oneUser = new OneUser() { name = username.Text, password = passwordBox.Password };
+                        localSettings.Values["UserStoredPassword"] = null;
+                        localSettings.Values["UserStoredUsername"] = null;
+                    }
+                    User.sign_or_not = true;
+                    tiao1.jm1 = true;
                 }
-                else
-                {
-                    string checksignin2 = "false";
-                    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-                    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-                    localSettings.Values["UserStoredautosignin"] = checksignin2;
+                else {
+                    args.Cancel = true;
+                    statusText6.Text = "东西都不写全还想登录？？？";
                 }
-                if (mima_rem.IsChecked.HasValue && mima_rem.IsChecked.Value)
-                {
-                    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-                    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-                    //OneUser oneUser = new OneUser() { name = username.Text, password = passwordBox.Password };
-                    localSettings.Values["UserStoredPassword"] = passwordBox.Password;
-                    localSettings.Values["UserStoredUsername"] = username.Text;
-                }
-                else
-                {
-                    Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-                    Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-                    //OneUser oneUser = new OneUser() { name = username.Text, password = passwordBox.Password };
-                    localSettings.Values["UserStoredPassword"] = null;
-                    localSettings.Values["UserStoredUsername"] = null;
-                }
-                User.sign_or_not = true;
-                tiao1.jm1 = true;
             }
 
         }

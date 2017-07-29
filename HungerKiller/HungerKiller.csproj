@@ -139,6 +139,8 @@
     <Compile Include="Model\comment1.cs" />
     <Compile Include="Model\dayede.cs" />
     <Compile Include="Model\DealManager.cs" />
+    <Compile Include="Model\dealturninformation.cs" />
+    <Compile Include="Model\Dealturnresult.cs" />
     <Compile Include="Model\DishNameAndImage.cs" />
     <Compile Include="Model\Fabu.cs" />
     <Compile Include="Model\hahaha.cs" />
@@ -148,6 +150,7 @@
     <Compile Include="Model\Randomm.cs" />
     <Compile Include="Model\Signinn.cs" />
     <Compile Include="Model\Sign_Up.cs" />
+    <Compile Include="Model\trunresult.cs" />
     <Compile Include="pinglunguanli.xaml.cs">
       <DependentUpon>pinglunguanli.xaml</DependentUpon>
     </Compile>
