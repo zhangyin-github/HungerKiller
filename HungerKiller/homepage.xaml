@@ -101,12 +101,20 @@
                 </Grid.RowDefinitions>
 
                 <!--菜品展示信息的自定义数据模板，事件click，点击图片进入菜品详细界面-->
-                <RelativePanel Grid.Row="0" BorderThickness="0,0,0,0.5" BorderBrush="LightGray" >
-                    <TextBlock Foreground="Gray" HorizontalAlignment="Center"                                
-                               FontSize="14" FontFamily="楷体" Text="发现美食"
+                <RelativePanel Grid.Row="0" 
+                               BorderThickness="0,0,0,0.5" 
+                               BorderBrush="LightGray" >
+                    <TextBlock Foreground="Gray" 
+                               HorizontalAlignment="Center"                                
+                               FontSize="14" 
+                               FontFamily="楷体" 
+                               Text="发现美食"
                                RelativePanel.AlignVerticalCenterWithPanel="True" />
-                    <AutoSuggestBox x:Name="AutoSuggestBox" PlaceholderText="输入要搜索的内容" 
-                                    Background="#232323" Foreground="White" Width="300" 
+                    <AutoSuggestBox x:Name="AutoSuggestBox" 
+                                    PlaceholderText="输入要搜索的内容" 
+                                    Background="#232323" 
+                                    Foreground="White" 
+                                    Width="300" 
                                     RelativePanel.AlignRightWithPanel="True" 
                                     RelativePanel.AlignVerticalCenterWithPanel="True"
                                     RelativePanel.AlignHorizontalCenterWithPanel="True"
@@ -128,22 +136,26 @@
                         <Grid.Background>
                             <SolidColorBrush Color="LightGray"/>
                         </Grid.Background>
-                        <FlipView x:Name="LeftFlipView" Opacity="0.5" IsEnabled="False">
+                        <FlipView x:Name="LeftFlipView" 
+                                  Opacity="0.5" 
+                                  IsEnabled="False" 
+                                  ItemsSource="{x:Bind NewsItems}">
                             <FlipView.ItemTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding}" Stretch="Fill"/>
+                                <DataTemplate x:DataType="data:NewsItem">
+                                    <Image Source="{x:Bind Image}" Stretch="Fill"/>
                                 </DataTemplate>
                             </FlipView.ItemTemplate>
                         </FlipView>
                     </Grid>
 
                     <!--中-->
-                    <FlipView x:Name="CenterFlipView" Grid.Column="1" 
-                            
-                          SelectionChanged="CenterFlipView_SelectionChanged">
+                    <FlipView x:Name="CenterFlipView" 
+                              Grid.Column="1" 
+                              SelectionChanged="CenterFlipView_SelectionChanged"  
+                              ItemsSource="{x:Bind NewsItems}">
                         <FlipView.ItemTemplate>
-                            <DataTemplate>
-                                <Image Source="{Binding}" Stretch="Fill"/>
+                            <DataTemplate x:DataType="data:NewsItem">
+                                <Image Name="myImage" Source="{x:Bind Image}" Stretch="Fill"/>
                             </DataTemplate>
                         </FlipView.ItemTemplate>
                     </FlipView>
@@ -153,10 +165,13 @@
                         <Grid.Background>
                             <SolidColorBrush Color="LightGray"/>
                         </Grid.Background>
-                        <FlipView x:Name="RightFlipView" Opacity="0.3" IsEnabled="False">
+                        <FlipView x:Name="RightFlipView" 
+                                  Opacity="0.3" 
+                                  IsEnabled="False" 
+                                  ItemsSource="{x:Bind NewsItems}">
                             <FlipView.ItemTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding}" Stretch="Fill"/>
+                                <DataTemplate x:DataType="data:NewsItem">
+                                    <Image Source="{x:Bind Image}" Stretch="Fill"/>
                                 </DataTemplate>
                             </FlipView.ItemTemplate>
                         </FlipView>
@@ -164,16 +179,22 @@
             </Grid>
                 
                 <!--三种推荐方式-->
-                <Grid  Grid.Row="2" HorizontalAlignment="Center"  Margin="0,20,0,10">
+                <Grid  Grid.Row="2" 
+                       HorizontalAlignment="Center"  
+                       Margin="0,20,0,10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="250"/>
                         <ColumnDefinition Width="250"/>
                         <ColumnDefinition Width="250"/>
                     </Grid.ColumnDefinitions>
                     <!--趣味决策-->
-                    <Grid Grid.Column="0" BorderBrush="LightGray" BorderThickness="0,0,0.5,0">
-                        <Button Name="juece2" Click="juece2_Click"
-                                BorderThickness="0" Background="Transparent"                                
+                    <Grid Grid.Column="0" 
+                          BorderBrush="LightGray" 
+                          BorderThickness="0,0,0.5,0">
+                        <Button Name="juece2" 
+                                Click="juece2_Click"
+                                BorderThickness="0" 
+                                Background="Transparent"                                
                                 Style="{StaticResource ButtonStyle1}">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                                 <Image Name="juece" Source="Assets/大转盘 LOGO-03.png" Height="50" />
@@ -181,14 +202,17 @@
                                     <TextBlock Text="趣味决策" FontSize="17" FontFamily="楷体" Margin="0,0,0,3"/>
                                     <TextBlock Text="今天吃啥？玩点不一样的" FontSize="14" FontFamily="楷体" Foreground="Gray"/>
                                 </StackPanel>
-
                             </StackPanel>
                         </Button>
                     </Grid>
                     <!--今日热门看点-->
-                    <Grid Grid.Column="1" BorderBrush="LightGray" BorderThickness="0,0,0.5,0">
-                        <Button Name="tuijian2" Click="tuijian2_Click"
-                                BorderThickness="0" Background="Transparent"                                
+                    <Grid Grid.Column="1" 
+                          BorderBrush="LightGray" 
+                          BorderThickness="0,0,0.5,0">
+                        <Button Name="tuijian2" 
+                                Click="tuijian2_Click"
+                                BorderThickness="0" 
+                                Background="Transparent"                                
                                 Style="{StaticResource ButtonStyle1}">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                                 <Image Name="tuijian" Source="Assets/看板_1.png" Height="50" />
@@ -215,7 +239,9 @@
                     </Grid>
                 </Grid>
                 <!--推荐菜品-->
-                <Grid Grid.Row="3" BorderThickness="0,0,0,0.5" BorderBrush="LightGray">
+                <Grid Grid.Row="3" 
+                      BorderThickness="0,0,0,0.5" 
+                      BorderBrush="LightGray">
                     <TextBlock Foreground="Gray"
                                FontSize="14"
                                FontFamily="楷体"
@@ -227,7 +253,8 @@
                           Grid.ColumnSpan="3"
                           Name="MyGridview"
                           HorizontalAlignment="Left"
-                          ItemsSource="{x:Bind NewsItems}" IsItemClickEnabled="True"                         
+                          ItemsSource="{x:Bind NewsItems}" 
+                          IsItemClickEnabled="True"                         
                           ItemClick="MyGridview_ItemClick">
                     <GridView.ItemTemplate>
                         <DataTemplate x:DataType="data:NewsItem">
@@ -237,8 +264,10 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Image Name="MyImage" Source="{x:Bind Image}"/>
-                                <RelativePanel Grid.Row="1" Margin="10">
+                                <Image Name="MyImage" 
+                                       Source="{x:Bind Image}"/>
+                                <RelativePanel Grid.Row="1" 
+                                               Margin="10">
                                     <TextBlock Text="{x:Bind Headline}" 
                                            Name="HeadlineTextBox"
                                            RelativePanel.AlignTopWithPanel="True" 
