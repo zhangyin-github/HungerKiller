@@ -107,6 +107,11 @@ namespace HungerKiller.Model
         public static bool jm1 = false;
     }
 
+    public class zidongzhuxiao
+    {
+        public static string zhuxiaoming;
+    }
+
     public class guanliyuan        //注销成功
     {
         public static bool son = false;
