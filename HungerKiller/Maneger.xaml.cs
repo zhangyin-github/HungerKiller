@@ -42,7 +42,7 @@ namespace HungerKiller
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
        
@@ -66,27 +66,33 @@ namespace HungerKiller
         private void PublishActivity_Click(object sender, RoutedEventArgs e)
         {
             guanliFrame.Navigate(typeof(publish));
-            TitleTextBlock.Text = "发布活动";
+            
         }
 
         private void PublishDilicious_Click(object sender, RoutedEventArgs e)
         {
             guanliFrame.Navigate(typeof(Fabucaiping));
-            TitleTextBlock.Text = "发布菜品";
+            
         }
 
         private void DeleteComments_Click(object sender, RoutedEventArgs e)
         {
             guanliFrame.Navigate(typeof(pinglunguanli));
-            TitleTextBlock.Text = "评论删除";
+            
         }
 
         private void RevokeActivity_Click(object sender, RoutedEventArgs e)
         {
             guanliFrame.Navigate(typeof(RevokeActivity));
-            TitleTextBlock.Text = "活动撤销";
+            
         }
 
-        
+        private void GobackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (guanliFrame.CanGoBack)
+            {
+                guanliFrame.GoBack();
+            }
+        }
     }
 }
