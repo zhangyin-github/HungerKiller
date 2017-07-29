@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
 using Windows.Foundation;
@@ -39,6 +40,11 @@ namespace HungerKiller
         {
             this.InitializeComponent();
         }
+        /// <summary>
+        /// 点击卡片1左侧按钮的处理办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
     private void CardChooseButtonone_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonOneTwo .Visibility == Windows.UI.Xaml.Visibility.Collapsed)
@@ -59,7 +65,11 @@ namespace HungerKiller
                 CardChooseButtonone.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
             }
         }
-
+        /// <summary>
+        /// 点击卡片2左侧按钮的处理办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CardChooseButtontwo_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonTwoTwo.Visibility == Windows.UI.Xaml.Visibility.Collapsed)
@@ -81,6 +91,11 @@ namespace HungerKiller
             }
         }
 
+        /// <summary>
+        /// 点击卡片3左侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CardChooseButtonthree_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonThreeTwo.Visibility == Windows.UI.Xaml.Visibility.Collapsed)
@@ -102,6 +117,11 @@ namespace HungerKiller
             }
         }
 
+        /// <summary>
+        /// 点击卡片4左侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CardChooseButtontfour_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonFourTwo.Visibility == Windows.UI.Xaml.Visibility.Collapsed)
@@ -123,6 +143,11 @@ namespace HungerKiller
             }
         }
 
+        /// <summary>
+        /// 点击卡片5左侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CardChooseButtonfive_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonFiveTwo.Visibility == Windows.UI.Xaml.Visibility.Collapsed)
@@ -144,6 +169,11 @@ namespace HungerKiller
             }
         }
 
+        /// <summary>
+        /// 点击卡片6左侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CardChooseButtonsix_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonSixTwo.Visibility == Windows.UI.Xaml.Visibility.Collapsed)
@@ -165,6 +195,11 @@ namespace HungerKiller
             }
         }
 
+        /// <summary>
+        /// 点击卡片7左侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CardChooseButtonseven_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonSevenTwo.Visibility == Windows.UI.Xaml.Visibility.Collapsed)
@@ -185,6 +220,11 @@ namespace HungerKiller
                 CardChooseButtonseven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Red);
             }
         }
+        /// <summary>
+        /// 点击卡片8左侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CardChooseButtoneight_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonEightTwo.Visibility == Windows.UI.Xaml.Visibility.Collapsed)
@@ -206,6 +246,11 @@ namespace HungerKiller
             }
         }
 
+        /// <summary>
+        /// 点击卡片9左侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CardChooseButtonnine_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonNineTwo.Visibility == Windows.UI.Xaml.Visibility.Collapsed)
@@ -227,6 +272,11 @@ namespace HungerKiller
             }
         }
 
+        /// <summary>
+        /// 点击卡片10左侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CardChooseButtonten_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonTenTwo.Visibility == Windows.UI.Xaml.Visibility.Collapsed)
@@ -248,6 +298,11 @@ namespace HungerKiller
             }
         }
 
+        /// <summary>
+        /// 点击卡片1右侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonOneTwo_Click(object sender, RoutedEventArgs e)
         {
             ButtonOneTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
@@ -258,6 +313,11 @@ namespace HungerKiller
             CardChooseButtonone.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
 
+        /// <summary>
+        /// 点击卡片2右侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonTwoTwo_Click(object sender, RoutedEventArgs e)
         {
             ButtonTwoTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
@@ -267,7 +327,11 @@ namespace HungerKiller
             countt = countt | 0x02;
             CardChooseButtontwo.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
-
+        /// <summary>
+        /// 点击卡片3右侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonThreeTwo_Click(object sender, RoutedEventArgs e)
         {
             ButtonThreeTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
@@ -277,7 +341,11 @@ namespace HungerKiller
             countt = countt | 0x04;
             CardChooseButtonthree.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
-
+        /// <summary>
+        /// 点击卡片4右侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonFourTwo_Click(object sender, RoutedEventArgs e)
         {
             ButtonFourTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
@@ -287,7 +355,11 @@ namespace HungerKiller
             countt = countt | 0x08;
             CardChooseButtontfour.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
-
+        /// <summary>
+        /// 点击卡片5右侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonFiveTwo_Click(object sender, RoutedEventArgs e)
         {
             ButtonFiveTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
@@ -297,7 +369,11 @@ namespace HungerKiller
             countt = countt | 0x10;
             CardChooseButtonfive.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
-
+        /// <summary>
+        /// 点击卡片6右侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSixTwo_Click(object sender, RoutedEventArgs e)
         {
             ButtonSixTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
@@ -307,7 +383,11 @@ namespace HungerKiller
             countt = countt | 0x20;
             CardChooseButtonsix.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
-
+        /// <summary>
+        /// 点击卡片7右侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSevenTwo_Click(object sender, RoutedEventArgs e)
         {
             ButtonSevenTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
@@ -317,7 +397,11 @@ namespace HungerKiller
             countt = countt | 0x40;
             CardChooseButtonseven.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
-
+        /// <summary>
+        /// 点击卡片8右侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonEightTwo_Click(object sender, RoutedEventArgs e)
         {
             ButtonEightTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
@@ -327,7 +411,11 @@ namespace HungerKiller
             countt = countt | 0x80;
             CardChooseButtoneight.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
-
+        /// <summary>
+        /// 点击卡片9右侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonNineTwo_Click(object sender, RoutedEventArgs e)
         {
             ButtonNineTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
@@ -338,6 +426,11 @@ namespace HungerKiller
             CardChooseButtonnine.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
 
+        /// <summary>
+        /// 点击卡片10右侧按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonTenTwo_Click(object sender, RoutedEventArgs e)
         {
             ButtonTenTwo.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
@@ -347,7 +440,11 @@ namespace HungerKiller
             countt = countt | 0x200;
             CardChooseButtonten.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Colors.Green);
         }
-
+        /// <summary>
+        /// 点击转盘上的更新按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void UpdateTurntable_Click(object sender, RoutedEventArgs e)
         {
             Randomm df= new Randomm();
@@ -372,6 +469,11 @@ namespace HungerKiller
             DishEightImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[dishneworder[7]].Value,UriKind.RelativeOrAbsolute));
         }
 
+        /// <summary>
+        /// 点击转盘上的开始选择按钮的解决方法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChooseButton_Click(object sender, RoutedEventArgs e)
         {
             if (a == 0)
@@ -413,62 +515,127 @@ namespace HungerKiller
               {
                   await Dispatcher.RunAsync(
                      CoreDispatcherPriority.High,
-                     () =>
+                     async () =>
                      {
+                         Dealturnresult de = new Model.Dealturnresult();
                          int x = (seed + sewq) % 1600;
                          int y = x / 200;
                          sewq = x;
+                         bool Isok=false;
                          if (y == 0)
                          {
-                             DishName.Text = DishOneText.Text;
-                             FinalImage.Source = DishOneImage.Source;
+                              Isok=await de.dealturnresult(DishOneText.Text);
+                             if (Isok)
+                             {FinalImage.Source = DishOneImage.Source;}
+                             else
+                             {ERRORtextblock.Visibility = Windows.UI.Xaml.Visibility.Visible; }
                          }
                          else if (y == 1)
                          {
-                             DishName.Text = DishTwoText.Text;
-                             FinalImage.Source = DishTwoImage.Source;
+                            Isok=await de.dealturnresult(DishTwoText.Text);
+                             if (Isok)
+                             { FinalImage.Source = DishTwoImage.Source;}
+                             else
+                             { ERRORtextblock.Visibility = Windows.UI.Xaml.Visibility.Visible;}
+                          
                          }
                          else if (y == 2)
                          {
-                             DishName.Text = DishThreeText.Text;
-                             FinalImage.Source = DishThreeImage.Source;
+                             Isok = await de.dealturnresult(DishThreeText.Text);
+                             if (Isok)
+                             { FinalImage.Source = DishThreeImage.Source;}
+                             else
+                             { ERRORtextblock.Visibility = Windows.UI.Xaml.Visibility.Visible;}
                          }
                          else if (y == 3)
                          {
-                             DishName.Text = DishFourText.Text;
-                             FinalImage.Source = DishFourIamge.Source;
+                             Isok=await de.dealturnresult(DishFourText.Text);
+                             if (Isok)
+                             { FinalImage.Source = DishFourIamge.Source;}
+                             else { ERRORtextblock.Visibility = Windows.UI.Xaml.Visibility.Visible; }
                          }
                          else if (y == 4)
                          {
-                             DishName.Text = DishFiveText.Text;
-                             FinalImage.Source = DishFiveImage.Source;
+                             Isok=await de.dealturnresult(DishFiveText.Text);
+                             if (Isok)
+                             { FinalImage.Source = DishFiveImage.Source; }
+                             else { ERRORtextblock.Visibility = Windows.UI.Xaml.Visibility.Visible; }
                          }
                          else if (y == 5)
                          {
-                             DishName.Text = DishSixText.Text;
-                             FinalImage.Source = DishSixImage.Source;
+                             Isok=await de.dealturnresult(DishSixText.Text);
+                             if (Isok)
+                             { FinalImage.Source = DishSixImage.Source; }
+                             else { ERRORtextblock.Visibility = Windows.UI.Xaml.Visibility.Visible; }
                          }
                          else if (y == 6)
                          {
-                             DishName.Text = DishSevenText.Text;
-                             FinalImage.Source = DishSevenImage.Source;
+                             Isok= await de.dealturnresult(DishSevenText.Text);
+                             if (Isok)
+                             { FinalImage.Source = DishSevenImage.Source; }
+                             else { ERRORtextblock.Visibility = Windows.UI.Xaml.Visibility.Visible; }
                          }
                          else if (y == 7)
                          {
-                             DishName.Text = DishEightText.Text;
-                             FinalImage.Source = DishEightImage.Source;
+                             Isok=await de.dealturnresult(DishEightText.Text);
+                             if (Isok)
+                             { FinalImage.Source = DishEightImage.Source; }
+                             else { ERRORtextblock.Visibility = Windows.UI.Xaml.Visibility.Visible; }
+                         }
+                         if (Isok)
+                         {
+                             ERRORtextblock.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                             DishName.Text = dealturninformation.getdealff().getDishinformation()[0].dishnamee;
+                             DishScore.Text = dealturninformation.getdealff().getDishinformation()[0].dishscoree;
+                             DishIngre.Text = dealturninformation.getdealff().getDishinformation()[0].dishclasss;
+                             DishFloor.Text = dealturninformation.getdealff().getDishinformation()[0].dishfloors;
+                             DishWindow.Text = dealturninformation.getdealff().getDishinformation()[0].dishpositions;
+                             DishAmount.Text = dealturninformation.getdealff().getDishinformation()[0].dishmount;
                          }
                      });
               }, sed);
         }
-
-        private void FinalOkButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// 点击最后的决定按钮的解决方法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void FinalOkButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                string sc = OneUser.name;
+                if (OneUser.name == null)
+                { sc = "佚名"; }
+                System.Net.Http.HttpClient cl = new System.Net.Http.HttpClient();
+                var url = "http://localhost:8080/HungerKillerBacked/Dealturn.jsp";
+                string st = "dishname=" + DishName.Text + "&";
+                st += "username=" +sc;
+                System.Net.Http.StringContent cons = new StringContent(st, System.Text.Encoding.UTF8, "application/x-www-form-urlencoded");
+                System.Net.Http.HttpResponseMessage response = await cl.PostAsync(url, cons);
+                var resdata = await response.Content.ReadAsStringAsync();
+                String[] SArraysss = resdata.Split('"');
+                if (SArraysss[3] == "1")
+                {
+                    peipei.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                }
+                else
+                {
+                    ERRORtextblock.Visibility= Windows.UI.Xaml.Visibility.Visible;
+                }
 
+            }
+            catch
+            {
 
+            }
         }
-        
-         private void OK_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// 点击卡片下面的决策按钮的解决办法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OK_Click(object sender, RoutedEventArgs e)
         {
             DealManager dealmanager = new DealManager();
             List<turn> turntab = new List<turn>();
