@@ -22,7 +22,7 @@ namespace HungerKiller.Model
         {
             try
             {
-                var url = "http://localhost:8080/HungerKillerBacked/Login.jsp";
+                var url = "http://118.202.44.18:8080/HungerKillerBacked/Login.jsp";
                 List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>>();
                 data.Add(new KeyValuePair<string, string>("username", username));
                 data.Add(new KeyValuePair<string, string>("passwor", password));
@@ -31,19 +31,30 @@ namespace HungerKiller.Model
                 var response = await hc.PostAsync(new Uri(url), content);
                 var resdata = await response.Content.ReadAsStringAsync();
                 if (resdata[0] == '4')
+                {
                     return 4;
+                    User.category = 4;
+                }
                 else if (resdata[0] == '3')
+                {
                     return 3;
+                    User.category = 3;
+                }
                 else if (resdata[0] == '2')
+                {
                     return 2;
-                else if (resdata[0] == '1')
-                    return 1;
+                    User.category = 2;
+                }
                 else
-                    return -1;
-            }
+                {
+                    return 1;
+                    User.category = 1;
+                }
+                }
             catch
             {
                 return 0;
+                User.category = 0;
             }
         }
     }

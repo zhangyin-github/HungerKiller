@@ -243,8 +243,8 @@
                                  Click="PublishDilicious_Click"
                                  Background="Red">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontFamily ="Segoe MDL2 Assets" Text="&#xE14C;"></TextBlock>
-                                    <TextBlock Text="发布菜品"></TextBlock>
+                                    <!-- <TextBlock FontFamily ="Segoe MDL2 Assets" Text="&#xE14C;"></TextBlock> -->
+                                    <TextBlock Text="发布菜品" Foreground="White" FontFamily="Ebrima" FontSize="25"></TextBlock>
                               </StackPanel>
                             </Button>
                          <Button Height="200" 
@@ -252,22 +252,28 @@
                                  Name="PublishActivity"  
                                  Margin="30" 
                                  Click="PublishActivity_Click" 
-                                 Background="Purple"></Button>
+                                 Background="Purple">
+                                <TextBlock Text="发布活动" Foreground="White" FontFamily="Ebrima" FontSize="25"></TextBlock>
+                            </Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" >
                             <Button Height="200" 
                                     Width="300" 
                                     Name="DeleteComments"  
                                     Click="DeleteComments_Click" 
-                                    Background="Brown"
-                                    ></Button>
+                                    Background="Brown">
+                                <TextBlock Text="删除评论" Foreground="White" FontFamily="Ebrima" FontSize="25">
+                                </TextBlock>
+                            </Button>
                             <Button Height="200" 
                                     Width="300" 
                                     Name="RevokeActivity"  
                                     Click="RevokeActivity_Click" 
                                     Margin="30" 
                                     Background="Green" 
-                                    ></Button>
+                                    >
+                                <TextBlock Text="活动撤销" Foreground="White" FontFamily="Ebrima" FontSize="25"></TextBlock>
+                            </Button>
                         </StackPanel>
                     </StackPanel>
                 </Frame>
