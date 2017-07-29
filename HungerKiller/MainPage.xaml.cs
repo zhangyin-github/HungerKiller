@@ -258,6 +258,20 @@ namespace HungerKiller
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            Windows.Storage.ApplicationDataContainer localSettings5 = Windows.Storage.ApplicationData.Current.LocalSettings;
+            Windows.Storage.StorageFolder localFolder1 = Windows.Storage.ApplicationData.Current.LocalFolder;
+            object kongjian = localSettings5.Values["UserStoredautosignin"];
+            string kongzhi = kongjian as string;
+            if (kongjian == "true")
+            {
+                User.sign_or_not = true;
+            }
+            else
+            {
+                User.sign_or_not = false;
+            }
+
+
             if (User.category == 4)
             {
                 MySettingStackPanel.Visibility = Visibility.Visible;
@@ -269,7 +283,7 @@ namespace HungerKiller
             if (User.sign_or_not == false)
             {
                 Windows.Storage.ApplicationDataContainer localSettings1 = Windows.Storage.ApplicationData.Current.LocalSettings;
-                Windows.Storage.StorageFolder localFolder1 = Windows.Storage.ApplicationData.Current.LocalFolder;
+                Windows.Storage.StorageFolder localFolder3 = Windows.Storage.ApplicationData.Current.LocalFolder;
                 object UserStored3 = localSettings1.Values["UserStoredautologout"];
                 zidongzhuxiao.zhuxiaoming = UserStored3 as string;
 
