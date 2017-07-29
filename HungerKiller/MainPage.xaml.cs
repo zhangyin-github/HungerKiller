@@ -30,7 +30,7 @@ namespace HungerKiller
         {
             this.InitializeComponent();
             //隐藏返回按钮
-            BackButton.Visibility = Visibility.Collapsed;
+            
 
             MyFrame.Navigate(typeof(homepage));
             Homepage.IsSelected = true;
@@ -127,7 +127,7 @@ namespace HungerKiller
             if (Homepage.IsSelected)
             {
                 //隐藏返回按钮
-                BackButton.Visibility = Visibility.Collapsed;
+                
 
                 ManegerListBox.SelectedIndex = -1;
                 MyFrame.Navigate(typeof(homepage));
@@ -175,8 +175,7 @@ namespace HungerKiller
                 await jump.ShowAsync();
                 if (tiao.jm == true)
                 {
-                    //显示返回按钮
-                    BackButton.Visibility = Visibility.Visible;
+                    
 
                     Frame.Navigate(typeof(SignUp));
                     tiao.jm = false;
@@ -318,7 +317,8 @@ namespace HungerKiller
         /// <param name="e"></param>
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            if(MyFrame.CanGoBack)
+            
+            if (MyFrame.CanGoBack)
             {
                 MyFrame.GoBack();
             }

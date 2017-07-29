@@ -12,38 +12,69 @@
             <RowDefinition Height="32"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <!--扩展标题栏-->
-        <RelativePanel Grid.Row="0" Background="#FF6D00" BorderBrush="{x:Null}" BorderThickness="0">
-            <!--后退按钮-->
+        <!--
+        <RelativePanel Grid.Row="0" Background="#FF6D00" >
+          
+                
+            <Button Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                            FontSize="15" Foreground="Black"  Width="40"
+                            RelativePanel.AlignHorizontalCenterWithPanel="True"
+                            RelativePanel.AlignVerticalCenterWithPanel="True"
+                            RelativePanel.AlignLeftWithPanel="True"
+                            Click="HamburgerButton_Click"/>
             <Button Name="BackButton" Click="BackButton_Click"                    
-                    Foreground="White" Background="{x:Null}"
-                    RelativePanel.AlignVerticalCenterWithPanel="True" Width="40" Height="32">
-                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="14" Text="&#xE112;"  />
-                
-                
-            </Button>               
-            <!--标题-->
+                    Foreground="White" Background="#FF6D00"
+                    Visibility="Visible"
+                    RelativePanel.AlignRightWith="HamburgerButton"
+                    RelativePanel.AlignVerticalCenterWithPanel="True" Width="40" Height="32"
+                    FontFamily="Segoe MDL2 Assets" FontSize="14" Content="&#xE112;" Margin="0.2,0.2,0.2,0" VerticalAlignment="Top" >
+            </Button>
+               
             <TextBlock Name="RealTitle" FontSize="13" Margin="11,0,0,0" Foreground="White"
                        RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.RightOf="BackButton">HungerKiller</TextBlock>
-            <!--AutoSuggestBox-->
+            
+        </RelativePanel> -->
+        <RelativePanel Grid.Row="0" Background="#FF6D00">
+            <Button Name="HamburgerButton" 
+                    RelativePanel.AlignLeftWithPanel="True"
+                    RelativePanel.AlignVerticalCenterWithPanel="True"
+                    FontFamily="Segoe MDL2 Assets"
+                    Background="Transparent"
+                    FontSize="15" 
+                    Height="32"
+                    Content="&#xE700;" 
+                    Click="HamburgerButton_Click" />
+
+            <Button Name="BackButton"
+                    RelativePanel.RightOf="HamburgerButton"
+                    RelativePanel.AlignVerticalCenterWithPanel="True"
+                    FontFamily="Segoe MDl2 Assets" 
+                    FontSize="15"
+                    Width="40"
+                    Height="32"
+                    Background="Transparent"
+                    Content="&#xE0C4;" 
+                    Click="BackButton_Click" 
+                     />
+
+            <TextBlock Name="RealTitle" FontSize="13" Margin="11,0,0,0" Foreground="White"
+                       RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.RightOf="BackButton">HungerKiller</TextBlock>
+
+            
         </RelativePanel>
-        
         <!--汉堡菜单-->
         <SplitView Name="MySplitView" Grid.Row="1" DisplayMode="CompactInline" OpenPaneLength="140" 
                    BorderThickness="0,0,0.4,0" BorderBrush="LightGray"
-                   CompactPaneLength="40" Grid.RowSpan="2" >
-            <SplitView.Pane>
-                <RelativePanel>
+                   CompactPaneLength="40" Grid.RowSpan="2" 
+                  >
+            <SplitView.Pane >
+                <RelativePanel  Background="#FFFDE7">
                     <!--汉堡菜单-->
-                    <Button Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
-                            FontSize="15" Foreground="Black" Background="{x:Null}" Width="40"
-                            VerticalAlignment="Center" HorizontalAlignment="Center" 
-                            Click="HamburgerButton_Click"/>
+                    
                     <!--基本功能菜单-->
                     <ListBox Name="BaseListBox" SelectionMode="Single" BorderBrush="#FF323131" Foreground="#FF817E7E"
-                             RelativePanel.Below="HamburgerButton"
-                             SelectionChanged="BaseListBox_SelectionChanged">
+                             
+                             SelectionChanged="BaseListBox_SelectionChanged" Background="#FFFDE7">
                         <!--主页-->
                         <ListBoxItem Name="Homepage">
                             <StackPanel Orientation="Horizontal">
@@ -65,8 +96,8 @@
                     <!--管理员菜单-->
                     <StackPanel RelativePanel.Below="BaseListBox" Name="MySettingStackPanel">
                         <TextBlock Name="BaseList" FontSize="11" FontWeight="Light" Margin="10,0,0,0" Foreground="Gray">管理员菜单</TextBlock>
-                        
-                        <ListBox Name="ManegerListBox" SelectionMode="Single" BorderBrush="#FF323131" Foreground="#FF817E7E"
+
+                        <ListBox Name="ManegerListBox" SelectionMode="Single" BorderBrush="#FF323131" Foreground="#FF817E7E" Background="#FFFDE7"
                                  SelectionChanged="ManegerListBox_SelectionChanged">
                             <ListBoxItem Name="Maneger">
                                 <StackPanel Orientation="Horizontal">
