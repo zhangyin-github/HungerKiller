@@ -262,6 +262,14 @@ namespace HungerKiller
             {
                 User.sign_or_not = false;
             }
+            if (User.category == 4)
+            {
+                MySettingStackPanel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MySettingStackPanel.Visibility = Visibility.Collapsed;
+            }
             //MySettingStackPanel.Visibility = Visibility.Collapsed;
         }
 
