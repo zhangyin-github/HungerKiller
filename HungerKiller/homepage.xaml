@@ -200,7 +200,7 @@
                         </Button>
                     </Grid>
                     <!--热门排行-->
-                    <Grid Grid.Column="2" BorderBrush="LightGray" BorderThickness="0,0,0.5,0">
+                    <Grid Grid.Column="2" BorderBrush="LightGray" BorderThickness="0,0,0.0,0">
                         <Button Name="paihang2" Click="paihang2_Click"
                                 BorderThickness="0" Background="Transparent"                                
                                 Style="{StaticResource ButtonStyle1}">
@@ -231,8 +231,9 @@
                           ItemClick="MyGridview_ItemClick">
                     <GridView.ItemTemplate>
                         <DataTemplate x:DataType="data:NewsItem">
-                            <Grid Background="White" Margin="10" Height="250" Width="200">
-                                <Grid.RowDefinitions >
+                            <Grid Background="White" Margin="10" Height="230" Width="190" 
+                                  BorderBrush="LightGray" BorderThickness="0.5">
+                                <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
@@ -244,15 +245,18 @@
                                            FontSize="18" 
                                            TextWrapping="Wrap" 
                                            FontFamily="楷体"/>
-                                    <TextBlock Text="{x:Bind Subhead}" 
+                                    <TextBlock x:Name="SubheadTextBox"
+                                          Text="{x:Bind Subhead}" 
                                            RelativePanel.Below="HeadlineTextBox" 
                                            TextWrapping="Wrap"
-                                           FontSize="18"
+                                           FontSize="12"
+                                           Foreground="Gray"
                                            FontFamily="楷体"/>
                                     <TextBlock Text="{x:Bind Dateline}" 
-                                           RelativePanel.AlignBottomWithPanel="True" 
-                                           FontSize="18"
+                                           RelativePanel.Below="SubheadTextBox"
+                                           FontSize="16"
                                            FontFamily="楷体"
+                                           Foreground="Gray"
                                            TextWrapping="Wrap"/>
                                 </RelativePanel>
                             </Grid>
