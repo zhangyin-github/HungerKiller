@@ -190,7 +190,7 @@ namespace HungerKiller
             }
              else
              {
-                Frame.Navigate(this.GetType());
+                //Frame.Navigate(this.GetType());
                 MySettingSplitView.IsPaneOpen = false;
                 SelfInfoSplitView.IsPaneOpen = !SelfInfoSplitView.IsPaneOpen;
             }
@@ -250,8 +250,13 @@ namespace HungerKiller
         {
             if (User.sign_or_not == false)
             {
+                Windows.Storage.ApplicationDataContainer localSettings1 = Windows.Storage.ApplicationData.Current.LocalSettings;
+                Windows.Storage.StorageFolder localFolder1 = Windows.Storage.ApplicationData.Current.LocalFolder;
+                object UserStored3 = localSettings1.Values["UserStoredautologout"];
+                zidongzhuxiao.zhuxiaoming = UserStored3 as string;
+
                 Signinn six = new Model.Signinn();
-                six.loginout(OneUser.name);
+                six.loginout(zidongzhuxiao.zhuxiaoming);
             }
             if (tiao.jm == true)
             {

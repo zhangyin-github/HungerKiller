@@ -127,6 +127,11 @@ namespace HungerKiller
 
         public void checkson()
         {
+            zidongzhuxiao.zhuxiaoming = username.Text;
+            Windows.Storage.ApplicationDataContainer localSettings1 = Windows.Storage.ApplicationData.Current.LocalSettings;
+            Windows.Storage.StorageFolder localFolder1 = Windows.Storage.ApplicationData.Current.LocalFolder;
+            localSettings1.Values["UserStoredautologout"] = zidongzhuxiao.zhuxiaoming;
+
             if (autosignin.IsChecked.Value == true)
             {
                 mima_rem.IsChecked = true;
