@@ -26,7 +26,7 @@
             <Grid >
                 <Grid.ColumnDefinitions >
                     <ColumnDefinition Width="300"></ColumnDefinition>
-                    <ColumnDefinition Width="250"></ColumnDefinition>
+                    <ColumnDefinition Width="350"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Grid.ColumnDefinitions >
@@ -39,7 +39,9 @@
                         <RowDefinition Height="50"></RowDefinition>
                         <RowDefinition Height="50"></RowDefinition>
                         <RowDefinition Height="50"></RowDefinition>
-                    </Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                            </Grid.RowDefinitions>
                     <TextBlock Text="菜名："
                                HorizontalAlignment="Center" 
                                VerticalAlignment="Center" 
@@ -80,7 +82,23 @@
                                Grid.Column="0"
                                Name="YuanLiaoTextBlock">
                     </TextBlock>
-                    <!-- TextBox-->
+                            <TextBlock Text="菜量："
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" 
+                               FontSize="20"
+                               Grid.Row="5"
+                               Grid.Column="0"
+                               Name="CailiangTextBlock">
+                            </TextBlock>
+                            <TextBlock Text="位置："
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" 
+                               FontSize="20"
+                               Grid.Row="6"
+                               Grid.Column="0"
+                               Name="WeizhiTextBlock">
+                            </TextBlock>
+                            <!-- TextBox-->
                     <TextBox Name="CaiMingTextBox"
                              HorizontalAlignment="Center" 
                              VerticalAlignment="Center" 
@@ -198,10 +216,11 @@
                               VerticalAlignment="Center" 
                               Height="40"
                               Width="180">
-                        <ComboBoxItem Content="一楼"></ComboBoxItem>
-                        <ComboBoxItem Content="二楼"></ComboBoxItem>
-                        <ComboBoxItem Content="三楼"></ComboBoxItem>
-                    </ComboBox>
+                        <ComboBoxItem Content="1"></ComboBoxItem>
+                        <ComboBoxItem Content="2"></ComboBoxItem>
+                        <ComboBoxItem Content="3"></ComboBoxItem>
+                        <ComboBoxItem Content="4"></ComboBoxItem>
+                            </ComboBox>
                     <TextBox Name="YuanLiaoTextBox"
                              Grid.Row="4"
                              Grid.Column="1"
@@ -210,7 +229,23 @@
                              Height="40"
                              Width="180">
                     </TextBox>
-                </Grid>
+                            <TextBox Name="CaiLiangTextBox"
+                             Grid.Row="5"
+                             Grid.Column="1"
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Center" 
+                             Height="40"
+                             Width="180">
+                            </TextBox>
+                            <TextBox Name="WeizhiTextBox"
+                             Grid.Row="6"
+                             Grid.Column="1"
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Center" 
+                             Height="40"
+                             Width="180">
+                            </TextBox>
+                        </Grid>
                 <StackPanel  Grid.Column="1">
                     
                     <Button Content="添加图片"

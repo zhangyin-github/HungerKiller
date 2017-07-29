@@ -22,7 +22,7 @@ namespace HungerKiller.Model
         {
             try
             {
-                var url = "http://118.202.44.18:8080/HungerKillerBacked/Login.jsp";
+                var url = "http://localhost:8080/HungerKillerBacked/Login.jsp";
                 List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>>();
                 data.Add(new KeyValuePair<string, string>("username", username));
                 data.Add(new KeyValuePair<string, string>("passwor", password));
