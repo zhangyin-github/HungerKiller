@@ -216,10 +216,10 @@
                               VerticalAlignment="Center" 
                               Height="40"
                               Width="180">
-                        <ComboBoxItem Content="一楼"></ComboBoxItem>
-                        <ComboBoxItem Content="二楼"></ComboBoxItem>
-                        <ComboBoxItem Content="三楼"></ComboBoxItem>
-                        <ComboBoxItem Content="四楼"></ComboBoxItem>
+                        <ComboBoxItem Content="1"></ComboBoxItem>
+                        <ComboBoxItem Content="2"></ComboBoxItem>
+                        <ComboBoxItem Content="3"></ComboBoxItem>
+                        <ComboBoxItem Content="4"></ComboBoxItem>
                             </ComboBox>
                     <TextBox Name="YuanLiaoTextBox"
                              Grid.Row="4"
