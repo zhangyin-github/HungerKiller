@@ -220,22 +220,27 @@
                     <ComboBoxItem Content="Profile"></ComboBoxItem>
                     <ComboBoxItem Content="Logout" Name="LogoutComboBoxItem" Tapped="LogoutComboBoxItem_Tapped" ></ComboBoxItem>
                 </ComboBox>
+                <Button RelativePanel.AlignLeftWithPanel="True" 
+                        Height="45"
+                        Width="60"
+                        Background="Transparent" 
+                        FontFamily="Segoe MDL2 Assets"
+                        Content="&#xE112;"
+                        Name="GobackButton"
+                        Margin="30"
+                        FontSize="20"
+                         
+                        Click="GobackButton_Click"></Button>
             </RelativePanel>
-            <Grid Grid.Row="1">
+            <Frame Grid.Row="1" Name="guanliFrame">
+               <Grid >
                 <Grid.RowDefinitions >
-                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Name="TitleTextBlock" 
-                           FontSize="50"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"
-                           Width="350"
-                           Height="80" 
-                           Grid.Row="0">
-                </TextBlock>
-                <Frame Grid.Row="1" Name="guanliFrame">
-                    <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" >
+                
+                
+                    <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" >
                         <StackPanel Orientation="Horizontal" >
                          <Button Height="200" 
                                  Width="300" 
@@ -276,8 +281,9 @@
                             </Button>
                         </StackPanel>
                     </StackPanel>
-                </Frame>
+                
             </Grid>
+            </Frame>
         </Grid>
     </Grid>
         
