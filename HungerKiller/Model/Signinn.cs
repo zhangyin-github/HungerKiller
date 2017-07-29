@@ -68,7 +68,7 @@ namespace HungerKiller.Model
         {
             try
             {
-                var url = "http://localhost:8080/HungerKillerBacked/Loginout.jsp";
+                var url = "http://118.202.44.18:8080/HungerKillerBacked/Loginout.jsp";
                 List<KeyValuePair<string, string>> datass = new List<KeyValuePair<string, string>>();
                 datass.Add(new KeyValuePair<string, string>("username", username));
                 Windows.Web.Http.HttpClient hcsd = new Windows.Web.Http.HttpClient();

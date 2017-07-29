@@ -53,8 +53,8 @@
                         <Setter Property="Margin" Value="4"/>
                     </Style>
                 </ListView.ItemContainerStyle>
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="data:NewsItem">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="data:NewsItem">
                         <StackPanel Orientation="Horizontal" BorderThickness="0,0,0,0.5">
                             <TextBlock Text="{x:Bind Headline}" 
                                        Name="Headlinelistbox"

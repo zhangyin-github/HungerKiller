@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         
         <!--扩展标题栏-->
-        <RelativePanel Grid.Row="0" Background="#FE674A" BorderBrush="{x:Null}" BorderThickness="0">
+        <RelativePanel Grid.Row="0" Background="#FF6D00" BorderBrush="{x:Null}" BorderThickness="0">
             <!--后退按钮-->
             <Button Name="BackButton" Click="BackButton_Click"                    
                     Foreground="White" Background="{x:Null}"
@@ -55,7 +55,7 @@
                         <!--趣味决策-->
                         <ListBoxItem Name="Deal">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Foreground="Black" Text="&#xE707;" 
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Foreground="Black" Text="&#xE11D;" 
                                        VerticalAlignment="Center" HorizontalAlignment="Center" />
                                 <TextBlock FontSize="13" FontWeight="Light" Margin="13,0,0,0" Foreground="Black" >趣味决策</TextBlock>
                             </StackPanel>
@@ -70,7 +70,7 @@
                                  SelectionChanged="ManegerListBox_SelectionChanged">
                             <ListBoxItem Name="Maneger">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Foreground="Black" Text="&#xE99A;"
+                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Foreground="Black" Text="&#xE1F6;"
                                                VerticalAlignment="Center" HorizontalAlignment="Center" />
                                     <TextBlock FontSize="13" FontWeight="Light" Margin="13,0,0,0" Foreground="Black" >管理</TextBlock>
                                 </StackPanel>
@@ -88,7 +88,7 @@
                                     Click="UserName_Click" >
                                 <Ellipse  Height="25" Width="25" >
                                         <Ellipse.Fill>
-                                            <ImageBrush ImageSource="Assets/2.jpg"/>
+                                        <ImageBrush ImageSource="Assets/个人中心.png"/>
                                         </Ellipse.Fill>
                                     </Ellipse>
                                 </Button>
