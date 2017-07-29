@@ -85,13 +85,13 @@ namespace HungerKiller
             {
                 BaseList.Visibility = Visibility.Collapsed;
                 Setting_1.Visibility = Visibility.Collapsed;
-                SettingListBox_2.Visibility = Visibility.Visible;
+                Setting_2.Visibility = Visibility.Visible;
             }
             else
             {
                 BaseList.Visibility = Visibility.Visible;
                 Setting_1.Visibility = Visibility.Visible;
-                SettingListBox_2.Visibility = Visibility.Collapsed;
+                Setting_2.Visibility = Visibility.Collapsed;
             }
 
             if(Setting_1.Visibility==Visibility.Visible)
@@ -110,7 +110,7 @@ namespace HungerKiller
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
-            ManegerListBox.SelectedIndex = SettingListBox_2.SelectedIndex = -1;
+            ManegerListBox.SelectedIndex = -1;
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
             IfSplitViewOpen();            
         }
@@ -129,13 +129,13 @@ namespace HungerKiller
                 //隐藏返回按钮
                 BackButton.Visibility = Visibility.Collapsed;
 
-                ManegerListBox.SelectedIndex = SettingListBox_2.SelectedIndex = -1;
+                ManegerListBox.SelectedIndex = -1;
                 MyFrame.Navigate(typeof(homepage));
                 IfSplitViewOpen();
             }
             else if (Deal.IsSelected)
             {              
-                ManegerListBox.SelectedIndex = SettingListBox_2.SelectedIndex = -1;
+                ManegerListBox.SelectedIndex = -1;
                 MyFrame.Navigate(typeof(deal));
                 IfSplitViewOpen();
             }
@@ -150,76 +150,19 @@ namespace HungerKiller
         {           
             if (Maneger.IsSelected)
             {
-                BaseListBox.SelectedIndex = SettingListBox_2.SelectedIndex = -1;
+                BaseListBox.SelectedIndex = -1;
                 MyFrame.Navigate(typeof(Maneger));
                 IfSplitViewOpen();
             }
         }
-        /// <summary>
-        /// 用户登录、设置、个人资料入口
-        /// Sakura
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /*  SplitView 关闭时点击用户头像、或者设置按钮，这是个ListBoxSelectionChanged事件*/
-        /*竖版的用户登录入口及设置按钮*/
-        private async void SettingListBox_2_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {            
-            if(MyUserHeaderImage_2.IsSelected)
-            {
-                ManegerListBox.SelectedIndex = BaseListBox.SelectedIndex = -1;
-                if (User.sign_or_not == false)
-                {
-                    Sign_In jump = new Sign_In();
-                    await jump.ShowAsync();
-                    if (tiao.jm == true)
-                    {
-                        //显示返回按钮
-                        BackButton.Visibility = Visibility.Visible;
 
-                  
 
-                        Frame.Navigate(typeof(SignUp));
-                        tiao.jm = false;
-                    }
-                    if (tiao1.jm1 == true)
-                    {
-                        ContentDialog1 m = new ContentDialog1();
-                        m.ShowAsync();
-                        tiao1.jm1 = false;
-                    }
-                }
-                else
-                {
-                    MySettingSplitView.IsPaneOpen = false;
-                    SelfInfoSplitView.IsPaneOpen = true;
-                }
-                
-            }
-            else if(MySettingButton_2.IsSelected)
-            {
-                ManegerListBox.SelectedIndex = BaseListBox.SelectedIndex = -1;
-
-                MySettingSplitView.IsPaneOpen = true;
-                SelfInfoSplitView.IsPaneOpen = false;
-            }
-        }
-        /// <summary>
-        /// 设置按钮
-        /// Sakura
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MySettingButton_Click(object sender, RoutedEventArgs e)
-        {
-            MySettingSplitView.IsPaneOpen = !MySettingSplitView.IsPaneOpen;
-            SelfInfoSplitView.IsPaneOpen = false;
-        }
+        //汉堡菜单-用户登录、个人资料、设置入口 
 
         /// <summary>
-        /// 点击用户名或头像位置，若已登录可以打开个人信息页面，否则打开登录页面
-        /// SplitView 打开时点击用户头像，这是个button_click事件
-        /// 横版的用户登录入口
+        /// 用户登录、个人资料入口   
+        /// 若登录，打开个人资料
+        /// 未登录，打开登录页面
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -253,12 +196,22 @@ namespace HungerKiller
              
         }
 
+        /// <summary>
+        /// 设置按钮
+        /// Sakura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MySettingButton_Click(object sender, RoutedEventArgs e)
+        {
+            ManegerListBox.SelectedIndex = BaseListBox.SelectedIndex = -1;
+            MySettingSplitView.IsPaneOpen = !MySettingSplitView.IsPaneOpen;
+            SelfInfoSplitView.IsPaneOpen = false;
+        }
+
 
         //以下是右侧侧滑框内函数
 
-
-
-        //以下是右侧侧滑框内函数
 
         /// <summary>
         /// 账号、设备安全
@@ -288,6 +241,10 @@ namespace HungerKiller
            
         }
 
+
+
+        //与登录、注销有关
+
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             if (tiao.jm == true)
@@ -305,10 +262,11 @@ namespace HungerKiller
             {
                 User.sign_or_not = false;
             }
+            //MySettingStackPanel.Visibility = Visibility.Collapsed;
         }
 
-            //MySettingStackPanel.Visibility = Visibility.Collapsed;
-        
+
+
 
         /// <summary>
         /// 注销
@@ -328,6 +286,8 @@ namespace HungerKiller
                     localSettings.Values["UserStoredautosignin"] = checksignin2;
                 logout signout = new logout();
                 signout.ShowAsync();
+
+                SelfInfoSplitView.IsPaneOpen = false;
             }
         }
 
