@@ -139,7 +139,7 @@
 
                     <!--中-->
                     <FlipView x:Name="CenterFlipView" Grid.Column="1" 
-                            Tapped="CenterFlipView_Tapped" 
+                            
                           SelectionChanged="CenterFlipView_SelectionChanged">
                         <FlipView.ItemTemplate>
                             <DataTemplate>

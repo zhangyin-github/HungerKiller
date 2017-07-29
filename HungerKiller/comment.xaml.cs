@@ -31,17 +31,22 @@ namespace HungerKiller
             this.InitializeComponent();
             Comment = Comment_Manager.Get_Comment();            
         }
+        
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);
-            var news = NewsManager.GetNews((int)e.Parameter);
-            Dish_Name_1.Text = news.Headline;
-            dish_Picture.ImageSource = new BitmapImage(new Uri(news.Image, UriKind.Absolute));
-            Dishes_Classify.Text = news.Text;
-            Dishes_Taste.Text = news.Subhead;
-            Dishes_Material.Text = news.Dateline;
+                base.OnNavigatedTo(e); 
+                var news = NewsManager.GetNews((int)e.Parameter);
+                // modify the info
+                Dish_Name_1.Text = news.Headline;
+                dish_Picture.ImageSource = new BitmapImage(new Uri(news.Image, UriKind.Absolute));
+                Dishes_Classify.Text = news.Text;
+                Dishes_Taste.Text = news.Subhead;
+                Dishes_Material.Text = news.Dateline;
+ 
         }
 
+      
         private void collect_comment_Click(object sender, RoutedEventArgs e)
         {
             collect a = new collect();
