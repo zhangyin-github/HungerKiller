@@ -91,6 +91,21 @@
                                 <TextBlock FontSize="13" FontWeight="Light" Margin="13,0,0,0" Foreground="Black" >趣味决策</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
+                        <!--今日看点-->
+                        <ListBoxItem Name="Today">
+                                <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Foreground="Black" Text="&#xE102;" 
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    <TextBlock FontSize="13" FontWeight="Light" Margin="13,0,0,0" Foreground="Black" >今日看点</TextBlock>
+                                </StackPanel>
+                         </ListBoxItem>
+                        <ListBoxItem Name="ph">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Foreground="Black" Text="&#xE179;" 
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock FontSize="13" FontWeight="Light" Margin="13,0,0,0" Foreground="Black" >排行榜</TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
 
                     </ListBox>
                     <!--管理员菜单-->
