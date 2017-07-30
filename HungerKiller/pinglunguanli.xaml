@@ -29,16 +29,24 @@
                     IsItemClickEnabled="True" 
                     ItemClick="ListView_ItemClick"
                     HorizontalAlignment="Center" >
+                    <ListView.ItemContainerStyle >
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Background" Value="#E0E0E0"></Setter>
+                            <Setter Property="Foreground"  Value="Black"  ></Setter>
+                            <Setter Property="BorderBrush"  Value="#FAFAFA"></Setter>
+                            <Setter Property="BorderThickness"  Value="2"></Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
             <ListView.ItemTemplate >
-                <DataTemplate  x:DataType="data:Fabu">
+                <DataTemplate  x:DataType="data:Fabu" >
                     <Grid >
                         <Grid.ColumnDefinitions >
                             <ColumnDefinition MinWidth="500"></ColumnDefinition>
                             <ColumnDefinition Width="100"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="0" >
-                        <CheckBox Name="PublishCheckBox" Tapped="PublishCheckBox_Tapped" ></CheckBox>
-                        <StackPanel HorizontalAlignment="Center" >
+                    <RelativePanel    Grid.Column="0" >
+                                    <CheckBox Name="PublishCheckBox" Tapped="PublishCheckBox_Tapped" RelativePanel.AlignLeftWithPanel="True" Margin="10" RelativePanel.AlignVerticalCenterWithPanel="True" ></CheckBox>
+                        <StackPanel HorizontalAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"  >
                             <TextBlock FontSize="16"
                                                Text="{x:Bind Title}"
                                                HorizontalAlignment="Center" >
@@ -48,7 +56,7 @@
                                                HorizontalAlignment="Center" >
                             </TextBlock>
                         </StackPanel>
-                    </StackPanel>
+                    </RelativePanel>
                         <Button FontFamily="Segoe MDL2 Assets"
                                 Content="&#xE107;"
                                 FontSize="23"

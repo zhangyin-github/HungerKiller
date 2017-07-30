@@ -30,7 +30,7 @@ namespace HungerKiller
         {
             this.InitializeComponent();
             //隐藏返回按钮
-            BackButton.Visibility = Visibility.Collapsed;
+            
 
             MyFrame.Navigate(typeof(homepage));
             Homepage.IsSelected = true;
@@ -127,7 +127,7 @@ namespace HungerKiller
             if (Homepage.IsSelected)
             {
                 //隐藏返回按钮
-                BackButton.Visibility = Visibility.Collapsed;
+                
 
                 ManegerListBox.SelectedIndex = -1;
                 MyFrame.Navigate(typeof(homepage));
@@ -139,6 +139,19 @@ namespace HungerKiller
                 MyFrame.Navigate(typeof(deal));
                 IfSplitViewOpen();
             }
+            else if (Today.IsSelected)
+            {
+                ManegerListBox.SelectedIndex = -1;
+                MyFrame.Navigate(typeof(Recommend));
+                IfSplitViewOpen();
+            }
+            else if (ph.IsSelected)
+            {
+                ManegerListBox.SelectedIndex = -1;
+                MyFrame.Navigate(typeof(Ranking));
+                IfSplitViewOpen();
+            }
+
         }
         /// <summary>
         /// 汉堡菜单-管理员部分
@@ -175,8 +188,7 @@ namespace HungerKiller
                 await jump.ShowAsync();
                 if (tiao.jm == true)
                 {
-                    //显示返回按钮
-                    BackButton.Visibility = Visibility.Visible;
+                    
 
                     Frame.Navigate(typeof(SignUp));
                     tiao.jm = false;
@@ -258,6 +270,20 @@ namespace HungerKiller
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            Windows.Storage.ApplicationDataContainer localSettings5 = Windows.Storage.ApplicationData.Current.LocalSettings;
+            Windows.Storage.StorageFolder localFolder1 = Windows.Storage.ApplicationData.Current.LocalFolder;
+            object kongjian = localSettings5.Values["UserStoredautosignin"];
+            string kongzhi = kongjian as string;
+            if (kongjian == "true")
+            {
+                User.sign_or_not = true;
+            }
+            else
+            {
+                User.sign_or_not = false;
+            }
+
+
             if (User.category == 4)
             {
                 MySettingStackPanel.Visibility = Visibility.Visible;
@@ -269,7 +295,7 @@ namespace HungerKiller
             if (User.sign_or_not == false)
             {
                 Windows.Storage.ApplicationDataContainer localSettings1 = Windows.Storage.ApplicationData.Current.LocalSettings;
-                Windows.Storage.StorageFolder localFolder1 = Windows.Storage.ApplicationData.Current.LocalFolder;
+                Windows.Storage.StorageFolder localFolder3 = Windows.Storage.ApplicationData.Current.LocalFolder;
                 object UserStored3 = localSettings1.Values["UserStoredautologout"];
                 zidongzhuxiao.zhuxiaoming = UserStored3 as string;
 
@@ -291,7 +317,9 @@ namespace HungerKiller
             {
                 User.sign_or_not = false;
             }
-            
+            AllDish alllss = new Model.AllDish();
+            alllss.getalldish();
+
             //MySettingStackPanel.Visibility = Visibility.Collapsed;
             //从这里开始写
 
@@ -335,7 +363,8 @@ namespace HungerKiller
         /// <param name="e"></param>
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            if(MyFrame.CanGoBack)
+            
+            if (MyFrame.CanGoBack)
             {
                 MyFrame.GoBack();
             }
