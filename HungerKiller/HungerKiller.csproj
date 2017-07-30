@@ -209,7 +209,7 @@
     <Content Include="Assets\bg.jpg" />
     <Content Include="Assets\list view.png" />
     <Content Include="Assets\refresh.png" />
-    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png.png" />
     <Content Include="Assets\star.png" />
     <Content Include="Assets\starempty.png" />
     <Content Include="Assets\starfull.png" />
