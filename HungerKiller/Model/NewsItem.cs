@@ -49,7 +49,7 @@ namespace HungerKiller.Model
             var items = new List<NewsItem>();
             for (int i=0; i<dayede.getinstance().getDishs().Count; i++)
             { 
-            items.Add(new NewsItem() { Id = dayede.getinstance().getDishs()[i].dishID, Category = "主页", Headline = dayede.getinstance().getDishs()[i].dishname, Subhead = dayede.getinstance().getDishs()[i].dishingerdients, Dateline =dayede.getinstance().getDishs()[i].dishtatse, Image = dayede.getinstance().getDishs()[i].dishpicture, Text = dayede.getinstance().getDishs()[i].dishscore });
+            items.Add(new NewsItem() { Id = dayede.getinstance().getDishs()[i].dishID, Category = "主页", Headline = dayede.getinstance().getDishs()[i].dishname, Subhead = dayede.getinstance().getDishs()[i].dishtatse, Dateline =dayede.getinstance().getDishs()[i].dishingerdients, Image = dayede.getinstance().getDishs()[i].dishpicture, Text = dayede.getinstance().getDishs()[i].dishscore });
             }
             return items;
         }

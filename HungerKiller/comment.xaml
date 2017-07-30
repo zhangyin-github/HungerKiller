@@ -94,12 +94,9 @@
                        FontSize="20"
                        Foreground="#FFF72D0D"
                        Margin="10">
-                    <TextBlock.FocusVisualPrimaryBrush>
-                        <SolidColorBrush Color="#FFE65B5B"/>
-                    </TextBlock.FocusVisualPrimaryBrush>
                 </TextBlock>
 
-                <RichTextBlock Foreground="#FFE65B5B" FocusVisualPrimaryBrush="#FFC32E2E">
+                <RichTextBlock>
                     <Paragraph Foreground="#FFF72D0D">1.锅包肉</Paragraph>
                     <Paragraph>2.香辣小龙虾</Paragraph>
                     <Paragraph>3.水煮牛肉</Paragraph>
