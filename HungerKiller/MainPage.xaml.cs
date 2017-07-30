@@ -293,6 +293,8 @@ namespace HungerKiller
             }
             
             //MySettingStackPanel.Visibility = Visibility.Collapsed;
+            //从这里开始写
+
         }
 
 
