@@ -52,7 +52,7 @@ namespace HungerKiller.Model
             else sendd = "b";
             try
             {
-                var url = "http://118.202.44.18:8080/HungerKillerBacked/insertUsernameAndPassword.jsp";
+                var url = "http://172.17.23.68:8080/HungerKillerBacked/insertUsernameAndPassword.jsp";
                 List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>>();
                 data.Add(new KeyValuePair<string, string>("username", username));
                 data.Add(new KeyValuePair<string, string>("passwor", password));
