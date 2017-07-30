@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Navigation;
 using HungerKiller.Model;
 using Windows.UI.Xaml.Media.Imaging;
 using HungerKiller.CommentCollet;
+using System.Net.Http;
+using Windows.UI.Popups;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -51,6 +53,63 @@ namespace HungerKiller
         {
             collect a = new collect();
             a.ShowAsync();
+        }
+
+        private async void release_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string dates = DateTime.Now.ToString("yyyy-MM-dd");
+                string times = DateTime.Now.ToString("hh:mm:ss");
+                string stfd = "username=" + OneUser.name + "&";
+                stfd += "dishname=" + Dish_Name_1.Text + "&";
+                stfd += "concent=" + plbox.Text + "&";
+                stfd += "date=" + dates + "&";
+                stfd += "time=" + times;
+                System.Net.Http.HttpClient clientts = new System.Net.Http.HttpClient();
+                System.Net.Http.StringContent content = new StringContent(stfd, System.Text.Encoding.UTF8,"application/x-www-form-urlencoded");
+                System.Net.Http.HttpResponseMessage response = await clientts.PostAsync("http://localhost:8080/HungerKillerBacked/Addcomment.jsp", content);
+                var resdata = await response.Content.ReadAsStringAsync();
+                String[] SArrayssssss = resdata.Split('"');
+                if (SArrayssssss[3] == "1")
+                {
+                    var dialog = new MessageDialog("评论成功", "评论提示");
+                    dialog.Commands.Add(new UICommand("确定", cmd => { }, commandId: 0));
+                    dialog.Commands.Add(new UICommand("取消", cmd => { }, commandId: 1));
+                    dialog.DefaultCommandIndex = 0;
+                    dialog.CancelCommandIndex = 1;
+                    var result = await dialog.ShowAsync();
+                }
+                else
+                {
+                    var dialog = new MessageDialog("评论失败", "评论提示");
+                    dialog.Commands.Add(new UICommand("确定", cmd => { }, commandId: 0));
+                    dialog.Commands.Add(new UICommand("取消", cmd => { }, commandId: 1));
+                    dialog.DefaultCommandIndex = 0;
+                    dialog.CancelCommandIndex = 1;
+                    var result = await dialog.ShowAsync();
+                }
+            }
+            catch
+            {
+                var dialog = new MessageDialog("评论失败", "评论提示");
+                dialog.Commands.Add(new UICommand("确定", cmd => { }, commandId: 0));
+                dialog.Commands.Add(new UICommand("取消", cmd => { }, commandId: 1));
+                dialog.DefaultCommandIndex = 0;
+                dialog.CancelCommandIndex = 1;
+                var result = await dialog.ShowAsync();
+            }
+        }
+
+        private void Dish_Pictures_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
+        {
+
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            GetAllcomment gets = new GetAllcomment();
+            gets.getall(Dish_Name_1.Text);
         }
     }
 

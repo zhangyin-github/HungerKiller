@@ -37,10 +37,13 @@
             <RelativePanel x:Name="Dish_Information_1"
                        Grid.Column="0" 
                        Grid.Row="0" Margin="40,0,0,0" Grid.RowSpan="2">
+                
+
                 <Ellipse x:Name="Dish_Pictures" 
                      Height="200" 
                      Width="200" 
                      Margin="20"
+                     
                      RelativePanel.AlignLeftWithPanel="True">
                     <Ellipse.Fill>
                         <ImageBrush x:Name="dish_Picture"/>
@@ -110,6 +113,18 @@
                         Height="30"
                         Margin="40,0,0,0"
                          >
+                <Button Name="Refresh"
+                    RelativePanel.AlignRightWithPanel="True"
+                    FontFamily="Segoe MDl2 Assets"
+                    Click="Refresh_Click"
+                    FontSize="15"
+                    Width="40"
+                    Height="32"
+                    Background="Transparent"
+                    Content="&#xE149;" 
+                  
+                     />
+
                 <TextBlock Text="评论" FontSize="20" RelativePanel.AlignTopWithPanel="True" />
                 <Rectangle RelativePanel.AlignBottomWithPanel="True" Height="0.5" Width="700" Fill="#FFA726"></Rectangle>
             </RelativePanel>
@@ -149,7 +164,7 @@
                          >
                 <TextBlock Text="评论" FontSize="20" Name="pltextbox" />
                 <TextBox Width="180" Height="200" RelativePanel.Below="pltextbox" Name="plbox" Margin="10" TextWrapping="Wrap"/>
-                <Button Content="发布评论" RelativePanel.Below="plbox" RelativePanel.AlignRightWith="plbox" Margin="10,10,0,10" Foreground="Black">
+                <Button Content="发布评论" Name="release" Click="release_Click" RelativePanel.Below="plbox" RelativePanel.AlignRightWith="plbox" Margin="10,10,0,10" Foreground="Black">
                     <Button.Background>
                         <SolidColorBrush Color="{StaticResource Color6}"/>
                     </Button.Background>

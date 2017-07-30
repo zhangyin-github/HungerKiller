@@ -141,15 +141,18 @@
     </Compile>
     <Compile Include="Model\AllDish.cs" />
     <Compile Include="Model\comment1.cs" />
+    <Compile Include="Model\commentinformation.cs" />
     <Compile Include="Model\dayede.cs" />
     <Compile Include="Model\DealManager.cs" />
     <Compile Include="Model\dealturninformation.cs" />
     <Compile Include="Model\Dealturnresult.cs" />
     <Compile Include="Model\DishNameAndImage.cs" />
     <Compile Include="Model\Fabu.cs" />
+    <Compile Include="Model\GetAllcomment.cs" />
     <Compile Include="Model\hahaha.cs" />
     <Compile Include="Model\Huodongchexiao.cs" />
     <Compile Include="Model\hehehhe.cs" />
+    <Compile Include="Model\informationforcomment.cs" />
     <Compile Include="Model\NewsItem.cs" />
     <Compile Include="Model\Randomm.cs" />
     <Compile Include="Model\Signinn.cs" />
