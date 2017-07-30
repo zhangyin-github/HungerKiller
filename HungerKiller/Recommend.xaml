@@ -7,76 +7,182 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data="using:HungerKiller.Model"
     mc:Ignorable="d">
-    
-    <ScrollViewer>
+   
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="300"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <RelativePanel Name="recommend" 
-                       Grid.Row="0" 
-                       Margin="0,-10,0,10">
-            <Image  Name="recommend1" 
-                    Height="200" 
-                    Width="200" 
-                    Source="Assets/11.jpg" 
-                    Margin="20" 
-                    RelativePanel.AlignLeftWithPanel="True"/>
-            <StackPanel Name="recommend2" 
-                        RelativePanel.RightOf="recommend1" 
-                        Margin="30">
-                <TextBlock Text="每日菜品推荐" 
-                           FontFamily="宋体" 
-                           FontSize="25"  
-                           Margin="0,50,0,20"/>
-                <TextBlock Text="根据你的口味生成，每天更新" 
-                           FontFamily="楷体" 
-                           Opacity="0.5" 
-                           FontSize="20"/>
-            </StackPanel>
-        </RelativePanel>
-        <ListView Name="Mylistview"
-                  Grid.Row="1"
-                  HorizontalAlignment="Stretch"
-                  AllowDrop="True"
-                  CanReorderItems="True"
-                  IsSwipeEnabled="True"
-                  ItemsSource="{x:Bind NewsItems}"
-                  IsItemClickEnabled="True"
-                  ItemClick="Mylistview_ItemClick"
-                  Margin="0,20,0,0">
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="Background" Value="Gray"/>
-                        <Setter Property="Foreground" Value="White"/>
-                        <Setter Property="Margin" Value="4"/>
-                    </Style>
-                </ListView.ItemContainerStyle>
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="data:NewsItem">
-                        <StackPanel Orientation="Horizontal" BorderThickness="0,0,0,0.5">
-                            <TextBlock Text="{x:Bind Headline}" 
-                                       Name="Headlinelistbox"
-                                       FontFamily="楷体"
-                                       FontSize="18"
-                                       Width="200"
-                                       Margin="150,0,0,0"/>
-                        <TextBlock Text="{x:Bind Subhead}"
-                                       Name="Subheadlistbox"
-                                       FontFamily="楷体"
-                                       FontSize="18"
-                                       Opacity="0.5"
-                                       Width="200"/>
-                        <TextBlock Text="{x:Bind Dateline}"
-                                       Name="Datelinelistbox"
-                                       FontFamily="楷体"
-                                       FontSize="18"
-                                       Opacity="0.5"/>
+        <ScrollViewer x:Name="scroll" ViewChanged="scroll_ViewChanged" Grid.Row="0" Grid.RowSpan="2">
+        <Pivot x:Name="pivot">
+            <Pivot.Title>
+                <Grid Height="195"/>
+            </Pivot.Title>
+                <PivotItem>
+                    <ListView Name="Mylistview"
+                              Grid.Row="1"
+                              HorizontalAlignment="Stretch"
+                              AllowDrop="True"
+                              CanReorderItems="True"
+                              IsSwipeEnabled="True"
+                              ItemsSource="{x:Bind NewsItems}"
+                              IsItemClickEnabled="True"
+                              ItemClick="Mylistview_ItemClick"
+                              Margin="0,40,0,0">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter Property="Margin" Value="4"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListViewItem">
+                                            <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualState x:Name="Normal">
+                                                            <Storyboard>
+                                                                <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="PointerOver">
+                                                            <Storyboard>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPointerOver}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPointerOver}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="White"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Pressed">
+                                                            <Storyboard>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPressed}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPressed}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="White"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <PointerDownThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Disabled">
+                                                            <Storyboard>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushDisabled}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundDisabled}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" 
+                                                                  BorderThickness="{TemplateBinding BorderThickness}" ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                                                  ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}"
+                                                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" 
+                                                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="data:NewsItem">
+                                <RelativePanel>
+                                <StackPanel Orientation="Horizontal" BorderThickness="0,0,0,0.5">
+                                    <Image Name="myImage2" Source="{x:Bind Image}" Height="40"/>
+                                    <TextBlock Text="{x:Bind Headline}" 
+                                               Name="Headlinelistbox"
+                                               FontFamily="楷体"
+                                               FontSize="18"
+                                               Width="200"
+                                               Margin="150,0,0,0"
+                                               VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Bind Subhead}"
+                                               Name="Subheadlistbox"
+                                               FontFamily="楷体"
+                                               FontSize="18"
+                                               Opacity="0.5"
+                                               Width="200"
+                                               VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Bind Dateline}"
+                                               Name="Datelinelistbox"
+                                               FontFamily="楷体"
+                                               FontSize="18"
+                                               Opacity="0.5"
+                                               VerticalAlignment="Center"/>
+                                </StackPanel>
+                                </RelativePanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </PivotItem>
+                <PivotItem>
+                    <ListView>
+                        
+                    </ListView>
+                </PivotItem>
+          </Pivot>
+        </ScrollViewer>
+        <Grid x:Name="header" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <RelativePanel Name="recommend" 
+                           Grid.Row="0" 
+                           Margin="0,-10,0,10">
+                <Image  Name="recommend1" 
+                        Height="200" 
+                        Width="200" 
+                        Source="Assets/11.jpg" 
+                        Margin="20,20,0,0" 
+                        RelativePanel.AlignLeftWithPanel="True"/>
+                <StackPanel Name="recommend2" 
+                            RelativePanel.RightOf="recommend1" 
+                            Margin="30">
+                    <TextBlock Text="每日推荐" 
+                               FontFamily="宋体" 
+                               FontSize="25"  
+                               Margin="0,50,0,20"/>
+                    <TextBlock Text="根据你的喜爱生成，每天更新" 
+                               FontFamily="楷体" 
+                               Opacity="0.5" 
+                               FontSize="20"/>
+                </StackPanel>
+            </RelativePanel>
+            <ListBox Grid.Row="1" 
+                     x:Name="listBox"
+                     Height="50" 
+                     Margin="16,0,0,0"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Bottom"
+                     Background="#FFEAEAEA"
+                     SelectedIndex="{Binding ElementName=pivot,Path=SelectedIndex,Mode=TwoWay}" >
+            <ListBox.Items>
+                <TextBlock Text="菜品"/>
+                <TextBlock Text="新闻"/>
+            </ListBox.Items>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal">
                     </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+        </Grid>
     </Grid>
-  </ScrollViewer>
 </Page>

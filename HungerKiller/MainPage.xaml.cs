@@ -321,6 +321,8 @@ namespace HungerKiller
             alllss.getalldish();
 
             //MySettingStackPanel.Visibility = Visibility.Collapsed;
+            //从这里开始写
+
         }
 
 

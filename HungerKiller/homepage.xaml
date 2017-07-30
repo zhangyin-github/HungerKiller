@@ -138,11 +138,10 @@
                         </Grid.Background>
                         <FlipView x:Name="LeftFlipView" 
                                   Opacity="0.5" 
-                                  IsEnabled="False" 
-                                  ItemsSource="{x:Bind NewsItems}">
+                                  IsEnabled="False" >
                             <FlipView.ItemTemplate>
-                                <DataTemplate x:DataType="data:NewsItem">
-                                    <Image Source="{x:Bind Image}" Stretch="Fill"/>
+                                <DataTemplate>
+                                    <Image Source="{Binding}" Stretch="Fill"/>
                                 </DataTemplate>
                             </FlipView.ItemTemplate>
                         </FlipView>
@@ -151,11 +150,10 @@
                     <!--中-->
                     <FlipView x:Name="CenterFlipView" 
                               Grid.Column="1" 
-                              SelectionChanged="CenterFlipView_SelectionChanged"  
-                              ItemsSource="{x:Bind NewsItems}">
+                              SelectionChanged="CenterFlipView_SelectionChanged">
                         <FlipView.ItemTemplate>
-                            <DataTemplate x:DataType="data:NewsItem">
-                                <Image Name="myImage" Source="{x:Bind Image}" Stretch="Fill"/>
+                            <DataTemplate>
+                                <Image Name="myImage" Source="{Binding}" Stretch="Fill"/>
                             </DataTemplate>
                         </FlipView.ItemTemplate>
                     </FlipView>
@@ -167,11 +165,10 @@
                         </Grid.Background>
                         <FlipView x:Name="RightFlipView" 
                                   Opacity="0.3" 
-                                  IsEnabled="False" 
-                                  ItemsSource="{x:Bind NewsItems}">
+                                  IsEnabled="False" >
                             <FlipView.ItemTemplate>
-                                <DataTemplate x:DataType="data:NewsItem">
-                                    <Image Source="{x:Bind Image}" Stretch="Fill"/>
+                                <DataTemplate>
+                                    <Image Source="{Binding}" Stretch="Fill"/>
                                 </DataTemplate>
                             </FlipView.ItemTemplate>
                         </FlipView>
