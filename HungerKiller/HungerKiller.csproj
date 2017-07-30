@@ -136,6 +136,7 @@
     <Compile Include="Maneger.xaml.cs">
       <DependentUpon>Maneger.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\AllDish.cs" />
     <Compile Include="Model\comment1.cs" />
     <Compile Include="Model\dayede.cs" />
     <Compile Include="Model\DealManager.cs" />
