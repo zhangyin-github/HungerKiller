@@ -14,12 +14,13 @@
         <Color x:Key="Color4">#FFFFFDE7</Color>
         <Color x:Key="Color5">#FFFFF8E1</Color>
         <Color x:Key="Color6">#FFFFF176</Color>
+        <Color x:Key="Color7">#FFCFD8DC</Color>
     </Page.Resources>
     <ScrollViewer>
         <Grid>
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFFF8E1" Offset="0.448"/>
+                    <GradientStop Color="#FFCFD8DC"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
