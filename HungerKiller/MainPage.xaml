@@ -256,7 +256,7 @@
                             </RelativePanel>
                             <RelativePanel>
                                 <ToggleSwitch Name="S2" RelativePanel.AlignRightWithPanel="True" MinWidth="30" FontSize="12"/>
-                                <TextBlock FontSize="12" RelativePanel.AlignVerticalCenterWith="S2" RelativePanel.AlignLeftWithPanel="True">透明磁贴</TextBlock>
+                                <TextBlock FontSize="12" RelativePanel.AlignVerticalCenterWith="S2" RelativePanel.AlignLeftWithPanel="True">动画效果</TextBlock>
                             </RelativePanel>
                         </StackPanel>
                         <Button Name="ClearCacheSetting" BorderBrush="LightGray" BorderThickness="1" Width="257" Background="White" Margin="20,10,20,20"
@@ -282,9 +282,52 @@
         <SplitView Grid.Row="1" Name="ModifySplitView" DisplayMode="Overlay" PanePlacement="Right"
                    HorizontalAlignment="Right" MaxWidth="300" MinWidth="0">
             <SplitView.Pane>
-                <Grid>
-                    
-                    
+                <Grid Width="300" HorizontalAlignment="Left" Background="White" BorderThickness="2,0,0,0">
+                    <Grid Margin="20,10,20,15">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <Grid BorderBrush="LightGray" BorderThickness="0,0,0,0.5">
+                            <TextBlock FontSize="13">编辑个人信息</TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1" Margin="0,10,0,0" BorderBrush="LightGray" BorderThickness="0,0,0,0.5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center">昵称</TextBlock>
+                            <TextBox Grid.Row="0" Grid.Column="1" Margin="5"></TextBox>
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center">介绍</TextBlock>
+                            <TextBox Grid.Row="1" Grid.Column="1" Margin="5"></TextBox>
+
+                            <TextBlock Grid.Row="2" Grid.Column="0" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center">生日</TextBlock>
+                            <DatePicker Grid.Row="2" Grid.Column="1" Width="100" Margin="5" BorderBrush="{x:Null}" Background="{x:Null}"></DatePicker>
+
+                            <TextBlock Grid.Row="3" Grid.Column="0" FontSize="12"  HorizontalAlignment="Center" VerticalAlignment="Center">口味</TextBlock>
+                            <TextBox Grid.Row="3" Grid.Column="1" Margin="5"></TextBox>
+
+                            <TextBlock Grid.Row="4" Grid.Column="0" FontSize="12"  HorizontalAlignment="Center" VerticalAlignment="Center">常住地</TextBlock>
+                            <TextBox Grid.Row="4" Grid.Column="1" Margin="5"></TextBox>
+                        </Grid>
+                        <RelativePanel Grid.Row="2">
+                            <Button Name="ConfirmButton" BorderBrush="LightGray" BorderThickness="1" Width="257" Background="White" Margin="0,10,0,0"
+                                    RelativePanel.AlignBottomWithPanel="True" FontSize="12">确定</Button>
+                        </RelativePanel>
+                    </Grid>
+                   
                 </Grid>
             </SplitView.Pane>
         </SplitView>
