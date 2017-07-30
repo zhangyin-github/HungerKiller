@@ -47,9 +47,9 @@ namespace HungerKiller.Model
         private static List<NewsItem> getNewsItems()
         {
             var items = new List<NewsItem>();
-            for (int i=0; i<dayede.getinstance().getDish().Count; i++)
+            for (int i=0; i<dayede.getinstance().getDishs().Count; i++)
             { 
-            items.Add(new NewsItem() { Id = dayede.getinstance().getDish()[i].dishID, Category = "主页", Headline = dayede.getinstance().getDish()[i].dishname, Subhead = dayede.getinstance().getDish()[i].dishingerdients, Dateline =dayede.getinstance().getDish()[i].dishtatse, Image = dayede.getinstance().getDish()[i].dishpicture, Text = dayede.getinstance().getDish()[i].dishscore });
+            items.Add(new NewsItem() { Id = dayede.getinstance().getDishs()[i].dishID, Category = "主页", Headline = dayede.getinstance().getDishs()[i].dishname, Subhead = dayede.getinstance().getDishs()[i].dishingerdients, Dateline =dayede.getinstance().getDishs()[i].dishtatse, Image = dayede.getinstance().getDishs()[i].dishpicture, Text = dayede.getinstance().getDishs()[i].dishscore });
             }
             return items;
         }

@@ -20,7 +20,6 @@
             </Pivot.Title>
                 <PivotItem>
                     <ListView Name="Mylistview"
-                              Grid.Row="1"
                               HorizontalAlignment="Stretch"
                               AllowDrop="True"
                               CanReorderItems="True"
@@ -131,8 +130,96 @@
                     </ListView>
                 </PivotItem>
                 <PivotItem>
-                    <ListView>
-                        
+                    <ListView Name="mylistview"
+                              HorizontalAlignment="Stretch"
+                              AllowDrop="True"
+                              CanReorderItems="True"
+                              IsItemClickEnabled="True"
+                              Margin="0,40,0,0">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter Property="Margin" Value="4"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListViewItem">
+                                            <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualState x:Name="Normal">
+                                                            <Storyboard>
+                                                                <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="PointerOver">
+                                                            <Storyboard>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPointerOver}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Black"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Pressed">
+                                                            <Storyboard>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPressed}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Black"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <PointerDownThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Disabled">
+                                                            <Storyboard>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushDisabled}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundDisabled}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" 
+                                                                  BorderThickness="{TemplateBinding BorderThickness}" ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                                                  ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}"
+                                                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" 
+                                                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.Items>
+                            <StackPanel Name="stackpanel1" Orientation="Horizontal">
+                                        <TextBlock Text="校园十佳歌手" Width="200" Margin="150,0,0,0" FontFamily="楷体" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                        <TextBlock Text="5月17日晚7点,由共青团东北大学委员会指导,东北大学学生会主办的2016-2017年度东北大学'校园十佳歌手'大赛决赛在大活举行." Width="200" Margin="150,0,0,0" FontFamily="楷体" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <StackPanel Name="stackpanel2" Orientation="Horizontal">
+                                        <TextBlock Text="校园书法大赛" Width="200" Margin="150,0,0,0" FontFamily="楷体" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                        <TextBlock Text="5月17日晚7点,由共青团东北大学委员会指导,东北大学学生会主办的2016-2017年度东北大学'校园书法'大赛决赛在大活举行." Width="200" Margin="150,0,0,0" FontFamily="楷体" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <StackPanel Name="stackpanel3" Orientation="Horizontal">
+                                        <TextBlock Text="校园篮球赛" Width="200" Margin="150,0,0,0" FontFamily="楷体" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                        <TextBlock Text="5月17日晚7点,由共青团东北大学委员会指导,东北大学学生会主办的2016-2017年度东北大学校园'校园篮球赛'大赛决赛在55体育场举行." Width="200" Margin="150,0,0,0" FontFamily="楷体" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </ListView.Items>
                     </ListView>
                 </PivotItem>
           </Pivot>
@@ -142,9 +229,8 @@
                 <RowDefinition Height="250"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <RelativePanel Name="recommend" 
-                           Grid.Row="0" 
-                           Margin="0,-10,0,10">
+            <Grid Grid.Row="0">
+            <RelativePanel Name="recommend">
                 <Image  Name="recommend1" 
                         Height="200" 
                         Width="200" 
@@ -164,10 +250,11 @@
                                FontSize="20"/>
                 </StackPanel>
             </RelativePanel>
+            </Grid>
             <ListBox Grid.Row="1" 
                      x:Name="listBox"
                      Height="50" 
-                     Margin="16,0,0,0"
+                     Margin="16,0,16,0"
                      HorizontalAlignment="Stretch"
                      VerticalAlignment="Bottom"
                      Background="#FFEAEAEA"

@@ -45,11 +45,11 @@ namespace HungerKiller
         {
             if (e.GetCurrentPoint(pivot).Properties.MouseWheelDelta < 0)
             {
-                scroll.ChangeView(0, scroll.VerticalOffset + 75, 1);
+                scroll.ChangeView(0, scroll.VerticalOffset + 125, 1);
             }
             else
             {
-                scroll.ChangeView(0, scroll.VerticalOffset - 75, 1);
+                scroll.ChangeView(0, scroll.VerticalOffset - 125, 1);
             }
             e.Handled = true;
         }
@@ -61,14 +61,19 @@ namespace HungerKiller
 
         private void scroll_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
         {
-            if (scroll.VerticalOffset >= 150)
+            if (scroll.VerticalOffset >= 250)
             {
-                _tt.Y = -150;
+                _tt.Y = -250;
             }
             else
             {
                 _tt.Y = -scroll.VerticalOffset;
             }
+        }
+
+        private void mylistview_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }
