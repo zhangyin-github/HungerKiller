@@ -11,7 +11,7 @@ namespace HungerKiller.Model
     class dayede
     {
         private static dayede instance;
-        private static List<hehehhe> Dish = null;
+        private static List<hehehhe> Dish = null;   //id,菜名,图片的url,评分，原料，菜量，楼层，具体位置，菜系，口味；
         private dayede()
         {
 
@@ -36,3 +36,5 @@ namespace HungerKiller.Model
         }
     }
 }
+
+

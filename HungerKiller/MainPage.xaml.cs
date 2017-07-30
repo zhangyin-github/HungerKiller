@@ -139,6 +139,19 @@ namespace HungerKiller
                 MyFrame.Navigate(typeof(deal));
                 IfSplitViewOpen();
             }
+            else if (Today.IsSelected)
+            {
+                ManegerListBox.SelectedIndex = -1;
+                MyFrame.Navigate(typeof(Recommend));
+                IfSplitViewOpen();
+            }
+            else if (ph.IsSelected)
+            {
+                ManegerListBox.SelectedIndex = -1;
+                MyFrame.Navigate(typeof(Ranking));
+                IfSplitViewOpen();
+            }
+
         }
         /// <summary>
         /// 汉堡菜单-管理员部分

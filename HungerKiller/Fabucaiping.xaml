@@ -115,28 +115,28 @@
                               Width="180"
                               Height="40">
                         <ComboBoxItem Name="ChuanCaiComboBoxItem">
-                            <TextBlock Text="川菜" HorizontalAlignment="Center" ></TextBlock>
+                            <TextBlock Text="川菜" HorizontalAlignment="Center" Name="chooclss1" ></TextBlock>
                         </ComboBoxItem>
                         <ComboBoxItem Name="YueCaiComboBoxItem">
-                            <TextBlock Text="粤菜" HorizontalAlignment="Center" ></TextBlock>
+                            <TextBlock Text="粤菜" HorizontalAlignment="Center" Name="chooclss2"></TextBlock>
                         </ComboBoxItem>
                         <ComboBoxItem Name="HuiCaiComboBoxItem">
-                            <TextBlock Text="徽菜" HorizontalAlignment="Center" ></TextBlock>
+                            <TextBlock Text="徽菜" HorizontalAlignment="Center" Name="chooclss3"></TextBlock>
                         </ComboBoxItem>
                         <ComboBoxItem Name="XiangCaiComboBoxItem">
-                            <TextBlock Text="湘菜" HorizontalAlignment="Center" ></TextBlock>
+                                    <TextBlock Text="湘菜" HorizontalAlignment="Center" Name="chooclss4"></TextBlock>
                         </ComboBoxItem>
                         <ComboBoxItem Name="LuCaiComboBoxItem">
-                            <TextBlock Text="鲁菜" HorizontalAlignment="Center" ></TextBlock>
+                                    <TextBlock Text="鲁菜" HorizontalAlignment="Center" Name="chooclss5" ></TextBlock>
                         </ComboBoxItem>
                         <ComboBoxItem Name="SuCaiComboBoxItem">
-                            <TextBlock Text="苏菜" HorizontalAlignment="Center" ></TextBlock>
+                                    <TextBlock Text="苏菜" HorizontalAlignment="Center" Name="chooclss6" ></TextBlock>
                         </ComboBoxItem>
                         <ComboBoxItem Name="ZheCaiComboBoxItem">
-                            <TextBlock Text="浙菜" HorizontalAlignment="Center" ></TextBlock>
+                                    <TextBlock Text="浙菜" HorizontalAlignment="Center" Name="chooclss7" ></TextBlock>
                         </ComboBoxItem>
                         <ComboBoxItem Name="MinCaiComboBoxItem">
-                            <TextBlock Text="闽菜" HorizontalAlignment="Center" ></TextBlock>
+                                    <TextBlock Text="闽菜" HorizontalAlignment="Center" Name="chooclss8" ></TextBlock>
                         </ComboBoxItem>
                     </ComboBox>
                     <ComboBox Name="KouWeiComboBox"
@@ -216,10 +216,10 @@
                               VerticalAlignment="Center" 
                               Height="40"
                               Width="180">
-                        <ComboBoxItem Content="1"></ComboBoxItem>
-                        <ComboBoxItem Content="2"></ComboBoxItem>
-                        <ComboBoxItem Content="3"></ComboBoxItem>
-                        <ComboBoxItem Content="4"></ComboBoxItem>
+                        <ComboBoxItem Name="f1" Content="1"></ComboBoxItem>
+                        <ComboBoxItem Name="f2" Content="2"></ComboBoxItem>
+                        <ComboBoxItem Name="f3" Content="3"></ComboBoxItem>
+                        <ComboBoxItem Name="f4" Content="4"></ComboBoxItem>
                             </ComboBox>
                     <TextBox Name="YuanLiaoTextBox"
                              Grid.Row="4"

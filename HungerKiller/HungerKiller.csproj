@@ -139,6 +139,7 @@
     <Compile Include="Maneger.xaml.cs">
       <DependentUpon>Maneger.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\AllDish.cs" />
     <Compile Include="Model\comment1.cs" />
     <Compile Include="Model\dayede.cs" />
     <Compile Include="Model\DealManager.cs" />
@@ -208,6 +209,7 @@
     <Content Include="Assets\bg.jpg" />
     <Content Include="Assets\list view.png" />
     <Content Include="Assets\refresh.png" />
+    <Content Include="Assets\SplashScreen..png" />
     <Content Include="Assets\star.png" />
     <Content Include="Assets\starempty.png" />
     <Content Include="Assets\starfull.png" />
