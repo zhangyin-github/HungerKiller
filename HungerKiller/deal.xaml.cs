@@ -447,27 +447,27 @@ namespace HungerKiller
         /// <param name="e"></param>
         private async void UpdateTurntable_Click(object sender, RoutedEventArgs e)
         {
-            Randomm df= new Randomm();
+            //Randomm df= new Randomm();
             //int[] dishneworder = new int[8];
             //dishneworder = await df.differSamenessRandomNum(8, 0, hahaha.getinstance().getDish().Count);
             int x = hahaha.getinstance().getDish().Count();
             var url = "http://localhost:8080/HungerKillerBacked/HungerKiller/";
-            DishOneText.Text = hahaha.getinstance().getDish()[x].Key;
-            DishOneImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x].Value,UriKind.RelativeOrAbsolute));
-            DishTwoText.Text = hahaha.getinstance().getDish()[x-1].Key;
-            DishTwoImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-1].Value,UriKind.RelativeOrAbsolute));
-            DishThreeText.Text = hahaha.getinstance().getDish()[x-2].Key;
-            DishThreeImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-2].Value,UriKind.RelativeOrAbsolute));
-            DishFourText.Text = hahaha.getinstance().getDish()[x-3].Key;
-            DishFourIamge.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-3].Value,UriKind.RelativeOrAbsolute));
-            DishFiveText.Text = hahaha.getinstance().getDish()[x-4].Key;
-            DishFiveImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-4].Value,UriKind.RelativeOrAbsolute));
-            DishSixText.Text = hahaha.getinstance().getDish()[x-5].Key;
-            DishSixImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-5].Value,UriKind.RelativeOrAbsolute));
-            DishSevenText.Text = hahaha.getinstance().getDish()[x-6].Key;
-            DishSevenImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-6].Value,UriKind.RelativeOrAbsolute));
-            DishEightText.Text = hahaha.getinstance().getDish()[x-7].Key;
-            DishEightImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-7].Value,UriKind.RelativeOrAbsolute));
+            DishOneText.Text = hahaha.getinstance().getDish()[x-1].Key;
+            DishOneImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-1].Value,UriKind.RelativeOrAbsolute));
+            DishTwoText.Text = hahaha.getinstance().getDish()[x-2].Key;
+            DishTwoImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-2].Value,UriKind.RelativeOrAbsolute));
+            DishThreeText.Text = hahaha.getinstance().getDish()[x-3].Key;
+            DishThreeImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-3].Value,UriKind.RelativeOrAbsolute));
+            DishFourText.Text = hahaha.getinstance().getDish()[x-4].Key;
+            DishFourIamge.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-4].Value,UriKind.RelativeOrAbsolute));
+            DishFiveText.Text = hahaha.getinstance().getDish()[x-5].Key;
+            DishFiveImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-5].Value,UriKind.RelativeOrAbsolute));
+            DishSixText.Text = hahaha.getinstance().getDish()[x-6].Key;
+            DishSixImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-6].Value,UriKind.RelativeOrAbsolute));
+            DishSevenText.Text = hahaha.getinstance().getDish()[x-7].Key;
+            DishSevenImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-7].Value,UriKind.RelativeOrAbsolute));
+            DishEightText.Text = hahaha.getinstance().getDish()[x-8].Key;
+            DishEightImage.Source = new BitmapImage(new Uri(url + hahaha.getinstance().getDish()[x-8].Value,UriKind.RelativeOrAbsolute));
         }
 
         /// <summary>

@@ -20,7 +20,7 @@
                 <Image  Name="rank1" 
                     Height="200" 
                     Width="200" 
-                    Source="Assets/10.jpg" 
+                    Source="Assets/排行222.png" 
                     Margin="20" 
                     RelativePanel.AlignLeftWithPanel="True"/>
                 <StackPanel Name="rank2" 
