@@ -13,7 +13,7 @@ namespace HungerKiller.Model
         {
             try
             {
-                var url = "http://localhost:8080/HungerKillerBacked/GetAll.jsp";
+                var url = "http://172.17.23.68:8080/HungerKillerBacked/GetAll.jsp";
                 List<KeyValuePair<string, string>> counttss = new List<KeyValuePair<string, string>>();
                 counttss.Add(new KeyValuePair<string, string>("DishOne", "1"));
                 Windows.Web.Http.HttpClient hc = new Windows.Web.Http.HttpClient();

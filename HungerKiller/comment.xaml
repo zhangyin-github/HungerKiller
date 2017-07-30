@@ -15,15 +15,11 @@
         <Color x:Key="Color5">#FFFFF8E1</Color>
         <Color x:Key="Color6">#FFFFF176</Color>
         <Color x:Key="Color7">#FFCFD8DC</Color>
+        <Color x:Key="Color8">#FFE65B5B</Color>
     </Page.Resources>
     <ScrollViewer>
         <Grid>
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFCFD8DC"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
+
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
@@ -96,10 +92,15 @@
                         Margin="0,50,50,0">
                 <TextBlock Text="相似菜品" 
                        FontSize="20"
-                       Margin="10"/>
+                       Foreground="#FFF72D0D"
+                       Margin="10">
+                    <TextBlock.FocusVisualPrimaryBrush>
+                        <SolidColorBrush Color="#FFE65B5B"/>
+                    </TextBlock.FocusVisualPrimaryBrush>
+                </TextBlock>
 
-                <RichTextBlock>
-                    <Paragraph>1.锅包肉</Paragraph>
+                <RichTextBlock Foreground="#FFE65B5B" FocusVisualPrimaryBrush="#FFC32E2E">
+                    <Paragraph Foreground="#FFF72D0D">1.锅包肉</Paragraph>
                     <Paragraph>2.香辣小龙虾</Paragraph>
                     <Paragraph>3.水煮牛肉</Paragraph>
                     <Paragraph>4.麻婆豆腐</Paragraph>
@@ -161,7 +162,7 @@
             </GridView>
             <RelativePanel Grid.Column="1" 
                         Grid.Row="1" Grid.RowSpan="2" Width="200" Height="300" 
-                         >
+                         Margin="0,30">
                 <TextBlock Text="评论" FontSize="20" Name="pltextbox" />
                 <TextBox Width="180" Height="200" RelativePanel.Below="pltextbox" Name="plbox" Margin="10" TextWrapping="Wrap"/>
                 <Button Content="发布评论" Name="release" Click="release_Click" RelativePanel.Below="plbox" RelativePanel.AlignRightWith="plbox" Margin="10,10,0,10" Foreground="Black">

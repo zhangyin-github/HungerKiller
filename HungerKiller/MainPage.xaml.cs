@@ -370,6 +370,9 @@ namespace HungerKiller
             }
         }
 
-        
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
