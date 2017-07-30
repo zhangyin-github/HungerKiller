@@ -11,7 +11,7 @@ namespace HungerKiller.Model
     class dayede
     {
         private static dayede instance;
-        private static List<hehehhe> Dish = null;   //id,菜名,图片的url,评分，原料，菜量，楼层，具体位置，菜系，口味；
+        private static List<hehehhe> Dishs = null;   //id,菜系,菜量,楼层,原料,菜名,图片的url,具体位置,评分,口味；
         private dayede()
         {
 
@@ -26,13 +26,13 @@ namespace HungerKiller.Model
             return instance;
 
         }
-        public List<hehehhe> getDish()
+        public List<hehehhe> getDishs()
         {
-            if (Dish == null)
+            if (Dishs == null)
             {
-                Dish = new List<hehehhe>();
+                Dishs = new List<hehehhe>();
             }
-            return Dish;
+            return Dishs;
         }
     }
 }

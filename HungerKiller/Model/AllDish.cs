@@ -24,7 +24,7 @@ namespace HungerKiller.Model
                 List<hehehhe> Dishsdsd = new List<hehehhe>();
                 int c = DishAllInformation.Count();
                 int d = 3;
-                dayede.getinstance().getDish().Clear();
+                dayede.getinstance().getDishs().Clear();
                 while (d < c)
                 {
                     int z = d + 4;
@@ -37,8 +37,8 @@ namespace HungerKiller.Model
                     int l = m + 4;
                     int k = l + 4;
                     int id = Convert.ToInt32(DishAllInformation[d]);
-                    dayede.getinstance().getDish().Add(new hehehhe(id, DishAllInformation[z], "http://localhost:8080/HungerKillerBacked/HungerKiller/"+DishAllInformation[x], DishAllInformation[s], DishAllInformation[v], DishAllInformation[b], DishAllInformation[n], DishAllInformation[m], DishAllInformation[l], DishAllInformation[k]));
-                    d = l + 4;
+                    dayede.getinstance().getDishs().Add(new hehehhe(id, DishAllInformation[z], "http://localhost:8080/HungerKillerBacked/HungerKiller/"+DishAllInformation[x], DishAllInformation[s], DishAllInformation[v], DishAllInformation[b], DishAllInformation[n], DishAllInformation[m], DishAllInformation[l], DishAllInformation[k]));
+                    d = k + 4;
                 }
                 return true;
             }

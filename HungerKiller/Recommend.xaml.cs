@@ -24,19 +24,51 @@ namespace HungerKiller
     /// </summary>
     public sealed partial class Recommend : Page
     {
+        private TranslateTransform _tt;
         public ObservableCollection<NewsItem> NewsItems;
         public NewsItem NewsItem { get { return this.DataContext as NewsItem; } }
         public Recommend()
         {
             this.InitializeComponent();
+            pivot.AddHandler(PointerWheelChangedEvent, new PointerEventHandler(OnChanged), true);
+            _tt = header.RenderTransform as TranslateTransform;
+            if (_tt == null)
+            {
+                header.RenderTransform = _tt = new TranslateTransform();
+            }
             NewsItems = new ObservableCollection<NewsItem>();
             NewsManager.GetAllItems(NewsItems);
             this.DataContextChanged += (s, e) => Bindings.Update();
         }
 
+        private void OnChanged(object sender, PointerRoutedEventArgs e)
+        {
+            if (e.GetCurrentPoint(pivot).Properties.MouseWheelDelta < 0)
+            {
+                scroll.ChangeView(0, scroll.VerticalOffset + 75, 1);
+            }
+            else
+            {
+                scroll.ChangeView(0, scroll.VerticalOffset - 75, 1);
+            }
+            e.Handled = true;
+        }
+
         private void Mylistview_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frame.Navigate(typeof(comment), ((NewsItem)e.ClickedItem).Id);
+        }
+
+        private void scroll_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
+        {
+            if (scroll.VerticalOffset >= 150)
+            {
+                _tt.Y = -150;
+            }
+            else
+            {
+                _tt.Y = -scroll.VerticalOffset;
+            }
         }
     }
 }

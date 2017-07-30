@@ -63,7 +63,7 @@
                   Margin="0,20,0,0">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
-                        <Setter Property="Background" Value="Gray"/>
+                        <Setter Property="Background" Value="#FFA4A09E"/>
                         <Setter Property="Foreground" Value="White"/>
                         <Setter Property="Margin" Value="4"/>
                     </Style>

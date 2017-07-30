@@ -317,8 +317,12 @@ namespace HungerKiller
             {
                 User.sign_or_not = false;
             }
-            
+            AllDish alllss = new Model.AllDish();
+            alllss.getalldish();
+
             //MySettingStackPanel.Visibility = Visibility.Collapsed;
+            //从这里开始写
+
         }
 
 

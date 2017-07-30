@@ -47,10 +47,10 @@ namespace HungerKiller.Model
         private static List<NewsItem> getNewsItems()
         {
             var items = new List<NewsItem>();
-            items.Add(new NewsItem() { Id = 1, Category = "主页", Headline = "蚬子炒虾", Subhead = "咸辣", Dateline = "蚬子，虾", Image = "ms-appx:///Assets/1.jpg", Text = "粤菜" });
-            items.Add(new NewsItem() { Id = 2, Category = "主页", Headline = "香辣肉蟹煲", Subhead = "酸甜", Dateline = "猪里脊肉，鸡蛋", Image = "ms-appx:///Assets/2.jpg", Text = "东北菜" });
-            items.Add(new NewsItem() { Id = 3, Category = "主页", Headline = "鱿鱼炒饭", Subhead = "甜咸", Dateline = "鱿鱼，饭", Image = "ms-appx:///Assets/3.jpg", Text = "淮扬菜" });
-            items.Add(new NewsItem() { Id = 4, Category = "主页", Headline = "黄金茶豆腐", Subhead = "咸", Dateline = "豆腐，鸡蛋", Image = "ms-appx:///Assets/4.jpg", Text = "鲁菜" });
+            for (int i=0; i<dayede.getinstance().getDish().Count; i++)
+            { 
+            items.Add(new NewsItem() { Id = dayede.getinstance().getDish()[i].dishID, Category = "主页", Headline = dayede.getinstance().getDish()[i].dishname, Subhead = dayede.getinstance().getDish()[i].dishingerdients, Dateline =dayede.getinstance().getDish()[i].dishtatse, Image = dayede.getinstance().getDish()[i].dishpicture, Text = dayede.getinstance().getDish()[i].dishscore });
+            }
             return items;
         }
         public static NewsItem GetNews(int id)
@@ -58,7 +58,7 @@ namespace HungerKiller.Model
             var items = getNewsItems();
             for (int i = 0; i < items.Capacity; i++)
             {
-                if (items[i].Id == id)
+             if (items[i].Id == id)
              return items[i];
             }
             return null;
