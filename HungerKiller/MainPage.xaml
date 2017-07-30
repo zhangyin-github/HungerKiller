@@ -56,6 +56,18 @@
                     Content="&#xE0C4;" 
                     Click="BackButton_Click" 
                      />
+            <Button Name="Refresh"
+                    RelativePanel.RightOf="RealTitle"
+                    RelativePanel.AlignVerticalCenterWithPanel="True"
+                    FontFamily="Segoe MDl2 Assets"
+                    
+                    FontSize="15"
+                    Width="40"
+                    Height="32"
+                    Background="Transparent"
+                    Content="&#xE149;" 
+                    Click="Refresh_Click" 
+                     />
 
             <TextBlock Name="RealTitle" FontSize="13" Margin="11,0,0,0" Foreground="White"
                        RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.RightOf="BackButton">HungerKiller</TextBlock>
