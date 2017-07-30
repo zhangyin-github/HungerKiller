@@ -7,20 +7,36 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data="using:HungerKiller.Model"
     mc:Ignorable="d">
+    <Page.Resources>
+        <Color x:Key="Color1">#FFFFD180</Color>
+        <Color x:Key="Color2">#FFFFE57F</Color>
+        <Color x:Key="Color3">#FFFFF9C4</Color>
+        <Color x:Key="Color4">#FFFFFDE7</Color>
+        <Color x:Key="Color5">#FFFFF8E1</Color>
+        <Color x:Key="Color6">#FFFFF176</Color>
+        <Color x:Key="Color7">#FFCFD8DC</Color>
+    </Page.Resources>
     <ScrollViewer>
-        <Grid Background="White">
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCFD8DC"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <RelativePanel x:Name="Dish_Information_1"
                        Grid.Column="0" 
-                       Grid.Row="0" Grid.ColumnSpan="3" Margin="0,0,379,0">
+                       Grid.Row="0" Margin="40,0,0,0" Grid.RowSpan="2">
                 <Ellipse x:Name="Dish_Pictures" 
                      Height="200" 
                      Width="200" 
@@ -53,19 +69,18 @@
                            Text="5" 
                            FontSize="20"/>
                     </StackPanel>
-
                     <!--分类-->
-                    <StackPanel  Orientation="Horizontal" Margin="0,40,0,10">
+                    <StackPanel  Orientation="Horizontal" Margin="0,0,0,15">
                         <TextBlock FontSize="20" >分类：</TextBlock>
                         <TextBlock Name="Dishes_Classify"  FontSize="20"/>
                     </StackPanel>
                     <!--口味-->
-                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
                         <TextBlock FontSize="20" >口味：</TextBlock>
                         <TextBlock Name="Dishes_Taste" FontSize="20"/>
                     </StackPanel>
                     <!--主要食材-->
-                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
                         <TextBlock FontSize="20">主要食材：</TextBlock>
                         <TextBlock Name="Dishes_Material" FontSize="20"/>
                     </StackPanel>
@@ -74,41 +89,41 @@
             </RelativePanel>
             <StackPanel x:Name="Similar_dishes" 
                     Grid.Row="0"
-                    Grid.Column="1">
+                    Grid.Column="1"
+                        Margin="0,50,50,0">
                 <TextBlock Text="相似菜品" 
                        FontSize="20"
                        Margin="10"/>
-                <ScrollViewer>
-                    <RichTextBlock>
-                        <Paragraph>1</Paragraph>
-                        <Paragraph>2</Paragraph>
-                        <Paragraph>3</Paragraph>
-                        <Paragraph>4</Paragraph>
-                        <Paragraph>5</Paragraph>
-                        <Paragraph>6</Paragraph>
-                    </RichTextBlock>
-                </ScrollViewer>
-            </StackPanel>
-            <StackPanel Grid.Column="0" 
-                        Grid.Row="1">
-                <TextBlock Text="评论" FontSize="30"/>
-                <Button x:Name="collect_comment" Click="collect_comment_Click" Height="40" Width="600"
-                        BorderBrush="AliceBlue">
-               
-                </Button>
-                
+
+                <RichTextBlock>
+                    <Paragraph>1.锅包肉</Paragraph>
+                    <Paragraph>2.香辣小龙虾</Paragraph>
+                    <Paragraph>3.水煮牛肉</Paragraph>
+                    <Paragraph>4.麻婆豆腐</Paragraph>
+                    <Paragraph>5.鱼香茄子</Paragraph>
+                    <Paragraph>6.酸菜鱼</Paragraph>
+                </RichTextBlock>
 
             </StackPanel>
+            <RelativePanel Grid.Column="0" 
+                        Grid.Row="1" 
+                        Height="30"
+                        Margin="40,0,0,0"
+                         >
+                <TextBlock Text="评论" FontSize="20" RelativePanel.AlignTopWithPanel="True" />
+                <Rectangle RelativePanel.AlignBottomWithPanel="True" Height="0.5" Width="700" Fill="#FFA726"></Rectangle>
+            </RelativePanel>
 
 
-            <GridView ItemsSource="{x:Bind Comment}" Grid.Column="0" Grid.Row="2">
+            <GridView ItemsSource="{x:Bind Comment}" Grid.Column="0" Grid.Row="2" Margin="40,0,0,0">
                 <GridView.ItemTemplate>
                     <DataTemplate x:DataType="data:Comment">
-                        <RelativePanel>
-                            
+                        <RelativePanel BorderBrush="#BDBDBD" BorderThickness="0,0,0,0.4">
+
                             <TextBlock x:Name="User_ID" 
                                        Text="{x:Bind User_Id}"
                                        RelativePanel.AlignLeftWithPanel="True"
+                                       FontSize="18"
                                        />
 
                             <TextBlock  x:Name="Comment_block"
@@ -116,14 +131,30 @@
                                         RelativePanel.Below="User_ID"
                                         TextWrapping="WrapWholeWords" 
                                         Width="600"
-                                        Text="{x:Bind User_comments}"/>
+                                        FontSize="14"
+                                        Text="{x:Bind User_comments}"
+                                        Foreground="#616161"/>
                             <TextBlock x:Name="time_block"
                                        RelativePanel.AlignRightWithPanel="True"
-                                       Text="{x:Bind Data_Time}"  />
+                                       RelativePanel.AlignBottomWithPanel="True"
+                                       Text="{x:Bind Data_Time}" 
+                                       FontSize="12"
+                                       Foreground="#757575"/>
                         </RelativePanel>
                     </DataTemplate>
                 </GridView.ItemTemplate>
             </GridView>
+            <RelativePanel Grid.Column="1" 
+                        Grid.Row="1" Grid.RowSpan="2" Width="200" Height="300" 
+                         >
+                <TextBlock Text="评论" FontSize="20" Name="pltextbox" />
+                <TextBox Width="180" Height="200" RelativePanel.Below="pltextbox" Name="plbox" Margin="10" TextWrapping="Wrap"/>
+                <Button Content="发布评论" RelativePanel.Below="plbox" RelativePanel.AlignRightWith="plbox" Margin="10,10,0,10" Foreground="Black">
+                    <Button.Background>
+                        <SolidColorBrush Color="{StaticResource Color6}"/>
+                    </Button.Background>
+                </Button>
+            </RelativePanel>
         </Grid>
     </ScrollViewer>
 </Page>
