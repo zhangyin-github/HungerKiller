@@ -298,8 +298,32 @@ namespace HungerKiller
             { t9 = "1"; }
             if (SuShiCheckBox.IsChecked.Value)
             { t10 = "1"; }
-             string chooseclass=CaiXiComboBox.SelectedValue.ToString();
-             string choosefloor=FloorComboBox.SelectedValue.ToString();
+             string chooseclass="民间菜品";
+            if (ChuanCaiComboBoxItem.IsSelected)
+            { chooseclass = "川菜"; }
+            else if (YueCaiComboBoxItem.IsSelected)
+            { chooseclass = "粤菜"; }
+            else if (HuiCaiComboBoxItem.IsSelected)
+            { chooseclass = "徽菜"; }
+            else if (XiangCaiComboBoxItem.IsSelected)
+            { chooseclass = "湘菜"; }
+            else if (LuCaiComboBoxItem.IsSelected)
+            { chooseclass = "鲁菜"; }
+            else if (SuCaiComboBoxItem.IsSelected)
+            { chooseclass = "苏菜"; }
+            else if (ZheCaiComboBoxItem.IsSelected)
+            { chooseclass = "浙菜"; }
+            else if (MinCaiComboBoxItem.IsSelected)
+            { chooseclass = "闽菜"; }
+             string choosefloor="5";
+            if (f1.IsSelected)
+            { choosefloor = "1"; }
+            else if (f2.IsSelected)
+            { choosefloor = "2"; }
+            else if (f3.IsSelected)
+            { choosefloor = "3"; }
+            else if (f4.IsSelected)
+            { choosefloor = "4"; }
              string choosedishname = CaiMingTextBox.Text;
              string choosedishingre = YuanLiaoTextBox.Text;
              string choosedishcurrent = CaiLiangTextBox.Text;
@@ -318,8 +342,8 @@ namespace HungerKiller
              str += "dishsalty=" + t6 + "&";
              str += "dishot=" + t7 + "&";
              str += "dishrice=" + t8 + "&";
-             str += "dishmainshi=" + t9 + "&";
-             str += "dishsushi" + t10 + "&";
+             str += "dishmianshi=" + t9 + "&";
+             str += "dishsushi=" + t10 + "&";
             if (inputstring == null)
             {
                 str += "dishimg=" +"0000";
@@ -360,16 +384,6 @@ namespace HungerKiller
                 dialog.CancelCommandIndex = 1;
                 var result = await dialog.ShowAsync();
             }
-            //var dialog = new MessageDialog("你确定发布，请检查是否编辑完整", "发布提示");
-            //dialog.Commands.Add(new UICommand("确定", cmd => { }, commandId: 0));
-            //dialog.Commands.Add(new UICommand("取消", cmd => { }, commandId: 1));
-
-            //设置默认按钮，不设置的话默认的确认按钮是第一个按钮
-            //dialog.DefaultCommandIndex = 0;
-            //dialog.CancelCommandIndex = 1;
-
-            //获取返回值
-            //var result = await dialog.ShowAsync();
         }
     }
 }
