@@ -124,6 +124,9 @@
     <Compile Include="homepage.xaml.cs">
       <DependentUpon>homepage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Interesting.xaml.cs">
+      <DependentUpon>Interesting.xaml</DependentUpon>
+    </Compile>
     <Compile Include="introduce.xaml.cs">
       <DependentUpon>introduce.xaml</DependentUpon>
     </Compile>
@@ -273,6 +276,10 @@
     <Page Include="homepage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Interesting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="introduce.xaml">
       <SubType>Designer</SubType>
